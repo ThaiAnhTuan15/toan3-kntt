@@ -19,7 +19,7 @@ export class AIService {
    * Áp dụng AI Cache để không gọi AI nhiều lần cho cùng 1 câu hỏi + đáp án sai
    */
   static async generateExplanation(questionId: string, studentWrongAnswer: string) {
-    const cacheKey = \`\${questionId}_\${studentWrongAnswer}\`;
+    const cacheKey = `${questionId}_${studentWrongAnswer}`;
     
     // 1. Kiểm tra Cache
     if (this.explanationCache.has(cacheKey)) {
@@ -31,11 +31,11 @@ export class AIService {
 
     // 2. Nếu không có trong cache, tiến hành gọi AI
     // (Trong thực tế cần nối chuỗi prompt và fetch từ CSDL nội dung câu hỏi)
-    const prompt = \`Học sinh đã chọn đáp án \${studentWrongAnswer} cho câu hỏi \${questionId}. Hãy giải thích tại sao sai và gợi ý cách giải đúng ngắn gọn nhất.\`;
+    const prompt = `Học sinh đã chọn đáp án ${studentWrongAnswer} cho câu hỏi ${questionId}. Hãy giải thích tại sao sai và gợi ý cách giải đúng ngắn gọn nhất.`;
     
     // Gọi API AI
     const aiResponse = await mockAiCall(prompt, { questionId });
-    const generatedExplanation = \`Đây là gợi ý tự động: Khi làm bài này em cần chú ý tính từ phải sang trái. (Sinh bởi AI)\`;
+    const generatedExplanation = `Đây là gợi ý tự động: Khi làm bài này em cần chú ý tính từ phải sang trái. (Sinh bởi AI)`;
 
     // 3. Lưu vào Cache để dùng cho học sinh sau
     this.explanationCache.set(cacheKey, generatedExplanation);
@@ -62,8 +62,8 @@ export class AIService {
       status: 'AI_GENERATED',
       questions: [
         {
-          code: \`M3-Q-AI-\${Math.floor(Math.random()*10000)}\`,
-          stem: \`Một câu hỏi sinh bởi AI về \${lesson} mức độ \${difficulty}\`,
+          code: `M3-Q-AI-${Math.floor(Math.random()*10000)}`,
+          stem: `Một câu hỏi sinh bởi AI về ${lesson} mức độ ${difficulty}`,
           difficulty: difficulty
         }
       ]

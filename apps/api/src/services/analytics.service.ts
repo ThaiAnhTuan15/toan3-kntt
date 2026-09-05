@@ -67,7 +67,7 @@ export class AnalyticsService {
         requirementCode: req.code,
         totalQuestions: qCount,
         gapStatus,
-        details: \`L1: \${level1}, L3: \${level3}\`
+        details: `L1: ${level1}, L3: ${level3}`
       };
     }).filter(g => g.gapStatus !== 'OK');
 
