@@ -170,8 +170,7 @@ export const LearningProvider = ({ children }) => {
     }
   });
 
-  const [isFreeMode,
-      isApiLoading, setIsFreeMode] = useState(() => {
+  const [isFreeMode, setIsFreeMode] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.FREE_MODE);
       return saved ? JSON.parse(saved) : false;
