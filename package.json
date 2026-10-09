@@ -8,6 +8,8 @@
     "database"
   ],
   "scripts": {
+    "build": "npm run db:generate && npm run build --workspace=api",
+    "start": "npm run start --workspace=api",
     "dev:web": "npm run dev --workspace=web",
     "dev:api": "npm run dev --workspace=api",
     "db:generate": "prisma generate --schema=./database/schema/schema.prisma"
