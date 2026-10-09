@@ -204,6 +204,45 @@ export const LearningProvider = ({ children }) => {
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.FREE_MODE, JSON.stringify(isFreeMode)); }, [isFreeMode]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(coins)); }, [coins]);
 
+  // ----------------------------------------------------------------------
+  // CLOUD SYNC (BACKGROUND)
+  // ----------------------------------------------------------------------
+  useEffect(() => {
+    try {
+      if (typeof window !== 'undefined') {
+        const token = localStorage.getItem('token');
+        // Only sync if token exists and it's not the mock token
+        if (token && token !== 'mock_token_for_student') {
+          // Render API URL
+          fetch('https://toan3-kntt.onrender.com/api/student/progress', {
+            method: 'PUT',
+            headers: { 
+              'Content-Type': 'application/json', 
+              'Authorization': 'Bearer ' + token 
+            },
+            body: JSON.stringify({
+              stars: totalStars,
+              coins: coins,
+              streakData: streakData,
+              badges: unlockedBadges,
+              wrongQuestions: g4MathWrong, // simplified for now
+              gameState: {
+                g4MathProgress,
+                history,
+                profile,
+                currentGrade,
+                currentSubject
+              }
+            })
+          }).catch(e => console.error('Cloud Sync Error', e));
+        }
+      }
+    } catch (err) {
+      console.error('Failed to prepare sync', err);
+    }
+  }, [totalStars, coins, streakData, unlockedBadges, g4MathProgress, history, profile, currentGrade, currentSubject]);
+
+
   // Derived active state
   const isMath = currentSubject === 'math';
   const isGrade7 = currentGrade === '7';
@@ -478,3 +517,4 @@ export const useLearning = () => {
   }
   return context;
 };
+
