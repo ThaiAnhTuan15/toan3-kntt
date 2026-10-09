@@ -21,6 +21,26 @@ export const ExplanationView = ({
   onRetryWrongOnly 
 }) => {
   const [filterMode, setFilterMode] = useState('all'); // 'all' | 'wrong' | 'correct'
+  const [aiExplanations, setAiExplanations] = useState({});
+  const [loadingAi, setLoadingAi] = useState({});
+
+  const handleAskAI = async (questionText, correctAnswer, wrongAnswer, questionId) => {
+    sounds.playClick();
+    setLoadingAi(prev => ({ ...prev, [questionId]: true }));
+    try {
+      const res = await fetch('https://toan3-kntt.onrender.com/api/analytics/ai-explain', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('token') },
+        body: JSON.stringify({ questionText, correctAnswer, wrongAnswer })
+      });
+      const data = await res.json();
+      setAiExplanations(prev => ({ ...prev, [questionId]: data.explanation }));
+    } catch (e) {
+      setAiExplanations(prev => ({ ...prev, [questionId]: 'Oops, Cú Mèo đang bận, em thử lại sau nha!' }));
+    } finally {
+      setLoadingAi(prev => ({ ...prev, [questionId]: false }));
+    }
+  };
 
   const optionLetters = ['A', 'B', 'C', 'D'];
   const wrongCount = details.filter(d => !d.isCorrect).length;
@@ -201,6 +221,39 @@ export const ExplanationView = ({
                   );
                 })}
               </div>
+
+              {/* AI Assistant Box (Only for wrong answers) */}
+              {!isCorrect && (
+                <div className="mt-4 mb-4 p-4 rounded-2xl bg-indigo-50 border-2 border-indigo-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2 font-black text-indigo-900">
+                      <Sparkles className="w-5 h-5 text-indigo-600" />
+                      <span>Trợ giảng AI Cú Mèo</span>
+                    </div>
+                    {!aiExplanations[q.id] && !loadingAi[q.id] && (
+                      <button
+                        onClick={() => handleAskAI(q.question, q.options[q.correctIndex], q.options[userChoice], q.id)}
+                        className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm transition-colors shadow-sm"
+                      >
+                        Hỏi Cú Mèo ngay
+                      </button>
+                    )}
+                  </div>
+                  
+                  {loadingAi[q.id] && (
+                    <div className="text-sm font-semibold text-indigo-600 animate-pulse flex items-center gap-2 mt-2">
+                      <RotateCcw className="w-4 h-4 animate-spin" />
+                      Cú Mèo đang đọc đề và suy nghĩ...
+                    </div>
+                  )}
+                  
+                  {aiExplanations[q.id] && (
+                    <div className="text-sm sm:text-base font-semibold text-indigo-800 leading-relaxed bg-white p-3 rounded-xl border border-indigo-100 mt-2">
+                      {aiExplanations[q.id]}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Step-by-Step Explanation Box */}
               <div className="rounded-2xl bg-amber-50/70 border-2 border-amber-200 p-4 space-y-2">
