@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import React, { useState } from 'react';
 import { 
   Lock, 
@@ -92,9 +92,9 @@ export const RoadmapView = ({ onStartQuiz }) => {
 
   const getBannerTitle = () => {
     if (isGrade7) {
-      return isMath ? 'Chinh Phục Toán Lớp 7 (GDPT 2018) 🚀' : 'Hành Trình Khám Phá Ngữ Văn Lớp 7 📖';
+      return isMath ? 'Chinh Phục Toán Lớp 3 (GDPT 2018) 🚀' : 'Hành Trình Khám Phá Ngữ Văn Lớp 3 📖';
     }
-    return isMath ? 'Chinh Phục Thế Giới Toán Lớp 4 🌟' : 'Hành Trình Khám Phá Tiếng Việt 4 📖';
+    return isMath ? 'Chinh Phục Thế Giới Toán Lớp 3 🌟' : 'Hành Trình Khám Phá Tiếng Việt 4 📖';
   };
 
   const getBannerDesc = () => {
