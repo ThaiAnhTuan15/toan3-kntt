@@ -403,6 +403,12 @@ model StudentProgress {
   student    Student  @relation(fields: [studentId], references: [id])
   overallScore Float  @default(0)
   level      Int      @default(1)
+  stars      Int      @default(0)
+  coins      Int      @default(0)
+  streakData Json?
+  badges     Json?
+  wrongQuestions Json?
+  gameState  Json?
   updatedAt  DateTime @updatedAt
 }
 

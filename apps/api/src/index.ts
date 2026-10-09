@@ -6,6 +6,7 @@ import adminRoutes from './routes/admin.routes';
 import parentRoutes from './routes/parent.routes';
 import teacherRoutes from './routes/teacher.routes';
 import analyticsRoutes from './routes/analytics.routes';
+import studentRoutes from './routes/student.routes';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/parent', parentRoutes);
 app.use('/api/teacher', teacherRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/student', studentRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Toan3KNTT API is running' });
