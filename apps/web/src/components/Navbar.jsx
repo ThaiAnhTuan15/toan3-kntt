@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState } from 'react';
 import { 
   Compass, 
@@ -76,9 +76,9 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   // Dynamic titles
   const getSubjectTitle = () => {
     if (isGrade7) {
-      return isMath ? 'Toán Nâng Cao' : 'Ngữ Văn 7';
+      return isMath ? 'Toán Lớp 7' : 'Ngữ Văn 7';
     }
-    return isMath ? 'Toán Lớp 3' : 'Toán 3';
+    return isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4';
   };
 
   const getSubjectSubtitle = () => {
@@ -129,7 +129,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
 
         {/* Grade & Subject Switchers */}
         <div className="flex items-center flex-wrap gap-2">
-          {/* Grade Switcher (Lớp 3 / Lớp 7) */}
+          {/* Grade Switcher (Lớp 4 / Lớp 7) */}
           <div className="bg-slate-100 p-1 rounded-2xl border-2 border-slate-200 flex items-center gap-1 shadow-inner">
             <button
               onClick={() => switchGrade('4')}
@@ -140,7 +140,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               }`}
             >
               <GraduationCap className="w-3.5 h-3.5" />
-              <span>Lớp 3</span>
+              <span>Lớp 4</span>
             </button>
 
             <button
@@ -183,7 +183,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               }`}
             >
               <BookMarked className="w-3.5 h-3.5" />
-              <span>{isGrade7 ? '📖 Ngữ Văn 7' : '📖 Toán 3'}</span>
+              <span>{isGrade7 ? '📖 Ngữ Văn 7' : '📖 Tiếng Việt 4'}</span>
             </button>
           </div>
         </div>

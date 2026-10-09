@@ -12,7 +12,7 @@ import { ResultModal } from './ResultModal';
 import { ExplanationView } from './ExplanationView';
 
 const MainContent = () => {
-  const { saveQuizResult, getQuestionsByWeek, currentSubject, isMath } = useLearning();
+  const { saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading } = useLearning();
   const [currentTab, setCurrentTab] = useState('roadmap'); // 'roadmap' | 'practice' | 'wrong' | 'dashboard' | 'badges'
   const [activeQuizConfig, setActiveQuizConfig] = useState(null);
   const [currentResultData, setCurrentResultData] = useState(null);
@@ -100,6 +100,19 @@ const MainContent = () => {
     setCurrentResultData(null);
     setIsViewingExplanation(false);
   };
+
+
+  if (isApiLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-amber-50 to-orange-50">
+        <div className="text-center p-8 bg-white rounded-xl shadow-lg border border-amber-100">
+          <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h2 className="text-xl font-bold text-slate-800">Đang tải dữ liệu bài học...</h2>
+          <p className="text-slate-500 mt-2">Vui lòng chờ giây lát (nếu server đang ngủ đông có thể mất khoảng 30s)</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`min-h-screen font-nunito text-slate-800 ${

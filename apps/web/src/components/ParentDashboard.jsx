@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState } from 'react';
 import { 
   BarChart3, 
@@ -44,7 +44,7 @@ export const ParentDashboard = () => {
 
   const subjectLabel = isGrade7
     ? (isMath ? 'Toán Lớp 7' : 'Ngữ Văn 7')
-    : (isMath ? 'Toán Lớp 3' : 'Tiếng Việt 4');
+    : (isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4');
 
   // Overall Statistics for current subject
   const totalQuizzes = subjectHistory.length;
@@ -207,7 +207,7 @@ export const ParentDashboard = () => {
       <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/80 rounded-3xl border-2 border-amber-200 p-6 shadow-sm space-y-4">
         <div className="flex items-center gap-2 text-amber-900 font-black text-base">
           <Sparkles className="w-5 h-5 text-amber-600" />
-          Nhận Xét & Lời Khuyên Của Giáo Viên {isMath ? 'Toán Lớp 3' : 'Tiếng Việt 4'}
+          Nhận Xét & Lời Khuyên Của Giáo Viên {isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4'}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

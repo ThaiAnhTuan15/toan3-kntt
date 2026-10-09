@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import prisma from '../config/db';
 import { QuestionService } from '../services/question.service';
-import { QuestionStatus } from '@toan3/types';
+import { QuestionStatus } from '@prisma/client';
 
 export const getQuestions = async (req: Request, res: Response) => {
   try {

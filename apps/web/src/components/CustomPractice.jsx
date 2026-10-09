@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState } from 'react';
 import { 
   BookOpen, 
@@ -37,7 +37,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
 
   const subjectLabel = isGrade7
     ? (isMath ? 'Toán Lớp 7' : 'Ngữ Văn 7')
-    : (isMath ? 'Toán Lớp 3' : 'Tiếng Việt 4');
+    : (isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4');
 
   // Quick Exam Presets
   const handleStartPreset = (presetType) => {
@@ -112,7 +112,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
             Phòng Luyện Thi & Tùy Chọn Đề
           </span>
           <h1 className="text-2xl sm:text-4xl font-black mb-2">
-            {isMath ? 'Đấu Trường Luyện Thi Toán Lớp 3 🎯' : 'Đấu Trường Luyện Thi Tiếng Việt 4 🎯'}
+            {isMath ? 'Đấu Trường Luyện Thi Toán Lớp 4 🎯' : 'Đấu Trường Luyện Thi Tiếng Việt 4 🎯'}
           </h1>
           <p className="text-sm sm:text-base font-bold text-teal-50">
             Lựa chọn các bộ đề thi thử Học Kỳ chuẩn hoặc tự thiết kế phòng luyện tập theo từng chủ đề yêu thích!
