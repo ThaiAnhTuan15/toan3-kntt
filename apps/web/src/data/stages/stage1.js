@@ -7,7 +7,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "easy",
     question: "Số gồm 5 trăm, 4 chục và 3 đơn vị được viết là:",
     options: ["534", "543", "453", "345"],
-    correctAnswer: "543",
+    correctIndex: 1,
     explanation: "Số gồm 5 trăm, 4 chục, 3 đơn vị viết là 543."
   },
   {
@@ -17,7 +17,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "medium",
     question: "Kết quả của phép tính 350 + 120 là:",
     options: ["470", "450", "480", "570"],
-    correctAnswer: "470",
+    correctIndex: 0,
     explanation: "Thực hiện phép tính cộng: 350 + 120 = 470."
   },
   {
@@ -27,7 +27,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "hard",
     question: "Một cửa hàng buổi sáng bán được 250 kg gạo, buổi chiều bán được ít hơn buổi sáng 50 kg. Cả hai buổi cửa hàng bán được bao nhiêu ki-lô-gam gạo?",
     options: ["450 kg", "200 kg", "400 kg", "500 kg"],
-    correctAnswer: "450 kg",
+    correctIndex: 0,
     explanation: "Buổi chiều bán được: 250 - 50 = 200 (kg). Cả hai buổi bán được: 250 + 200 = 450 (kg)."
   },
 
@@ -39,7 +39,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "easy",
     question: "Tìm x, biết: x + 125 = 300",
     options: ["175", "425", "275", "185"],
-    correctAnswer: "175",
+    correctIndex: 0,
     explanation: "Muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng kia. x = 300 - 125 = 175."
   },
   {
@@ -49,7 +49,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "medium",
     question: "Tìm số bị trừ, biết hiệu là 150 và số trừ là 200.",
     options: ["350", "50", "250", "400"],
-    correctAnswer: "350",
+    correctIndex: 0,
     explanation: "Số bị trừ = Hiệu + Số trừ = 150 + 200 = 350."
   },
 
@@ -61,7 +61,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "easy",
     question: "Kế quả của phép tính 3 × 6 là:",
     options: ["18", "24", "15", "12"],
-    correctAnswer: "18",
+    correctIndex: 0,
     explanation: "Theo bảng nhân 3, ta có: 3 × 6 = 18."
   },
   {
@@ -83,7 +83,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "easy",
     question: "Điền số thích hợp vào chỗ chấm: 4 × ... = 32",
     options: ["7", "8", "9", "6"],
-    correctAnswer: "8",
+    correctIndex: 1,
     explanation: "Theo bảng nhân 4, ta có 4 × 8 = 32."
   },
 
@@ -95,7 +95,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "medium",
     question: "An có 5 quyển vở. Số vở của Bình gấp 3 lần số vở của An. Hỏi Bình có bao nhiêu quyển vở?",
     options: ["8", "10", "15", "20"],
-    correctAnswer: "15",
+    correctIndex: 2,
     explanation: "Số vở của Bình là: 5 × 3 = 15 (quyển vở)."
   },
 
@@ -107,7 +107,7 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "easy",
     question: "6 × 7 = ?",
     options: ["42", "48", "36", "49"],
-    correctAnswer: "42",
+    correctIndex: 0,
     explanation: "6 × 7 = 42"
   },
   {
@@ -117,7 +117,8 @@ export const STAGE_1_QUESTIONS = [
     difficulty: "medium",
     question: "Số liền trước của 1000 là số nào?",
     options: ["999", "990", "1001", "900"],
-    correctAnswer: "999",
+    correctIndex: 0,
     explanation: "Số liền trước của 1000 là 1000 - 1 = 999."
   }
 ];
+

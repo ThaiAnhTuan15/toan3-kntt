@@ -26,8 +26,8 @@ export const getCurriculumGaps = async (req: Request, res: Response) => {
 
 export const generateAIExplanation = async (req: Request, res: Response) => {
   try {
-    const { questionId, wrongAnswer } = req.body;
-    const explanation = await AIService.generateExplanation(questionId, wrongAnswer);
+    const { questionText, correctAnswer, wrongAnswer } = req.body;
+    const explanation = await AIService.generateExplanation(questionText, correctAnswer, wrongAnswer);
     res.json(explanation);
   } catch (error) {
     res.status(500).json({ message: 'Lỗi máy chủ', error });

@@ -1,27 +1,12 @@
-import { PROMPT_TEMPLATES } from '../config/prompts';
-
-// Giả lập thư viện gọi AI (ví dụ: OpenAI SDK hoặc Google Generative AI)
-const mockAiCall = async (prompt: string, variables: any) => {
-  console.log('--- GỌI AI API ---');
-  return JSON.stringify({
-    success: true,
-    data: "Mock AI Response",
-    metadata: variables
-  });
-};
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export class AIService {
-  // Bộ nhớ đệm (Cache) trong RAM để lưu kết quả AI, giảm chi phí API
   private static explanationCache = new Map<string, string>();
+  private static genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-  /**
-   * Sinh lời giải tự động cho câu hỏi mà học sinh làm sai
-   * Áp dụng AI Cache để không gọi AI nhiều lần cho cùng 1 câu hỏi + đáp án sai
-   */
-  static async generateExplanation(questionId: string, studentWrongAnswer: string) {
-    const cacheKey = `${questionId}_${studentWrongAnswer}`;
+  static async generateExplanation(questionText: string, correctAnswer: string, studentWrongAnswer: string) {
+    const cacheKey = `${questionText}_${studentWrongAnswer}`;
     
-    // 1. Kiểm tra Cache
     if (this.explanationCache.has(cacheKey)) {
       return {
         source: 'CACHE',
@@ -29,44 +14,38 @@ export class AIService {
       };
     }
 
-    // 2. Nếu không có trong cache, tiến hành gọi AI
-    // (Trong thực tế cần nối chuỗi prompt và fetch từ CSDL nội dung câu hỏi)
-    const prompt = `Học sinh đã chọn đáp án ${studentWrongAnswer} cho câu hỏi ${questionId}. Hãy giải thích tại sao sai và gợi ý cách giải đúng ngắn gọn nhất.`;
-    
-    // Gọi API AI
-    const aiResponse = await mockAiCall(prompt, { questionId });
-    const generatedExplanation = `Đây là gợi ý tự động: Khi làm bài này em cần chú ý tính từ phải sang trái. (Sinh bởi AI)`;
+    try {
+      if (!process.env.GEMINI_API_KEY) {
+        return {
+          source: 'FALLBACK',
+          explanation: 'Tính năng AI chưa được cấu hình API Key. Hãy nhờ thầy cô hoặc phụ huynh giải thích nhé!'
+        };
+      }
 
-    // 3. Lưu vào Cache để dùng cho học sinh sau
-    this.explanationCache.set(cacheKey, generatedExplanation);
+      const model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const prompt = `Bạn là "Cú Mèo Thông Thái", một trợ giảng môn Toán lớp 3 siêu dễ thương và tâm lý.
+Học sinh vừa làm sai một câu hỏi toán học. 
+Câu hỏi là: "${questionText}"
+Đáp án đúng là: "${correctAnswer}"
+Học sinh đã chọn sai đáp án là: "${studentWrongAnswer}"
 
-    return {
-      source: 'AI_API',
-      explanation: generatedExplanation
-    };
-  }
+Hãy đóng vai Cú Mèo, viết một đoạn ngắn (3-4 câu) giải thích thật dễ hiểu cho học sinh lớp 3 tại sao lại sai, và gợi ý cách làm đúng. Dùng giọng điệu nhẹ nhàng, vui vẻ, xưng "Cú Mèo" và gọi học sinh là "bạn nhỏ" hoặc "em".`;
 
-  /**
-   * Sinh câu hỏi mới hoàn toàn bằng AI
-   */
-  static async generateQuestions(topic: string, lesson: string, difficulty: number, count: number = 1) {
-    let rawPrompt = PROMPT_TEMPLATES.QUESTION_GENERATOR;
-    rawPrompt = rawPrompt.replace('{{lesson}}', lesson)
-                         .replace('{{difficulty}}', difficulty.toString());
+      const result = await model.generateContent(prompt);
+      const generatedExplanation = result.response.text();
 
-    // Gọi API AI
-    const result = await mockAiCall(rawPrompt, { topic, count });
-    
-    // Trả về JSON (Trong thực tế cần Parse JSON từ chuỗi AI trả về)
-    return {
-      status: 'AI_GENERATED',
-      questions: [
-        {
-          code: `M3-Q-AI-${Math.floor(Math.random()*10000)}`,
-          stem: `Một câu hỏi sinh bởi AI về ${lesson} mức độ ${difficulty}`,
-          difficulty: difficulty
-        }
-      ]
-    };
+      this.explanationCache.set(cacheKey, generatedExplanation);
+
+      return {
+        source: 'AI_API',
+        explanation: generatedExplanation
+      };
+    } catch (error) {
+      console.error("AI Service Error:", error);
+      return {
+        source: 'ERROR',
+        explanation: 'Cú Mèo đang bận chút xíu, em hãy xem lại phần Giải thích tiêu chuẩn ở trên nhé!'
+      };
+    }
   }
 }

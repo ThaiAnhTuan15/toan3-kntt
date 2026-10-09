@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import sounds from '../utils/soundEffects';
 
@@ -32,20 +32,20 @@ const STORAGE_KEYS = {
 };
 
 const DEFAULT_PROFILE = {
-  name: 'Học Sinh Chăm Chỉ',
+  name: 'Há»c Sinh ChÄƒm Chá»‰',
   mascot: 'elephant',
   avatarColor: '#FFD166',
 };
 
 export const BADGE_DEFINITIONS = [
-  { id: 'first_quiz', name: 'Bước Chân Đầu Tiên', desc: 'Hoàn thành bài luyện tập đầu tiên', icon: 'Footprints', req: (h) => h.length >= 1 },
-  { id: 'perfect_10', name: 'Điểm 10 Hoàn Hảo', desc: 'Đạt điểm tối đa 100% trong 1 bài thi', icon: 'Award', req: (h) => h.some(q => q.score === 100) },
-  { id: 'g4_math_master', name: 'Hiệp Sĩ Toán Lớp 4', desc: 'Hoàn thành trên 15 tuần Toán 4', icon: 'ShieldCheck', req: (h, p) => Object.keys(p.g4Math || {}).filter(w => p.g4Math[w]?.bestScore >= 70).length >= 15 },
-  { id: 'g4_tv_master', name: 'Trạng Nguyên Tiếng Việt 4', desc: 'Hoàn thành trên 15 tuần Tiếng Việt 4', icon: 'BookOpen', req: (h, p) => Object.keys(p.g4Tv || {}).filter(w => p.g4Tv[w]?.bestScore >= 70).length >= 15 },
-  { id: 'g7_math_master', name: 'Thần Đồng Toán Lớp 7', desc: 'Hoàn thành trên 15 tuần Toán 7', icon: 'Zap', req: (h, p) => Object.keys(p.g7Math || {}).filter(w => p.g7Math[w]?.bestScore >= 70).length >= 15 },
-  { id: 'g7_lit_master', name: 'Nhà Văn Nhí Lớp 7', desc: 'Hoàn thành trên 15 tuần Ngữ Văn 7', icon: 'Feather', req: (h, p) => Object.keys(p.g7Lit || {}).filter(w => p.g7Lit[w]?.bestScore >= 70).length >= 15 },
-  { id: 'streak_3', name: 'Chăm Chỉ Chuyên Cần', desc: 'Học liên tục trong 3 ngày', icon: 'Flame', req: (h, p, s) => (s?.currentStreak || 1) >= 3 },
-  { id: 'star_hunter_30', name: 'Thợ Săn Ngôi Sao', desc: 'Tích lũy được trên 30 ngôi sao', icon: 'Star', req: (h, p, s, stars) => stars >= 30 }
+  { id: 'first_quiz', name: 'BÆ°á»›c ChĂ¢n Äáº§u TiĂªn', desc: 'HoĂ n thĂ nh bĂ i luyá»‡n táº­p Ä‘áº§u tiĂªn', icon: 'Footprints', req: (h) => h.length >= 1 },
+  { id: 'perfect_10', name: 'Äiá»ƒm 10 HoĂ n Háº£o', desc: 'Äáº¡t Ä‘iá»ƒm tá»‘i Ä‘a 100% trong 1 bĂ i thi', icon: 'Award', req: (h) => h.some(q => q.score === 100) },
+  { id: 'g4_math_master', name: 'Hiá»‡p SÄ© ToĂ¡n Lá»›p 4', desc: 'HoĂ n thĂ nh trĂªn 15 tuáº§n ToĂ¡n 4', icon: 'ShieldCheck', req: (h, p) => Object.keys(p.g4Math || {}).filter(w => p.g4Math[w]?.bestScore >= 70).length >= 15 },
+  { id: 'g4_tv_master', name: 'Tráº¡ng NguyĂªn Tiáº¿ng Viá»‡t 4', desc: 'HoĂ n thĂ nh trĂªn 15 tuáº§n Tiáº¿ng Viá»‡t 4', icon: 'BookOpen', req: (h, p) => Object.keys(p.g4Tv || {}).filter(w => p.g4Tv[w]?.bestScore >= 70).length >= 15 },
+  { id: 'g7_math_master', name: 'Tháº§n Äá»“ng ToĂ¡n Lá»›p 7', desc: 'HoĂ n thĂ nh trĂªn 15 tuáº§n ToĂ¡n 7', icon: 'Zap', req: (h, p) => Object.keys(p.g7Math || {}).filter(w => p.g7Math[w]?.bestScore >= 70).length >= 15 },
+  { id: 'g7_lit_master', name: 'NhĂ  VÄƒn NhĂ­ Lá»›p 7', desc: 'HoĂ n thĂ nh trĂªn 15 tuáº§n Ngá»¯ VÄƒn 7', icon: 'Feather', req: (h, p) => Object.keys(p.g7Lit || {}).filter(w => p.g7Lit[w]?.bestScore >= 70).length >= 15 },
+  { id: 'streak_3', name: 'ChÄƒm Chá»‰ ChuyĂªn Cáº§n', desc: 'Há»c liĂªn tá»¥c trong 3 ngĂ y', icon: 'Flame', req: (h, p, s) => (s?.currentStreak || 1) >= 3 },
+  { id: 'star_hunter_30', name: 'Thá»£ SÄƒn NgĂ´i Sao', desc: 'TĂ­ch lÅ©y Ä‘Æ°á»£c trĂªn 30 ngĂ´i sao', icon: 'Star', req: (h, p, s, stars) => stars >= 30 }
 ];
 
 export const LearningProvider = ({ children }) => {
@@ -204,43 +204,7 @@ export const LearningProvider = ({ children }) => {
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.FREE_MODE, JSON.stringify(isFreeMode)); }, [isFreeMode]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(coins)); }, [coins]);
 
-  // ----------------------------------------------------------------------
-  // CLOUD SYNC (BACKGROUND)
-  // ----------------------------------------------------------------------
-  useEffect(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        const token = localStorage.getItem('token');
-        // Only sync if token exists and it's not the mock token
-        if (token && token !== 'mock_token_for_student') {
-          // Render API URL
-          fetch('https://toan3-kntt.onrender.com/api/student/progress', {
-            method: 'PUT',
-            headers: { 
-              'Content-Type': 'application/json', 
-              'Authorization': 'Bearer ' + token 
-            },
-            body: JSON.stringify({
-              stars: totalStars,
-              coins: coins,
-              streakData: streakData,
-              badges: unlockedBadges,
-              wrongQuestions: g4MathWrong, // simplified for now
-              gameState: {
-                g4MathProgress,
-                history,
-                profile,
-                currentGrade,
-                currentSubject
-              }
-            })
-          }).catch(e => console.error('Cloud Sync Error', e));
-        }
-      }
-    } catch (err) {
-      console.error('Failed to prepare sync', err);
-    }
-  }, [totalStars, coins, streakData, unlockedBadges, g4MathProgress, history, profile, currentGrade, currentSubject]);
+
 
 
   // Derived active state
@@ -445,7 +409,7 @@ export const LearningProvider = ({ children }) => {
     sounds.setSoundEnabled(next);
   };
 
-  // Switch Grade (Lớp 4 <-> Lớp 7)
+  // Switch Grade (Lá»›p 4 <-> Lá»›p 7)
   const switchGrade = (grade) => {
     if (grade === '4' || grade === '7') {
       setCurrentGrade(grade);
@@ -453,7 +417,7 @@ export const LearningProvider = ({ children }) => {
     }
   };
 
-  // Switch Subject (Toán <-> Tiếng Việt / Ngữ Văn)
+  // Switch Subject (ToĂ¡n <-> Tiáº¿ng Viá»‡t / Ngá»¯ VÄƒn)
   const switchSubject = (subj) => {
     if (subj === 'math' || subj === 'vietnamese') {
       setCurrentSubject(subj);
@@ -517,4 +481,5 @@ export const useLearning = () => {
   }
   return context;
 };
+
 
