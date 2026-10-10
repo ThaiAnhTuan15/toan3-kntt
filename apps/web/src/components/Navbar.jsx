@@ -54,6 +54,10 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   const [tempName, setTempName] = useState(profile.name);
   const [tempMascot, setTempMascot] = useState(profile.mascot);
 
+  const [showPinModal, setShowPinModal] = useState(false);
+  const [pinInput, setPinInput] = useState('');
+  const [pinError, setPinError] = useState('');
+
   const currentMascotObj = MASCOTS.find(m => m.id === profile.mascot) || MASCOTS[0];
 
   const handleSaveProfile = () => {
@@ -225,7 +229,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
           <button
             onClick={() => {
               sounds.playClick();
-              toggleFreeMode();
+              setShowPinModal(true);
             }}
             className={`px-2.5 py-1.5 rounded-xl border-2 flex items-center gap-1.5 text-xs transition-all ${
               isFreeMode 
@@ -367,6 +371,61 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
                 className="px-6 py-2 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl shadow-bouncy-sm btn-bouncy text-xs"
               >
                 Lưu Thay Đổi
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* PIN Modal for Free Mode */}
+      {showPinModal && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-sm w-full p-6 animate-scale-in">
+            <h3 className="text-xl font-bold text-slate-800 mb-2">Góc Phụ Huynh</h3>
+            <p className="text-sm font-bold text-slate-600 mb-4">
+              Vui lòng nhập mã PIN của phụ huynh để {isFreeMode ? 'tắt' : 'bật'} tính năng này.
+            </p>
+            
+            <input
+              type="password"
+              pattern="[0-9]*"
+              inputMode="numeric"
+              maxLength={4}
+              value={pinInput}
+              onChange={(e) => {
+                setPinInput(e.target.value);
+                setPinError('');
+              }}
+              className="w-full text-center tracking-[1em] font-bold text-2xl py-3 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:outline-none mb-2"
+              placeholder="••••"
+            />
+            {pinError && <p className="text-red-500 text-sm font-bold mb-4 text-center">{pinError}</p>}
+            
+            <div className="flex gap-2 mt-4">
+              <button 
+                onClick={() => {
+                  setShowPinModal(false);
+                  setPinInput('');
+                  setPinError('');
+                }}
+                className="flex-1 py-2 rounded-xl font-bold text-slate-500 hover:bg-slate-100"
+              >
+                Hủy
+              </button>
+              <button 
+                onClick={() => {
+                  if (pinInput === '2026') {
+                    toggleFreeMode();
+                    setShowPinModal(false);
+                    setPinInput('');
+                    setPinError('');
+                  } else {
+                    setPinError('Mã PIN không đúng!');
+                  }
+                }}
+                className="flex-1 py-2 bg-amber-400 text-amber-950 font-bold rounded-xl shadow-bouncy-sm hover:bg-amber-500"
+              >
+                Xác nhận
               </button>
             </div>
           </div>
