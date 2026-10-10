@@ -882,4 +882,176 @@ export const STAGE_2_QUESTIONS = [
   {"id":"ADV_030","week":28,"semester":2,"stage":3,"topic":"Toán có lời văn nâng cao","category":"operations","difficulty":"hard","question":"Nhóm thứ nhất có 5 người trồng được 350 cây. Nhóm thứ hai ít hơn nhóm thứ nhất là 2 người. Hỏi cả hai nhóm trồng được bao nhiêu cây, biết rằng mỗi người trồng được số cây như nhau?","options":["200 cây","195 cây","210 cây","220 cây"],"correctIndex":2,"hint":"Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.","explanation":"Bài toán yêu cầu tính toán logic nhiều bước."},
   {"id":"ADV_031","week":29,"semester":2,"stage":3,"topic":"Toán có lời văn nâng cao","category":"operations","difficulty":"hard","question":"Có 9 hộp đựng số bút chì như nhau. Nếu ở mỗi hộp lấy ra 5 bút chì thì số bút chì lấy ra đúng bằng số bút chì ở 3 hộp nguyên. Hỏi 9 hộp nguyên có bao nhiêu bút chì?","options":["135 bút","130 bút","133 bút","134 bút"],"correctIndex":0,"hint":"Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.","explanation":"Bài toán yêu cầu tính toán logic nhiều bước."},
   {"id":"ADV_032","week":30,"semester":2,"stage":3,"topic":"Toán có lời văn nâng cao","category":"operations","difficulty":"hard","question":"Tuổi của Mai bằng ¼ tuổi của bố. Tuổi của bố bằng ½ tuổi của ông. Tuổi của ông 64 tuổi. Hỏi Mai bao nhiêu tuổi?","options":["11 tuổi","9tuổi","6tuổi","8tuổi"],"correctIndex":1,"hint":"Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.","explanation":"Bài toán yêu cầu tính toán logic nhiều bước."}
+,
+{
+  "id": "HK1_ADV_010",
+  "week": 10,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Nhân số có hai chữ số với số có một chữ số",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Có 4 cuộn dây điện, mỗi cuộn dài 45m. Người ta đã dùng hết 120m dây điện. Hỏi còn lại bao nhiêu mét dây điện?",
+  "options": [
+    "60m",
+    "180m",
+    "80m",
+    "75m"
+  ],
+  "correctIndex": 0,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Tổng chiều dài dây là 45 x 4 = 180m. Số dây còn lại: 180 - 120 = 60m"
+},
+{
+  "id": "HK1_ADV_011",
+  "week": 11,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Chia số có hai chữ số cho số có một chữ số",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Lớp 3A có 34 học sinh. Phòng học của lớp chỉ có loại bàn 2 chỗ ngồi. Hỏi cần ít nhất bao nhiêu bộ bàn ghế như thế để đủ chỗ cho tất cả học sinh?",
+  "options": [
+    "16 bộ",
+    "17 bộ",
+    "18 bộ",
+    "15 bộ"
+  ],
+  "correctIndex": 1,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Ta có 34 : 2 = 17, nên cần vừa đủ 17 bộ bàn ghế"
+},
+{
+  "id": "HK1_ADV_012",
+  "week": 12,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Xem đồng hồ, tháng - năm",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Nếu ngày 28 tháng 11 là Chủ Nhật thì ngày 5 tháng 12 cùng năm đó là thứ mấy?",
+  "options": [
+    "Thứ Bảy",
+    "Chủ Nhật",
+    "Thứ Hai",
+    "Thứ Ba"
+  ],
+  "correctIndex": 1,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Tháng 11 có 30 ngày. Từ ngày 28/11 đến 5/12 cách nhau đúng 2 + 5 = 7 ngày, tức là tròn 1 tuần nên vẫn là Chủ Nhật"
+},
+{
+  "id": "HK1_ADV_013",
+  "week": 13,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Đơn vị đo độ dài (mm, dm, cm, m, km) và Khối lượng (g, kg)",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Một túi đường nặng 1kg. Người ta dùng 400g đường để làm bánh và 250g để pha nước ngọt. Hỏi túi đường còn lại bao nhiêu gam?",
+  "options": [
+    "350g",
+    "450g",
+    "600g",
+    "750g"
+  ],
+  "correctIndex": 0,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Đổi 1kg = 1000g. Số đường còn lại: 1000 - 400 - 250 = 350g"
+},
+{
+  "id": "HK1_ADV_014",
+  "week": 14,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Tính giá trị của biểu thức số",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Giá trị của biểu thức 150 - 50 x 2 là:",
+  "options": [
+    "200",
+    "50",
+    "100",
+    "0"
+  ],
+  "correctIndex": 1,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Thực hiện nhân trước, trừ sau: 150 - (50 x 2) = 150 - 100 = 50"
+},
+{
+  "id": "HK1_ADV_015",
+  "week": 15,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Hình tam giác, hình tứ giác. Chu vi hình tam giác, hình tứ giác",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Một hình chữ nhật có chiều dài 12cm, chiều rộng ngắn hơn chiều dài 4cm. Chu vi của hình chữ nhật đó là:",
+  "options": [
+    "32cm",
+    "40cm",
+    "20cm",
+    "16cm"
+  ],
+  "correctIndex": 1,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Chiều rộng là 12 - 4 = 8cm. Chu vi là (12 + 8) x 2 = 40cm"
+},
+{
+  "id": "HK1_ADV_016",
+  "week": 16,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Ôn tập phép nhân, phép chia phạm vi 1000",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Kết quả của phép tính 123 x 3 + 45 là:",
+  "options": [
+    "414",
+    "369",
+    "404",
+    "514"
+  ],
+  "correctIndex": 0,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Ta có 123 x 3 = 369; 369 + 45 = 414"
+},
+{
+  "id": "HK1_ADV_017",
+  "week": 17,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Ôn tập hình học và giải toán có lời văn (Nâng cao)",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Bác An trồng 5 hàng cây, mỗi hàng có 15 cây chanh. Sau đó bác trồng thêm 25 cây cam. Hỏi tổng số cây chanh và cây cam bác An đã trồng là bao nhiêu?",
+  "options": [
+    "75 cây",
+    "100 cây",
+    "90 cây",
+    "85 cây"
+  ],
+  "correctIndex": 1,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Số cây chanh là 15 x 5 = 75 cây. Tổng số cây là 75 + 25 = 100 cây"
+},
+{
+  "id": "HK1_ADV_018",
+  "week": 18,
+  "semester": 1,
+  "stage": 2,
+  "topic": "Đề ôn luyện tổng hợp & Kiểm tra định kỳ cuối học kì 1",
+  "category": "operations",
+  "difficulty": "hard",
+  "question": "Một số gồm 8 trăm, 0 chục và 5 đơn vị. Nếu giảm số đó đi 5 lần thì ta được kết quả là:",
+  "options": [
+    "161",
+    "101",
+    "160",
+    "805"
+  ],
+  "correctIndex": 0,
+  "hint": "Đọc kĩ đề, tóm tắt bài toán và tính từng bước một.",
+  "explanation": "Số đó là 805. Giảm đi 5 lần: 805 : 5 = 161"
+}
 ];
