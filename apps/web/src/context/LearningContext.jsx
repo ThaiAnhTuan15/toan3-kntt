@@ -12,24 +12,24 @@ import { STAGES_LIT7, TOPIC_CATEGORIES_LIT7, WEEKS_METADATA_LIT7, QUESTION_BANK_
 
 const LearningContext = createContext();
 
-const STORAGE_KEYS = {
-  GRADE: 'toan_current_grade',
-  SUBJECT: 'toan_current_subject',
-  PROFILE: 'toan_user_profile',
-  PROGRESS_G4_MATH: 'toan4_week_progress',
-  PROGRESS_G4_TV: 'toan4_week_progress_tv',
-  PROGRESS_G7_MATH: 'toan7_week_progress_math',
-  PROGRESS_G7_LIT: 'toan7_week_progress_lit',
-  HISTORY: 'toan_quiz_history',
-  WRONG_G4_MATH: 'toan4_wrong_questions',
-  WRONG_G4_TV: 'toan4_wrong_questions_tv',
-  WRONG_G7_MATH: 'toan7_wrong_questions_math',
-  WRONG_G7_LIT: 'toan7_wrong_questions_lit',
-  BADGES: 'toan_badges',
-  STREAK: 'toan_streak_data',
-  FREE_MODE: 'toan_free_mode',
-  COINS: 'toan_coins',
-};
+const getStorageKeys = (profileId) => ({
+  GRADE: `agy_grade_${profileId}`,
+  SUBJECT: `agy_subject_${profileId}`,
+  PROFILE: `agy_profile_${profileId}`,
+  PROGRESS_G4_MATH: `agy_prog_g4m_${profileId}`,
+  PROGRESS_G4_TV: `agy_prog_g4tv_${profileId}`,
+  PROGRESS_G7_MATH: `agy_prog_g7m_${profileId}`,
+  PROGRESS_G7_LIT: `agy_prog_g7lit_${profileId}`,
+  HISTORY: `agy_history_${profileId}`,
+  WRONG_G4_MATH: `agy_wrong_g4m_${profileId}`,
+  WRONG_G4_TV: `agy_wrong_g4tv_${profileId}`,
+  WRONG_G7_MATH: `agy_wrong_g7m_${profileId}`,
+  WRONG_G7_LIT: `agy_wrong_g7lit_${profileId}`,
+  BADGES: `agy_badges_${profileId}`,
+  STREAK: `agy_streak_${profileId}`,
+  FREE_MODE: `agy_freemode_${profileId}`,
+  COINS: `agy_coins_${profileId}`
+});
 
 const DEFAULT_PROFILE = {
   name: 'Học Sinh Chăm Chỉ',
@@ -48,7 +48,8 @@ export const BADGE_DEFINITIONS = [
   { id: 'star_hunter_30', name: 'Thợ Săn Ngôi Sao', desc: 'Tích lũy được trên 30 ngôi sao', icon: 'Star', req: (h, p, s, stars) => stars >= 30 }
 ];
 
-export const LearningProvider = ({ children }) => {
+export const LearningProvider = ({ children, profileId = 'default' }) => {
+  const STORAGE_KEYS = getStorageKeys(profileId);
   // Current active Grade: '4' | '7'
   const [currentGrade, setCurrentGrade] = useState(() => {
     try {

@@ -63,41 +63,50 @@ export const TOPIC_CATEGORIES = [
 ];
 
 export const WEEKS_METADATA = {
-  1: { title: "Ôn tập các số đến 1000", stage: 1, category: "natural_num" },
-  2: { title: "Ôn tập phép cộng, phép trừ trong phạm vi 1000", stage: 1, category: "operations" },
-  3: { title: "Tìm thành phần trong phép cộng, phép trừ", stage: 1, category: "operations" },
-  4: { title: "Ôn tập bảng nhân 2; 5, bảng chia 2; 5", stage: 1, category: "operations" },
-  5: { title: "Bảng nhân 3, bảng chia 3", stage: 1, category: "operations" },
-  6: { title: "Bảng nhân 4, bảng chia 4", stage: 1, category: "operations" },
-  7: { title: "Ôn tập hình học và đo lường", stage: 1, category: "geometry" },
-  8: { title: "Luyện tập chung: Ôn tập và Bổ sung", stage: 1, category: "natural_num" },
-  9: { title: "Bảng nhân 6, bảng chia 6", stage: 1, category: "operations" },
-  10: { title: "Bảng nhân 7, bảng chia 7", stage: 2, category: "operations" },
-  11: { title: "Bảng nhân 8, bảng chia 8", stage: 2, category: "operations" },
-  12: { title: "Bảng nhân 9, bảng chia 9", stage: 2, category: "operations" },
-  13: { title: "Tìm thành phần trong phép nhân, phép chia", stage: 2, category: "operations" },
-  14: { title: "Một phần mấy", stage: 2, category: "fractions" },
-  15: { title: "Luyện tập chung: Bảng nhân, bảng chia", stage: 2, category: "operations" },
-  16: { title: "Điểm ở giữa, trung điểm của đoạn thẳng", stage: 2, category: "geometry" },
-  17: { title: "Hình tròn. Tâm, bán kính, đường kính", stage: 2, category: "geometry" },
-  18: { title: "Góc, góc vuông, góc không vuông", stage: 2, category: "geometry" },
-  19: { title: "Hình tam giác, tứ giác, chữ nhật, hình vuông", stage: 3, category: "geometry" },
-  20: { title: "Thực hành vẽ hình phẳng", stage: 3, category: "geometry" },
-  21: { title: "Khối lập phương, khối hộp chữ nhật", stage: 3, category: "geometry" },
-  22: { title: "Luyện tập chung: Hình phẳng, Hình khối", stage: 3, category: "geometry" },
-  23: { title: "Nhân số có 2 chữ số với số có 1 chữ số", stage: 3, category: "operations" },
-  24: { title: "Gấp một số lên một số lần", stage: 3, category: "word_problems" },
-  25: { title: "Phép chia hết, phép chia có dư", stage: 3, category: "operations" },
-  26: { title: "Chia số có 2 chữ số cho số có 1 chữ số", stage: 3, category: "operations" },
-  27: { title: "Giảm một số đi một số lần", stage: 3, category: "word_problems" },
-  28: { title: "Bài toán giải bằng hai bước tính", stage: 4, category: "word_problems" },
-  29: { title: "Luyện tập chung: Phép nhân, chia", stage: 4, category: "operations" },
-  30: { title: "Mi-li-mét", stage: 4, category: "measurement" },
-  31: { title: "Gam", stage: 4, category: "measurement" },
-  32: { title: "Mi-li-lít", stage: 4, category: "measurement" },
-  33: { title: "Nhiệt độ. Đơn vị đo nhiệt độ", stage: 4, category: "measurement" },
-  34: { title: "Thực hành đo lường", stage: 4, category: "measurement" },
-  35: { title: "Luyện tập chung cuối năm", stage: 4, category: "word_problems" }
+  // HỌC KỲ 1 (Tập 1 - 44 Bài)
+  1: { title: "Ôn tập các số đến 1000 & Phép cộng trừ", subject: "math", category: "natural_num", desc: "Bài 1, 2" },
+  2: { title: "Tìm thành phần trong phép cộng trừ & Ôn bảng nhân chia", subject: "math", category: "operations", desc: "Bài 3, 4" },
+  3: { title: "Bảng nhân chia 3 và 4", subject: "math", category: "operations", desc: "Bài 5, 6" },
+  4: { title: "Ôn tập hình học, đo lường & Luyện tập chung", subject: "math", category: "geometry", desc: "Bài 7, 8" },
+  
+  5: { title: "Bảng nhân chia 6 và 7", subject: "math", category: "operations", desc: "Bài 9, 10" },
+  6: { title: "Bảng nhân chia 8 và 9", subject: "math", category: "operations", desc: "Bài 11, 12" },
+  7: { title: "Tìm thành phần phép nhân chia & Phân số", subject: "math", category: "fractions", desc: "Bài 13, 14, 15" },
+  
+  8: { title: "Điểm ở giữa, trung điểm & Hình tròn", subject: "math", category: "geometry", desc: "Bài 16, 17" },
+  9: { title: "Góc, Góc vuông & Hình phẳng", subject: "math", category: "geometry", desc: "Bài 18, 19, 20" },
+  10: { title: "Hình khối & Luyện tập chung", subject: "math", category: "geometry", desc: "Bài 21, 22" },
+  
+  11: { title: "Nhân chia số có hai chữ số (phần 1)", subject: "math", category: "operations", desc: "Bài 23, 24" },
+  12: { title: "Phép chia hết, chia có dư & Chia số có hai chữ số (phần 2)", subject: "math", category: "operations", desc: "Bài 25, 26" },
+  13: { title: "Giảm một số đi một số lần & Bài toán hai bước tính", subject: "math", category: "operations", desc: "Bài 27, 28, 29" },
+  
+  14: { title: "Mi-li-mét, Gam & Mi-li-lít", subject: "math", category: "measurement", desc: "Bài 30, 31, 32" },
+  15: { title: "Nhiệt độ & Luyện tập đo lường", subject: "math", category: "measurement", desc: "Bài 33, 34, 35" },
+  
+  16: { title: "Nhân chia số có ba chữ số (phần 1)", subject: "math", category: "operations", desc: "Bài 36, 37" },
+  17: { title: "Biểu thức số & So sánh số lớn gấp mấy lần số bé", subject: "math", category: "operations", desc: "Bài 38, 39, 40" },
+  
+  18: { title: "Ôn tập Học Kì 1", subject: "math", category: "exam", desc: "Bài 41, 42, 43, 44" },
+  
+  // HỌC KỲ 2 (Tập 2)
+  19: { title: "Các số có bốn chữ số", subject: "math", category: "natural_num", desc: "Tập 2" },
+  20: { title: "Phép cộng, trừ trong phạm vi 10 000", subject: "math", category: "operations", desc: "Tập 2" },
+  21: { title: "Phép nhân, chia trong phạm vi 10 000", subject: "math", category: "operations", desc: "Tập 2" },
+  22: { title: "Tháng - Năm, Xem đồng hồ", subject: "math", category: "measurement", desc: "Tập 2" },
+  23: { title: "Tiền Việt Nam", subject: "math", category: "measurement", desc: "Tập 2" },
+  24: { title: "Làm quen với thống kê số liệu", subject: "math", category: "statistics", desc: "Tập 2" },
+  25: { title: "Diện tích của một hình", subject: "math", category: "geometry", desc: "Tập 2" },
+  26: { title: "Các số có năm chữ số", subject: "math", category: "natural_num", desc: "Tập 2" },
+  27: { title: "Phép cộng, trừ trong phạm vi 100 000", subject: "math", category: "operations", desc: "Tập 2" },
+  28: { title: "Phép nhân, chia trong phạm vi 100 000", subject: "math", category: "operations", desc: "Tập 2" },
+  29: { title: "Chu vi hình chữ nhật, hình vuông", subject: "math", category: "geometry", desc: "Tập 2" },
+  30: { title: "Diện tích hình chữ nhật, hình vuông", subject: "math", category: "geometry", desc: "Tập 2" },
+  31: { title: "Khả năng xảy ra của một sự kiện", subject: "math", category: "statistics", desc: "Tập 2" },
+  32: { title: "Ôn tập các số trong phạm vi 100 000", subject: "math", category: "exam", desc: "Tập 2" },
+  33: { title: "Ôn tập bốn phép tính", subject: "math", category: "exam", desc: "Tập 2" },
+  34: { title: "Ôn tập hình học và đo lường", subject: "math", category: "exam", desc: "Tập 2" },
+  35: { title: "Ôn tập cuối năm", subject: "math", category: "exam", desc: "Tập 2" }
 };
 
 // Combine all 350+ questions across 4 stages
