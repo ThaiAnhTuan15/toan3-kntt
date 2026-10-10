@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateQuestionStatus = exports.createQuestion = exports.getQuestions = void 0;
 const db_1 = __importDefault(require("../config/db"));
 const question_service_1 = require("../services/question.service");
-const types_1 = require("@toan3/types");
+const client_1 = require("@prisma/client");
 const getQuestions = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { status, skillId, page = 1, limit = 20 } = req.query;
@@ -64,7 +64,7 @@ const updateQuestionStatus = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
         const { id } = req.params;
         const { status } = req.body;
-        if (!Object.values(types_1.QuestionStatus).includes(status)) {
+        if (!Object.values(client_1.QuestionStatus).includes(status)) {
             return res.status(400).json({ message: 'Trạng thái không hợp lệ' });
         }
         /*

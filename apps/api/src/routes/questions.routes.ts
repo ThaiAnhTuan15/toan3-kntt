@@ -9,7 +9,8 @@ router.get('/', async (req, res) => {
   try {
     const questions = await prisma.question.findMany({
       include: {
-        options: true
+        options: true,
+        lesson: true
       }
     });
     
@@ -23,8 +24,8 @@ router.get('/', async (req, res) => {
 
       return {
         id: q.code,
-        week: 1, // hardcoded for demo mapping
-        stage: 1,
+        week: q.lesson ? q.lesson.lessonOrder : 1,
+        stage: Math.ceil((q.lesson ? q.lesson.lessonOrder : 1) / 9) || 1,
         category: 'natural_num',
         difficulty: diff,
         question: q.stem,

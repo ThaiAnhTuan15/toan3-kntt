@@ -78,7 +78,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
     if (isGrade7) {
       return isMath ? 'Toán Lớp 7' : 'Ngữ Văn 7';
     }
-    return isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4';
+    return isMath ? 'Toán Lớp 3' : 'Tiếng Việt 3';
   };
 
   const getSubjectSubtitle = () => {
@@ -140,7 +140,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               }`}
             >
               <GraduationCap className="w-3.5 h-3.5" />
-              <span>Lớp 4</span>
+              <span>Lớp 3</span>
             </button>
 
             <button

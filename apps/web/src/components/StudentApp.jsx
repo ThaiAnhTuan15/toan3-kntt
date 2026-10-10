@@ -158,9 +158,11 @@ const MainContent = () => {
       {/* Quiz Modal Player */}
       {activeQuizConfig && !currentResultData && (
         <QuizArena
-          quizConfig={activeQuizConfig}
-          onFinish={handleFinishQuiz}
-          onExit={handleExitQuiz}
+          title={activeQuizConfig.title}
+          questions={activeQuizConfig.questions}
+          timeLimitSec={activeQuizConfig.timeLimitSec}
+          onFinishQuiz={handleFinishQuiz}
+          onExitQuiz={handleExitQuiz}
         />
       )}
 
