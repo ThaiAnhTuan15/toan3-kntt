@@ -469,8 +469,14 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
     sounds.playClick();
   };
 
+  const resetProgress = () => {
+    Object.values(STORAGE_KEYS).forEach(key => localStorage.removeItem(key));
+    window.location.reload();
+  };
+
   return (
     <LearningContext.Provider value={{
+      resetProgress,
       currentGrade,
       switchGrade,
       isGrade7,
