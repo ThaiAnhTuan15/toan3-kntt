@@ -12,7 +12,7 @@ import { ResultModal } from './ResultModal';
 import { ExplanationView } from './ExplanationView';
 
 const MainContent = ({ onLogout }) => {
-  const { saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading } = useLearning();
+  const { profile, saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading } = useLearning();
   const [currentTab, setCurrentTab] = useState('roadmap'); // 'roadmap' | 'practice' | 'wrong' | 'dashboard' | 'badges'
   const [activeQuizConfig, setActiveQuizConfig] = useState(null);
   const [currentResultData, setCurrentResultData] = useState(null);
@@ -175,10 +175,14 @@ const MainContent = ({ onLogout }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 flex justify-end">
           <button 
             onClick={onLogout}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl text-sm transition-all"
+            className="flex items-center gap-3 px-5 py-2 bg-white hover:bg-slate-50 border-2 border-slate-200 text-slate-700 font-bold rounded-full shadow-sm transition-all group"
+            title="Đổi tài khoản"
           >
-            <LogOut className="w-4 h-4" />
-            Đổi Tài Khoản
+            <div className="text-2xl bg-amber-100 w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              {profile?.avatar || '🐯'}
+            </div>
+            <span className="text-lg">{profile?.name || 'Học Sinh'}</span>
+            <LogOut className="w-5 h-5 ml-2 text-slate-400 group-hover:text-rose-500" />
           </button>
         </div>
 
@@ -253,6 +257,7 @@ function OldApp() {
 
 import { Users, Lock, LogOut } from 'lucide-react';
 
+
 const ProfileSelector = ({ onSelect }) => {
   const [profiles, setProfiles] = useState(() => {
     try {
@@ -261,14 +266,15 @@ const ProfileSelector = ({ onSelect }) => {
     } catch { return [{ id: 'default', name: 'Bé Bi', avatar: '🐯' }]; }
   });
   const [newProfileName, setNewProfileName] = useState('');
+  const [selectedAvatar, setSelectedAvatar] = useState('🐯');
+  const avatars = ['🐯', '🐰', '🐼', '🦊', '🐶', '🐱', '🦁', '🐸', '🐵', '🦉'];
   
   const handleAdd = () => {
     if (!newProfileName.trim()) return;
-    const avatars = ['🐯', '🐰', '🐼', '🦊', '🐶', '🐱'];
     const newP = {
       id: 'p_' + Date.now(),
       name: newProfileName,
-      avatar: avatars[profiles.length % avatars.length]
+      avatar: selectedAvatar
     };
     const updated = [...profiles, newP];
     setProfiles(updated);
@@ -279,12 +285,16 @@ const ProfileSelector = ({ onSelect }) => {
   return (
     <div className="min-h-screen bg-amber-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-xl p-8 max-w-lg w-full text-center border-4 border-amber-300">
-        <h1 className="text-3xl font-black text-amber-600 mb-8">Ai đang học toán thế nhỉ?</h1>
+        <h1 className="text-3xl font-bold text-amber-600 mb-8">Ai đang học toán thế nhỉ?</h1>
         <div className="grid grid-cols-2 gap-4 mb-8">
           {profiles.map(p => (
             <button
               key={p.id}
-              onClick={() => onSelect(p.id)}
+              onClick={() => {
+                // Keep global profile up to date
+                localStorage.setItem('activeProfileData', JSON.stringify(p));
+                onSelect(p.id);
+              }}
               className="p-6 rounded-2xl bg-amber-50 hover:bg-amber-100 border-2 border-amber-200 hover:border-amber-400 transition-all flex flex-col items-center gap-3 group"
             >
               <div className="text-5xl group-hover:scale-110 transition-transform">{p.avatar}</div>
@@ -292,26 +302,40 @@ const ProfileSelector = ({ onSelect }) => {
             </button>
           ))}
         </div>
-        <div className="flex gap-2">
-          <input 
-            type="text" 
-            placeholder="Tên bé mới..." 
-            value={newProfileName}
-            onChange={(e) => setNewProfileName(e.target.value)}
-            className="flex-1 px-4 py-3 rounded-xl border-2 border-slate-200 outline-none focus:border-amber-400 font-bold text-slate-700"
-          />
-          <button 
-            onClick={handleAdd}
-            className="px-6 py-3 bg-amber-400 hover:bg-amber-500 text-amber-950 font-black rounded-xl transition-all"
-          >
-            + Thêm
-          </button>
+        
+        <div className="bg-slate-50 p-4 rounded-2xl border-2 border-slate-100">
+          <h3 className="text-slate-500 font-bold mb-3">Thêm tài khoản mới</h3>
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
+            {avatars.map(av => (
+              <button 
+                key={av} 
+                onClick={() => setSelectedAvatar(av)}
+                className={`text-2xl p-2 rounded-xl transition-all ${selectedAvatar === av ? 'bg-amber-200 scale-110 ring-2 ring-amber-400' : 'bg-white hover:bg-slate-100'}`}
+              >
+                {av}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <input 
+              type="text" 
+              placeholder="Tên bé mới..." 
+              value={newProfileName}
+              onChange={(e) => setNewProfileName(e.target.value)}
+              className="flex-1 px-4 py-3 rounded-xl border-2 border-slate-200 outline-none focus:border-amber-400 font-bold text-slate-700"
+            />
+            <button 
+              onClick={handleAdd}
+              className="px-6 py-3 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl transition-all"
+            >
+              + Thêm
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
 // Parent Corner Wrapper
 const ProtectedDashboard = () => {
   const [pin, setPin] = useState('');
@@ -322,7 +346,7 @@ const ProtectedDashboard = () => {
     return (
       <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded-3xl shadow-xl border-4 border-slate-200 text-center">
         <Lock className="w-12 h-12 text-slate-400 mx-auto mb-4" />
-        <h2 className="text-2xl font-black text-slate-800 mb-2">Góc Phụ Huynh</h2>
+        <h2 className="text-2xl font-bold text-slate-800 mb-2">Góc Phụ Huynh</h2>
         <p className="text-slate-500 mb-6 font-semibold">Vui lòng nhập mã PIN (Mặc định: 2026)</p>
         <input 
           type="password"
@@ -336,7 +360,7 @@ const ProtectedDashboard = () => {
             if (pin === '2026') setIsAuthenticated(true);
             else alert('Mã PIN không đúng!');
           }}
-          className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-black rounded-xl"
+          className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl"
         >
           Xác Nhận
         </button>
@@ -348,7 +372,7 @@ const ProtectedDashboard = () => {
     <div className="space-y-6">
       <ParentDashboard />
       <div className="bg-rose-50 border-2 border-rose-200 p-6 rounded-3xl text-center">
-        <h3 className="text-xl font-black text-rose-700 mb-2">Cài Đặt Dữ Liệu</h3>
+        <h3 className="text-xl font-bold text-rose-700 mb-2">Cài Đặt Dữ Liệu</h3>
         <p className="text-rose-600/80 text-sm font-semibold mb-6">Xóa toàn bộ điểm số, huy chương và tiến trình của tài khoản hiện tại để bắt đầu lại từ đầu.</p>
         <button 
           onClick={() => {
@@ -356,7 +380,7 @@ const ProtectedDashboard = () => {
               resetProgress();
             }
           }}
-          className="px-8 py-3 bg-rose-500 hover:bg-rose-600 text-white font-black rounded-xl shadow-lg shadow-rose-200"
+          className="px-8 py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-200"
         >
           Xóa Dữ Liệu & Học Lại Từ Đầu
         </button>
@@ -386,4 +410,5 @@ export default function App() {
     </LearningProvider>
   );
 }
+
 

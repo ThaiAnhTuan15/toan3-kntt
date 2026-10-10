@@ -108,10 +108,10 @@ export const CustomPractice = ({ onStartQuiz }) => {
           : 'bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500'
       }`}>
         <div className="max-w-2xl">
-          <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-wider mb-2 inline-block">
+          <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
             Phòng Luyện Thi & Tùy Chọn Đề
           </span>
-          <h1 className="text-2xl sm:text-4xl font-black mb-2">
+          <h1 className="text-2xl sm:text-4xl font-bold mb-2">
             {isMath ? 'Đấu Trường Luyện Thi Toán Lớp 4 🎯' : 'Đấu Trường Luyện Thi Tiếng Việt 4 🎯'}
           </h1>
           <p className="text-sm sm:text-base font-bold text-teal-50">
@@ -122,7 +122,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
 
       {/* Quick Presets Section */}
       <div>
-        <h2 className="text-xl font-black text-slate-800 mb-4 flex items-center gap-2">
+        <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
           <Zap className="w-5 h-5 text-amber-500" />
           Bộ Đề Thi Thử Nổi Bật ({isMath ? 'Toán Học' : 'Tiếng Việt'})
         </h2>
@@ -228,7 +228,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
       <div className="bg-white rounded-3xl border-2 border-slate-200 p-6 sm:p-8 shadow-bouncy space-y-6">
         <div className="flex items-center justify-between pb-4 border-b-2 border-slate-100">
           <div>
-            <h2 className="text-xl font-black text-slate-800">
+            <h2 className="text-xl font-bold text-slate-800">
               Thiết Kế Phòng Luyện Tập Tùy Chọn 🛠️
             </h2>
             <p className="text-xs sm:text-sm font-bold text-slate-500 mt-0.5">
@@ -314,7 +314,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
                   key={num}
                   type="button"
                   onClick={() => setQuestionCount(num)}
-                  className={`flex-1 py-2.5 rounded-xl font-black text-xs transition-all border-2 ${
+                  className={`flex-1 py-2.5 rounded-xl font-bold text-xs transition-all border-2 ${
                     questionCount === num
                       ? isMath
                         ? 'bg-amber-400 border-amber-500 text-amber-950 shadow-sm'
@@ -344,7 +344,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
                 <Clock className="w-4 h-4" />
                 {isTimed ? `Bật tính giờ (${questionCount} phút)` : 'Tắt (Làm thoải mái)'}
               </span>
-              <span className="font-black text-xs">{isTimed ? 'BẬT' : 'TẮT'}</span>
+              <span className="font-bold text-xs">{isTimed ? 'BẬT' : 'TẮT'}</span>
             </button>
           </div>
         </div>
@@ -353,7 +353,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
         <div className="pt-4 flex justify-end">
           <button
             onClick={handleStartCustom}
-            className={`px-8 py-3.5 font-black text-sm rounded-2xl shadow-bouncy btn-bouncy flex items-center gap-2 ${
+            className={`px-8 py-3.5 font-bold text-sm rounded-2xl shadow-bouncy btn-bouncy flex items-center gap-2 ${
               isMath 
                 ? 'bg-amber-400 hover:bg-amber-500 text-amber-950' 
                 : 'bg-rose-500 hover:bg-rose-600 text-white'
@@ -367,3 +367,4 @@ export const CustomPractice = ({ onStartQuiz }) => {
     </div>
   );
 };
+

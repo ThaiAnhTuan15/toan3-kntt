@@ -34,10 +34,10 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
       <div className="bg-gradient-to-r from-rose-400 via-pink-400 to-orange-400 rounded-3xl p-6 sm:p-8 text-white shadow-bouncy">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-xl">
-            <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-wider mb-2 inline-block">
+            <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
               Kho Luyện Tập Phục Hồi Kiến Thức
             </span>
-            <h1 className="text-2xl sm:text-3xl font-black mb-1">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-1">
               Phòng Sửa Câu Sai & Khắc Phục Lỗ Hổng 🔄
             </h1>
             <p className="text-xs sm:text-sm font-bold text-rose-50">
@@ -48,7 +48,7 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
           {wrongQuestions.length > 0 && (
             <button
               onClick={handleStartReviewQuiz}
-              className="px-6 py-3.5 bg-white text-rose-600 hover:bg-rose-50 font-black text-sm sm:text-base rounded-2xl shadow-bouncy btn-bouncy flex items-center gap-2"
+              className="px-6 py-3.5 bg-white text-rose-600 hover:bg-rose-50 font-bold text-sm sm:text-base rounded-2xl shadow-bouncy btn-bouncy flex items-center gap-2"
             >
               <Play className="w-5 h-5 fill-rose-600" />
               Luyện Lại Tất Cả ({wrongQuestions.length})
@@ -63,7 +63,7 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
           <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-4xl mx-auto shadow-inner">
             🎉
           </div>
-          <h2 className="text-2xl font-black text-slate-800">
+          <h2 className="text-2xl font-bold text-slate-800">
             Không Có Câu Sai Nào!
           </h2>
           <p className="text-sm font-semibold text-slate-500">
@@ -85,7 +85,7 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
             >
               <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
                 <div className="flex items-center gap-2">
-                  <span className="w-7 h-7 rounded-xl bg-rose-100 text-rose-700 font-black text-xs flex items-center justify-center">
+                  <span className="w-7 h-7 rounded-xl bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center">
                     {idx + 1}
                   </span>
                   <span className="text-xs font-bold text-slate-400">
@@ -117,3 +117,4 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
     </div>
   );
 };
+

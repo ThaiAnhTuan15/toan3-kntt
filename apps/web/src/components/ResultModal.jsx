@@ -107,7 +107,7 @@ export const ResultModal = ({
         </div>
 
         {/* Title & Feedback */}
-        <h2 className="text-2xl sm:text-3xl font-black text-slate-800 mb-1 font-nunito">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-1 font-nunito">
           {title}
         </h2>
         <p className="text-xs sm:text-sm font-bold text-slate-500 max-w-sm mx-auto mb-5">
@@ -133,10 +133,10 @@ export const ResultModal = ({
           </div>
 
           {/* Numerical Score */}
-          <div className="text-3xl sm:text-4xl font-black text-slate-800 mb-1">
+          <div className="text-3xl sm:text-4xl font-bold text-slate-800 mb-1">
             {Math.round((score / 10) * 10) / 10} <span className="text-lg text-slate-500 font-bold">/ 10 Điểm</span>
           </div>
-          <div className="text-xs font-black text-amber-700">
+          <div className="text-xs font-bold text-amber-700">
             Tỉ lệ chính xác: {score}%
           </div>
 
@@ -144,19 +144,19 @@ export const ResultModal = ({
           <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-amber-200/60 text-xs font-extrabold">
             <div className="bg-white/80 p-2 rounded-xl border border-amber-200">
               <div className="text-slate-400 font-bold text-[10px]">Đúng</div>
-              <div className="text-emerald-600 text-sm font-black flex items-center justify-center gap-0.5">
+              <div className="text-emerald-600 text-sm font-bold flex items-center justify-center gap-0.5">
                 <CheckCircle2 className="w-3.5 h-3.5" /> {correctCount}/{totalCount}
               </div>
             </div>
             <div className="bg-white/80 p-2 rounded-xl border border-amber-200">
               <div className="text-slate-400 font-bold text-[10px]">Thưởng Xu</div>
-              <div className="text-yellow-600 text-sm font-black flex items-center justify-center gap-0.5">
+              <div className="text-yellow-600 text-sm font-bold flex items-center justify-center gap-0.5">
                 <Coins className="w-3.5 h-3.5" /> +{earnedCoins}
               </div>
             </div>
             <div className="bg-white/80 p-2 rounded-xl border border-amber-200">
               <div className="text-slate-400 font-bold text-[10px]">Thời gian</div>
-              <div className="text-blue-600 text-sm font-black flex items-center justify-center gap-0.5">
+              <div className="text-blue-600 text-sm font-bold flex items-center justify-center gap-0.5">
                 <Clock className="w-3.5 h-3.5" /> {timeSpent}s
               </div>
             </div>
@@ -168,7 +168,7 @@ export const ResultModal = ({
           {/* View Detailed Solutions */}
           <button
             onClick={() => { sounds.playClick(); onOpenExplanations(); }}
-            className="w-full py-3.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-black text-base rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-2"
+            className="w-full py-3.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-base rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-2"
           >
             <BookOpen className="w-5 h-5" />
             Xem Lời Giải Chi Tiết & Sửa Lỗi
@@ -207,3 +207,4 @@ export const ResultModal = ({
     </div>
   );
 };
+

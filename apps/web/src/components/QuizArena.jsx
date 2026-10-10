@@ -174,7 +174,7 @@ export const QuizArena = ({
           </button>
 
           {/* Countdown Timer */}
-          <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 font-black text-xs sm:text-sm ${
+          <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 font-bold text-xs sm:text-sm ${
             isTimeCritical 
               ? 'bg-rose-50 border-rose-400 text-rose-600 animate-pulse' 
               : 'bg-blue-50 border-blue-300 text-blue-800'
@@ -186,7 +186,7 @@ export const QuizArena = ({
           {/* Submit Button */}
           <button
             onClick={() => handleSubmit(false)}
-            className="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-bouncy-sm btn-bouncy"
+            className="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-bouncy-sm btn-bouncy"
           >
             Nộp Bài
           </button>
@@ -206,10 +206,10 @@ export const QuizArena = ({
         {/* Question Header */}
         <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
           <div className="flex items-center gap-2">
-            <span className="w-8 h-8 rounded-xl bg-amber-400 text-amber-950 font-black text-sm flex items-center justify-center shadow-sm">
+            <span className="w-8 h-8 rounded-xl bg-amber-400 text-amber-950 font-bold text-sm flex items-center justify-center shadow-sm">
               {currentIndex + 1}
             </span>
-            <span className="text-xs font-black uppercase tracking-wider text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
               Câu hỏi {currentIndex + 1} / {totalQuestions}
             </span>
             <span className={`text-[11px] font-bold px-2 py-0.5 rounded-md ${
@@ -286,7 +286,7 @@ export const QuizArena = ({
                 }`}
               >
                 {/* Letter Circle (A, B, C, D) */}
-                <span className={`w-9 h-9 rounded-xl font-black text-sm flex items-center justify-center shrink-0 transition-all ${
+                <span className={`w-9 h-9 rounded-xl font-bold text-sm flex items-center justify-center shrink-0 transition-all ${
                   isSelected
                     ? 'bg-amber-500 text-white shadow-sm'
                     : 'bg-white border-2 border-slate-300 text-slate-600 group-hover:border-amber-400'
@@ -325,7 +325,7 @@ export const QuizArena = ({
           {currentIndex < totalQuestions - 1 ? (
             <button
               onClick={handleNext}
-              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-black text-sm rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-sm rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center gap-1.5"
             >
               Câu tiếp theo
               <ChevronRight className="w-4 h-4" />
@@ -333,7 +333,7 @@ export const QuizArena = ({
           ) : (
             <button
               onClick={() => handleSubmit(false)}
-              className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center gap-1.5"
             >
               Hoàn thành & Nộp bài
               <CheckCircle2 className="w-4 h-4" />
@@ -363,13 +363,13 @@ export const QuizArena = ({
               <button
                 key={qIdx}
                 onClick={() => handleJumpTo(qIdx)}
-                className={`w-9 h-9 rounded-xl font-black text-xs relative transition-all ${
+                className={`w-9 h-9 rounded-xl font-bold text-xs relative transition-all ${
                   isCurrent
                     ? 'ring-2 ring-amber-500 ring-offset-2 scale-110 z-10'
                     : ''
                 } ${
                   isAnswered
-                    ? 'bg-amber-400 text-amber-950 font-black'
+                    ? 'bg-amber-400 text-amber-950 font-bold'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -396,7 +396,7 @@ export const QuizArena = ({
             <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-3xl mx-auto mb-3">
               ⚠️
             </div>
-            <h3 className="text-xl font-black text-slate-800 mb-2">
+            <h3 className="text-xl font-bold text-slate-800 mb-2">
               Bé Chưa Làm Hết Bài!
             </h3>
             <p className="text-sm font-semibold text-slate-600 mb-6">
@@ -411,7 +411,7 @@ export const QuizArena = ({
               </button>
               <button
                 onClick={() => handleSubmit(true)}
-                className="py-2.5 bg-rose-500 hover:bg-rose-600 text-white font-black rounded-xl text-sm shadow-sm"
+                className="py-2.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl text-sm shadow-sm"
               >
                 Vẫn nộp bài
               </button>
@@ -422,3 +422,4 @@ export const QuizArena = ({
     </div>
   );
 };
+

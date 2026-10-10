@@ -126,10 +126,10 @@ export const ParentDashboard = () => {
           : 'bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600'
       }`}>
         <div>
-          <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-wider mb-2 inline-block">
+          <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
             Góc Phụ Huynh & Phân Tích Năng Lực ({isMath ? 'Toán Học' : 'Tiếng Việt'})
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black mb-1">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">
             Báo Cáo Học Tập Của {profile.name} 📊
           </h1>
           <p className="text-xs sm:text-sm font-bold text-blue-100">
@@ -155,7 +155,7 @@ export const ParentDashboard = () => {
             <span className="text-xs font-bold">Tổng bài đã làm</span>
             <Layers className="w-4 h-4 text-blue-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-slate-800">
+          <div className="text-2xl sm:text-3xl font-bold text-slate-800">
             {totalQuizzes} <span className="text-xs font-semibold text-slate-400">bài</span>
           </div>
           <div className="text-[11px] font-extrabold text-emerald-600 mt-1 flex items-center gap-1">
@@ -168,7 +168,7 @@ export const ParentDashboard = () => {
             <span className="text-xs font-bold">Điểm trung bình</span>
             <TrendingUp className="w-4 h-4 text-emerald-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-slate-800">
+          <div className="text-2xl sm:text-3xl font-bold text-slate-800">
             {averageScore}%
           </div>
           <div className="text-[11px] font-extrabold text-slate-500 mt-1">
@@ -181,7 +181,7 @@ export const ParentDashboard = () => {
             <span className="text-xs font-bold">Thời gian học tập</span>
             <Clock className="w-4 h-4 text-amber-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-slate-800">
+          <div className="text-2xl sm:text-3xl font-bold text-slate-800">
             {totalMinutes} <span className="text-xs font-semibold text-slate-400">phút</span>
           </div>
           <div className="text-[11px] font-extrabold text-amber-600 mt-1">
@@ -194,7 +194,7 @@ export const ParentDashboard = () => {
             <span className="text-xs font-bold">Ngôi sao tích lũy</span>
             <Award className="w-4 h-4 text-yellow-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-slate-800">
+          <div className="text-2xl sm:text-3xl font-bold text-slate-800">
             {totalStars} <span className="text-xs font-semibold text-slate-400">sao</span>
           </div>
           <div className="text-[11px] font-extrabold text-yellow-600 mt-1">
@@ -205,7 +205,7 @@ export const ParentDashboard = () => {
 
       {/* AI Teacher Advice & Pedagogical Insights */}
       <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/80 rounded-3xl border-2 border-amber-200 p-6 shadow-sm space-y-4">
-        <div className="flex items-center gap-2 text-amber-900 font-black text-base">
+        <div className="flex items-center gap-2 text-amber-900 font-bold text-base">
           <Sparkles className="w-5 h-5 text-amber-600" />
           Nhận Xét & Lời Khuyên Của Giáo Viên {isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4'}
         </div>
@@ -219,7 +219,7 @@ export const ParentDashboard = () => {
             </div>
             <p className="text-xs sm:text-sm font-bold text-slate-700">
               {strongestTopic ? (
-                <>Bé làm rất tốt chủ đề <span className="text-emerald-700 underline font-black">{strongestTopic.name}</span> với độ chính xác đạt {strongestTopic.accuracy}%.</>
+                <>Bé làm rất tốt chủ đề <span className="text-emerald-700 underline font-bold">{strongestTopic.name}</span> với độ chính xác đạt {strongestTopic.accuracy}%.</>
               ) : (
                 <>Bé đang trong giai đoạn làm quen ban đầu. Hãy khuyến khích bé hoàn thành các bài trắc nghiệm Tuần 1 để hệ thống phân tích chi tiết!</>
               )}
@@ -234,7 +234,7 @@ export const ParentDashboard = () => {
             </div>
             <p className="text-xs sm:text-sm font-bold text-slate-700">
               {weakestTopic && weakestTopic.accuracy < 75 ? (
-                <>Bé cần lưu ý thêm về <span className="text-amber-800 underline font-black">{weakestTopic.name}</span> (đạt {weakestTopic.accuracy}%). Phụ huynh nên hướng dẫn bé xem lại phần 'Sửa Câu Sai' để nắm vững phương pháp.</>
+                <>Bé cần lưu ý thêm về <span className="text-amber-800 underline font-bold">{weakestTopic.name}</span> (đạt {weakestTopic.accuracy}%). Phụ huynh nên hướng dẫn bé xem lại phần 'Sửa Câu Sai' để nắm vững phương pháp.</>
               ) : (
                 <>Năng lực học tập của bé đang tiến bộ rất đồng đều ở mọi mảng kiến thức. Hãy duy trì thói quen học 15 phút mỗi ngày!</>
               )}
@@ -247,7 +247,7 @@ export const ParentDashboard = () => {
       <div className="bg-white rounded-3xl border-2 border-slate-200 p-6 sm:p-8 shadow-bouncy space-y-6">
         <div className="flex items-center justify-between pb-4 border-b-2 border-slate-100">
           <div>
-            <h2 className="text-lg sm:text-xl font-black text-slate-800">
+            <h2 className="text-lg sm:text-xl font-bold text-slate-800">
               Đánh Giá Năng Lực Theo Chuẩn Kiến Thức & Kỹ Năng
             </h2>
             <p className="text-xs font-bold text-slate-500 mt-0.5">
@@ -262,7 +262,7 @@ export const ParentDashboard = () => {
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <div className="flex items-center gap-2">
                   <span className="font-extrabold text-sm text-slate-800">{topic.name}</span>
-                  <span className={`text-[11px] font-black px-2 py-0.5 rounded-full border ${topic.statusColor}`}>
+                  <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${topic.statusColor}`}>
                     {topic.status}
                   </span>
                 </div>
@@ -295,7 +295,7 @@ export const ParentDashboard = () => {
 
       {/* Recent History Table */}
       <div className="bg-white rounded-3xl border-2 border-slate-200 p-6 shadow-bouncy space-y-4">
-        <h2 className="text-lg sm:text-xl font-black text-slate-800 flex items-center gap-2">
+        <h2 className="text-lg sm:text-xl font-bold text-slate-800 flex items-center gap-2">
           <Calendar className="w-5 h-5 text-indigo-500" />
           Lịch Sử 5 Bài Luyện Tập Gần Nhất
         </h2>
@@ -326,7 +326,7 @@ export const ParentDashboard = () => {
                       {item.week ? `Tuần ${item.week}` : 'Luyện tập tùy chọn'}
                     </td>
                     <td className="py-3 px-3">
-                      <span className={`px-2 py-0.5 rounded-full font-black text-xs ${
+                      <span className={`px-2 py-0.5 rounded-full font-bold text-xs ${
                         item.score >= 90 
                           ? 'bg-emerald-100 text-emerald-800' 
                           : item.score >= 70 
@@ -339,7 +339,7 @@ export const ParentDashboard = () => {
                     <td className="py-3 px-3">
                       Đúng {item.correctCount}/{item.totalCount} câu
                     </td>
-                    <td className="py-3 px-3 text-amber-500 font-black flex items-center gap-1">
+                    <td className="py-3 px-3 text-amber-500 font-bold flex items-center gap-1">
                       +{item.earnedStars} ⭐
                     </td>
                   </tr>
@@ -352,3 +352,4 @@ export const ParentDashboard = () => {
     </div>
   );
 };
+

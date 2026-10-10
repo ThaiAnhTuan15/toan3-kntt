@@ -46,11 +46,11 @@ export const ExplanationView = ({
           </button>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-black text-amber-600 uppercase tracking-wider">
+              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">
                 Lời Giải & Sửa Bài Chi Tiết
               </span>
             </div>
-            <h1 className="text-lg sm:text-xl font-black text-slate-800">
+            <h1 className="text-lg sm:text-xl font-bold text-slate-800">
               {quizTitle || "Bài Luyện Tập"}
             </h1>
           </div>
@@ -120,7 +120,7 @@ export const ExplanationView = ({
               {/* Question Header & Status */}
               <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-xl bg-amber-400 text-amber-950 font-black text-sm flex items-center justify-center shadow-sm">
+                  <span className="w-8 h-8 rounded-xl bg-amber-400 text-amber-950 font-bold text-sm flex items-center justify-center shadow-sm">
                     {index + 1}
                   </span>
                   <span className="text-xs font-bold text-slate-400">
@@ -131,7 +131,7 @@ export const ExplanationView = ({
                   </span>
                 </div>
 
-                <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black border ${
+                <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
                   isCorrect 
                     ? 'bg-emerald-50 border-emerald-300 text-emerald-700' 
                     : 'bg-rose-50 border-rose-300 text-rose-700'
@@ -165,11 +165,11 @@ export const ExplanationView = ({
                   let letterStyle = "bg-slate-100 text-slate-600 border-slate-200";
 
                   if (isTargetCorrect) {
-                    cardStyle = "bg-emerald-50/90 border-emerald-400 text-emerald-950 font-black ring-2 ring-emerald-300";
-                    letterStyle = "bg-emerald-500 text-white font-black";
+                    cardStyle = "bg-emerald-50/90 border-emerald-400 text-emerald-950 font-bold ring-2 ring-emerald-300";
+                    letterStyle = "bg-emerald-500 text-white font-bold";
                   } else if (isUserSelection && !isCorrect) {
-                    cardStyle = "bg-rose-50/90 border-rose-400 text-rose-950 font-black ring-2 ring-rose-300";
-                    letterStyle = "bg-rose-500 text-white font-black";
+                    cardStyle = "bg-rose-50/90 border-rose-400 text-rose-950 font-bold ring-2 ring-rose-300";
+                    letterStyle = "bg-rose-500 text-white font-bold";
                   }
 
                   return (
@@ -188,12 +188,12 @@ export const ExplanationView = ({
 
                       {/* Indicator tag */}
                       {isTargetCorrect && (
-                        <span className="text-[11px] font-black px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 shrink-0">
+                        <span className="text-[11px] font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 shrink-0">
                           Đáp án đúng ✓
                         </span>
                       )}
                       {isUserSelection && !isTargetCorrect && (
-                        <span className="text-[11px] font-black px-2 py-0.5 bg-rose-100 text-rose-800 rounded-full border border-rose-300 shrink-0">
+                        <span className="text-[11px] font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded-full border border-rose-300 shrink-0">
                           Bé đã chọn ✗
                         </span>
                       )}
@@ -204,7 +204,7 @@ export const ExplanationView = ({
 
               {/* Step-by-Step Explanation Box */}
               <div className="rounded-2xl bg-amber-50/70 border-2 border-amber-200 p-4 space-y-2">
-                <div className="flex items-center gap-2 font-black text-sm text-amber-900">
+                <div className="flex items-center gap-2 font-bold text-sm text-amber-900">
                   <Lightbulb className="w-5 h-5 text-amber-600" />
                   <span>Hướng dẫn giải chi tiết từng bước:</span>
                 </div>
@@ -224,3 +224,4 @@ export const ExplanationView = ({
     </div>
   );
 };
+

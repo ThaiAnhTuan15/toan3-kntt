@@ -109,7 +109,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               <span className="font-extrabold text-lg sm:text-xl text-slate-800 tracking-tight font-nunito">
                 {getSubjectTitle()}
               </span>
-              <span className={`text-white text-[11px] font-black px-2 py-0.5 rounded-full shadow-sm ${
+              <span className={`text-white text-[11px] font-bold px-2 py-0.5 rounded-full shadow-sm ${
                 isMath 
                   ? (isGrade7 ? 'bg-gradient-to-r from-blue-600 to-indigo-600' : 'bg-gradient-to-r from-amber-500 to-orange-500')
                   : (isGrade7 ? 'bg-gradient-to-r from-rose-600 to-purple-600' : 'bg-gradient-to-r from-rose-500 to-pink-500')
@@ -133,7 +133,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
           <div className="bg-slate-100 p-1 rounded-2xl border-2 border-slate-200 flex items-center gap-1 shadow-inner">
             <button
               onClick={() => switchGrade('4')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl font-black text-xs transition-all ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl font-bold text-xs transition-all ${
                 !isGrade7
                   ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-amber-950 shadow-sm scale-105'
                   : 'text-slate-600 hover:text-amber-800'
@@ -145,7 +145,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
 
             <button
               onClick={() => switchGrade('7')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl font-black text-xs transition-all ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl font-bold text-xs transition-all ${
                 isGrade7
                   ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-sm scale-105'
                   : 'text-slate-600 hover:text-blue-800'
@@ -160,7 +160,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
           <div className="bg-slate-100 p-1 rounded-2xl border-2 border-slate-200 flex items-center gap-1 shadow-inner">
             <button
               onClick={() => switchSubject('math')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl font-black text-xs sm:text-sm transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl font-bold text-xs sm:text-sm transition-all ${
                 isMath
                   ? isGrade7
                     ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-sm scale-105'
@@ -174,7 +174,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
 
             <button
               onClick={() => switchSubject('vietnamese')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl font-black text-xs sm:text-sm transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl font-bold text-xs sm:text-sm transition-all ${
                 !isMath
                   ? isGrade7
                     ? 'bg-gradient-to-r from-rose-500 to-purple-600 text-white shadow-sm scale-105'
@@ -229,7 +229,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
             }}
             className={`px-2.5 py-1.5 rounded-xl border-2 flex items-center gap-1.5 text-xs transition-all ${
               isFreeMode 
-                ? 'bg-purple-100 border-purple-400 text-purple-800 font-black' 
+                ? 'bg-purple-100 border-purple-400 text-purple-800 font-bold' 
                 : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
             }`}
             title="Bật/Tắt chế độ mở khóa tự do tất cả tuần"
@@ -282,7 +282,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
                 <Icon className="w-4 h-4" />
                 <span>{item.label}</span>
                 {item.badge && (
-                  <span className="px-1.5 py-0.5 text-[10px] font-black rounded-full bg-rose-500 text-white">
+                  <span className="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-rose-500 text-white">
                     {item.badge}
                   </span>
                 )}
@@ -299,7 +299,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-amber-500" />
-                <h3 className="text-xl font-black text-slate-800">Hồ Sơ Của Bạn</h3>
+                <h3 className="text-xl font-bold text-slate-800">Hồ Sơ Của Bạn</h3>
               </div>
               <button 
                 onClick={() => setShowProfileModal(false)}
@@ -364,7 +364,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               </button>
               <button
                 onClick={handleSaveProfile}
-                className="px-6 py-2 bg-amber-400 hover:bg-amber-500 text-amber-950 font-black rounded-xl shadow-bouncy-sm btn-bouncy text-xs"
+                className="px-6 py-2 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl shadow-bouncy-sm btn-bouncy text-xs"
               >
                 Lưu Thay Đổi
               </button>
@@ -375,3 +375,4 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
     </header>
   );
 };
+

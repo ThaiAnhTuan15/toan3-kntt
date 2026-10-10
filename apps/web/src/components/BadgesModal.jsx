@@ -41,10 +41,10 @@ export const BadgesModal = () => {
       <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 rounded-3xl p-6 sm:p-8 text-white shadow-bouncy">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-xl">
-            <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-wider mb-2 inline-block">
+            <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
               Phòng Truyền Thống & Danh Hiệu
             </span>
-            <h1 className="text-2xl sm:text-3xl font-black mb-1 text-slate-900">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-1 text-slate-900">
               Bộ Sưu Tập Huy Hiệu Danh Giá 🏆
             </h1>
             <p className="text-xs sm:text-sm font-bold text-amber-950">
@@ -53,8 +53,8 @@ export const BadgesModal = () => {
           </div>
 
           <div className="bg-white/30 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/40 text-center">
-            <div className="text-xs font-black text-amber-950">ĐÃ MỞ KHÓA</div>
-            <div className="text-2xl font-black text-slate-900">
+            <div className="text-xs font-bold text-amber-950">ĐÃ MỞ KHÓA</div>
+            <div className="text-2xl font-bold text-slate-900">
               {unlockedBadges.length} / {BADGE_DEFINITIONS.length}
             </div>
           </div>
@@ -87,7 +87,7 @@ export const BadgesModal = () => {
               {/* Badge Info */}
               <div className="flex-1">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <h3 className={`font-black text-base ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
+                  <h3 className={`font-bold text-base ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
                     {badge.name}
                   </h3>
                 </div>
@@ -96,7 +96,7 @@ export const BadgesModal = () => {
                 </p>
 
                 {isUnlocked ? (
-                  <span className="inline-flex items-center gap-1 text-[11px] font-black text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-md">
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-md">
                     <Sparkles className="w-3 h-3 text-emerald-600" /> Đã đạt được
                   </span>
                 ) : (
@@ -112,3 +112,4 @@ export const BadgesModal = () => {
     </div>
   );
 };
+
