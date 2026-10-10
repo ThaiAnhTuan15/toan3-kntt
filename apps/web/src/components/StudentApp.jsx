@@ -170,21 +170,21 @@ const MainContent = () => {
       {currentResultData && !isViewingExplanation && (
         <ResultModal
           resultData={currentResultData}
-          onReview={() => setIsViewingExplanation(true)}
-          onRetry={handleRetryCurrentQuiz}
-          onRetryWrong={handleRetryWrongOnly}
-          onExit={handleExitQuiz}
+          onOpenExplanations={() => setIsViewingExplanation(true)}
+          onRetryQuiz={handleRetryCurrentQuiz}
+          onRetryWrongOnly={handleRetryWrongOnly}
+          onBackToRoadmap={handleExitQuiz}
         />
       )}
 
       {/* Step-by-Step Explanation Review Modal */}
       {currentResultData && isViewingExplanation && (
         <ExplanationView
-          resultData={currentResultData}
-          onClose={() => setIsViewingExplanation(false)}
-          onRetry={handleRetryCurrentQuiz}
-          onExit={handleExitQuiz}
-        />
+            quizTitle={currentResultData.title}
+            details={currentResultData.details}
+            onBack={() => setIsViewingExplanation(false)}
+            onRetryWrongOnly={handleRetryWrongOnly}
+          />
       )}
     </div>
   );
@@ -197,3 +197,5 @@ export default function App() {
     </LearningProvider>
   );
 }
+
+
