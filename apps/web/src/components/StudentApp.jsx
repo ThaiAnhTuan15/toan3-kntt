@@ -133,7 +133,7 @@ const MainContent = () => {
       />
 
       {/* Main Tab Routing */}
-      <main className="pb-16 pt-4">
+      <main className={`pb-16 pt-4 ${(activeQuizConfig || currentResultData) ? 'hidden' : ''}`}>
         {currentTab === 'roadmap' && (
           <RoadmapView onStartQuiz={handleStartQuiz} />
         )}
