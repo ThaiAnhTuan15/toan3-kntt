@@ -28,7 +28,8 @@ const getStorageKeys = (profileId) => ({
   BADGES: `agy_badges_${profileId}`,
   STREAK: `agy_streak_${profileId}`,
   FREE_MODE: `agy_freemode_${profileId}`,
-  COINS: `agy_coins_${profileId}`
+  COINS: `agy_coins_${profileId}`,
+  PARENT_PIN: `agy_parentpin_${profileId}`
 });
 
 const DEFAULT_PROFILE = {
@@ -185,6 +186,18 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
     } catch { return 50; }
   });
 
+  const [parentPin, setParentPin] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.PARENT_PIN);
+      return saved ? JSON.parse(saved) : '2026';
+    } catch { return '2026'; }
+  });
+
+  const updateParentPin = (newPin) => {
+    setParentPin(newPin);
+    sounds.playClick();
+  };
+
   const [soundEnabled, setSoundEnabled] = useState(sounds.isSoundEnabled());
 
   const [apiQuestions, setApiQuestions] = useState([]);
@@ -226,6 +239,7 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.STREAK, JSON.stringify(streakData)); }, [streakData]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.FREE_MODE, JSON.stringify(isFreeMode)); }, [isFreeMode]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(coins)); }, [coins]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.PARENT_PIN, JSON.stringify(parentPin)); }, [parentPin]);
 
   // Derived active state
   const isMath = currentSubject === 'math';
@@ -485,6 +499,8 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       isMath,
       profile,
       updateProfile,
+      parentPin,
+      updateParentPin,
       progress,
       totalStars,
       coins,

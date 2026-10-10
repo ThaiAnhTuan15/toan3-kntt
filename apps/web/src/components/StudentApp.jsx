@@ -340,16 +340,22 @@ const ProfileSelector = ({ onSelect }) => {
 const ProtectedDashboard = () => {
   const [pin, setPin] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { resetProgress } = useLearning();
+  const { parentPin, updateParentPin, resetProgress } = useLearning();
+
+  const [newPin, setNewPin] = useState('');
+  const [isChangingPin, setIsChangingPin] = useState(false);
 
   if (!isAuthenticated) {
     return (
-      <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded-3xl shadow-xl border-4 border-slate-200 text-center">
+      <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded-3xl shadow-xl border-4 border-slate-200 text-center relative">
         <Lock className="w-12 h-12 text-slate-400 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-slate-800 mb-2">Góc Phụ Huynh</h2>
-        <p className="text-slate-500 mb-6 font-semibold">Vui lòng nhập mã PIN (Mặc định: 2026)</p>
+        <p className="text-slate-500 mb-6 font-semibold">Vui lòng nhập mã PIN của phụ huynh</p>
         <input 
           type="password"
+          pattern="[0-9]*"
+          inputMode="numeric"
+          maxLength={4}
           value={pin}
           onChange={(e) => setPin(e.target.value)}
           className="w-full text-center text-3xl tracking-widest px-4 py-3 rounded-xl border-2 border-slate-200 mb-4 focus:border-blue-400 outline-none"
@@ -357,12 +363,26 @@ const ProtectedDashboard = () => {
         />
         <button 
           onClick={() => {
-            if (pin === '2026') setIsAuthenticated(true);
-            else alert('Mã PIN không đúng!');
+            if (pin === parentPin) {
+              setIsAuthenticated(true);
+            } else {
+              alert('Mã PIN không đúng!');
+            }
           }}
-          className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl"
+          className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl mb-4"
         >
           Xác Nhận
+        </button>
+        <button 
+          onClick={() => {
+            if (window.confirm('Khôi phục mã PIN về mặc định (2026)?')) {
+              updateParentPin('2026');
+              alert('Đã khôi phục mã PIN về 2026.');
+            }
+          }}
+          className="text-xs text-slate-400 hover:text-slate-600 font-semibold underline"
+        >
+          Quên mã PIN?
         </button>
       </div>
     );
@@ -371,6 +391,61 @@ const ProtectedDashboard = () => {
   return (
     <div className="space-y-6">
       <ParentDashboard />
+      
+      {/* Change PIN Settings */}
+      <div className="bg-slate-50 border-2 border-slate-200 p-6 rounded-3xl text-center">
+        <h3 className="text-xl font-bold text-slate-700 mb-2">Đổi Mã PIN</h3>
+        <p className="text-slate-500 text-sm font-semibold mb-4">Mã PIN dùng để bảo vệ Góc Phụ Huynh và chức năng Mở Khóa Tự Do.</p>
+        
+        {isChangingPin ? (
+          <div className="flex flex-col items-center gap-3">
+            <input 
+              type="password"
+              pattern="[0-9]*"
+              inputMode="numeric"
+              maxLength={4}
+              value={newPin}
+              onChange={(e) => setNewPin(e.target.value)}
+              className="w-48 text-center text-2xl tracking-widest px-4 py-2 rounded-xl border-2 border-slate-200 focus:border-amber-400 outline-none"
+              placeholder="Mã PIN mới"
+            />
+            <div className="flex gap-2 w-48">
+              <button 
+                onClick={() => {
+                  setIsChangingPin(false);
+                  setNewPin('');
+                }}
+                className="flex-1 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl text-sm"
+              >
+                Hủy
+              </button>
+              <button 
+                onClick={() => {
+                  if (newPin.length !== 4) {
+                    alert('Mã PIN phải có đúng 4 chữ số!');
+                    return;
+                  }
+                  updateParentPin(newPin);
+                  setIsChangingPin(false);
+                  setNewPin('');
+                  alert('Đổi mã PIN thành công!');
+                }}
+                className="flex-1 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm"
+              >
+                Lưu
+              </button>
+            </div>
+          </div>
+        ) : (
+          <button 
+            onClick={() => setIsChangingPin(true)}
+            className="px-6 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl shadow-sm"
+          >
+            Đổi mã PIN mới
+          </button>
+        )}
+      </div>
+
       <div className="bg-rose-50 border-2 border-rose-200 p-6 rounded-3xl text-center">
         <h3 className="text-xl font-bold text-rose-700 mb-2">Cài Đặt Dữ Liệu</h3>
         <p className="text-rose-600/80 text-sm font-semibold mb-6">Xóa toàn bộ điểm số, huy chương và tiến trình của tài khoản hiện tại để bắt đầu lại từ đầu.</p>
