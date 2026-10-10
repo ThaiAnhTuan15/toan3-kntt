@@ -94,7 +94,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
     if (isGrade7) {
       return isMath ? 'Chinh Phục Toán Lớp 7 (GDPT 2018) 🚀' : 'Hành Trình Khám Phá Ngữ Văn Lớp 7 📖';
     }
-    return isMath ? 'Chinh Phục Thế Giới Toán Lớp 4 🌟' : 'Hành Trình Khám Phá Tiếng Việt 4 📖';
+    return isMath ? 'Chinh Phục Thế Giới Toán Lớp 3 🌟' : 'Hành Trình Khám Phá Tiếng Việt 3 📖';
   };
 
   const getBannerDesc = () => {
