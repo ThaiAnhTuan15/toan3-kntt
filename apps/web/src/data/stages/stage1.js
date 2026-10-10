@@ -1,5 +1,4 @@
 export const STAGE_1_QUESTIONS = [
-
   {
     "id": "T01_01",
     "week": 1,
@@ -8,16 +7,16 @@ export const STAGE_1_QUESTIONS = [
     "topic": "Ôn tập các số đến 1000",
     "category": "natural_num",
     "difficulty": "easy",
-    "question": "Số gồm 1 trăm, 2 chục và 5 đơn vị được viết là:",
+    "question": "Số gồm 1 trăm, 3 chục và 4 đơn vị được viết là:",
     "options": [
-      "125",
-      "1025",
-      "1205",
-      "152"
+      "134",
+      "143",
+      "314",
+      "431"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 1, hàng chục là 2, hàng đơn vị là 5. Ta được số 125."
+    "hint": "Ghép các chữ số hàng trăm, hàng chục, hàng đơn vị theo thứ tự từ trái sang phải.",
+    "explanation": "Chữ số hàng trăm là 1, hàng chục là 3, hàng đơn vị là 4. Ta viết được số 134."
   },
   {
     "id": "T01_02",
@@ -27,16 +26,16 @@ export const STAGE_1_QUESTIONS = [
     "topic": "Ôn tập các số đến 1000",
     "category": "natural_num",
     "difficulty": "easy",
-    "question": "Số gồm 2 trăm, 4 chục và 5 đơn vị được viết là:",
+    "question": "Số 326 được tạo thành từ:",
     "options": [
-      "245",
-      "2045",
-      "2405",
-      "254"
+      "3 trăm, 2 chục và 6 đơn vị",
+      "3 trăm, 6 chục và 2 đơn vị",
+      "2 trăm, 3 chục và 6 đơn vị",
+      "6 trăm, 2 chục và 3 đơn vị"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 2, hàng chục là 4, hàng đơn vị là 5. Ta được số 245."
+    "hint": "Quan sát từ trái qua phải để xác định hàng trăm, hàng chục, hàng đơn vị.",
+    "explanation": "Chữ số 3 ở hàng trăm, chữ số 2 ở hàng chục, chữ số 6 ở hàng đơn vị."
   },
   {
     "id": "T01_03",
@@ -45,17 +44,17 @@ export const STAGE_1_QUESTIONS = [
     "stage": 1,
     "topic": "Ôn tập các số đến 1000",
     "category": "natural_num",
-    "difficulty": "easy",
-    "question": "Số gồm 3 trăm, 6 chục và 5 đơn vị được viết là:",
+    "difficulty": "medium",
+    "question": "Dãy số nào sau đây gồm các số liên tiếp theo thứ tự từ bé đến lớn?",
     "options": [
-      "365",
-      "3065",
-      "3605",
-      "356"
+      "41, 42, 43",
+      "43, 42, 41",
+      "41, 43, 42",
+      "42, 41, 43"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 3, hàng chục là 6, hàng đơn vị là 5. Ta được số 365."
+    "hint": "Các số liên tiếp tăng dần thì số sau lớn hơn số trước 1 đơn vị.",
+    "explanation": "41 rồi đến 42 rồi đến 43 là dãy 3 số tự nhiên liên tiếp tăng dần."
   },
   {
     "id": "T01_04",
@@ -64,17 +63,17 @@ export const STAGE_1_QUESTIONS = [
     "stage": 1,
     "topic": "Ôn tập các số đến 1000",
     "category": "natural_num",
-    "difficulty": "easy",
-    "question": "Số gồm 4 trăm, 8 chục và 5 đơn vị được viết là:",
+    "difficulty": "medium",
+    "question": "Số liền trước của 880 là số nào?",
     "options": [
-      "485",
-      "4085",
-      "4805",
-      "458"
+      "879",
+      "881",
+      "870",
+      "890"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 4, hàng chục là 8, hàng đơn vị là 5. Ta được số 485."
+    "hint": "Muốn tìm số liền trước, ta lấy số đó trừ đi 1.",
+    "explanation": "880 - 1 = 879."
   },
   {
     "id": "T01_05",
@@ -83,1648 +82,625 @@ export const STAGE_1_QUESTIONS = [
     "stage": 1,
     "topic": "Ôn tập các số đến 1000",
     "category": "natural_num",
-    "difficulty": "medium",
-    "question": "Số gồm 5 trăm, 10 chục và 5 đơn vị được viết là:",
-    "options": [
-      "5105",
-      "50105",
-      "51005",
-      "5510"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 5, hàng chục là 10, hàng đơn vị là 5. Ta được số 5105."
-  },
-  {
-    "id": "T01_06",
-    "week": 1,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập các số đến 1000",
-    "category": "natural_num",
-    "difficulty": "medium",
-    "question": "Số gồm 6 trăm, 12 chục và 5 đơn vị được viết là:",
-    "options": [
-      "6125",
-      "60125",
-      "61205",
-      "6512"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 6, hàng chục là 12, hàng đơn vị là 5. Ta được số 6125."
-  },
-  {
-    "id": "T01_07",
-    "week": 1,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập các số đến 1000",
-    "category": "natural_num",
-    "difficulty": "medium",
-    "question": "Số gồm 7 trăm, 14 chục và 5 đơn vị được viết là:",
-    "options": [
-      "7145",
-      "70145",
-      "71405",
-      "7514"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 7, hàng chục là 14, hàng đơn vị là 5. Ta được số 7145."
-  },
-  {
-    "id": "T01_08",
-    "week": 1,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập các số đến 1000",
-    "category": "natural_num",
     "difficulty": "hard",
-    "question": "Số gồm 8 trăm, 16 chục và 5 đơn vị được viết là:",
+    "question": "Tìm dấu thích hợp điền vào chỗ chấm: 400 + 70 + 5 ... 475",
     "options": [
-      "8165",
-      "80165",
-      "81605",
-      "8516"
+      "=",
+      ">",
+      "<",
+      "Không so sánh được"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 8, hàng chục là 16, hàng đơn vị là 5. Ta được số 8165."
+    "hint": "Hãy tính tổng ở vế trái trước khi so sánh.",
+    "explanation": "400 + 70 + 5 = 475. Vậy điền dấu =."
   },
-  {
-    "id": "T01_09",
-    "week": 1,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập các số đến 1000",
-    "category": "natural_num",
-    "difficulty": "hard",
-    "question": "Số gồm 9 trăm, 18 chục và 5 đơn vị được viết là:",
-    "options": [
-      "9185",
-      "90185",
-      "91805",
-      "9518"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 9, hàng chục là 18, hàng đơn vị là 5. Ta được số 9185."
-  },
-  {
-    "id": "T01_10",
-    "week": 1,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập các số đến 1000",
-    "category": "natural_num",
-    "difficulty": "hard",
-    "question": "Số gồm 10 trăm, 20 chục và 5 đơn vị được viết là:",
-    "options": [
-      "10205",
-      "100205",
-      "102005",
-      "10520"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Hàng trăm là 10, hàng chục là 20, hàng đơn vị là 5. Ta được số 10205."
-  }
-,
-
   {
     "id": "T02_01",
     "week": 2,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
+    "topic": "Phép cộng, phép trừ",
     "category": "operations",
     "difficulty": "easy",
-    "question": "Kết quả của phép tính 100 + 50 là:",
+    "question": "Tính nhẩm: 500 + 400 = ?",
     "options": [
-      "150",
-      "160",
-      "140",
-      "250"
+      "900",
+      "100",
+      "800",
+      "700"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "100 cộng 50 bằng 150."
+    "hint": "Cộng 5 trăm với 4 trăm.",
+    "explanation": "5 trăm cộng 4 trăm bằng 9 trăm (900)."
   },
   {
     "id": "T02_02",
     "week": 2,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
+    "topic": "Phép cộng, phép trừ",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của phép tính 200 + 100 là:",
+    "difficulty": "medium",
+    "question": "Đặt tính rồi tính: 146 + 29 = ?",
     "options": [
-      "300",
-      "310",
-      "290",
-      "400"
+      "175",
+      "165",
+      "185",
+      "176"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "200 cộng 100 bằng 300."
+    "hint": "Cộng từ hàng đơn vị sang hàng chục, nhớ 1 sang hàng chục.",
+    "explanation": "6 + 9 = 15 viết 5 nhớ 1. 4 + 2 = 6 thêm 1 là 7. Hạ 1. Kết quả là 175."
   },
   {
     "id": "T02_03",
     "week": 2,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của phép tính 300 + 150 là:",
-    "options": [
-      "450",
-      "460",
-      "440",
-      "550"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "300 cộng 150 bằng 450."
-  },
-  {
-    "id": "T02_04",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của phép tính 400 + 200 là:",
-    "options": [
-      "600",
-      "610",
-      "590",
-      "700"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "400 cộng 200 bằng 600."
-  },
-  {
-    "id": "T02_05",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của phép tính 500 + 250 là:",
-    "options": [
-      "750",
-      "760",
-      "740",
-      "850"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "500 cộng 250 bằng 750."
-  },
-  {
-    "id": "T02_06",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của phép tính 600 + 300 là:",
-    "options": [
-      "900",
-      "910",
-      "890",
-      "1000"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "600 cộng 300 bằng 900."
-  },
-  {
-    "id": "T02_07",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của phép tính 700 + 350 là:",
-    "options": [
-      "1050",
-      "1060",
-      "1040",
-      "1150"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "700 cộng 350 bằng 1050."
-  },
-  {
-    "id": "T02_08",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
+    "topic": "Phép cộng, phép trừ",
     "category": "operations",
     "difficulty": "hard",
-    "question": "Kết quả của phép tính 800 + 400 là:",
+    "question": "Con trâu cân nặng 650 kg, con nghé cân nặng 150 kg. Hỏi con trâu nặng hơn con nghé bao nhiêu ki-lô-gam?",
+    "image": "/images/math3/buffalo.png",
     "options": [
-      "1200",
-      "1210",
-      "1190",
-      "1300"
+      "500 kg",
+      "800 kg",
+      "400 kg",
+      "700 kg"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "800 cộng 400 bằng 1200."
+    "hint": "Để tìm phần nặng hơn, ta làm phép tính trừ.",
+    "explanation": "Con trâu nặng hơn con nghé số ki-lô-gam là: 650 - 150 = 500 (kg)."
   },
-  {
-    "id": "T02_09",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của phép tính 900 + 450 là:",
-    "options": [
-      "1350",
-      "1360",
-      "1340",
-      "1450"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "900 cộng 450 bằng 1350."
-  },
-  {
-    "id": "T02_10",
-    "week": 2,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập phép cộng, phép trừ trong phạm vi 1000",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của phép tính 1000 + 500 là:",
-    "options": [
-      "1500",
-      "1510",
-      "1490",
-      "1600"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "1000 cộng 500 bằng 1500."
-  }
-,
-
   {
     "id": "T03_01",
     "week": 3,
     "semester": 1,
     "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
+    "topic": "Tìm thành phần phép tính",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 1 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
+    "difficulty": "medium",
+    "question": "Tìm số hạng chưa biết: ? + 10 = 26",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "16",
+      "36",
+      "10",
+      "20"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng đã biết.",
+    "explanation": "Ta lấy 26 - 10 = 16."
   },
   {
     "id": "T03_02",
     "week": 3,
     "semester": 1,
     "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 2 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_03",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 3 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_04",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 4 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_05",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 5 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_06",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 6 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_07",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 7 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_08",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
+    "topic": "Tìm thành phần phép tính",
     "category": "operations",
     "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 8 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
+    "question": "Việt có một số viên bi. Việt đã cho bạn 5 viên, còn lại 3 viên. Hỏi lúc đầu Việt có bao nhiêu viên bi?",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "8 viên",
+      "2 viên",
+      "5 viên",
+      "3 viên"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Đây là bài toán tìm số bị trừ: ? - 5 = 3.",
+    "explanation": "Muốn tìm số bi lúc đầu (số bị trừ), ta lấy số bi còn lại (hiệu) cộng với số bi đã cho (số trừ): 3 + 5 = 8 (viên)."
   },
-  {
-    "id": "T03_09",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 9 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T03_10",
-    "week": 3,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Tìm thành phần trong phép cộng, phép trừ",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 10 về Tìm thành phần trong phép cộng, phép trừ (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  }
-,
-
   {
     "id": "T04_01",
     "week": 4,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
+    "topic": "Bảng nhân chia 2, 5",
     "category": "operations",
     "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 1 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
+    "question": "Tính nhẩm: 2 x 8 = ?",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "16",
+      "14",
+      "18",
+      "12"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Em hãy nhẩm bảng nhân 2.",
+    "explanation": "2 nhân 8 bằng 16."
   },
   {
     "id": "T04_02",
     "week": 4,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 2 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_03",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 3 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_04",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 4 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_05",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
+    "topic": "Bảng nhân chia 2, 5",
     "category": "operations",
     "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 5 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
+    "question": "Có 18 học sinh ngồi vào các bàn học, mỗi bàn 2 bạn. Hỏi có bao nhiêu bàn học như vậy?",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "9 bàn",
+      "8 bàn",
+      "7 bàn",
+      "10 bàn"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Ta dùng phép chia để tìm số bàn.",
+    "explanation": "Số bàn học là: 18 : 2 = 9 (bàn)."
   },
-  {
-    "id": "T04_06",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 6 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_07",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 7 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_08",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 8 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_09",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 9 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T04_10",
-    "week": 4,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập bảng nhân 2; 5, bảng chia 2; 5",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 10 về Ôn tập bảng nhân 2; 5, bảng chia 2; 5 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  }
-,
-
   {
     "id": "T05_01",
     "week": 5,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
+    "topic": "Chuyên đề Tuần 5",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 3 x 1 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 5 (Câu 1)",
     "options": [
-      "3",
-      "6",
-      "0",
-      "5"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T05_02",
     "week": 5,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
+    "topic": "Chuyên đề Tuần 5",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 3 x 2 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 5 (Câu 2)",
     "options": [
-      "6",
-      "9",
-      "3",
-      "8"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T05_03",
     "week": 5,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
+    "topic": "Chuyên đề Tuần 5",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 3 x 3 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 5 (Câu 3)",
     "options": [
-      "9",
-      "12",
-      "6",
-      "11"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T05_04",
     "week": 5,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
+    "topic": "Chuyên đề Tuần 5",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 3 x 4 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 5 (Câu 4)",
     "options": [
-      "12",
-      "15",
-      "9",
-      "14"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T05_05",
     "week": 5,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
+    "topic": "Chuyên đề Tuần 5",
     "category": "operations",
     "difficulty": "medium",
-    "question": "Kết quả của 3 x 5 là:",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 5 (Câu 5)",
     "options": [
-      "15",
-      "18",
-      "12",
-      "17"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
-  {
-    "id": "T05_06",
-    "week": 5,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của 3 x 6 là:",
-    "options": [
-      "18",
-      "21",
-      "15",
-      "20"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T05_07",
-    "week": 5,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của 3 x 7 là:",
-    "options": [
-      "21",
-      "24",
-      "18",
-      "23"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T05_08",
-    "week": 5,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của 3 x 8 là:",
-    "options": [
-      "24",
-      "27",
-      "21",
-      "26"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T05_09",
-    "week": 5,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của 3 x 9 là:",
-    "options": [
-      "27",
-      "30",
-      "24",
-      "29"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T05_10",
-    "week": 5,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 3, bảng chia 3",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của 3 x 10 là:",
-    "options": [
-      "30",
-      "33",
-      "27",
-      "32"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  }
-,
-
   {
     "id": "T06_01",
     "week": 6,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
+    "topic": "Chuyên đề Tuần 6",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 1 về Bảng nhân 4, bảng chia 4 (Toán 3):",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 6 (Câu 1)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T06_02",
     "week": 6,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
+    "topic": "Chuyên đề Tuần 6",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 2 về Bảng nhân 4, bảng chia 4 (Toán 3):",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 6 (Câu 2)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T06_03",
     "week": 6,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
+    "topic": "Chuyên đề Tuần 6",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 3 về Bảng nhân 4, bảng chia 4 (Toán 3):",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 6 (Câu 3)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T06_04",
     "week": 6,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
+    "topic": "Chuyên đề Tuần 6",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 4 về Bảng nhân 4, bảng chia 4 (Toán 3):",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 6 (Câu 4)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T06_05",
     "week": 6,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
+    "topic": "Chuyên đề Tuần 6",
     "category": "operations",
     "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 5 về Bảng nhân 4, bảng chia 4 (Toán 3):",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 6 (Câu 5)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
-  {
-    "id": "T06_06",
-    "week": 6,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 6 về Bảng nhân 4, bảng chia 4 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T06_07",
-    "week": 6,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 7 về Bảng nhân 4, bảng chia 4 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T06_08",
-    "week": 6,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 8 về Bảng nhân 4, bảng chia 4 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T06_09",
-    "week": 6,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 9 về Bảng nhân 4, bảng chia 4 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T06_10",
-    "week": 6,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 4, bảng chia 4",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 10 về Bảng nhân 4, bảng chia 4 (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  }
-,
-
   {
     "id": "T07_01",
     "week": 7,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 1 về Ôn tập hình học và đo lường (Toán 3):",
+    "topic": "Chuyên đề Tuần 7",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 7 (Câu 1)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T07_02",
     "week": 7,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 2 về Ôn tập hình học và đo lường (Toán 3):",
+    "topic": "Chuyên đề Tuần 7",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 7 (Câu 2)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T07_03",
     "week": 7,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 3 về Ôn tập hình học và đo lường (Toán 3):",
+    "topic": "Chuyên đề Tuần 7",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 7 (Câu 3)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T07_04",
     "week": 7,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 4 về Ôn tập hình học và đo lường (Toán 3):",
+    "topic": "Chuyên đề Tuần 7",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 7 (Câu 4)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T07_05",
     "week": 7,
     "semester": 1,
     "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
+    "topic": "Chuyên đề Tuần 7",
+    "category": "operations",
     "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 5 về Ôn tập hình học và đo lường (Toán 3):",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 7 (Câu 5)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
-  {
-    "id": "T07_06",
-    "week": 7,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 6 về Ôn tập hình học và đo lường (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T07_07",
-    "week": 7,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 7 về Ôn tập hình học và đo lường (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T07_08",
-    "week": 7,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 8 về Ôn tập hình học và đo lường (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T07_09",
-    "week": 7,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 9 về Ôn tập hình học và đo lường (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T07_10",
-    "week": 7,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Ôn tập hình học và đo lường",
-    "category": "geometry",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 10 về Ôn tập hình học và đo lường (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  }
-,
-
   {
     "id": "T08_01",
     "week": 8,
     "semester": 1,
     "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 1 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
+    "topic": "Chuyên đề Tuần 8",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 8 (Câu 1)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T08_02",
     "week": 8,
     "semester": 1,
     "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 2 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
+    "topic": "Chuyên đề Tuần 8",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 8 (Câu 2)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T08_03",
     "week": 8,
     "semester": 1,
     "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 3 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
+    "topic": "Chuyên đề Tuần 8",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 8 (Câu 3)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T08_04",
     "week": 8,
     "semester": 1,
     "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "easy",
-    "question": "Câu hỏi trắc nghiệm số 4 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
+    "topic": "Chuyên đề Tuần 8",
+    "category": "operations",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 8 (Câu 4)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T08_05",
     "week": 8,
     "semester": 1,
     "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
+    "topic": "Chuyên đề Tuần 8",
+    "category": "operations",
     "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 5 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 8 (Câu 5)",
     "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
-  {
-    "id": "T08_06",
-    "week": 8,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 6 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T08_07",
-    "week": 8,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "medium",
-    "question": "Câu hỏi trắc nghiệm số 7 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T08_08",
-    "week": 8,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 8 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T08_09",
-    "week": 8,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 9 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T08_10",
-    "week": 8,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Luyện tập chung: Ôn tập và Bổ sung",
-    "category": "natural_num",
-    "difficulty": "hard",
-    "question": "Câu hỏi trắc nghiệm số 10 về Luyện tập chung: Ôn tập và Bổ sung (Toán 3):",
-    "options": [
-      "Đáp án A đúng",
-      "Đáp án B sai",
-      "Đáp án C sai",
-      "Đáp án D sai"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  }
-,
-
   {
     "id": "T09_01",
     "week": 9,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
+    "topic": "Chuyên đề Tuần 9",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 6 x 1 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 9 (Câu 1)",
     "options": [
-      "6",
-      "12",
-      "0",
-      "8"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T09_02",
     "week": 9,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
+    "topic": "Chuyên đề Tuần 9",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 6 x 2 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 9 (Câu 2)",
     "options": [
-      "12",
-      "18",
-      "6",
-      "14"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T09_03",
     "week": 9,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
+    "topic": "Chuyên đề Tuần 9",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 6 x 3 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 9 (Câu 3)",
     "options": [
-      "18",
-      "24",
-      "12",
-      "20"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T09_04",
     "week": 9,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
+    "topic": "Chuyên đề Tuần 9",
     "category": "operations",
-    "difficulty": "easy",
-    "question": "Kết quả của 6 x 4 là:",
+    "difficulty": "medium",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 9 (Câu 4)",
     "options": [
-      "24",
-      "30",
-      "18",
-      "26"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   },
   {
     "id": "T09_05",
     "week": 9,
     "semester": 1,
     "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
+    "topic": "Chuyên đề Tuần 9",
     "category": "operations",
     "difficulty": "medium",
-    "question": "Kết quả của 6 x 5 là:",
+    "question": "Câu hỏi tự động sinh từ sách Toán 3 - Tuần 9 (Câu 5)",
     "options": [
-      "30",
-      "36",
-      "24",
-      "32"
+      "Đúng",
+      "Sai",
+      "Thiếu dữ kiện",
+      "Đáp án khác"
     ],
     "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T09_06",
-    "week": 9,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của 6 x 6 là:",
-    "options": [
-      "36",
-      "42",
-      "30",
-      "38"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T09_07",
-    "week": 9,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
-    "category": "operations",
-    "difficulty": "medium",
-    "question": "Kết quả của 6 x 7 là:",
-    "options": [
-      "42",
-      "48",
-      "36",
-      "44"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T09_08",
-    "week": 9,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của 6 x 8 là:",
-    "options": [
-      "48",
-      "54",
-      "42",
-      "50"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T09_09",
-    "week": 9,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của 6 x 9 là:",
-    "options": [
-      "54",
-      "60",
-      "48",
-      "56"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
-  },
-  {
-    "id": "T09_10",
-    "week": 9,
-    "semester": 1,
-    "stage": 1,
-    "topic": "Bảng nhân 6, bảng chia 6",
-    "category": "operations",
-    "difficulty": "hard",
-    "question": "Kết quả của 6 x 10 là:",
-    "options": [
-      "60",
-      "66",
-      "54",
-      "62"
-    ],
-    "correctIndex": 0,
-    "hint": "Cố gắng tính toán cẩn thận nhé!",
-    "explanation": "Đây là kết quả chính xác."
+    "hint": "Câu hỏi đang được AI phân tích từ PDF...",
+    "explanation": "Đang cập nhật..."
   }
-,
 ];
