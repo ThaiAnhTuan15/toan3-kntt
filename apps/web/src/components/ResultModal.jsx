@@ -25,7 +25,7 @@ export const ResultModal = ({
   onBackToRoadmap
 }) => {
   const { score, correctCount, totalCount, timeSpent, details } = resultData;
-  const { earnedStars, earnedCoins } = earnedRewards || { earnedStars: 0, earnedCoins: 0 };
+  const { earnedStars, earnedCoins, earnedMoney, stageReward, finalReward } = earnedRewards || { earnedStars: 0, earnedCoins: 0, earnedMoney: 0 };
 
   useEffect(() => {
     if (score >= 80) {
@@ -140,27 +140,49 @@ export const ResultModal = ({
             Tỉ lệ chính xác: {score}%
           </div>
 
-          {/* Sub Stats: Coins & Time */}
-          <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-amber-200/60 text-xs font-extrabold">
-            <div className="bg-white/80 p-2 rounded-xl border border-amber-200">
-              <div className="text-slate-400 font-bold text-[10px]">Đúng</div>
-              <div className="text-emerald-600 text-sm font-bold flex items-center justify-center gap-0.5">
-                <CheckCircle2 className="w-3.5 h-3.5" /> {correctCount}/{totalCount}
+          {/* Sub Stats: Coins & Money & Time */}
+          <div className="grid grid-cols-4 gap-1.5 mt-4 pt-3 border-t border-amber-200/60 text-xs font-extrabold">
+            <div className="bg-white/80 p-1.5 sm:p-2 rounded-xl border border-amber-200">
+              <div className="text-slate-400 font-bold text-[9px] sm:text-[10px]">Đúng</div>
+              <div className="text-emerald-600 text-xs sm:text-sm font-bold flex items-center justify-center gap-0.5">
+                <CheckCircle2 className="w-3 h-3" /> {correctCount}/{totalCount}
               </div>
             </div>
-            <div className="bg-white/80 p-2 rounded-xl border border-amber-200">
-              <div className="text-slate-400 font-bold text-[10px]">Thưởng Xu</div>
-              <div className="text-yellow-600 text-sm font-bold flex items-center justify-center gap-0.5">
-                <Coins className="w-3.5 h-3.5" /> +{earnedCoins}
+            <div className="bg-white/80 p-1.5 sm:p-2 rounded-xl border border-amber-200">
+              <div className="text-slate-400 font-bold text-[9px] sm:text-[10px]">Thưởng Xu</div>
+              <div className="text-yellow-600 text-xs sm:text-sm font-bold flex items-center justify-center gap-0.5">
+                <Coins className="w-3 h-3" /> +{earnedCoins}
               </div>
             </div>
-            <div className="bg-white/80 p-2 rounded-xl border border-amber-200">
-              <div className="text-slate-400 font-bold text-[10px]">Thời gian</div>
-              <div className="text-blue-600 text-sm font-bold flex items-center justify-center gap-0.5">
-                <Clock className="w-3.5 h-3.5" /> {timeSpent}s
+            <div className="bg-rose-50/90 p-1.5 sm:p-2 rounded-xl border border-rose-300">
+              <div className="text-rose-600 font-black text-[9px] sm:text-[10px]">Heo Đất 🐷</div>
+              <div className="text-rose-700 text-xs sm:text-sm font-black flex items-center justify-center gap-0.5">
+                +{Number(earnedMoney || 0).toLocaleString('vi-VN')}đ
+              </div>
+            </div>
+            <div className="bg-white/80 p-1.5 sm:p-2 rounded-xl border border-amber-200">
+              <div className="text-slate-400 font-bold text-[9px] sm:text-[10px]">Thời gian</div>
+              <div className="text-blue-600 text-xs sm:text-sm font-bold flex items-center justify-center gap-0.5">
+                <Clock className="w-3 h-3" /> {timeSpent}s
               </div>
             </div>
           </div>
+
+          {/* Stage Completion Bonus Banner */}
+          {stageReward && (
+            <div className="mt-3 p-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-2xl shadow-sm text-center animate-bounce-subtle">
+              <div className="text-[11px] uppercase font-extrabold text-emerald-100">🎉 Xuất Sắc Vượt Chặng!</div>
+              <div className="text-base sm:text-lg font-black mt-0.5">Thưởng Nóng Heo Đất: +{stageReward.amount.toLocaleString('vi-VN')} đ 🏆</div>
+            </div>
+          )}
+
+          {/* Final Scholarship Bonus Banner */}
+          {finalReward && (
+            <div className="mt-3 p-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl shadow-md text-center animate-pulse">
+              <div className="text-[11px] uppercase font-extrabold text-indigo-100">🎓 Thần Đồng Toàn Khóa HK1!</div>
+              <div className="text-lg sm:text-xl font-black mt-0.5">Học Bổng Xuất Sắc: +{finalReward.amount.toLocaleString('vi-VN')} đ 👑</div>
+            </div>
+          )}
         </div>
 
         {/* Action Buttons Stack */}

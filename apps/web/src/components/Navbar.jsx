@@ -22,6 +22,8 @@ import {
 } from 'lucide-react';
 import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
+import { RewardRulesModal } from './RewardRulesModal';
+import { WithdrawModal } from './WithdrawModal';
 
 const MASCOTS = [
   { id: 'elephant', name: 'Bé Voi Dũng Cảm', emoji: '🐘', desc: 'Siêu trí nhớ & Kiên trì' },
@@ -42,6 +44,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
     updateProfile,
     totalStars, 
     coins, 
+    piggyBalance,
     streakData, 
     wrongQuestions, 
     soundEnabled, 
@@ -53,6 +56,8 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [tempName, setTempName] = useState(profile?.name || 'Học Sinh');
   const [tempAvatar, setTempAvatar] = useState(profile?.avatar || '🐯');
+  const [showRulesModal, setShowRulesModal] = useState(false);
+  const [showWithdrawModal, setShowWithdrawModal] = useState(false);
 
   const [showPinModal, setShowPinModal] = useState(false);
   const [pinInput, setPinInput] = useState('');
@@ -188,7 +193,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               }`}
             >
               <BookMarked className="w-3.5 h-3.5" />
-              <span>{isGrade7 ? '📖 Ngữ Văn 7' : '📖 Tiếng Việt 4'}</span>
+              <span>{isGrade7 ? '📖 Ngữ Văn 7' : '📖 Tiếng Việt 3'}</span>
             </button>
           </div>
         </div>
@@ -212,6 +217,32 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
             <Flame className="w-4 h-4 text-orange-500 fill-orange-400" />
             <span>{streakData.currentStreak} <span className="text-orange-700 text-xs hidden sm:inline">Ngày</span></span>
           </div>
+
+          {/* Piggy Bank Pill */}
+          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 border-2 border-rose-300 rounded-xl text-rose-900 shadow-sm font-extrabold text-xs sm:text-sm">
+            <span className="text-base sm:text-lg">🐷</span>
+            <span>{(piggyBalance || 0).toLocaleString('vi-VN')} <span className="text-rose-700 text-xs hidden sm:inline">đ</span></span>
+          </div>
+
+          {/* Reward Rules Button */}
+          <button
+            onClick={() => setShowRulesModal(true)}
+            className="flex items-center gap-1 px-2.5 py-1.5 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 rounded-xl text-amber-900 font-extrabold text-xs transition-all shadow-sm"
+            title="Xem quy tắc thưởng Heo Đất Tri Thức"
+          >
+            <span className="text-sm">📜</span>
+            <span className="hidden md:inline">Quy Tắc Thưởng</span>
+          </button>
+
+          {/* Withdraw Button */}
+          <button
+            onClick={() => setShowWithdrawModal(true)}
+            className="flex items-center gap-1 px-2.5 py-1.5 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white rounded-xl font-extrabold text-xs transition-all shadow-sm"
+            title="Xin Ba Mẹ đổi quà từ Heo Đất"
+          >
+            <span>🎁</span>
+            <span className="hidden md:inline">Đổi Quà</span>
+          </button>
 
           {/* Sound Toggle */}
           <button
@@ -424,6 +455,22 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Reward Rules Modal */}
+      {showRulesModal && (
+        <RewardRulesModal 
+          onClose={() => setShowRulesModal(false)}
+          onOpenWithdraw={() => setShowWithdrawModal(true)}
+        />
+      )}
+
+      {/* Withdraw Modal */}
+      {showWithdrawModal && (
+        <WithdrawModal 
+          onClose={() => setShowWithdrawModal(false)}
+          onOpenRules={() => setShowRulesModal(true)}
+        />
       )}
     </header>
   );

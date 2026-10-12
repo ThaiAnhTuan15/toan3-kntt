@@ -29,7 +29,12 @@ const getStorageKeys = (profileId) => ({
   STREAK: `agy_streak_${profileId}`,
   FREE_MODE: `agy_freemode_${profileId}`,
   COINS: `agy_coins_${profileId}`,
-  PARENT_PIN: `agy_parentpin_${profileId}`
+  PARENT_PIN: `agy_parentpin_${profileId}`,
+  PIGGY_BANK: `agy_piggy_${profileId}`,
+  PIGGY_HISTORY: `agy_piggy_hist_${profileId}`,
+  PIGGY_REQUESTS: `agy_piggy_req_${profileId}`,
+  CLAIMED_STAGES: `agy_piggy_stages_${profileId}`,
+  CLAIMED_FINAL: `agy_piggy_final_${profileId}`
 });
 
 const DEFAULT_PROFILE = {
@@ -246,6 +251,104 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
     sounds.playClick();
   };
 
+  // Piggy Bank (Heo Đất Tri Thức)
+  const [piggyBalance, setPiggyBalance] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.PIGGY_BANK);
+      return saved ? JSON.parse(saved) : 0;
+    } catch { return 0; }
+  });
+
+  const [piggyHistory, setPiggyHistory] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.PIGGY_HISTORY);
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  const [piggyRequests, setPiggyRequests] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.PIGGY_REQUESTS);
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  const [claimedStages, setClaimedStages] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.CLAIMED_STAGES);
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  const [claimedFinal, setClaimedFinal] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.CLAIMED_FINAL);
+      return saved ? JSON.parse(saved) : false;
+    } catch { return false; }
+  });
+
+  // Request withdrawal from student
+  const requestWithdrawal = (amount, note) => {
+    const num = Number(amount);
+    if (!num || num <= 0) return { success: false, message: 'Số tiền phải lớn hơn 0!' };
+    if (num > piggyBalance) return { success: false, message: 'Số tiền yêu cầu vượt quá số dư trong Heo đất!' };
+    
+    const newReq = {
+      id: 'req_' + Date.now(),
+      date: new Date().toISOString(),
+      amount: num,
+      note: note || 'Mua đồ dùng học tập',
+      status: 'pending'
+    };
+    setPiggyRequests(prev => [newReq, ...prev]);
+    sounds.playVictory();
+    return { success: true, message: 'Đã gửi yêu cầu tới Ba Mẹ thành công!' };
+  };
+
+  // Approve withdrawal from parent
+  const approveWithdrawal = (requestId, customAmount, note) => {
+    const req = piggyRequests.find(r => r.id === requestId);
+    if (!req) return;
+    const actualAmount = customAmount ? Number(customAmount) : req.amount;
+    
+    setPiggyBalance(prev => Math.max(0, prev - actualAmount));
+    setPiggyRequests(prev => prev.map(r => r.id === requestId ? { ...r, status: 'approved', approvedAt: new Date().toISOString() } : r));
+    
+    const trans = {
+      id: Date.now(),
+      date: new Date().toISOString(),
+      title: 'Đã Lĩnh Thưởng (Ba Mẹ Trao Quà)',
+      amount: actualAmount,
+      type: 'withdraw',
+      note: note || req.note || 'Ba mẹ đã trao quà / tiền mặt cho con'
+    };
+    setPiggyHistory(prev => [trans, ...prev]);
+    sounds.playVictory();
+  };
+
+  // Reject withdrawal
+  const rejectWithdrawal = (requestId, reason) => {
+    setPiggyRequests(prev => prev.map(r => r.id === requestId ? { ...r, status: 'rejected', rejectReason: reason || 'Nhắc con tiếp tục tiết kiệm thêm nhé' } : r));
+    sounds.playClick();
+  };
+
+  // Direct manual adjustment by parent
+  const manualAdjustPiggy = (amount, reason) => {
+    const num = Number(amount);
+    if (isNaN(num) || num === 0) return;
+    setPiggyBalance(prev => Math.max(0, prev + num));
+    const trans = {
+      id: Date.now(),
+      date: new Date().toISOString(),
+      title: num > 0 ? 'Ba Mẹ Thưởng Nóng' : 'Ba Mẹ Điều Chỉnh Số Dư',
+      amount: Math.abs(num),
+      type: num > 0 ? 'earn' : 'withdraw',
+      note: reason || 'Điều chỉnh từ phụ huynh'
+    };
+    setPiggyHistory(prev => [trans, ...prev]);
+    sounds.playClick();
+  };
+
   const [soundEnabled, setSoundEnabled] = useState(sounds.isSoundEnabled());
 
   const [apiQuestions, setApiQuestions] = useState([]);
@@ -305,6 +408,11 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.FREE_MODE, JSON.stringify(isFreeMode)); }, [isFreeMode]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(coins)); }, [coins]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.PARENT_PIN, JSON.stringify(parentPin)); }, [parentPin]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(piggyBalance)); }, [piggyBalance]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.PIGGY_HISTORY, JSON.stringify(piggyHistory)); }, [piggyHistory]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(piggyRequests)); }, [piggyRequests]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.CLAIMED_STAGES, JSON.stringify(claimedStages)); }, [claimedStages]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.CLAIMED_FINAL, JSON.stringify(claimedFinal)); }, [claimedFinal]);
 
   // Derived active state
   const isMath = currentSubject === 'math';
@@ -414,6 +522,100 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
     const earnedCoins = correctCount * 5 + (score === 100 ? 30 : 10);
     setCoins(prev => prev + earnedCoins);
 
+    // Calculate Piggy Reward Money (VNĐ)
+    let earnedMoney = 0;
+    const prevAttempts = (progress[week]?.attempts) || 0;
+    const wrongCount = totalCount - correctCount;
+
+    if (prevAttempts === 0) {
+      // Lần 1: Đúng hết 10.000đ, sai 1 câu trừ 2.000đ, sai >= 5 câu là 0đ
+      if (wrongCount < 5) {
+        earnedMoney = Math.max(0, 10000 - wrongCount * 2000);
+      } else {
+        earnedMoney = 0;
+      }
+    } else if (prevAttempts === 1) {
+      // Lần 2: Đúng hết 5.000đ, sai 1 câu trừ 1.000đ, sai >= 5 câu là 0đ
+      if (wrongCount < 5) {
+        earnedMoney = Math.max(0, 5000 - wrongCount * 1000);
+      } else {
+        earnedMoney = 0;
+      }
+    } else {
+      // Lần 3 trở đi: Đúng hết (100%) thưởng 2.000đ khích lệ
+      if (score === 100) {
+        earnedMoney = 2000;
+      } else {
+        earnedMoney = 0;
+      }
+    }
+
+    if (earnedMoney > 0) {
+      setPiggyBalance(prev => prev + earnedMoney);
+      const moneyTrans = {
+        id: Date.now() + 1,
+        date: new Date().toISOString(),
+        title: `Làm Đề ${week} (Lần ${prevAttempts + 1})`,
+        amount: earnedMoney,
+        type: 'earn',
+        note: `Đúng ${correctCount}/${totalCount} câu (Điểm: ${score}%)`
+      };
+      setPiggyHistory(prev => [moneyTrans, ...prev]);
+    }
+
+    // Check Stage completion (Thưởng Vượt Chặng: +50.000đ / chặng)
+    let stageReward = null;
+    let finalReward = null;
+
+    if (currentGrade !== '7' && isMath && week) {
+      const currentStageObj = STAGES.find(st => st.weeks.includes(Number(week)));
+      if (currentStageObj && !claimedStages.includes(currentStageObj.id)) {
+        const isStageFinished = currentStageObj.weeks.every(wNum => {
+          if (wNum === Number(week)) return Math.max(progress[week]?.bestScore || 0, score) >= 75;
+          return (progress[wNum]?.bestScore || 0) >= 75;
+        });
+
+        if (isStageFinished) {
+          const bonusStage = 50000;
+          setClaimedStages(prev => [...prev, currentStageObj.id]);
+          setPiggyBalance(prev => prev + bonusStage);
+          const stageTrans = {
+            id: Date.now() + 2,
+            date: new Date().toISOString(),
+            title: `Thưởng Vượt ${currentStageObj.title.split(':')[0]}!`,
+            amount: bonusStage,
+            type: 'earn',
+            note: `Hoàn thành toàn bộ các đề trong ${currentStageObj.title}`
+          };
+          setPiggyHistory(prev => [stageTrans, ...prev]);
+          stageReward = { stageId: currentStageObj.id, stageTitle: currentStageObj.title, amount: bonusStage };
+        }
+      }
+
+      // Check Học bổng HK1 (Hoàn thành cả 6 Chặng - 66 đề: +100.000đ)
+      if (!claimedFinal) {
+        const all66Finished = Array.from({ length: 66 }, (_, i) => i + 1).every(wNum => {
+          if (wNum === Number(week)) return Math.max(progress[week]?.bestScore || 0, score) >= 75;
+          return (progress[wNum]?.bestScore || 0) >= 75;
+        });
+        if (all66Finished) {
+          const bonusFinal = 100000;
+          setClaimedFinal(true);
+          setPiggyBalance(prev => prev + bonusFinal);
+          const finalTrans = {
+            id: Date.now() + 3,
+            date: new Date().toISOString(),
+            title: 'Học Bổng Xuất Sắc Học Kỳ 1 (Toán 3)',
+            amount: bonusFinal,
+            type: 'earn',
+            note: 'Chinh phục trọn vẹn 66 Đề học tập GDPT 2018!'
+          };
+          setPiggyHistory(prev => [finalTrans, ...prev]);
+          finalReward = { amount: bonusFinal };
+        }
+      }
+    }
+
     // Update wrong list
     const updateWrongList = (prevList) => {
       const updated = [...prevList];
@@ -489,6 +691,9 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       timeSpent: timeSpent || 0,
       earnedStars,
       earnedCoins,
+      earnedMoney,
+      stageReward,
+      finalReward,
       details: details.map(d => ({
         questionId: d.question.id,
         category: d.question.category,
@@ -506,7 +711,10 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
 
     return {
       earnedStars,
-      earnedCoins
+      earnedCoins,
+      earnedMoney,
+      stageReward,
+      finalReward
     };
   };
 
@@ -595,6 +803,15 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       progress,
       totalStars,
       coins,
+      piggyBalance,
+      piggyHistory,
+      piggyRequests,
+      claimedStages,
+      claimedFinal,
+      requestWithdrawal,
+      approveWithdrawal,
+      rejectWithdrawal,
+      manualAdjustPiggy,
       streakData,
       isFreeMode,
       isApiLoading,

@@ -14,7 +14,12 @@ import {
   Layers,
   ChevronRight,
   BookOpen,
-  Calculator
+  Calculator,
+  Gift,
+  Plus,
+  Check,
+  Send,
+  XCircle
 } from 'lucide-react';
 import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
@@ -26,6 +31,12 @@ export const ParentDashboard = () => {
     history, 
     totalStars, 
     coins, 
+    piggyBalance,
+    piggyHistory,
+    piggyRequests,
+    approveWithdrawal,
+    rejectWithdrawal,
+    manualAdjustPiggy,
     streakData,
     isMath,
     currentGrade,
@@ -34,6 +45,10 @@ export const ParentDashboard = () => {
     currentCategories,
     switchSubject
   } = useLearning();
+
+  const [showAdjustModal, setShowAdjustModal] = useState(false);
+  const [adjustAmount, setAdjustAmount] = useState('');
+  const [adjustReason, setAdjustReason] = useState('');
 
   // Filter history by current grade & subject
   const subjectHistory = history.filter(h => {
@@ -44,7 +59,7 @@ export const ParentDashboard = () => {
 
   const subjectLabel = isGrade7
     ? (isMath ? 'Toán Lớp 7' : 'Ngữ Văn 7')
-    : (isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4');
+    : (isMath ? 'Toán Lớp 3' : 'Tiếng Việt 3');
 
   // Overall Statistics for current subject
   const totalQuizzes = subjectHistory.length;
@@ -210,7 +225,7 @@ export const ParentDashboard = () => {
       <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/80 rounded-3xl border-2 border-amber-200 p-6 shadow-sm space-y-4">
         <div className="flex items-center gap-2 text-amber-900 font-bold text-base">
           <Sparkles className="w-5 h-5 text-amber-600" />
-          Nhận Xét & Lời Khuyên Của Giáo Viên {isMath ? 'Toán Lớp 4' : 'Tiếng Việt 4'}
+          Nhận Xét & Lời Khuyên Của Giáo Viên {subjectLabel}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -296,6 +311,154 @@ export const ParentDashboard = () => {
         </div>
       </div>
 
+      {/* Sổ Quỹ Heo Đất Tri Thức */}
+      <div className="bg-white rounded-3xl border-2 border-pink-200 p-6 shadow-bouncy space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-pink-100 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-2xl shadow-md shadow-pink-200">
+              🐷
+            </div>
+            <div>
+              <h2 className="text-lg sm:text-xl font-black text-slate-800 flex items-center gap-2">
+                Sổ Quỹ Heo Đất Tri Thức
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-700 font-extrabold">
+                  Tiền Thưởng Thực Tế
+                </span>
+              </h2>
+              <p className="text-xs font-semibold text-slate-500">
+                Theo dõi tích lũy, trao thưởng và duyệt yêu cầu mua đồ dùng học tập của bé
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="text-right">
+              <span className="text-[11px] font-bold text-slate-400 block uppercase">Số Dư Hiện Tại</span>
+              <span className="text-2xl sm:text-3xl font-black text-rose-600">
+                {(piggyBalance || 0).toLocaleString('vi-VN')} <span className="text-base font-bold text-rose-500">đ</span>
+              </span>
+            </div>
+            <button
+              onClick={() => setShowAdjustModal(true)}
+              className="px-3.5 py-2 bg-pink-50 hover:bg-pink-100 text-pink-700 border border-pink-200 rounded-xl font-extrabold text-xs transition flex items-center gap-1.5 shadow-sm"
+              title="Cộng thêm hoặc trừ bớt tiền trong heo đất"
+            >
+              <Plus className="w-4 h-4" />
+              Điều Chỉnh
+            </button>
+          </div>
+        </div>
+
+        {/* Danh sách yêu cầu xin đổi quà đang chờ duyệt */}
+        <div className="space-y-3">
+          <h3 className="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Gift className="w-4 h-4 text-amber-500" />
+            Yêu Cầu Xin Đổi Quà Đang Chờ Duyệt
+            {piggyRequests?.filter(r => r.status?.toLowerCase() === 'pending').length > 0 && (
+              <span className="bg-rose-500 text-white text-[10px] px-2 py-0.5 rounded-full font-black animate-pulse">
+                {piggyRequests.filter(r => r.status?.toLowerCase() === 'pending').length}
+              </span>
+            )}
+          </h3>
+
+          {(!piggyRequests || piggyRequests.filter(r => r.status?.toLowerCase() === 'pending').length === 0) ? (
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center text-xs font-bold text-slate-400">
+              Hiện tại bé chưa gửi yêu cầu xin đổi quà nào.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {piggyRequests.filter(r => r.status?.toLowerCase() === 'pending').map(req => (
+                <div key={req.id} className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border-2 border-amber-300 shadow-sm flex flex-col justify-between gap-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <span className="text-xs font-black text-amber-800 block">
+                        Bé xin rút: <span className="text-base text-rose-600 font-black">{req.amount.toLocaleString('vi-VN')} đ</span>
+                      </span>
+                      <p className="text-xs font-semibold text-slate-700 mt-1">
+                        Mục đích: <strong className="text-slate-900 font-extrabold">{req.note || req.reason || 'Mua đồ dùng học tập'}</strong>
+                      </p>
+                      <span className="text-[10px] font-bold text-slate-400 block mt-1">
+                        {new Date(req.date).toLocaleString('vi-VN')}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-2 border-t border-amber-200">
+                    <button
+                      onClick={() => {
+                        approveWithdrawal(req.id);
+                        sounds.playSuccess?.();
+                      }}
+                      className="flex-1 py-2 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold text-xs rounded-xl shadow-sm transition flex items-center justify-center gap-1.5"
+                    >
+                      <Check className="w-4 h-4" />
+                      Duyệt & Trao Quà
+                    </button>
+                    <button
+                      onClick={() => {
+                        rejectWithdrawal(req.id);
+                        sounds.playClick?.();
+                      }}
+                      className="px-3 py-2 bg-slate-200 hover:bg-slate-300 active:scale-95 text-slate-600 font-extrabold text-xs rounded-xl transition flex items-center justify-center gap-1"
+                    >
+                      <XCircle className="w-4 h-4" />
+                      Từ Chối
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Lịch sử giao dịch quỹ gần nhất */}
+        <div className="space-y-3">
+          <h3 className="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-pink-500" />
+            Lịch Sử Thu - Chi Heo Đất Gần Nhất
+          </h3>
+
+          {(!piggyHistory || piggyHistory.length === 0) ? (
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center text-xs font-bold text-slate-400">
+              Chưa có giao dịch thưởng hoặc rút tiền nào được ghi nhận.
+            </div>
+          ) : (
+            <div className="max-h-60 overflow-y-auto rounded-2xl border border-slate-200 divide-y divide-slate-100">
+              {piggyHistory.slice(0, 10).map((h) => {
+                const isEarn = h.type?.toLowerCase() === 'earn' || h.type === 'EARN';
+                return (
+                  <div key={h.id} className="p-3 bg-white flex items-center justify-between text-xs gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">
+                        {isEarn ? '🌟' : '🎁'}
+                      </span>
+                      <div>
+                        <span className="font-extrabold text-slate-800 block">
+                          {h.title || h.reason || (isEarn ? 'Thưởng bài học' : 'Lĩnh thưởng')}
+                        </span>
+                        {h.note && (
+                          <span className="text-[11px] text-slate-500 font-semibold block">
+                            {h.note}
+                          </span>
+                        )}
+                        <span className="text-[10px] font-bold text-slate-400">
+                          {new Date(h.date).toLocaleString('vi-VN')}
+                        </span>
+                      </div>
+                    </div>
+                    <div className={`font-black text-sm whitespace-nowrap ${
+                      isEarn ? 'text-emerald-600' : 'text-rose-600'
+                    }`}>
+                      {isEarn ? `+${Math.abs(h.amount).toLocaleString('vi-VN')} đ` : `-${Math.abs(h.amount).toLocaleString('vi-VN')} đ`}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Recent History Table */}
       <div className="bg-white rounded-3xl border-2 border-slate-200 p-6 shadow-bouncy space-y-4">
         <h2 className="text-lg sm:text-xl font-bold text-slate-800 flex items-center gap-2">
@@ -352,6 +515,93 @@ export const ParentDashboard = () => {
           </div>
         )}
       </div>
+
+      {/* Modal Điều Chỉnh Quỹ */}
+      {showAdjustModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-6 max-w-sm w-full shadow-2xl border-2 border-pink-200 space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <h3 className="font-black text-base text-slate-800 flex items-center gap-2">
+                <span>🐷</span> Điều Chỉnh Quỹ Heo Đất
+              </h3>
+              <button
+                onClick={() => setShowAdjustModal(false)}
+                className="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-bold hover:bg-slate-200 flex items-center justify-center"
+              >
+                ✕
+              </button>
+            </div>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const amt = parseInt(adjustAmount, 10);
+                if (isNaN(amt) || amt === 0) {
+                  alert('Vui lòng nhập số tiền hợp lệ (ví dụ: 10000 hoặc -10000)');
+                  return;
+                }
+                if (!adjustReason.trim()) {
+                  alert('Vui lòng nhập lý do điều chỉnh');
+                  return;
+                }
+                manualAdjustPiggy(amt, adjustReason.trim());
+                setAdjustAmount('');
+                setAdjustReason('');
+                setShowAdjustModal(false);
+              }}
+              className="space-y-4"
+            >
+              <div>
+                <label className="text-xs font-extrabold text-slate-700 block mb-1">
+                  Số tiền cần điều chỉnh (VNĐ):
+                </label>
+                <input
+                  type="number"
+                  step="1000"
+                  placeholder="VD: 20000 (cộng thêm) hoặc -20000 (trừ đi)"
+                  value={adjustAmount}
+                  onChange={(e) => setAdjustAmount(e.target.value)}
+                  className="w-full px-3 py-2.5 rounded-xl border-2 border-slate-200 font-black text-slate-800 text-sm focus:border-pink-500 focus:outline-none"
+                  required
+                />
+                <span className="text-[10px] text-slate-400 font-semibold block mt-1">
+                  * Nhập số dương để thưởng thêm, nhập số âm để trừ bớt (khi đã mua quà trực tiếp).
+                </span>
+              </div>
+
+              <div>
+                <label className="text-xs font-extrabold text-slate-700 block mb-1">
+                  Lý do điều chỉnh:
+                </label>
+                <input
+                  type="text"
+                  placeholder="VD: Ba mẹ thưởng thêm làm việc nhà chăm chỉ..."
+                  value={adjustReason}
+                  onChange={(e) => setAdjustReason(e.target.value)}
+                  className="w-full px-3 py-2.5 rounded-xl border-2 border-slate-200 font-bold text-slate-800 text-xs focus:border-pink-500 focus:outline-none"
+                  required
+                />
+              </div>
+
+              <div className="flex items-center gap-2 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setShowAdjustModal(false)}
+                  className="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 font-extrabold text-xs"
+                >
+                  Hủy
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 py-2.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white font-extrabold text-xs shadow-md shadow-pink-200"
+                >
+                  Xác Nhận
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
