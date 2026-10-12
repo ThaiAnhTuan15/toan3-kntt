@@ -271,6 +271,17 @@ export const QuizArena = ({
           <MathRenderer text={currentQuestion.question} />
         </div>
 
+        {/* Question Illustration Image (if available) */}
+        {currentQuestion.image && (
+          <div className="flex justify-center my-4 p-3 bg-slate-50/90 rounded-2xl border-2 border-slate-100 max-w-xl mx-auto shadow-sm">
+            <img 
+              src={currentQuestion.image} 
+              alt="Hình minh họa câu hỏi" 
+              className="max-h-72 max-w-full object-contain rounded-xl hover:scale-105 transition-transform duration-200" 
+            />
+          </div>
+        )}
+
         {/* 4 Options Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
           {currentQuestion.options.map((opt, optIdx) => {

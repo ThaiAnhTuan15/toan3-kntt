@@ -102,6 +102,17 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
                 <MathRenderer text={q.question} />
               </div>
 
+              {/* Question Illustration Image (if available) */}
+              {q.image && (
+                <div className="flex justify-center my-2 p-2 bg-slate-50/90 rounded-2xl border border-slate-200 max-w-md mx-auto shadow-sm">
+                  <img 
+                    src={q.image} 
+                    alt="Hình minh họa câu hỏi" 
+                    className="max-h-48 max-w-full object-contain rounded-xl" 
+                  />
+                </div>
+              )}
+
               {/* Hint & Formula */}
               <div className="rounded-xl bg-amber-50/70 border border-amber-200 p-3 text-xs sm:text-sm font-semibold text-amber-900 flex items-start gap-2">
                 <Lightbulb className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />

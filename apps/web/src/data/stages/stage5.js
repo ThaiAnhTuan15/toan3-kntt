@@ -1,5 +1,4 @@
-// CHẶNG 5: Chặng 5: Thung lũng Đo lường & Nhà thám hiểm nhí
-// Tổng số câu hỏi: 121
+// CHẶNG 5: Tổng số câu hỏi: 121
 
 export const STAGE_5_QUESTIONS = [
   {
@@ -19,7 +18,8 @@ export const STAGE_5_QUESTIONS = [
       "5dm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. 5mm.\nNăm mi-li-mét được viết tắt là 5mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: A. 5mm.\nNăm mi-li-mét được viết tắt là 5mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_2",
@@ -38,7 +38,8 @@ export const STAGE_5_QUESTIONS = [
       "Không có số thích hợp"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. 10.\nVì 1cm = 10mm nên 100mm = 10cm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. 10.\nVì 1cm = 10mm nên 100mm = 10cm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_3",
@@ -57,7 +58,8 @@ export const STAGE_5_QUESTIONS = [
       "420"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: D. 420.\nVì 1cm = 10mm nên 42cm = 420mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: D. 420.\nVì 1cm = 10mm nên 42cm = 420mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_4",
@@ -76,7 +78,8 @@ export const STAGE_5_QUESTIONS = [
       "3000"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. 30.\nVì 1cm = 10mm nên 3cm = 30mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: A. 30.\nVì 1cm = 10mm nên 3cm = 30mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_5",
@@ -95,7 +98,8 @@ export const STAGE_5_QUESTIONS = [
       "ba li"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. ba mi-li-mét.\n3mm được đọc/gọi là ba mi-li-mét. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. ba mi-li-mét.\n3mm được đọc/gọi là ba mi-li-mét. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_6",
@@ -114,7 +118,8 @@ export const STAGE_5_QUESTIONS = [
       "bảy li"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. bảy mi-li-mét.\n7mm được đọc là bảy mi-li-mét. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: A. bảy mi-li-mét.\n7mm được đọc là bảy mi-li-mét. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_7",
@@ -133,7 +138,8 @@ export const STAGE_5_QUESTIONS = [
       "5000mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 50mm.\nQuan sát thước kẻ, đoạn thẳng dài 5cm. Đổi ra mi-li-mét: 5cm = 50mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 50mm.\nQuan sát thước kẻ, đoạn thẳng dài 5cm. Đổi ra mi-li-mét: 5cm = 50mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image277.png"
   },
   {
     "id": "q_49_8",
@@ -152,7 +158,8 @@ export const STAGE_5_QUESTIONS = [
       "Gấ 4cn lên 2 lần được 20mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. Gấp 4cm lên 2 lần được 80mm.\nGấp 4cm lên 2 lần: 4cm × 2 = 8cm = 80mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. Gấp 4cm lên 2 lần được 80mm.\nGấp 4cm lên 2 lần: 4cm × 2 = 8cm = 80mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_9",
@@ -171,7 +178,8 @@ export const STAGE_5_QUESTIONS = [
       "155"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 165.\nĐổi 2dm = 200mm. Ta có: 35mm + ?mm = 200mm => ? = 200 - 35 = 165. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 165.\nĐổi 2dm = 200mm. Ta có: 35mm + ?mm = 200mm => ? = 200 - 35 = 165. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image279.png"
   },
   {
     "id": "q_49_10",
@@ -190,7 +198,8 @@ export const STAGE_5_QUESTIONS = [
       "112"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. 39.\nĐoạn thẳng CD dài: 56 - 17 = 39 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. 39.\nĐoạn thẳng CD dài: 56 - 17 = 39 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_11",
@@ -209,7 +218,8 @@ export const STAGE_5_QUESTIONS = [
       "35mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. 55mm.\nCào cào nhảy xa được: 11 × 5 = 55 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: A. 55mm.\nCào cào nhảy xa được: 11 × 5 = 55 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_12",
@@ -228,7 +238,8 @@ export const STAGE_5_QUESTIONS = [
       "dm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. mm.\nCon kiến có kích thước rất nhỏ, dài khoảng 5mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: A. mm.\nCon kiến có kích thước rất nhỏ, dài khoảng 5mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_13",
@@ -247,7 +258,8 @@ export const STAGE_5_QUESTIONS = [
       "không so sánh được"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. dài hơn.\nVế trái: 4dm - 25mm + 75mm = 400 - 25 + 75 = 450mm. Vế phải: 2dm + 230mm = 200 + 230 = 430mm. Vì 450mm > 430mm nên vế trái dài hơn vế phải. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: A. dài hơn.\nVế trái: 4dm - 25mm + 75mm = 400 - 25 + 75 = 450mm. Vế phải: 2dm + 230mm = 200 + 230 = 430mm. Vì 450mm > 430mm nên vế trái dài hơn vế phải. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_14",
@@ -266,7 +278,8 @@ export const STAGE_5_QUESTIONS = [
       "Không so sánh được kết quả hai phép tính"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. Phép tính (1).\nPhép tính (1): 5cm + 25mm - 15mm = 50 + 25 - 15 = 60mm. Phép tính (2): 35mm + 20mm = 55mm. Vì 60mm > 55mm nên Phép tính (1) lớn hơn. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. Phép tính (1).\nPhép tính (1): 5cm + 25mm - 15mm = 50 + 25 - 15 = 60mm. Phép tính (2): 35mm + 20mm = 55mm. Vì 60mm > 55mm nên Phép tính (1) lớn hơn. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_49_15",
@@ -285,7 +298,8 @@ export const STAGE_5_QUESTIONS = [
       "115mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 75mm.\nĐoạn MN = PQ = 2cm = 20mm. Đoạn NP = 20 + 15 = 35mm. Độ dài đường gấp khúc MNPQ là: 20 + 35 + 20 = 75 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 75mm.\nĐoạn MN = PQ = 2cm = 20mm. Đoạn NP = 20 + 15 = 35mm. Độ dài đường gấp khúc MNPQ là: 20 + 35 + 20 = 75 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_1",
@@ -304,7 +318,8 @@ export const STAGE_5_QUESTIONS = [
       "2000mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. 20mm.\nQuan sát thước kẻ, đoạn thẳng AB dài 2cm. Đổi ra mi-li-mét: 2cm = 20mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. 20mm.\nQuan sát thước kẻ, đoạn thẳng AB dài 2cm. Đổi ra mi-li-mét: 2cm = 20mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image278.png"
   },
   {
     "id": "q_50_2",
@@ -323,7 +338,8 @@ export const STAGE_5_QUESTIONS = [
       "1"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: D. 1.\nVì 1m = 1000mm nên 1000mm = 1m. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: D. 1.\nVì 1m = 1000mm nên 1000mm = 1m. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_3",
@@ -342,7 +358,8 @@ export const STAGE_5_QUESTIONS = [
       "20"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 2000.\nVì 1m = 1000mm nên 2m = 2000mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 2000.\nVì 1m = 1000mm nên 2m = 2000mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_4",
@@ -361,7 +378,8 @@ export const STAGE_5_QUESTIONS = [
       "4000mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. 40mm.\nGiảm 16cm đi 4 lần: 16cm : 4 = 4cm. Đổi ra mi-li-mét: 4cm = 40mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. 40mm.\nGiảm 16cm đi 4 lần: 16cm : 4 = 4cm. Đổi ra mi-li-mét: 4cm = 40mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_5",
@@ -380,7 +398,8 @@ export const STAGE_5_QUESTIONS = [
       "2"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 200.\nGấp 4cm lên 5 lần: 4cm × 5 = 20cm. Đổi ra mi-li-mét: 20cm = 200mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 200.\nGấp 4cm lên 5 lần: 4cm × 5 = 20cm. Đổi ra mi-li-mét: 20cm = 200mm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_6",
@@ -399,7 +418,8 @@ export const STAGE_5_QUESTIONS = [
       "8000cm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: A. 8cm.\nVì 10mm = 1cm nên 80mm = 8cm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU"
+    "explanation": "Giải thích: Đáp án đúng là: A. 8cm.\nVì 10mm = 1cm nên 80mm = 8cm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU",
+    "image": null
   },
   {
     "id": "q_50_7",
@@ -418,7 +438,8 @@ export const STAGE_5_QUESTIONS = [
       "8"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 547.\nĐổi 6dm = 600mm. Ta có: 53mm + ?mm = 600mm => ? = 600 - 53 = 547. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 547.\nĐổi 6dm = 600mm. Ta có: 53mm + ?mm = 600mm => ? = 600 - 53 = 547. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image280.png"
   },
   {
     "id": "q_50_8",
@@ -437,7 +458,8 @@ export const STAGE_5_QUESTIONS = [
       "64 con"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Gà có 2 chân, số con gà là: 64 : 2 = 32 (con). Số chân gà gấp 2 lần số chân lợn nên số chân lợn là: 64 : 2 = 32 (chân). Lợn có 4 chân, số con lợn là: 32 : 4 = 8 (con). Số gà nhiều hơn số lợn là: 32 - 8 = 24 (con). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Gà có 2 chân, số con gà là: 64 : 2 = 32 (con). Số chân gà gấp 2 lần số chân lợn nên số chân lợn là: 64 : 2 = 32 (chân). Lợn có 4 chân, số con lợn là: 32 : 4 = 8 (con). Số gà nhiều hơn số lợn là: 32 - 8 = 24 (con). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_9",
@@ -456,7 +478,8 @@ export const STAGE_5_QUESTIONS = [
       "70mm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: D. 70mm.\nĐoạn AB dài 4cm = 40mm, đoạn CD dài 3cm = 30mm. Tổng độ dài: 40 + 30 = 70 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: D. 70mm.\nĐoạn AB dài 4cm = 40mm, đoạn CD dài 3cm = 30mm. Tổng độ dài: 40 + 30 = 70 (mm). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image281.png"
   },
   {
     "id": "q_50_10",
@@ -475,7 +498,8 @@ export const STAGE_5_QUESTIONS = [
       "50cm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: D. 50cm.\nTổng quãng đường kiến đi là: 156 + 344 = 500 (mm). Đổi ra xăng-ti-mét: 500mm = 50cm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG"
+    "explanation": "Giải thích: Đáp án đúng là: D. 50cm.\nTổng quãng đường kiến đi là: 156 + 344 = 500 (mm). Đổi ra xăng-ti-mét: 500mm = 50cm. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
+    "image": null
   },
   {
     "id": "q_50_11",
@@ -494,7 +518,8 @@ export const STAGE_5_QUESTIONS = [
       "Đoạn dây màu đỏ"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: D. Đoạn dây màu đỏ.\nMỗi đoạn dây màu đỏ dài: 95 : 5 = 19 (mm). Mỗi đoạn dây màu xanh dài: 72 : 4 = 18 (mm). Vì 19mm > 18mm nên mỗi đoạn dây màu đỏ dài hơn. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: D. Đoạn dây màu đỏ.\nMỗi đoạn dây màu đỏ dài: 95 : 5 = 19 (mm). Mỗi đoạn dây màu xanh dài: 72 : 4 = 18 (mm). Vì 19mm > 18mm nên mỗi đoạn dây màu đỏ dài hơn. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_12",
@@ -513,7 +538,8 @@ export const STAGE_5_QUESTIONS = [
       "Các phép tính có kết quả bằng nhau"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: C. 32cm : 8 + 4mm.\nTa tính:\n- A: 45mm - 26mm + 10mm = 29mm\n- B: 3cm × 2 - 25mm = 60mm - 25mm = 35mm\n- C: 32cm : 8 + 4mm = 4cm + 4mm = 44mm\nKết quả lớn nhất là 44mm (phép tính C). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: C. 32cm : 8 + 4mm.\nTa tính:\n- A: 45mm - 26mm + 10mm = 29mm\n- B: 3cm × 2 - 25mm = 60mm - 25mm = 35mm\n- C: 32cm : 8 + 4mm = 4cm + 4mm = 44mm\nKết quả lớn nhất là 44mm (phép tính C). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_13",
@@ -532,7 +558,8 @@ export const STAGE_5_QUESTIONS = [
       "Không có phép tính nào"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. 2 phép tính.\nTa tính:\n- Phép 1: 45cm : 9 + 15mm = 5cm + 15mm = 50 + 15 = 65mm.\n- Phép 2: 85mm - 46mm + 6mm = 45mm.\n- Phép 3: 15mm × 3 + 2cm = 45mm + 20mm = 65mm.\nCó 2 phép tính có kết quả bằng 65mm (phép 1 và phép 3). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO"
+    "explanation": "Giải thích: Đáp án đúng là: B. 2 phép tính.\nTa tính:\n- Phép 1: 45cm : 9 + 15mm = 5cm + 15mm = 50 + 15 = 65mm.\n- Phép 2: 85mm - 46mm + 6mm = 45mm.\n- Phép 3: 15mm × 3 + 2cm = 45mm + 20mm = 65mm.\nCó 2 phép tính có kết quả bằng 65mm (phép 1 và phép 3). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO",
+    "image": null
   },
   {
     "id": "q_50_14",
@@ -551,7 +578,8 @@ export const STAGE_5_QUESTIONS = [
       "không so sánh được"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đáp án đúng là: B. dài hơn.\nVế trái: 1m - 5dm - 40cm + 141mm = 1000 - 500 - 400 + 141 = 241mm. Vì 241mm > 240mm nên vế trái dài hơn. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đáp án đúng là: B. dài hơn.\nVế trái: 1m - 5dm - 40cm + 141mm = 1000 - 500 - 400 + 141 = 241mm. Vì 241mm > 240mm nên vế trái dài hơn. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_50_15",
@@ -570,7 +598,8 @@ export const STAGE_5_QUESTIONS = [
       "160cm"
     ],
     "correctIndex": 0,
-    "explanation": "Đáp án đúng là: A. 140cm.\n8 lá cờ xếp thẳng hàng tạo thành: 8 - 1 = 7 khoảng cách. Khoảng cách từ lá cờ đầu tiên đến lá cờ cuối cùng là: 200mm × 7 = 1400mm = 140cm."
+    "explanation": "Đáp án đúng là: A. 140cm.\n8 lá cờ xếp thẳng hàng tạo thành: 8 - 1 = 7 khoảng cách. Khoảng cách từ lá cờ đầu tiên đến lá cờ cuối cùng là: 200mm × 7 = 1400mm = 140cm.",
+    "image": null
   },
   {
     "id": "q_51_1",
@@ -589,7 +618,8 @@ export const STAGE_5_QUESTIONS = [
       "35g"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Thực hiện phép nhân: 8g × 5 = 40g. Vậy đáp án đúng là A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép nhân: 8g × 5 = 40g. Vậy đáp án đúng là A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_2",
@@ -608,7 +638,8 @@ export const STAGE_5_QUESTIONS = [
       "200g"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Quan sát chiếc cân đĩa đang ở vị trí thăng bằng: đĩa cân bên trái đặt quả cân 200g, đĩa bên phải đặt con gấu. Do đó con gấu có cân nặng bằng quả cân là 200g. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát chiếc cân đĩa đang ở vị trí thăng bằng: đĩa cân bên trái đặt quả cân 200g, đĩa bên phải đặt con gấu. Do đó con gấu có cân nặng bằng quả cân là 200g. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image282.png"
   },
   {
     "id": "q_51_3",
@@ -627,7 +658,8 @@ export const STAGE_5_QUESTIONS = [
       "mg"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Đơn vị gam được viết tắt là chữ g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đơn vị gam được viết tắt là chữ g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_4",
@@ -646,7 +678,8 @@ export const STAGE_5_QUESTIONS = [
       "300g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát cân đĩa thăng bằng: đĩa bên trái có 1 quả cân ghi 100g, đĩa bên phải là gói bột ngọt. Vậy gói bột ngọt cân nặng 100g. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát cân đĩa thăng bằng: đĩa bên trái có 1 quả cân ghi 100g, đĩa bên phải là gói bột ngọt. Vậy gói bột ngọt cân nặng 100g. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image283.png"
   },
   {
     "id": "q_51_5",
@@ -665,7 +698,8 @@ export const STAGE_5_QUESTIONS = [
       "500g"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Quan sát cân đĩa thăng bằng: quả cân ở đĩa bên trái ghi 500g, đĩa bên phải là gói đường. Vậy gói đường nặng 500g. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát cân đĩa thăng bằng: quả cân ở đĩa bên trái ghi 500g, đĩa bên phải là gói đường. Vậy gói đường nặng 500g. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image284.png"
   },
   {
     "id": "q_51_6",
@@ -684,7 +718,8 @@ export const STAGE_5_QUESTIONS = [
       "200g"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Đĩa cân bên trái có 2 quả cân: 100g và 50g. Tổng khối lượng là: 100g + 50g = 150g. Vì cân thăng bằng nên gói mì chính nặng 150g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đĩa cân bên trái có 2 quả cân: 100g và 50g. Tổng khối lượng là: 100g + 50g = 150g. Vì cân thăng bằng nên gói mì chính nặng 150g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image285.png"
   },
   {
     "id": "q_51_7",
@@ -703,7 +738,8 @@ export const STAGE_5_QUESTIONS = [
       "50g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát mặt đồng hồ của chiếc cân đồng hồ: kim cân chỉ đúng vào vạch 500g. Vậy túi táo có cân nặng là 500g. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát mặt đồng hồ của chiếc cân đồng hồ: kim cân chỉ đúng vào vạch 500g. Vậy túi táo có cân nặng là 500g. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image286.png"
   },
   {
     "id": "q_51_8",
@@ -722,7 +758,8 @@ export const STAGE_5_QUESTIONS = [
       "43g"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Sáu mươi chín viết là 69, gam viết tắt là g. Vậy sáu mươi chín gam được viết là 69g. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Sáu mươi chín viết là 69, gam viết tắt là g. Vậy sáu mươi chín gam được viết là 69g. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_9",
@@ -741,7 +778,8 @@ export const STAGE_5_QUESTIONS = [
       "Không là khối lượng của con nào"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Đổi 1000g = 1kg. Quan sát hình vẽ ta thấy: con chó nặng 14kg, con lợn nặng 60kg, con gà nặng 1kg. Do đó 1000g chính là khối lượng của con gà. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đổi 1000g = 1kg. Quan sát hình vẽ ta thấy: con chó nặng 14kg, con lợn nặng 60kg, con gà nặng 1kg. Do đó 1000g chính là khối lượng của con gà. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image289.png"
   },
   {
     "id": "q_51_10",
@@ -760,7 +798,8 @@ export const STAGE_5_QUESTIONS = [
       "Không so sánh được"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Tính vế trái: 860g - 256g = 604g. So sánh: 604g > 600g. Vậy dấu thích hợp điền vào chỗ chấm là dấu >. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Tính vế trái: 860g - 256g = 604g. So sánh: 604g > 600g. Vậy dấu thích hợp điền vào chỗ chấm là dấu >. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_11",
@@ -779,7 +818,8 @@ export const STAGE_5_QUESTIONS = [
       "677g"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Thực hiện phép cộng: 625g + 152g = 777g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép cộng: 625g + 152g = 777g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_12",
@@ -798,7 +838,8 @@ export const STAGE_5_QUESTIONS = [
       "1000"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Tổng khối lượng của con gà và con cá là: 700g + 300g = 1000g. Đổi 1000g = 1kg. Vậy số cần điền là 1. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Tổng khối lượng của con gà và con cá là: 700g + 300g = 1000g. Đổi 1000g = 1kg. Vậy số cần điền là 1. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_13",
@@ -817,7 +858,8 @@ export const STAGE_5_QUESTIONS = [
       "3"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Khối lượng bên đĩa B hơn đĩa A là: 600g - 350g = 250g. Khi đặt 1 quả cân 200g vào đĩa A thì đĩa A còn thiếu: 250g - 200g = 50g để bằng đĩa B. Vì mỗi quả cân còn lại nặng 50g nên cần thêm: 50 : 50 = 1 (quả cân). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Khối lượng bên đĩa B hơn đĩa A là: 600g - 350g = 250g. Khi đặt 1 quả cân 200g vào đĩa A thì đĩa A còn thiếu: 250g - 200g = 50g để bằng đĩa B. Vì mỗi quả cân còn lại nặng 50g nên cần thêm: 50 : 50 = 1 (quả cân). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_14",
@@ -836,7 +878,8 @@ export const STAGE_5_QUESTIONS = [
       "1000g"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Đổi 1kg = 1000g. Sau khi ông dùng 750g, lượng chè còn lại trong hộp là: 1000g - 750g = 250g. Bố mua thêm 500g đổ vào thì hộp chè nặng: 250g + 500g = 750g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đổi 1kg = 1000g. Sau khi ông dùng 750g, lượng chè còn lại trong hộp là: 1000g - 750g = 250g. Bố mua thêm 500g đổ vào thì hộp chè nặng: 250g + 500g = 750g. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_51_15",
@@ -855,7 +898,8 @@ export const STAGE_5_QUESTIONS = [
       "80g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Khối lượng của cả 9 túi đường (gồm đường và vỏ túi) là: 85 - 4 = 81 (g). Khối lượng của mỗi túi (cả vỏ túi và đường) là: 81 : 9 = 9 (g). Vì mỗi vỏ túi nặng 1g nên số gam đường trong mỗi túi là: 9 - 1 = 8 (g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Khối lượng của cả 9 túi đường (gồm đường và vỏ túi) là: 85 - 4 = 81 (g). Khối lượng của mỗi túi (cả vỏ túi và đường) là: 81 : 9 = 9 (g). Vì mỗi vỏ túi nặng 1g nên số gam đường trong mỗi túi là: 9 - 1 = 8 (g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_1",
@@ -874,7 +918,8 @@ export const STAGE_5_QUESTIONS = [
       "200g"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Trong thực tế, một con chó cảnh/chó béc-giê trưởng thành có cân nặng khoảng 20kg. Các mức 200g và 2kg quá nhẹ, mức 200kg quá nặng. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Trong thực tế, một con chó cảnh/chó béc-giê trưởng thành có cân nặng khoảng 20kg. Các mức 200g và 2kg quá nhẹ, mức 200kg quá nặng. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image287.png"
   },
   {
     "id": "q_52_2",
@@ -893,7 +938,8 @@ export const STAGE_5_QUESTIONS = [
       "1000"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Theo bảng đơn vị đo khối lượng: 1kg = 1000g, do đó 1000g = 1kg. Số cần điền là 1. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Theo bảng đơn vị đo khối lượng: 1kg = 1000g, do đó 1000g = 1kg. Số cần điền là 1. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_3",
@@ -912,7 +958,8 @@ export const STAGE_5_QUESTIONS = [
       "14"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Đổi 1kg = 1000g. Ta có: 1kg 400g = 1000g + 400g = 1400g. Số thích hợp điền vào chỗ chấm là 1400. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đổi 1kg = 1000g. Ta có: 1kg 400g = 1000g + 400g = 1400g. Số thích hợp điền vào chỗ chấm là 1400. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_4",
@@ -931,7 +978,8 @@ export const STAGE_5_QUESTIONS = [
       "50g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Giảm 25kg đi 5 lần ta có: 25kg : 5 = 5kg. Đổi sang đơn vị gam: 5kg = 5000g. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Giảm 25kg đi 5 lần ta có: 25kg : 5 = 5kg. Đổi sang đơn vị gam: 5kg = 5000g. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_5",
@@ -950,7 +998,8 @@ export const STAGE_5_QUESTIONS = [
       "6"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Gấp 2kg lên 3 lần ta có: 2kg × 3 = 6kg. Đổi sang đơn vị gam: 6kg = 6000g. Vậy số gam thu được là 6000. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Gấp 2kg lên 3 lần ta có: 2kg × 3 = 6kg. Đổi sang đơn vị gam: 6kg = 6000g. Vậy số gam thu được là 6000. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_6",
@@ -969,7 +1018,8 @@ export const STAGE_5_QUESTIONS = [
       "hg"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Một quả chuối bình thường có cân nặng khoảng 200 gam (g). Đơn vị thích hợp điền vào chỗ chấm là g. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU"
+    "explanation": "Giải thích: Một quả chuối bình thường có cân nặng khoảng 200 gam (g). Đơn vị thích hợp điền vào chỗ chấm là g. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU",
+    "image": "/images/math3/v3_image288.png"
   },
   {
     "id": "q_52_7",
@@ -988,7 +1038,8 @@ export const STAGE_5_QUESTIONS = [
       "Không so sánh được"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Tính vế trái: 780g + 220g = 1000g. Đổi vế phải: 1kg = 1000g. Vì 1000g = 1000g nên điền dấu =. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Tính vế trái: 780g + 220g = 1000g. Đổi vế phải: 1kg = 1000g. Vì 1000g = 1000g nên điền dấu =. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_8",
@@ -1007,7 +1058,8 @@ export const STAGE_5_QUESTIONS = [
       "64 con"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Gà có 2 chân, số con gà là: 64 : 2 = 32 (con). Số chân gà gấp 2 lần số chân lợn nên số chân lợn là: 64 : 2 = 32 (chân). Lợn có 4 chân, số con lợn là: 32 : 4 = 8 (con). Số gà nhiều hơn số lợn là: 32 - 8 = 24 (con). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Gà có 2 chân, số con gà là: 64 : 2 = 32 (con). Số chân gà gấp 2 lần số chân lợn nên số chân lợn là: 64 : 2 = 32 (chân). Lợn có 4 chân, số con lợn là: 32 : 4 = 8 (con). Số gà nhiều hơn số lợn là: 32 - 8 = 24 (con). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_9",
@@ -1026,7 +1078,8 @@ export const STAGE_5_QUESTIONS = [
       "646g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: 4 gói kẹo cân nặng số gam là: 120 × 4 = 480 (g). Mẹ mua tất cả số gam bánh và kẹo là: 480 + 156 = 636 (g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 4 gói kẹo cân nặng số gam là: 120 × 4 = 480 (g). Mẹ mua tất cả số gam bánh và kẹo là: 480 + 156 = 636 (g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_10",
@@ -1045,7 +1098,8 @@ export const STAGE_5_QUESTIONS = [
       "750g"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: 3 quả cam như thế cân nặng là: 250 × 3 = 750 (g). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG"
+    "explanation": "Giải thích: 3 quả cam như thế cân nặng là: 250 × 3 = 750 (g). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
+    "image": null
   },
   {
     "id": "q_52_11",
@@ -1064,7 +1118,8 @@ export const STAGE_5_QUESTIONS = [
       "10g"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: 1 gói bột ngô cân nặng: 63 : 3 = 21 (g). 1 gói bột nở cân nặng: 84 : 4 = 21 (g). Tổng khối lượng của 1 gói bột ngô và 1 gói bột nở là: 21 + 21 = 42 (g). Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 1 gói bột ngô cân nặng: 63 : 3 = 21 (g). 1 gói bột nở cân nặng: 84 : 4 = 21 (g). Tổng khối lượng của 1 gói bột ngô và 1 gói bột nở là: 21 + 21 = 42 (g). Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_12",
@@ -1083,7 +1138,8 @@ export const STAGE_5_QUESTIONS = [
       "9"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Số gói gia vị A Nam cần mua: 80 : 8 = 10 (gói). Số gói gia vị B Nam cần mua: 72 : 9 = 8 (gói). Tổng số gói gia vị A và B Nam phải mua: 10 + 8 = 18 (gói). Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Số gói gia vị A Nam cần mua: 80 : 8 = 10 (gói). Số gói gia vị B Nam cần mua: 72 : 9 = 8 (gói). Tổng số gói gia vị A và B Nam phải mua: 10 + 8 = 18 (gói). Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_52_13",
@@ -1102,7 +1158,8 @@ export const STAGE_5_QUESTIONS = [
       "3g"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đổi 1kg = 1000g. Đĩa trái nặng 1000g, đĩa phải nặng 700g. Để hai đĩa cân bằng thì cần đặt thêm vào đĩa phải quả cân có khối lượng: 1000g - 700g = 300g. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO"
+    "explanation": "Giải thích: Đổi 1kg = 1000g. Đĩa trái nặng 1000g, đĩa phải nặng 700g. Để hai đĩa cân bằng thì cần đặt thêm vào đĩa phải quả cân có khối lượng: 1000g - 700g = 300g. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO",
+    "image": null
   },
   {
     "id": "q_52_14",
@@ -1121,7 +1178,8 @@ export const STAGE_5_QUESTIONS = [
       "3 cách"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Đĩa trái (thanh long) nặng 470g, đĩa phải (táo) nặng 220g, chênh lệch: 470 - 220 = 250g. Có 2 cách đặt quả cân để cân thăng bằng:\n- Cách 1: Chỉ đặt quả cân vào đĩa táo: Đặt quả 200g và 50g vào đĩa táo (220 + 200 + 50 = 470g bằng đĩa thanh long).\n- Cách 2: Đặt vào cả hai đĩa: Đặt quả 50g vào đĩa thanh long (470 + 50 = 520g) và đặt hai quả 200g, 100g vào đĩa táo (220 + 200 + 100 = 520g). Cả hai đĩa đều nặng 520g.\nVậy có đúng 2 cách đặt quả cân. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đĩa trái (thanh long) nặng 470g, đĩa phải (táo) nặng 220g, chênh lệch: 470 - 220 = 250g. Có 2 cách đặt quả cân để cân thăng bằng:\n- Cách 1: Chỉ đặt quả cân vào đĩa táo: Đặt quả 200g và 50g vào đĩa táo (220 + 200 + 50 = 470g bằng đĩa thanh long).\n- Cách 2: Đặt vào cả hai đĩa: Đặt quả 50g vào đĩa thanh long (470 + 50 = 520g) và đặt hai quả 200g, 100g vào đĩa táo (220 + 200 + 100 = 520g). Cả hai đĩa đều nặng 520g.\nVậy có đúng 2 cách đặt quả cân. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image290.png"
   },
   {
     "id": "q_52_15",
@@ -1141,7 +1199,8 @@ export const STAGE_5_QUESTIONS = [
       "TRẮC NGHIỆM"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Mỗi gói gia vị cân nặng là: 81 : 9 = 9 (g). Số gói gia vị dùng nấu món thứ hai: 2 × 2 = 4 (gói). Số gói gia vị dùng nấu món thứ ba là: 9 - (2 + 4) = 3 (gói). Khối lượng gia vị mẹ dùng nấu món thứ ba là: 9 × 3 = 27 (g). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ───────────────────────────────────────────────────── BÀI 32: MI-LI-LÍT 1. NHẬN BIẾT"
+    "explanation": "Giải thích: Mỗi gói gia vị cân nặng là: 81 : 9 = 9 (g). Số gói gia vị dùng nấu món thứ hai: 2 × 2 = 4 (gói). Số gói gia vị dùng nấu món thứ ba là: 9 - (2 + 4) = 3 (gói). Khối lượng gia vị mẹ dùng nấu món thứ ba là: 9 × 3 = 27 (g). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ───────────────────────────────────────────────────── BÀI 32: MI-LI-LÍT 1. NHẬN BIẾT",
+    "image": null
   },
   {
     "id": "q_53_1",
@@ -1160,7 +1219,8 @@ export const STAGE_5_QUESTIONS = [
       "đơn vị để đo dung tích"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Mi-li-lít là một đơn vị dùng để đo dung tích. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Mi-li-lít là một đơn vị dùng để đo dung tích. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_2",
@@ -1179,7 +1239,8 @@ export const STAGE_5_QUESTIONS = [
       "300ml"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Quan sát bình đong, mực nước màu xanh dâng lên đúng ngang vạch số 300 ml. Vậy bình có 300ml nước. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát bình đong, mực nước màu xanh dâng lên đúng ngang vạch số 300 ml. Vậy bình có 300ml nước. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image291.png"
   },
   {
     "id": "q_53_3",
@@ -1198,7 +1259,8 @@ export const STAGE_5_QUESTIONS = [
       "mg"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Đơn vị mi-li-lít được viết tắt là ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đơn vị mi-li-lít được viết tắt là ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_4",
@@ -1217,7 +1279,8 @@ export const STAGE_5_QUESTIONS = [
       "Không dụng cụ nào"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Dụng cụ A là cân điện tử dùng đo khối lượng (kg). Dụng cụ B là ca đong có chia các vạch theo đơn vị ml để đo dung tích. Vậy dụng cụ dùng đo với đơn vị mi-li-lít là dụng cụ B. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Dụng cụ A là cân điện tử dùng đo khối lượng (kg). Dụng cụ B là ca đong có chia các vạch theo đơn vị ml để đo dung tích. Vậy dụng cụ dùng đo với đơn vị mi-li-lít là dụng cụ B. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image292.png"
   },
   {
     "id": "q_53_5",
@@ -1236,7 +1299,8 @@ export const STAGE_5_QUESTIONS = [
       "550ml"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Quan sát nhãn trên thân chai nước ghi rõ 650 ml. Vậy dung tích chai nước là 650ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát nhãn trên thân chai nước ghi rõ 650 ml. Vậy dung tích chai nước là 650ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image293.png"
   },
   {
     "id": "q_53_6",
@@ -1255,7 +1319,8 @@ export const STAGE_5_QUESTIONS = [
       "Ba trăm hai mươi lít"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: 320 đọc là ba trăm hai mươi, ml đọc là mi-li-lít. Vậy 320ml đọc là Ba trăm hai mươi mi-li-lít. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 320 đọc là ba trăm hai mươi, ml đọc là mi-li-lít. Vậy 320ml đọc là Ba trăm hai mươi mi-li-lít. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_7",
@@ -1274,7 +1339,8 @@ export const STAGE_5_QUESTIONS = [
       "350ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Thực hiện phép trừ: 720ml - 340ml = 380ml. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép trừ: 720ml - 340ml = 380ml. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_8",
@@ -1293,7 +1359,8 @@ export const STAGE_5_QUESTIONS = [
       "1000ml"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Quan sát hình vẽ: Ca A có 500ml, Ca B có 200ml, Ca C có 300ml. Vì rót hết nước từ bình sang 3 ca nên lượng nước ban đầu trong bình bằng tổng lượng nước trong 3 ca: 500ml + 200ml + 300ml = 1000ml. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát hình vẽ: Ca A có 500ml, Ca B có 200ml, Ca C có 300ml. Vì rót hết nước từ bình sang 3 ca nên lượng nước ban đầu trong bình bằng tổng lượng nước trong 3 ca: 500ml + 200ml + 300ml = 1000ml. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image296.png"
   },
   {
     "id": "q_53_9",
@@ -1312,7 +1379,8 @@ export const STAGE_5_QUESTIONS = [
       "4ml"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Thực hiện phép tính từ trái sang phải: 16ml + 56ml = 72ml; 72ml - 12ml = 60ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép tính từ trái sang phải: 16ml + 56ml = 72ml; 72ml - 12ml = 60ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_10",
@@ -1331,7 +1399,8 @@ export const STAGE_5_QUESTIONS = [
       "260ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Tổng lượng nước đã rót vào 3 cốc là: 80 × 3 = 240 (ml). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Tổng lượng nước đã rót vào 3 cốc là: 80 × 3 = 240 (ml). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_11",
@@ -1350,7 +1419,8 @@ export const STAGE_5_QUESTIONS = [
       "100ml"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Đổi 1l = 1000ml. Lượng nước đã rót sang 2 ca là: 200 × 2 = 400 (ml). Lượng nước còn lại trong phích là: 1000 - 400 = 600 (ml). Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Đổi 1l = 1000ml. Lượng nước đã rót sang 2 ca là: 200 × 2 = 400 (ml). Lượng nước còn lại trong phích là: 1000 - 400 = 600 (ml). Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image297.png"
   },
   {
     "id": "q_53_12",
@@ -1369,7 +1439,8 @@ export const STAGE_5_QUESTIONS = [
       "310ml"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Số mi-li-lít dầu mẹ đã dùng là: 620 - 290 = 330 (ml). Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Số mi-li-lít dầu mẹ đã dùng là: 620 - 290 = 330 (ml). Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_13",
@@ -1388,7 +1459,8 @@ export const STAGE_5_QUESTIONS = [
       "545"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Lượng nước lúc đầu trong bình bằng tổng lượng nước đã dùng, lượng nước rót vào 2 cốc và lượng nước còn lại: 115 + 150 + 200 + 80 = 545 (ml). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Lượng nước lúc đầu trong bình bằng tổng lượng nước đã dùng, lượng nước rót vào 2 cốc và lượng nước còn lại: 115 + 150 + 200 + 80 = 545 (ml). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_14",
@@ -1407,7 +1479,8 @@ export const STAGE_5_QUESTIONS = [
       "508ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: 4 chai dầu còn lại đựng tất cả: 82 × 4 = 328 (ml). Tổng số mi-li-lít dầu trong cả 5 chai là: 178 + 328 = 506 (ml). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 4 chai dầu còn lại đựng tất cả: 82 × 4 = 328 (ml). Tổng số mi-li-lít dầu trong cả 5 chai là: 178 + 328 = 506 (ml). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_53_15",
@@ -1426,7 +1499,8 @@ export const STAGE_5_QUESTIONS = [
       "500ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát bình đo 500ml: Mật ong ở đáy dâng đến vạch 100ml. Nước lọc ở giữa dâng từ 100ml đến vạch 250ml (vạch chính giữa 200 và 300). Dầu ăn ở lớp trên cùng dâng từ vạch 250ml đến vạch 500ml. Lượng dầu ăn là: 500 - 250 = 250 (ml). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát bình đo 500ml: Mật ong ở đáy dâng đến vạch 100ml. Nước lọc ở giữa dâng từ 100ml đến vạch 250ml (vạch chính giữa 200 và 300). Dầu ăn ở lớp trên cùng dâng từ vạch 250ml đến vạch 500ml. Lượng dầu ăn là: 500 - 250 = 250 (ml). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image302.png"
   },
   {
     "id": "q_54_1",
@@ -1445,7 +1519,8 @@ export const STAGE_5_QUESTIONS = [
       "72ml"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Thực hiện phép nhân: 12ml × 6 = 72ml. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép nhân: 12ml × 6 = 72ml. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_2",
@@ -1464,7 +1539,8 @@ export const STAGE_5_QUESTIONS = [
       "90ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Thực hiện phép trừ: 120ml - 50ml = 70ml. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép trừ: 120ml - 50ml = 70ml. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_3",
@@ -1483,7 +1559,8 @@ export const STAGE_5_QUESTIONS = [
       "Chín mươi tư mi-li-lít"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: 194 đọc là một trăm chín mươi tư, ml đọc là mi-li-lít. Vậy 194ml đọc là Một trăm chín mươi tư mi-li-lít. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 194 đọc là một trăm chín mươi tư, ml đọc là mi-li-lít. Vậy 194ml đọc là Một trăm chín mươi tư mi-li-lít. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_4",
@@ -1502,7 +1579,8 @@ export const STAGE_5_QUESTIONS = [
       "200ml"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát ca A, mực nước dâng đầy đến đúng vạch trên cùng có ghi 500 ml. Vậy lượng nước trong ca A là 500ml. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát ca A, mực nước dâng đầy đến đúng vạch trên cùng có ghi 500 ml. Vậy lượng nước trong ca A là 500ml. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image294.png"
   },
   {
     "id": "q_54_5",
@@ -1521,7 +1599,8 @@ export const STAGE_5_QUESTIONS = [
       "200ml"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Ca B được chia làm 5 vạch đều nhau đến 500ml, mỗi vạch ứng với 100ml. Mực nước đang ở vạch thứ 3: 2 × 100ml = 200ml. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Ca B được chia làm 5 vạch đều nhau đến 500ml, mỗi vạch ứng với 100ml. Mực nước đang ở vạch thứ 3: 2 × 100ml = 200ml. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_6",
@@ -1540,7 +1619,8 @@ export const STAGE_5_QUESTIONS = [
       "200ml"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Ca C được chia làm 5 vạch đều nhau đến 500ml, mỗi vạch ứng với 100ml. Mực nước đang ở vạch thứ 3: 3 × 100ml = 300ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU"
+    "explanation": "Giải thích: Ca C được chia làm 5 vạch đều nhau đến 500ml, mỗi vạch ứng với 100ml. Mực nước đang ở vạch thứ 3: 3 × 100ml = 300ml. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU",
+    "image": "/images/math3/v3_image295.png"
   },
   {
     "id": "q_54_7",
@@ -1559,7 +1639,8 @@ export const STAGE_5_QUESTIONS = [
       "Bình D"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Dung tích các bình: Bình A có 750ml, Bình B có 500ml, Bình C có 580ml, Bình D có 720ml. So sánh: 750ml > 720ml > 580ml > 500ml. Vậy Bình A chứa nhiều nước nhất. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Dung tích các bình: Bình A có 750ml, Bình B có 500ml, Bình C có 580ml, Bình D có 720ml. So sánh: 750ml > 720ml > 580ml > 500ml. Vậy Bình A chứa nhiều nước nhất. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image298.png"
   },
   {
     "id": "q_54_8",
@@ -1578,7 +1659,8 @@ export const STAGE_5_QUESTIONS = [
       "490"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Chai thứ hai chứa số xăng là: 560 - 170 = 390 (ml). Cả hai chai chứa số xăng là: 560 + 390 = 950 (ml). Số cần điền là 950. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Chai thứ hai chứa số xăng là: 560 - 170 = 390 (ml). Cả hai chai chứa số xăng là: 560 + 390 = 950 (ml). Số cần điền là 950. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_9",
@@ -1597,7 +1679,8 @@ export const STAGE_5_QUESTIONS = [
       "646g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: 4 gói kẹo cân nặng số gam là: 120 × 4 = 480 (g). Mẹ mua tất cả số gam bánh và kẹo là: 480 + 156 = 636 (g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 4 gói kẹo cân nặng số gam là: 120 × 4 = 480 (g). Mẹ mua tất cả số gam bánh và kẹo là: 480 + 156 = 636 (g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_10",
@@ -1616,7 +1699,8 @@ export const STAGE_5_QUESTIONS = [
       "không xác định được"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Tổng lượng nước rót vào 3 ống nghiệm là: 95ml + 36ml + 49ml = 180ml. Vì ban đầu chai có 180ml nước, mà 180ml < 190ml nên lượng nước trong chai ít hơn 190ml. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG"
+    "explanation": "Giải thích: Tổng lượng nước rót vào 3 ống nghiệm là: 95ml + 36ml + 49ml = 180ml. Vì ban đầu chai có 180ml nước, mà 180ml < 190ml nên lượng nước trong chai ít hơn 190ml. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
+    "image": "/images/math3/v3_image299.png"
   },
   {
     "id": "q_54_11",
@@ -1635,7 +1719,8 @@ export const STAGE_5_QUESTIONS = [
       "D và A"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Dung tích các ca: Ca A có 90ml, Ca B có 110ml, Ca C có 80ml, Ca D có 145ml. Ta thấy: 110ml + 80ml = 190ml (chính là Ca B và Ca C). Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Dung tích các ca: Ca A có 90ml, Ca B có 110ml, Ca C có 80ml, Ca D có 145ml. Ta thấy: 110ml + 80ml = 190ml (chính là Ca B và Ca C). Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image300.png"
   },
   {
     "id": "q_54_12",
@@ -1654,7 +1739,8 @@ export const STAGE_5_QUESTIONS = [
       "3"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Thực hiện phép tính theo sơ đồ mũi tên: Bước 1: 12ml × 3 = 36ml. Bước 2: 36ml : 4 = 9ml. Vậy số thích hợp điền vào dấu ? là 9. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Thực hiện phép tính theo sơ đồ mũi tên: Bước 1: 12ml × 3 = 36ml. Bước 2: 36ml : 4 = 9ml. Vậy số thích hợp điền vào dấu ? là 9. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/v3_image301.png"
   },
   {
     "id": "q_54_13",
@@ -1673,7 +1759,8 @@ export const STAGE_5_QUESTIONS = [
       "Không so sánh được"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Tính vế trái: 80ml × 8 = 640ml. Đổi vế phải: 1l = 1000ml. So sánh: 640ml < 1000ml nên dấu thích hợp là dấu <. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO"
+    "explanation": "Giải thích: Tính vế trái: 80ml × 8 = 640ml. Đổi vế phải: 1l = 1000ml. So sánh: 640ml < 1000ml nên dấu thích hợp là dấu <. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO",
+    "image": null
   },
   {
     "id": "q_54_14",
@@ -1692,7 +1779,8 @@ export const STAGE_5_QUESTIONS = [
       "270ml"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Tổng lượng nước ở cả 3 ca ban đầu là: 120 × 3 = 360 (ml). Sau khi rót, ca thứ nhất chỉ bị bớt đi 25ml (chuyển sang ca thứ hai), nên ca thứ nhất còn lại: 120 - 25 = 95 (ml). Vì lượng nước chỉ chuyển qua lại giữa các ca và không bị tràn ra ngoài, nên tổng lượng nước của ca thứ hai và ca thứ ba là: 360 - 95 = 265 (ml). Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Tổng lượng nước ở cả 3 ca ban đầu là: 120 × 3 = 360 (ml). Sau khi rót, ca thứ nhất chỉ bị bớt đi 25ml (chuyển sang ca thứ hai), nên ca thứ nhất còn lại: 120 - 25 = 95 (ml). Vì lượng nước chỉ chuyển qua lại giữa các ca và không bị tràn ra ngoài, nên tổng lượng nước của ca thứ hai và ca thứ ba là: 360 - 95 = 265 (ml). Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_54_15",
@@ -1712,7 +1800,8 @@ export const STAGE_5_QUESTIONS = [
       "TRẮC NGHIỆM"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: 3 chai còn lại đựng tất cả số dầu là: 60 × 3 = 180 (ml). Tổng số mi-li-lít dầu trong cả 4 chai là: 200 + 180 = 380 (ml). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ───────────────────────────────────────────────────── BÀI 33: NHIỆT ĐỘ. ĐƠN VỊ ĐO NHIỆT ĐỘ 📌 Lưu ý sư phạm: Bài 33 trong bản xem trước của tài liệu gốc lưu dưới dạng 5 ảnh quét gồm 11 câu hỏi phần Nhận biết. Đã được chuyển đổi toàn bộ sang chữ và trích xuất hình ảnh sắc nét kèm lời giải chi tiết. 1. NHẬN BIẾT"
+    "explanation": "Giải thích: 3 chai còn lại đựng tất cả số dầu là: 60 × 3 = 180 (ml). Tổng số mi-li-lít dầu trong cả 4 chai là: 200 + 180 = 380 (ml). Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ───────────────────────────────────────────────────── BÀI 33: NHIỆT ĐỘ. ĐƠN VỊ ĐO NHIỆT ĐỘ 📌 Lưu ý sư phạm: Bài 33 trong bản xem trước của tài liệu gốc lưu dưới dạng 5 ảnh quét gồm 11 câu hỏi phần Nhận biết. Đã được chuyển đổi toàn bộ sang chữ và trích xuất hình ảnh sắc nét kèm lời giải chi tiết. 1. NHẬN BIẾT",
+    "image": "/images/math3/v3_image356.jpeg"
   },
   {
     "id": "q_55_1",
@@ -1731,7 +1820,8 @@ export const STAGE_5_QUESTIONS = [
       "102°F"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Mười hai viết là 12, độ xê có kí hiệu là °C. Vậy mười hai độ xê được viết là 12°C. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Mười hai viết là 12, độ xê có kí hiệu là °C. Vậy mười hai độ xê được viết là 12°C. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_55_2",
@@ -1750,7 +1840,8 @@ export const STAGE_5_QUESTIONS = [
       "Hai mươi độ xê"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát bảng số liệu ta thấy nhiệt độ của buổi Sáng là 26°C, đọc là hai mươi sáu độ xê. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát bảng số liệu ta thấy nhiệt độ của buổi Sáng là 26°C, đọc là hai mươi sáu độ xê. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_55_3",
@@ -1769,7 +1860,8 @@ export const STAGE_5_QUESTIONS = [
       "Hai mươi độ xê"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Quan sát bảng số liệu ta thấy cột buổi Trưa có nhiệt độ là 34°C, đọc là ba mươi tư độ xê. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát bảng số liệu ta thấy cột buổi Trưa có nhiệt độ là 34°C, đọc là ba mươi tư độ xê. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_55_4",
@@ -1788,7 +1880,8 @@ export const STAGE_5_QUESTIONS = [
       "75°C"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát thang đo của nhiệt kế, cột chất lỏng màu đỏ dâng lên đến đúng vạch số 80 (đơn vị °C). Do đó nhiệt kế chỉ 80°C. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát thang đo của nhiệt kế, cột chất lỏng màu đỏ dâng lên đến đúng vạch số 80 (đơn vị °C). Do đó nhiệt kế chỉ 80°C. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b33_q7_nhietke28.png"
   },
   {
     "id": "q_55_5",
@@ -1807,7 +1900,8 @@ export const STAGE_5_QUESTIONS = [
       "40°C"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát nhiệt kế, cột chất lỏng màu đỏ dâng đến đúng vạch số 30 trên thang đo độ C. Vậy nhiệt kế chỉ 30°C. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát nhiệt kế, cột chất lỏng màu đỏ dâng đến đúng vạch số 30 trên thang đo độ C. Vậy nhiệt kế chỉ 30°C. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b33_q7_nhietke28.png"
   },
   {
     "id": "q_55_6",
@@ -1826,7 +1920,8 @@ export const STAGE_5_QUESTIONS = [
       "Mười chín độ xê"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: 19 đọc là mười chín, °C đọc là độ xê. Vậy 19°C đọc là Mười chín độ xê. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 19 đọc là mười chín, °C đọc là độ xê. Vậy 19°C đọc là Mười chín độ xê. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_55_7",
@@ -1845,7 +1940,8 @@ export const STAGE_5_QUESTIONS = [
       "37°C"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Quan sát thang đo nhiệt độ °C ở bên trái của nhiệt kế: cột chất lỏng màu đỏ dâng qua vạch 20 thêm 8 vạch nhỏ (dưới vạch 30 đúng 2 vạch nhỏ). Vậy nhiệt kế chỉ 28°C. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát thang đo nhiệt độ °C ở bên trái của nhiệt kế: cột chất lỏng màu đỏ dâng qua vạch 20 thêm 8 vạch nhỏ (dưới vạch 30 đúng 2 vạch nhỏ). Vậy nhiệt kế chỉ 28°C. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b33_q7_nhietke28.png"
   },
   {
     "id": "q_55_8",
@@ -1864,7 +1960,8 @@ export const STAGE_5_QUESTIONS = [
       "90°C"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Hình vẽ là ly nước chứa các viên đá lạnh. Trong thực tế, nước đá đang tan có nhiệt độ là 0°C. Do đó nhiệt độ phù hợp nhất là 0°C. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Hình vẽ là ly nước chứa các viên đá lạnh. Trong thực tế, nước đá đang tan có nhiệt độ là 0°C. Do đó nhiệt độ phù hợp nhất là 0°C. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b33_q8_cocda.png"
   },
   {
     "id": "q_55_9",
@@ -1883,7 +1980,8 @@ export const STAGE_5_QUESTIONS = [
       "Ba mươi độ xê"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Kí hiệu °C đọc là độ xê. Vậy 30°C đọc là Ba mươi độ xê. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Kí hiệu °C đọc là độ xê. Vậy 30°C đọc là Ba mươi độ xê. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_55_10",
@@ -1903,7 +2001,8 @@ export const STAGE_5_QUESTIONS = [
       "TRẮC NGHIỆM"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Mức thuỷ ngân ở vạch 35 trên thang đo nhiệt độ thì nhiệt độ khi đó là 35°C. Chọn đáp án A. BÀI 35: LUYỆN TẬP CHUNG 📌 Lưu ý sư phạm: Bài học tổng hợp kiến thức về đo khối lượng (gam), dung tích (mi-li-lít) và nhiệt độ (độ C) trong Chủ đề 5. 1. NHẬN BIẾT"
+    "explanation": "Giải thích: Mức thuỷ ngân ở vạch 35 trên thang đo nhiệt độ thì nhiệt độ khi đó là 35°C. Chọn đáp án A. BÀI 35: LUYỆN TẬP CHUNG 📌 Lưu ý sư phạm: Bài học tổng hợp kiến thức về đo khối lượng (gam), dung tích (mi-li-lít) và nhiệt độ (độ C) trong Chủ đề 5. 1. NHẬN BIẾT",
+    "image": null
   },
   {
     "id": "q_55_11",
@@ -1923,7 +2022,8 @@ export const STAGE_5_QUESTIONS = [
       "TRẮC NGHIỆM"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: 11 đọc là mười một, kí hiệu °C đọc là độ xê. Vậy 11°C được đọc là Mười một độ xê. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ───────────────────────────────────────────────────── BÀI 34: THỰC HÀNH VÀ TRẢI NGHIỆM VỚI CÁC ĐƠN VỊ MI-LI-MÉT, GAM, MI-LI-LÍT, ĐỘ C 📌 Lưu ý sư phạm: Bài 34 trong bản xem trước của tài liệu gốc được lưu dưới dạng 5 ảnh quét gồm 10 câu hỏi phần Nhận biết (tiêu đề gốc bị ghi nhầm là Bài 35: Luyện tập chung). Đã chuyển toàn bộ sang chữ và trích xuất ảnh minh họa kèm lời giải chi tiết. 1. NHẬN BIẾT"
+    "explanation": "Giải thích: 11 đọc là mười một, kí hiệu °C đọc là độ xê. Vậy 11°C được đọc là Mười một độ xê. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ───────────────────────────────────────────────────── BÀI 34: THỰC HÀNH VÀ TRẢI NGHIỆM VỚI CÁC ĐƠN VỊ MI-LI-MÉT, GAM, MI-LI-LÍT, ĐỘ C 📌 Lưu ý sư phạm: Bài 34 trong bản xem trước của tài liệu gốc được lưu dưới dạng 5 ảnh quét gồm 10 câu hỏi phần Nhận biết (tiêu đề gốc bị ghi nhầm là Bài 35: Luyện tập chung). Đã chuyển toàn bộ sang chữ và trích xuất ảnh minh họa kèm lời giải chi tiết. 1. NHẬN BIẾT",
+    "image": null
   },
   {
     "id": "q_56_1",
@@ -1942,7 +2042,8 @@ export const STAGE_5_QUESTIONS = [
       "19 dm"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát thước kẻ đo từ vạch 0cm đến mép kia của đồng xu: đồng xu đi qua vạch 1cm thêm 9 vạch mi-li-mét nhỏ, tức là dài 1cm 9mm = 10mm + 9mm = 19mm. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát thước kẻ đo từ vạch 0cm đến mép kia của đồng xu: đồng xu đi qua vạch 1cm thêm 9 vạch mi-li-mét nhỏ, tức là dài 1cm 9mm = 10mm + 9mm = 19mm. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b34_q1_dongxu.png"
   },
   {
     "id": "q_56_2",
@@ -1961,7 +2062,8 @@ export const STAGE_5_QUESTIONS = [
       "2g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Cục tẩy học sinh là vật nhỏ cầm tay, trong thực tế có cân nặng khoảng 20 gam (20g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Cục tẩy học sinh là vật nhỏ cầm tay, trong thực tế có cân nặng khoảng 20 gam (20g). Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b34_q2_cuctay.png"
   },
   {
     "id": "q_56_3",
@@ -1980,7 +2082,8 @@ export const STAGE_5_QUESTIONS = [
       "40kg"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Một hộp sữa đặc Ông Thọ thông thường có khối lượng tịnh gần 400 gam (380g). Trong các số đo đã cho, 400g là phù hợp nhất. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Một hộp sữa đặc Ông Thọ thông thường có khối lượng tịnh gần 400 gam (380g). Trong các số đo đã cho, 400g là phù hợp nhất. Chọn đáp án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b34_q4_quabi.png"
   },
   {
     "id": "q_56_4",
@@ -1999,7 +2102,8 @@ export const STAGE_5_QUESTIONS = [
       "300kg"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quả bí xanh/dưa gang bình thường nặng khoảng 3 ki-lô-gam (3kg). Các số đo 3g thì quá nhẹ, 30kg hay 300kg thì quá nặng. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quả bí xanh/dưa gang bình thường nặng khoảng 3 ki-lô-gam (3kg). Các số đo 3g thì quá nhẹ, 30kg hay 300kg thì quá nặng. Chọn đáp án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b34_q4_quabi.png"
   },
   {
     "id": "q_56_5",
@@ -2018,7 +2122,8 @@ export const STAGE_5_QUESTIONS = [
       "D"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Quan sát 4 ca: Ca A đựng 300 ml, Ca B đựng 150 ml, Ca C đựng 200 ml, Ca D đựng 250 ml. Vì 150ml < 200ml < 250ml < 300ml nên Ca B đựng ít nước nhất. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát 4 ca: Ca A đựng 300 ml, Ca B đựng 150 ml, Ca C đựng 200 ml, Ca D đựng 250 ml. Vì 150ml < 200ml < 250ml < 300ml nên Ca B đựng ít nước nhất. Chọn đáp án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b34_q5_canuoc.png"
   },
   {
     "id": "q_56_6",
@@ -2037,7 +2142,8 @@ export const STAGE_5_QUESTIONS = [
       "Hai mươi lăm độ xê"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: 25 đọc là hai mươi lăm, kí hiệu °C đọc là độ xê. Vậy 25°C được đọc là Hai mươi lăm độ xê. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: 25 đọc là hai mươi lăm, kí hiệu °C đọc là độ xê. Vậy 25°C được đọc là Hai mươi lăm độ xê. Chọn đáp án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_56_7",
@@ -2056,7 +2162,8 @@ export const STAGE_5_QUESTIONS = [
       "Ca B và D"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Ta tính tổng lượng nước của từng cặp ca:\n• Ca A và B: 300 ml + 150 ml = 450 ml.\n• Ca B và C: 150 ml + 200 ml = 350 ml.\n• Ca C và D: 200 ml + 250 ml = 450 ml.\n• Ca B và D: 150 ml + 250 ml = 400 ml.\nVậy hai ca B và D có tổng lượng nước bằng đúng 400ml nước. Chọn D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Ta tính tổng lượng nước của từng cặp ca:\n• Ca A và B: 300 ml + 150 ml = 450 ml.\n• Ca B và C: 150 ml + 200 ml = 350 ml.\n• Ca C và D: 200 ml + 250 ml = 450 ml.\n• Ca B và D: 150 ml + 250 ml = 400 ml.\nVậy hai ca B và D có tổng lượng nước bằng đúng 400ml nước. Chọn D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c7_jugs.png"
   },
   {
     "id": "q_56_8",
@@ -2075,7 +2182,8 @@ export const STAGE_5_QUESTIONS = [
       "Không nhiệt kế nào phù hợp"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát hình vẽ:\n• Chai nước khoáng có nhiệt độ là 26 °C.\n• Nhiệt kế A chỉ mức 26 °C (trên vạch 20 sáu vạch nhỏ).\n• Nhiệt kế B chỉ 70 °C.\n• Nhiệt kế C chỉ 10 °C.\nDo đó, nhiệt kế A thích hợp nhất để đo chai nước khoáng. Chọn A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát hình vẽ:\n• Chai nước khoáng có nhiệt độ là 26 °C.\n• Nhiệt kế A chỉ mức 26 °C (trên vạch 20 sáu vạch nhỏ).\n• Nhiệt kế B chỉ 70 °C.\n• Nhiệt kế C chỉ 10 °C.\nDo đó, nhiệt kế A thích hợp nhất để đo chai nước khoáng. Chọn A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c8_thermometers.png"
   },
   {
     "id": "q_56_9",
@@ -2094,7 +2202,8 @@ export const STAGE_5_QUESTIONS = [
       "800ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát vạch chia trên bình đong: khoảng cách giữa hai vạch 900 ml và 1000 ml là 100 ml, vạch chính giữa tương ứng với 950 ml. Mực nước trong bình dâng đúng đến vạch 950 ml. Vậy bình đang chứa 950ml nước. Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát vạch chia trên bình đong: khoảng cách giữa hai vạch 900 ml và 1000 ml là 100 ml, vạch chính giữa tương ứng với 950 ml. Mực nước trong bình dâng đúng đến vạch 950 ml. Vậy bình đang chứa 950ml nước. Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c9_measuring_cup.png"
   },
   {
     "id": "q_56_10",
@@ -2114,7 +2223,8 @@ export const STAGE_5_QUESTIONS = [
       "TRẮC NGHIỆM"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Mức thuỷ ngân ở vạch 35 trên thang đo nhiệt độ thì nhiệt độ khi đó là 35°C. Chọn đáp án A. BÀI 35: LUYỆN TẬP CHUNG 📌 Lưu ý sư phạm: Bài học tổng hợp kiến thức về đo khối lượng (gam), dung tích (mi-li-lít) và nhiệt độ (độ C) trong Chủ đề 5. 1. NHẬN BIẾT"
+    "explanation": "Giải thích: Mức thuỷ ngân ở vạch 35 trên thang đo nhiệt độ thì nhiệt độ khi đó là 35°C. Chọn đáp án A. BÀI 35: LUYỆN TẬP CHUNG 📌 Lưu ý sư phạm: Bài học tổng hợp kiến thức về đo khối lượng (gam), dung tích (mi-li-lít) và nhiệt độ (độ C) trong Chủ đề 5. 1. NHẬN BIẾT",
+    "image": null
   },
   {
     "id": "q_57_1",
@@ -2133,7 +2243,8 @@ export const STAGE_5_QUESTIONS = [
       "400g"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Quan sát hình vẽ chiếc cân đĩa ta thấy kim cân chỉ vạch chính giữa (cân ở vị trí thăng bằng). Khi đó, cân nặng của túi A bằng tổng khối lượng của các quả cân ở đĩa bên trái: 100g + 200g = 300g. Chọn C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát hình vẽ chiếc cân đĩa ta thấy kim cân chỉ vạch chính giữa (cân ở vị trí thăng bằng). Khi đó, cân nặng của túi A bằng tổng khối lượng của các quả cân ở đĩa bên trái: 100g + 200g = 300g. Chọn C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c1_scale_a.png"
   },
   {
     "id": "q_57_2",
@@ -2152,7 +2263,8 @@ export const STAGE_5_QUESTIONS = [
       "500g"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát hình vẽ ta thấy cân ở vị trí thăng bằng, do đó tổng khối lượng ở hai đĩa cân bằng nhau: 500g = 200g + cân nặng túi B. Vậy cân nặng của túi B là: 500g - 200g = 300g. Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát hình vẽ ta thấy cân ở vị trí thăng bằng, do đó tổng khối lượng ở hai đĩa cân bằng nhau: 500g = 200g + cân nặng túi B. Vậy cân nặng của túi B là: 500g - 200g = 300g. Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c2_scale_b.png"
   },
   {
     "id": "q_57_3",
@@ -2171,7 +2283,8 @@ export const STAGE_5_QUESTIONS = [
       "26"
     ],
     "correctIndex": 2,
-    "explanation": "Giải thích: Theo sơ đồ mũi tên, ta lấy lượng nước ban đầu nhân với 3: 8 ml × 3 = 24 ml. Số thích hợp cần điền vào dấu hỏi chấm là 24. Chọn C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Theo sơ đồ mũi tên, ta lấy lượng nước ban đầu nhân với 3: 8 ml × 3 = 24 ml. Số thích hợp cần điền vào dấu hỏi chấm là 24. Chọn C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c3_arrow.png"
   },
   {
     "id": "q_57_4",
@@ -2190,7 +2303,8 @@ export const STAGE_5_QUESTIONS = [
       "50g"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Trong thực tế đời sống, một quả cà chua thông thường có khối lượng nhỏ khoảng 50g (500g tương đương nửa ki-lô-gam thì quá to; 5kg và 50kg là đơn vị đo vật rất nặng). Vậy quả cà chua nặng khoảng 50g. Chọn D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Trong thực tế đời sống, một quả cà chua thông thường có khối lượng nhỏ khoảng 50g (500g tương đương nửa ki-lô-gam thì quá to; 5kg và 50kg là đơn vị đo vật rất nặng). Vậy quả cà chua nặng khoảng 50g. Chọn D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_57_5",
@@ -2209,7 +2323,8 @@ export const STAGE_5_QUESTIONS = [
       "D"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát dung tích nước trong các ca:\n• Ca A: 300 ml\n• Ca B: 150 ml\n• Ca C: 200 ml\n• Ca D: 250 ml\nVì 300 ml > 250 ml > 200 ml > 150 ml nên ca A đựng nhiều nước nhất. Chọn A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát dung tích nước trong các ca:\n• Ca A: 300 ml\n• Ca B: 150 ml\n• Ca C: 200 ml\n• Ca D: 250 ml\nVì 300 ml > 250 ml > 200 ml > 150 ml nên ca A đựng nhiều nước nhất. Chọn A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c5_jugs.png"
   },
   {
     "id": "q_57_6",
@@ -2228,7 +2343,8 @@ export const STAGE_5_QUESTIONS = [
       "Bảy độ xê"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Kí hiệu \"°C\" đọc là \"độ xê\". Số 27 đọc là \"hai mươi bảy\". Do đó 27°C được đọc đầy đủ là \"Hai mươi bảy độ xê\". Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Kí hiệu \"°C\" đọc là \"độ xê\". Số 27 đọc là \"hai mươi bảy\". Do đó 27°C được đọc đầy đủ là \"Hai mươi bảy độ xê\". Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": null
   },
   {
     "id": "q_57_7",
@@ -2247,7 +2363,8 @@ export const STAGE_5_QUESTIONS = [
       "Ca B và D"
     ],
     "correctIndex": 3,
-    "explanation": "Giải thích: Ta tính tổng lượng nước của từng cặp ca:\n• Ca A và B: 300 ml + 150 ml = 450 ml.\n• Ca B và C: 150 ml + 200 ml = 350 ml.\n• Ca C và D: 200 ml + 250 ml = 450 ml.\n• Ca B và D: 150 ml + 250 ml = 400 ml.\nVậy hai ca B và D có tổng lượng nước bằng đúng 400ml nước. Chọn D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Ta tính tổng lượng nước của từng cặp ca:\n• Ca A và B: 300 ml + 150 ml = 450 ml.\n• Ca B và C: 150 ml + 200 ml = 350 ml.\n• Ca C và D: 200 ml + 250 ml = 450 ml.\n• Ca B và D: 150 ml + 250 ml = 400 ml.\nVậy hai ca B và D có tổng lượng nước bằng đúng 400ml nước. Chọn D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c7_jugs.png"
   },
   {
     "id": "q_57_8",
@@ -2266,7 +2383,8 @@ export const STAGE_5_QUESTIONS = [
       "Không nhiệt kế nào phù hợp"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Quan sát hình vẽ:\n• Chai nước khoáng có nhiệt độ là 26 °C.\n• Nhiệt kế A chỉ mức 26 °C (trên vạch 20 sáu vạch nhỏ).\n• Nhiệt kế B chỉ 70 °C.\n• Nhiệt kế C chỉ 10 °C.\nDo đó, nhiệt kế A thích hợp nhất để đo chai nước khoáng. Chọn A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát hình vẽ:\n• Chai nước khoáng có nhiệt độ là 26 °C.\n• Nhiệt kế A chỉ mức 26 °C (trên vạch 20 sáu vạch nhỏ).\n• Nhiệt kế B chỉ 70 °C.\n• Nhiệt kế C chỉ 10 °C.\nDo đó, nhiệt kế A thích hợp nhất để đo chai nước khoáng. Chọn A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c8_thermometers.png"
   },
   {
     "id": "q_57_9",
@@ -2285,7 +2403,8 @@ export const STAGE_5_QUESTIONS = [
       "800ml"
     ],
     "correctIndex": 1,
-    "explanation": "Giải thích: Quan sát vạch chia trên bình đong: khoảng cách giữa hai vạch 900 ml và 1000 ml là 100 ml, vạch chính giữa tương ứng với 950 ml. Mực nước trong bình dâng đúng đến vạch 950 ml. Vậy bình đang chứa 950ml nước. Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·"
+    "explanation": "Giải thích: Quan sát vạch chia trên bình đong: khoảng cách giữa hai vạch 900 ml và 1000 ml là 100 ml, vạch chính giữa tương ứng với 950 ml. Mực nước trong bình dâng đúng đến vạch 950 ml. Vậy bình đang chứa 950ml nước. Chọn B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
+    "image": "/images/math3/b31_35_b35_c9_measuring_cup.png"
   },
   {
     "id": "q_57_10",
@@ -2305,6 +2424,7 @@ export const STAGE_5_QUESTIONS = [
       "TRẮC NGHIỆM"
     ],
     "correctIndex": 0,
-    "explanation": "Giải thích: Mức thuỷ ngân ở vạch 35 trên thang đo nhiệt độ thì nhiệt độ khi đó là 35°C. Chọn đáp án A. BÀI 35: LUYỆN TẬP CHUNG 📌 Lưu ý sư phạm: Bài học tổng hợp kiến thức về đo khối lượng (gam), dung tích (mi-li-lít) và nhiệt độ (độ C) trong Chủ đề 5. 1. NHẬN BIẾT"
+    "explanation": "Giải thích: Mức thuỷ ngân ở vạch 35 trên thang đo nhiệt độ thì nhiệt độ khi đó là 35°C. Chọn đáp án A. BÀI 35: LUYỆN TẬP CHUNG 📌 Lưu ý sư phạm: Bài học tổng hợp kiến thức về đo khối lượng (gam), dung tích (mi-li-lít) và nhiệt độ (độ C) trong Chủ đề 5. 1. NHẬN BIẾT",
+    "image": null
   }
 ];

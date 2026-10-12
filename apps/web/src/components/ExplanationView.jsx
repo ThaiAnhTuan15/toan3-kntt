@@ -155,6 +155,17 @@ export const ExplanationView = ({
                 <MathRenderer text={q.question} />
               </div>
 
+              {/* Question Illustration Image (if available) */}
+              {q.image && (
+                <div className="flex justify-center my-3 p-2 bg-slate-50/90 rounded-2xl border border-slate-200 max-w-lg mx-auto mb-5 shadow-sm">
+                  <img 
+                    src={q.image} 
+                    alt="Hình minh họa câu hỏi" 
+                    className="max-h-60 max-w-full object-contain rounded-xl hover:scale-105 transition-transform" 
+                  />
+                </div>
+              )}
+
               {/* 4 Options with Status Coloring */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
                 {q.options.map((opt, optIdx) => {
