@@ -18,7 +18,8 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const questions = yield prisma.question.findMany({
             include: {
-                options: true
+                options: true,
+                lesson: true
             }
         });
         // Map backend model to frontend expected format
@@ -31,8 +32,8 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             const correctIndex = q.options.findIndex(opt => opt.isCorrect);
             return {
                 id: q.code,
-                week: 1, // hardcoded for demo mapping
-                stage: 1,
+                week: q.lesson ? q.lesson.lessonOrder : 1,
+                stage: Math.ceil((q.lesson ? q.lesson.lessonOrder : 1) / 9) || 1,
                 category: 'natural_num',
                 difficulty: diff,
                 question: q.stem,

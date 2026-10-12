@@ -103,7 +103,7 @@ export const ParentDashboard = () => {
       status,
       statusColor
     };
-  });
+  }) : [];
 
   // Find Strongest and Weakest areas
   const testedTopics = topicBreakdown.filter(t => t.accuracy !== null);
