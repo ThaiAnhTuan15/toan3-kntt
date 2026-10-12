@@ -82,13 +82,13 @@ export const RoadmapView = ({ onStartQuiz }) => {
       type: 'week',
       week: weekNum,
       difficulty: difficulty,
-      title: `Luyện Tập: Tuần ${weekNum} - ${currentMetadata[weekNum]?.title || ''}`
+      title: `Luyện Tập: Đề ${weekNum} - ${currentMetadata[weekNum]?.title || ''}`
     });
   };
 
   // Calculate overall completion
   const completedWeeksCount = Object.keys(progress).filter(w => (progress[w]?.bestScore || 0) >= 70).length;
-  const progressPercent = Math.round((completedWeeksCount / 35) * 100);
+  const progressPercent = Math.round((completedWeeksCount / (Object.keys(currentMetadata).length || 66)) * 100);
 
   const getBannerTitle = () => {
     if (isGrade7) {
@@ -126,7 +126,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
         <div className="relative z-10 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs sm:text-sm font-bold mb-3">
             <Sparkles className="w-4 h-4 text-yellow-200" />
-            Lộ Trình Học Tập Chuẩn 35 Tuần GDPT Mới
+            Lộ Trình Học Tập Chuẩn 6 Chặng (66 Đề) - HK1 Toán 3
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold mb-2 tracking-tight">
             {getBannerTitle()}
@@ -138,7 +138,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
           {/* Overall Progress bar */}
           <div className="bg-black/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
             <div className="flex justify-between text-xs sm:text-sm font-extrabold mb-1.5">
-              <span>Tiến Độ Hành Trình: {completedWeeksCount}/35 Tuần</span>
+              <span>Tiến Độ Hành Trình: {completedWeeksCount}/{Object.keys(currentMetadata).length || 66} Đề</span>
               <span>{progressPercent}% Hoàn thành</span>
             </div>
             <div className="w-full bg-white/30 rounded-full h-3.5 overflow-hidden p-0.5">
@@ -170,7 +170,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
               : 'bg-white text-slate-600 hover:bg-slate-100 border-2 border-slate-200'
           }`}
         >
-          🌟 Tất Cả 4 Chặng (35 Tuần)
+          🌟 Tất Cả 6 Chặng (66 Đề Học Kỳ 1)
         </button>
 
         {currentStages.map((stage) => {
@@ -233,7 +233,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
                 <div className="flex items-center gap-3">
                   <div className="text-right">
                     <div className="text-xs font-bold text-slate-500">Hoàn thành</div>
-                    <div className="text-base font-bold text-emerald-600">{stageCompletedWeeks}/{stageWeeks.length} Tuần</div>
+                    <div className="text-base font-bold text-emerald-600">{stageCompletedWeeks}/{stageWeeks.length} Đề</div>
                   </div>
                   <div className={`p-3 rounded-2xl border-2 flex items-center gap-2 ${
                     stageProgressPercent === 100 
@@ -281,7 +281,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
                                 ? 'bg-amber-400 text-amber-950 shadow-sm'
                                 : 'bg-rose-400 text-white shadow-sm'
                             }`}>
-                              Tuần {weekNum}
+                              Đề {weekNum}
                             </span>
                             {getCategoryBadge(meta.category)}
                           </div>
@@ -348,7 +348,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
                           </>
                         ) : (
                           <div className="text-slate-400 text-[11px] font-semibold flex items-center gap-1">
-                            <Lock className="w-3 h-3" /> Cần đạt ≥75% ở Tuần {weekNum - 1}
+                            <Lock className="w-3 h-3" /> Cần đạt ≥75% ở Đề {weekNum - 1}
                           </div>
                         )}
                       </div>
@@ -371,7 +371,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
                 <span className={`px-3 py-1 font-bold text-xs rounded-full inline-block mb-1.5 shadow-sm ${
                   isMath ? 'bg-amber-400 text-amber-950' : 'bg-rose-500 text-white'
                 }`}>
-                  Trạm Học Tuần {activeWeekModal}
+                  Đề Luyện Tập Số {activeWeekModal}
                 </span>
                 <h3 className="text-xl font-bold text-slate-800">
                   {currentMetadata[activeWeekModal]?.title}
@@ -403,10 +403,10 @@ export const RoadmapView = ({ onStartQuiz }) => {
                   <span className="text-2xl">⭐</span>
                   <div>
                     <div className="font-bold text-base text-slate-800 group-hover:text-amber-800">
-                      Đề Chuẩn Trọn Vẹn (Đầy Đủ 10 Câu)
+                      Đề Tiêu Chuẩn ({getQuestionsByWeek(activeWeekModal).length} Câu: Dễ ➔ Khó)
                     </div>
                     <div className="text-xs font-semibold text-slate-500">
-                      Gồm 10 bài tập từ Khởi động đến 5 bài Nâng cao tư duy
+                      Toàn bộ câu hỏi phân bổ lũy tiến từ Nhận biết ➔ Thông hiểu ➔ Vận dụng cao
                     </div>
                   </div>
                 </div>

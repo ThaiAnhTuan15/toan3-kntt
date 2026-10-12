@@ -27,32 +27,13 @@ const MainContent = ({ onLogout }) => {
         const shuffleArr = arr => [...arr].sort(() => 0.5 - Math.random());
         
         if (config.difficulty === 'all') {
-          // Ma trận đề thi thông minh: 4 Dễ, 4 TB, 2 Khó
-          const easyQs = weekQuestions.filter(q => q.difficulty === 'easy');
-          const mediumQs = weekQuestions.filter(q => q.difficulty === 'medium');
-          const hardQs = weekQuestions.filter(q => q.difficulty === 'hard');
-          
-          let matrixQs = [
-            ...shuffleArr(easyQs).slice(0, 4),
-            ...shuffleArr(mediumQs).slice(0, 4),
-            ...shuffleArr(hardQs).slice(0, 2)
-          ];
-          
-          if (matrixQs.length < 10) {
-            const usedIds = new Set(matrixQs.map(q => q.id));
-            const remaining = shuffleArr(weekQuestions.filter(q => !usedIds.has(q.id)));
-            matrixQs = [...matrixQs, ...remaining].slice(0, 10);
-          }
-          
-          // Sắp xếp độ khó tăng dần
-          const diffWeight = { easy: 1, medium: 2, hard: 3 };
-          matrixQs.sort((a, b) => (diffWeight[a.difficulty] || 0) - (diffWeight[b.difficulty] || 0));
-          questions = matrixQs;
+          // Sử dụng trọn vẹn toàn bộ câu hỏi của đề (10-15 câu), giữ nguyên thứ tự sư phạm Dễ -> Khó
+          questions = [...weekQuestions].sort((a, b) => (a.order_in_quiz || 0) - (b.order_in_quiz || 0));
         } else {
           // Chuyên đề nâng cao / dễ / trung bình
           let filtered = weekQuestions.filter(q => q.difficulty === config.difficulty);
           if (filtered.length === 0) filtered = weekQuestions; // fallback
-          questions = shuffleArr(filtered).slice(0, 5); // Chọn 5 câu cho chuyên đề
+          questions = [...filtered].sort((a, b) => (a.order_in_quiz || 0) - (b.order_in_quiz || 0));
         }
       }
 
@@ -79,7 +60,8 @@ const MainContent = ({ onLogout }) => {
         };
       });
 
-      const timeLimit = config.timeLimitSec || Math.max(300, preparedQuestions.length * 75); // 75s per question
+      const quizMeta = currentMetadata ? currentMetadata[config.week] : null;
+    const timeLimit = config.timeLimitSec || (quizMeta?.time_limit_sec) || (preparedQuestions.length <= 12 ? 720 : 900); // 75s per question
 
     setActiveQuizConfig({
       type: config.type || 'week',

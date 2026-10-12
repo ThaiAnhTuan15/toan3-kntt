@@ -70,7 +70,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   };
 
   const navItems = [
-    { id: 'roadmap', label: 'Lộ Trình 35 Tuần', icon: Compass, badge: null },
+    { id: 'roadmap', label: 'Lộ Trình 6 Chặng', icon: Compass, badge: null },
     { id: 'practice', label: 'Phòng Luyện Thi', icon: BookOpen, badge: null },
     { id: 'wrong', label: 'Sửa Câu Sai', icon: RotateCcw, badge: wrongQuestions.length > 0 ? wrongQuestions.length : null },
     { id: 'dashboard', label: 'Góc Phụ Huynh', icon: BarChart3, badge: null },

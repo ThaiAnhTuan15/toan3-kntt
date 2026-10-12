@@ -389,7 +389,7 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
         }
       };
 
-      if (score >= 75 && week < 35) {
+      if (score >= 75 && week < 66) {
         const nextWeek = Number(week) + 1;
         if (!updated[nextWeek]) {
           updated[nextWeek] = { bestScore: 0, stars: 0, attempts: 0, unlocked: true };
