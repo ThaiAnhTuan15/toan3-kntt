@@ -10,7 +10,7 @@ import { BadgesModal } from './BadgesModal';
 import { QuizArena } from './QuizArena';
 import { ResultModal } from './ResultModal';
 import { ExplanationView } from './ExplanationView';
-import { LogOut } from 'lucide-react';
+import { Users, Lock, LogOut } from 'lucide-react';
 
 const MainContent = ({ onLogout }) => {
   const { profile, saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading, currentMetadata } = useLearning();
@@ -236,9 +236,6 @@ function OldApp() {
 }
 
 
-
-
-import { Users, Lock, LogOut } from 'lucide-react';
 
 
 const ProfileSelector = ({ onSelect }) => {
