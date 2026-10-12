@@ -150,7 +150,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Con trâu cân nặng 152 kg, con bò cân nặng 148 kg, con lợn nặng 108 kg, co",
+    "question": "Câu 3: Con trâu cân nặng 152 kg, con bò cân nặng 148 kg, con lợn nặng 108 kg, con hà mã cân nặng 122 kg. Hỏi con nào nặng nhất?",
     "options": [
       "Con bò",
       "Con trâu",
@@ -190,7 +190,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Điền dấu: >, <, = ?",
+    "question": "Câu 5: Điền dấu: >, <, = ?\n500 + 90 + 8 ? 598",
     "options": [
       "Không có dấu nào",
       ">",
@@ -370,7 +370,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: : Điền dấu: >, <, = ?",
+    "question": "Câu 7: : Điền dấu: >, <, = ?\n900 + 70 + 9 ? 900 + 90 + 8",
     "options": [
       "Không có dấu nào",
       ">",
@@ -450,7 +450,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Ba con lợn có cân nặng lần lượt là 99 kg, 109 kg và 119 kg. Biết lợn đen",
+    "question": "Câu 4: Ba con lợn có cân nặng lần lượt là 99 kg, 109 kg và 119 kg. Biết lợn đen nặng nhất và lợn khoang nhẹ hơn lợn trắng. Cân nặng của lợn đen, lợn trắng và lợn khoang theo thứ tự là",
     "options": [
       "119 kg, 109 kg, 99 kg",
       "119 kg, 99 kg, 109 kg",
@@ -510,7 +510,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 12: Số còn thiếu trong dãy số là?",
+    "question": "Câu 12: Số còn thiếu trong dãy số là?\n535; …; 545; 550; …; 560; 565; 570.",
     "options": [
       "540; 555",
       "555; 540",
@@ -670,7 +670,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Hãy điền số tròn trăm thích hợp vào chỗ trống để được phép so sánh đúng",
+    "question": "Câu 5: Hãy điền số tròn trăm thích hợp vào chỗ trống để được phép so sánh đúng\n.?. + 80 < 250",
     "options": [
       "200",
       "50",
@@ -690,7 +690,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Có bao nhiêu số tròn chục có ba chữ số mà tổng các chữ số của số đó bằng",
+    "question": "Câu 2: Có bao nhiêu số tròn chục có ba chữ số mà tổng các chữ số của số đó bằng 9.",
     "options": [
       "6 số",
       "7 số",
@@ -710,7 +710,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Có 9 chữ số viết liền nhau 120 317 495. Giữ nguyên thứ tự các chữ số, em",
+    "question": "Câu 3: Có 9 chữ số viết liền nhau 120 317 495. Giữ nguyên thứ tự các chữ số, em hãy xoá đi 6 chữ số để được số còn lại để được số có ba chữ số lớn nhất?",
     "options": [
       "749",
       "795",
@@ -890,7 +890,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Hãy chọn đáp án đúng điều vào ô trống.",
+    "question": "Câu 2: Hãy chọn đáp án đúng điều vào ô trống.\n35 + 17 .?. 28 + 26",
     "options": [
       "<",
       ">",
@@ -910,7 +910,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Con lợn cân nặng 65 kg, con chó cân nặng 35 kg. Hỏi con lợn và con chó câ",
+    "question": "Câu 3: Con lợn cân nặng 65 kg, con chó cân nặng 35 kg. Hỏi con lợn và con chó cân nặng tất cả bao nhiêu ki-lô-gam?",
     "options": [
       "200",
       "195",
@@ -930,7 +930,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Một bãi đỗ xe có thể chứa nhiều nhất 88 xe, hiện đang có 41 xe máy và 34",
+    "question": "Câu 4: Một bãi đỗ xe có thể chứa nhiều nhất 88 xe, hiện đang có 41 xe máy và 34 xe đạp. Bãi đỗ xe đó còn có thể chứa được bao nhiêu xe?",
     "options": [
       "13",
       "75",
@@ -950,7 +950,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Một tiệm bánh sinh nhật ngày thứ nhất bán được số bánh bằng số liền sau c",
+    "question": "Câu 1: Một tiệm bánh sinh nhật ngày thứ nhất bán được số bánh bằng số liền sau của 25. Ngày thứ hai bán được 38 chiếc bánh. Hỏi ngày thứ hai cửa hàng bán được hơn hay kém ngày thứ nhất bao nhiêu chiếc bánh?",
     "options": [
       "Ngày thứ hai cửa hàng bán kém ngày thứ nhất 12 chiếc bánh.",
       "Ngày thứ hai cửa hàng bán hơn ngày thứ nhất 13 chiếc bánh.",
@@ -970,7 +970,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Hiện tại bố 39 tuổi. Hỏi bao nhiêu năm nữa thì số tuổi của bố là số lẻ li",
+    "question": "Câu 2: Hiện tại bố 39 tuổi. Hỏi bao nhiêu năm nữa thì số tuổi của bố là số lẻ liền trước của 57?",
     "options": [
       "16 năm",
       "14 năm",
@@ -990,7 +990,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Bút chì màu xanh dài hơn bút chì màu vàng 4 cm, bút chì màu vàng dài hơn",
+    "question": "Câu 1: Bút chì màu xanh dài hơn bút chì màu vàng 4 cm, bút chì màu vàng dài hơn bút chì màu đỏ 2 cm. Hỏi bút chì màu xanh dài hơn bút chì màu đỏ bao nhiêu xăng-ti-mét?",
     "options": [
       "4 cm",
       "2 cm",
@@ -1070,7 +1070,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 11:  Con trâu cân nặng 760 kg, con nghé cân nặng 240 kg. Cả hai con cân nặng",
+    "question": "Câu 11:  Con trâu cân nặng 760 kg, con nghé cân nặng 240 kg. Cả hai con cân nặng bao nhiêu kg?",
     "options": [
       "900 kg",
       "1 000 kg",
@@ -1150,7 +1150,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Một nhân viên buổi sáng giao được 41 chai sữa. Buổi chiều nhân viên đó ti",
+    "question": "Câu 6: Một nhân viên buổi sáng giao được 41 chai sữa. Buổi chiều nhân viên đó tiếp tục giao thêm 38 chai sữa. Hỏi Tổng số chai sữa mà nhân viên đó giao trong ngày là bao nhiêu?",
     "options": [
       "77 chai",
       "76 chai",
@@ -1170,7 +1170,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Một sợi dây dài 99 cm. Lần thứ nhất cắt đi 34 cm. Lần thứ hai cắt đi .?.",
+    "question": "Câu 7: Một sợi dây dài 99 cm. Lần thứ nhất cắt đi 34 cm. Lần thứ hai cắt đi .?. cm thì sợi dây còn lại dài 20 cm?",
     "options": [
       "65",
       "45",
@@ -1190,7 +1190,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Tổng khối lượng của ba quả tạ là 70 kg. Quả tạ thứ nhất nặng 40 kg. Quả t",
+    "question": "Câu 8: Tổng khối lượng của ba quả tạ là 70 kg. Quả tạ thứ nhất nặng 40 kg. Quả tạ thứ hai nặng 20 kg. Hỏi khối lượng của quả tạ thứ ba là bao nhiêu ki-lô-gam?",
     "options": [
       "40 kg",
       "30 kg",
@@ -1230,7 +1230,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Buổi sáng, cô Hoa bán được số quả táo bằng số tròn chục liền trước của 30",
+    "question": "Câu 3: Buổi sáng, cô Hoa bán được số quả táo bằng số tròn chục liền trước của 30. Buổi chiều, cô bán thêm được số quả táo bằng số liền sau của 20. Hỏi tổng số táo mà cô Hoa bán được trong ngày hôm đó là bao nhiêu?",
     "options": [
       "50 quả",
       "41 quả",
@@ -1250,7 +1250,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Hai lớp 2C và 2D cùng làm bài kiểm tra toán. Lớp 2C có 48 bạn, trong đó c",
+    "question": "Câu 4: Hai lớp 2C và 2D cùng làm bài kiểm tra toán. Lớp 2C có 48 bạn, trong đó có 27 bạn được điểm giỏi và còn lại được điểm khá. Lớp 2D có 32 bạn được điểm khá.\nHỏi hiệu số bạn được điểm khá của hai lớp là bao nhiêu bạn?",
     "options": [
       "21 bạn",
       "12 bạn",
@@ -1270,7 +1270,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Để thực hiện chương trình kế hoạch nhỏ, ngày thứ nhất trường của Kim thu",
+    "question": "Câu 5: Để thực hiện chương trình kế hoạch nhỏ, ngày thứ nhất trường của Kim thu được 353 kg giấy vụn, ngày thứ hai thu được 323 kg giấy vụn. Vậy cả hai ngày trường của Kim thu được số giấy vụn là?",
     "options": [
       "767 kg",
       "766 kg",
@@ -1290,7 +1290,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Cho số có hai chữ số biết khi bớt đi 3 đơn vị ở chữ số hàng chục và giữ n",
+    "question": "Câu 2: Cho số có hai chữ số biết khi bớt đi 3 đơn vị ở chữ số hàng chục và giữ nguyên chữ số hàng đơn vị ra được số 56. Chữ số hàng chục cần tìm là?",
     "options": [
       "8",
       "5",
@@ -1310,7 +1310,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 1:",
+    "question": "Câu 1:\nCho phép tính 11 + 12 + 13 + 14 = 50. Phép tính trên có bao nhiêu số hạng?",
     "options": [
       "4 số hạng",
       "6 số hạng",
@@ -1370,7 +1370,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 4: Muốn tìm một số hạng chưa biết, ta lấy tổng … đi số hạng kia.",
+    "question": "Câu 4: Muốn tìm một số hạng chưa biết, ta lấy tổng … đi số hạng kia.\nChữ thích hợp điền vào chỗ chấm là?",
     "options": [
       "cộng",
       "trừ",
@@ -1410,7 +1410,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 6:",
+    "question": "Câu 6:\nSố hạng còn lại trong tổng 56 + ? = 99 là",
     "options": [
       "23",
       "33",
@@ -1490,7 +1490,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Tìm số bị trừ?",
+    "question": "Câu 3: Tìm số bị trừ?\n90 - ? = 54",
     "options": [
       "16",
       "46",
@@ -1510,7 +1510,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Trong hộp có một số cái kẹo. Bình đã ăn hết 9 cái kẹo thì trong hộp còn l",
+    "question": "Câu 4: Trong hộp có một số cái kẹo. Bình đã ăn hết 9 cái kẹo thì trong hộp còn lại 38 cái kẹo nữa. Hỏi lúc đầu trong hộp có tất cả bao nhiêu cái kẹo?",
     "options": [
       "47 cái",
       "27 cái",
@@ -1530,7 +1530,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Trong một phép tính có số bị trừ bằng 41 và hiệu là số lớn nhất có một ch",
+    "question": "Câu 1: Trong một phép tính có số bị trừ bằng 41 và hiệu là số lớn nhất có một chữ số. Số trừ của phép trừ đó là?",
     "options": [
       "9",
       "41",
@@ -1550,7 +1550,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Tìm tổng sau biết đây là tổng của 3 số liên tiếp và số bé nhất là 27.",
+    "question": "Câu 2: Tìm tổng sau biết đây là tổng của 3 số liên tiếp và số bé nhất là 27.\n27 + ? + ? = ?",
     "options": [
       "80",
       "83",
@@ -1570,7 +1570,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Bút chì màu xanh dài hơn bút chì màu vàng 4 cm, bút chì màu vàng dài hơn",
+    "question": "Câu 1: Bút chì màu xanh dài hơn bút chì màu vàng 4 cm, bút chì màu vàng dài hơn bút chì màu đỏ 2 cm. Hỏi bút chì màu xanh dài hơn bút chì màu đỏ bao nhiêu xăng-ti-mét?",
     "options": [
       "4 cm",
       "2 cm",
@@ -1590,7 +1590,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 8:",
+    "question": "Câu 8:\nCho phép tính 50 – 10 – 11 – 12 – 13 = 4. Hiệu trong phép tính trên là?",
     "options": [
       "50",
       "10",
@@ -1650,7 +1650,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 11: Muốn tìm số bị trừ, ta lấy hiệu … với số trừ.",
+    "question": "Câu 11: Muốn tìm số bị trừ, ta lấy hiệu … với số trừ.\nĐáp án thích hợp để điền vào chỗ chấm là?",
     "options": [
       "trừ",
       "nhân",
@@ -1670,7 +1670,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 12: Muốn tìm số trừ, ta lấy số bị trừ … đi hiệu.",
+    "question": "Câu 12: Muốn tìm số trừ, ta lấy số bị trừ … đi hiệu.\nĐáp án thích hợp để điền vào chỗ chấm là?",
     "options": [
       "cộng",
       "nhân",
@@ -1690,7 +1690,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 13: Cho phép tính ? + 88 + 90 = 231. Thành phần còn thiếu trong phép tính tr",
+    "question": "Câu 13: Cho phép tính ? + 88 + 90 = 231. Thành phần còn thiếu trong phép tính trên có tên gọi là?",
     "options": [
       "Không có tên gọi",
       "Tổng",
@@ -1710,7 +1710,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Hiện nay tổng số tuổi của hai mẹ con là 33 tuổi. Biết con năm nay 8 tuổi.",
+    "question": "Câu 5: Hiện nay tổng số tuổi của hai mẹ con là 33 tuổi. Biết con năm nay 8 tuổi. Hỏi năm nay mẹ bao nhiêu tuổi?",
     "options": [
       "24 tuổi",
       "25 tuổi",
@@ -1730,7 +1730,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Cho số hạng thứ nhất là 18, số hạng thứ hai là 29, số hạng thứ ba là 31.",
+    "question": "Câu 6: Cho số hạng thứ nhất là 18, số hạng thứ hai là 29, số hạng thứ ba là 31. Tổng của ba số hạng là?",
     "options": [
       "47",
       "60",
@@ -1810,7 +1810,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Ban đầu trong kho có 96 bao gạo. Lần thứ nhất người ta chuyển 34 bao gạo",
+    "question": "Câu 3: Ban đầu trong kho có 96 bao gạo. Lần thứ nhất người ta chuyển 34 bao gạo ra ngoài kho. Lần thứ hai số bao gạo chuyển ra ngoài kho bằng số liền trước của 40. Hỏi sau hai lần chuyển, trong kho còn lại bao nhiêu bao gạo?",
     "options": [
       "39 bao",
       "23 bao",
@@ -1830,7 +1830,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Một cửa hàng có số hộp sữa bằng số liền trước của 26. Cửa hàng đã bán đượ",
+    "question": "Câu 4: Một cửa hàng có số hộp sữa bằng số liền trước của 26. Cửa hàng đã bán được 4 hộp sữa. Hỏi số hộp sữa còn lại của cửa hàng có nhiều hơn 20 hộp không?",
     "options": [
       "nhiều hơn",
       "ít hơn",
@@ -1850,7 +1850,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Cho phép cộng có ba số hạng. Biết số hạng thứ nhất và số hạng thứ hai đều",
+    "question": "Câu 5: Cho phép cộng có ba số hạng. Biết số hạng thứ nhất và số hạng thứ hai đều là 30. Nếu lấy số hạng thứ hai cộng với 8 thì được số hạng thứ ba. Tổng của ba số hạng đó là?",
     "options": [
       "90",
       "38",
@@ -1870,7 +1870,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Cho số có hai chữ số biết khi bớt đi 3 đơn vị ở chữ số hàng chục và giữ n",
+    "question": "Câu 2: Cho số có hai chữ số biết khi bớt đi 3 đơn vị ở chữ số hàng chục và giữ nguyên chữ số hàng đơn vị ra được số 56. Chữ số hàng chục cần tìm là?",
     "options": [
       "8",
       "5",
@@ -2050,7 +2050,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1:  Một đoạn dây đồng dài 27 cm được uốn thành hình tam giác (như hình dưới",
+    "question": "Câu 1:  Một đoạn dây đồng dài 27 cm được uốn thành hình tam giác (như hình dưới đây). Hình tam giác có 3 cạnh bằng nhau. Độ dài mỗi cạnh của tam giác là?",
     "options": [
       "9 cm",
       "18 cm",
@@ -2110,7 +2110,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Kết quả của phép tính 3 × 3 + 3 bằng với kết quả của phép tính nào sau đâ",
+    "question": "Câu 4: Kết quả của phép tính 3 × 3 + 3 bằng với kết quả của phép tính nào sau đây?",
     "options": [
       "3 × 2",
       "3 × 3",
@@ -2130,7 +2130,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Một đội sản xuất gồm 21 nhân viên nam và 15 nhân viên nữ được chia đều và",
+    "question": "Câu 1: Một đội sản xuất gồm 21 nhân viên nam và 15 nhân viên nữ được chia đều vào 3 tổ. Trong một tổ, số nhân viên nam nhiều hơn số nhân viên nữ là?",
     "options": [
       "7 nhân viên",
       "2 nhân viên",
@@ -2150,7 +2150,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Một gia đình nuôi được 48 con thỏ. Sau khi bán đi 21 con thỏ thì số thỏ c",
+    "question": "Câu 2: Một gia đình nuôi được 48 con thỏ. Sau khi bán đi 21 con thỏ thì số thỏ còn lại được nhốt vào các chuồng, mỗi chuồng có 3 con thỏ. Hỏi cần có bao nhiêu chuồng để nhốt hết số thỏ còn lại?",
     "options": [
       "7 cái chuồng",
       "8 cái chuồng",
@@ -2170,7 +2170,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Tìm một số biết rằng hiệu của số đó với 21 với số đó bằng thương của số l",
+    "question": "Câu 1: Tìm một số biết rằng hiệu của số đó với 21 với số đó bằng thương của số lớn nhất có một chữ số với 3. Số cần tìm là?",
     "options": [
       "24",
       "21",
@@ -2210,7 +2210,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Mỗi khay có 3 chiếc bánh bao. Hỏi 8 khay như thế có tất cả bao nhiêu chi",
+    "question": "Câu 10: Mỗi khay có 3 chiếc bánh bao. Hỏi 8 khay như thế có tất cả bao nhiêu chiếc bánh bao?",
     "options": [
       "18 chiếc",
       "21 chiếc",
@@ -2270,7 +2270,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 13: Có 27 bạn xếp hàng tập thể dục, các bạn xếp thành 3 hàng, mỗi hàng có số",
+    "question": "Câu 13: Có 27 bạn xếp hàng tập thể dục, các bạn xếp thành 3 hàng, mỗi hàng có số bạn bằng nhau. Hỏi mỗi hàng có mấy bạn?",
     "options": [
       "7 bạn",
       "6 bạn",
@@ -2310,7 +2310,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 15: Dấu thích hợp điền vào chỗ chấm là?",
+    "question": "Câu 15: Dấu thích hợp điền vào chỗ chấm là?\n3 × 8 … 2 × 9",
     "options": [
       ">",
       "<",
@@ -2330,7 +2330,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Mỗi ngày bạn An và Nam đọc được 9 trang sách, trong đó An đọc được 6 tran",
+    "question": "Câu 5: Mỗi ngày bạn An và Nam đọc được 9 trang sách, trong đó An đọc được 6 trang sách. Số trang sách bạn Nam đọc được sau 5 ngày là?",
     "options": [
       "45 trang",
       "30 trang",
@@ -2350,7 +2350,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Một cửa hàng có 48 kg gạo. Sau khi bán được 27 kg gạo thì số gạo còn lại",
+    "question": "Câu 6: Một cửa hàng có 48 kg gạo. Sau khi bán được 27 kg gạo thì số gạo còn lại chia đều vào 3 túi. Hỏi mỗi túi nặng bao nhiêu ki-lô-gam?",
     "options": [
       "6kg",
       "5kg",
@@ -2370,7 +2370,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Cho phép tính",
+    "question": "Câu 7: Cho phép tính\n15dm : 3 × 5 = .?.\nKết quả của phép tính trên là?",
     "options": [
       "25 dm",
       "28 dm",
@@ -2390,7 +2390,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Bạn An làm bài tập trong 6 ngày, mỗi ngày 2 bài. Nhưng cùng số lượng bài",
+    "question": "Câu 3: Bạn An làm bài tập trong 6 ngày, mỗi ngày 2 bài. Nhưng cùng số lượng bài tập đó, Nga làm trong 3 ngày. Hỏi mỗi ngày Nga làm được nhiều hơn An bao nhiêu bài?",
     "options": [
       "6 bài",
       "4 bài",
@@ -2410,7 +2410,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Vân, Nga và Trang gấp được tất cả 46 ngôi sao. Vân gấp được 19 ngôi sao.",
+    "question": "Câu 4: Vân, Nga và Trang gấp được tất cả 46 ngôi sao. Vân gấp được 19 ngôi sao. Trang gấp được số ngôi sao bằng tổng số ngôi sao của Trang và Nga chia cho 3. Nga gấp được bao nhiêu ngôi sao?",
     "options": [
       "19 ngôi sao",
       "18 ngôi sao",
@@ -2430,7 +2430,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Dấu thích hợp điền vào ô trống để được đáp án đúng là?",
+    "question": "Câu 5: Dấu thích hợp điền vào ô trống để được đáp án đúng là?\n12 : 3 × 4 … 6 : 3 × 9",
     "options": [
       ">",
       "=",
@@ -2450,7 +2450,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Biết thứ tự ô trống được tính từ trái qua phải. Số cần điền trong ô trống",
+    "question": "Câu 2: Biết thứ tự ô trống được tính từ trái qua phải. Số cần điền trong ô trống thứ nhất là?",
     "options": [
       "12",
       "28",
@@ -2470,7 +2470,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Biết rằng thường của số thứ nhất với 3 bằng tích của 4 với số thứ hai. Số",
+    "question": "Câu 3: Biết rằng thường của số thứ nhất với 3 bằng tích của 4 với số thứ hai. Số thứ hai là số liền sau của số nhỏ nhất có một chữ số khác 0. Số thứ nhất là?",
     "options": [
       "2",
       "21",
@@ -2670,7 +2670,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Hòa muốn chọn một tuần có nhiều ngày có thể nắng để đi du lịch biển. Hỏi",
+    "question": "Câu 3: Hòa muốn chọn một tuần có nhiều ngày có thể nắng để đi du lịch biển. Hỏi Hòa nên chọn từ ngày nào đến ngày nào?",
     "options": [
       "Từ ngày 18 đến ngày 24",
       "Từ ngày 25 đến ngày 31",
@@ -2710,7 +2710,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Đồng hồ trong hình vẽ dưới đây cho biết thời gian đến lớp học của mỗi bạn",
+    "question": "Câu 5: Đồng hồ trong hình vẽ dưới đây cho biết thời gian đến lớp học của mỗi bạn. Biết lớp học bắt đầu lúc 2 giờ chiều. Hỏi bạn trong bức tranh nào nào đi học muộn?",
     "options": [
       "Bức tranh thứ nhất",
       "Bức tranh thứ hai",
@@ -2750,7 +2750,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Tùng nghĩ ra một số có hai chữ số. Tùng thấy rằng, thương của số đó và số",
+    "question": "Câu 2: Tùng nghĩ ra một số có hai chữ số. Tùng thấy rằng, thương của số đó và số liền trước của 5 là một số có một chữ số nhỏ hơn 10 và lớn hơn 8. Hỏi số Tùng nghĩ ra là?",
     "options": [
       "28",
       "24",
@@ -2770,7 +2770,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Nam và Toàn đi đến trường trên cùng một con đường. Đoạn đường từ nhà Nam",
+    "question": "Câu 1: Nam và Toàn đi đến trường trên cùng một con đường. Đoạn đường từ nhà Nam đến trường dài 3 km, đoạn đường từ nhà Nam đến nhà Toàn dài 1 km. Biết rằng nhà Toán nằm trên đoạn đường đi từ nhà Nam và trường. Đoạn đường từ nhà Toàn đến trường dài .?. km.",
     "options": [
       "2 km",
       "3 km",
@@ -2990,7 +2990,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Một người nuôi được 35 con cừu. Lần thứ nhất người đó bán được 11 con cừu",
+    "question": "Câu 3: Một người nuôi được 35 con cừu. Lần thứ nhất người đó bán được 11 con cừu. Lần thứ hai người đó bán được số con cừu bằng số con cừu còn lại chia cho 4. Hỏi sau hai lần bán người đó còn lại bao nhiêu con cừu?",
     "options": [
       "17 con cừu",
       "15 con cừu",
@@ -3030,7 +3030,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Tìm một số biết rằng thương của số đó với 4 bằng tích của 2 với số liền t",
+    "question": "Câu 5: Tìm một số biết rằng thương của số đó với 4 bằng tích của 2 với số liền trước của 4. Số cần tìm là?",
     "options": [
       "24",
       "20",
@@ -3050,7 +3050,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Một đường gấp khúc gồm ba đoạn thẳng có độ dài bằng 80 dm. Biết đường gấp",
+    "question": "Câu 2: Một đường gấp khúc gồm ba đoạn thẳng có độ dài bằng 80 dm. Biết đường gấp khúc đó có một đoạn thẳng dài 200 cm và hai đoạn thẳng còn lại dài bằng nhau. Hỏi mỗi đoạn thẳng còn lại dài bao nhiêu mét?",
     "options": [
       "30 m",
       "2 m",
@@ -3070,7 +3070,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Một con thuyền đậu nổi trên biển, mũi thuyền cao 8dm 9cm so với mặt nước",
+    "question": "Câu 3: Một con thuyền đậu nổi trên biển, mũi thuyền cao 8dm 9cm so với mặt nước biển. Khi mặt nước biển dâng lên 1dm thì khoảng cách từ mũi thuyền đến mặt nước biển lúc đó là bao nhiêu xăng-ti-mét?",
     "options": [
       "90cm",
       "10cm",
@@ -3110,7 +3110,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Hình vẽ dưới đây cho biết cân nặng của con gấu và con cáo. Tổng cân nặng",
+    "question": "Câu 2: Hình vẽ dưới đây cho biết cân nặng của con gấu và con cáo. Tổng cân nặng của cả hai con là .?. kg",
     "options": [
       "350kg",
       "300kg",
@@ -3230,7 +3230,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Cho các hinh dưới đây. Hỏi sau khi nối các điểm cùng nhau, hình nào có 2",
+    "question": "Câu 1: Cho các hinh dưới đây. Hỏi sau khi nối các điểm cùng nhau, hình nào có 2 hình tứ giác?",
     "options": [
       "Hình 1",
       "Hình 2",
@@ -3250,7 +3250,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Lan tan học vào lúc 5 giờ chiều. Hỏi khi đó đồng hồ nào trong các đồng hồ",
+    "question": "Câu 2: Lan tan học vào lúc 5 giờ chiều. Hỏi khi đó đồng hồ nào trong các đồng hồ dưới đây chỉ đúng thời gian?",
     "options": [
       "D",
       "A",
@@ -3270,7 +3270,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Biết hôm nay là thứ Tư ngày 16 tháng 6. Hỏi ngày mai là thứ mấy và là ngà",
+    "question": "Câu 3: Biết hôm nay là thứ Tư ngày 16 tháng 6. Hỏi ngày mai là thứ mấy và là ngày bao nhiêu?",
     "options": [
       "Thứ Năm, ngày 17 tháng 6",
       "Thứ Ba ngày 17 tháng6",
@@ -3310,7 +3310,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Cho hai số hạng. Số hạng thứ nhất là hiệu của 743 và 512. Số hạng thứ hai",
+    "question": "Câu 5: Cho hai số hạng. Số hạng thứ nhất là hiệu của 743 và 512. Số hạng thứ hai bằng 143. Tổng của hai số hạng đã cho bằng .?.",
     "options": [
       "473",
       "734",
@@ -3370,7 +3370,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Một hình tam giác có chu vi 18 cm. Nếu răng 1 cạnh thêm 3cm, giảm một cạn",
+    "question": "Câu 1: Một hình tam giác có chu vi 18 cm. Nếu răng 1 cạnh thêm 3cm, giảm một cạnh đi 4cm thì chu vi của tam giác đó tăng hay giả bao nhiêu xăng-ti-mét?",
     "options": [
       "Tăng 1 cm",
       "Giảm 1 cm",
@@ -3470,7 +3470,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 12: Khi viết số 567 thành tổng các trăm, chục và đơn vị ta được 567 = 500 +",
+    "question": "Câu 12: Khi viết số 567 thành tổng các trăm, chục và đơn vị ta được 567 = 500 + 60 + .?. Số cần điền vào chỗ chấm là?",
     "options": [
       "6",
       "5",
@@ -3510,7 +3510,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Biết phép tính được thực hiện từ trái sang phải. Số .?. cần tìm ở ô cuối",
+    "question": "Câu 6: Biết phép tính được thực hiện từ trái sang phải. Số .?. cần tìm ở ô cuối cùng là?",
     "options": [
       "12",
       "3",
@@ -3570,7 +3570,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Nam đi đá bóng lúc 5 rưỡi chiều. Hỏi khi Nam đá bóng, kim phút chỉ số mấy",
+    "question": "Câu 9: Nam đi đá bóng lúc 5 rưỡi chiều. Hỏi khi Nam đá bóng, kim phút chỉ số mấy?",
     "options": [
       "5",
       "6",
@@ -3590,7 +3590,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Để xây xong hàng rào của một khu vườn, đội công nhân mất 3 ngày 5 giờ nữa",
+    "question": "Câu 3: Để xây xong hàng rào của một khu vườn, đội công nhân mất 3 ngày 5 giờ nữa. Như vật, đội công nhân xây xong hàng rào trong .?. giờ.",
     "options": [
       "77",
       "72",
@@ -3610,7 +3610,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Một người muốn đi từ A đến D phải đi qua B và C. Biết rằng quãng đường AD",
+    "question": "Câu 4: Một người muốn đi từ A đến D phải đi qua B và C. Biết rằng quãng đường AD dài 90 km, quãng đường AB dài 25 km. Quãng đường BC dài hơn quãng đườnh AB là 15 km. Hỏi quãng đường CD dài bao nhiêu ki-lô-mét?",
     "options": [
       "15 km",
       "10 km",
@@ -3650,7 +3650,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Số hạng thứ nhất là số lớn nhất có ba chữ số và có tổng các chữ số bằng 4",
+    "question": "Câu 2: Số hạng thứ nhất là số lớn nhất có ba chữ số và có tổng các chữ số bằng 4. Số hạng thứ hai là số có ba chữ số có chữ số hàng trăm bằng số liền sau của 3, chữ số hàng chục bằng chữ số hàng đơn vị và bằng 1.",
     "options": [
       "811",
       "621",
@@ -3670,7 +3670,7 @@ export const STAGE_1_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Tổng độ dài 3 đoạn thẳng là 49 dm. Tổng độ dài đoạn thẳng thứ nhất và đoạ",
+    "question": "Câu 3: Tổng độ dài 3 đoạn thẳng là 49 dm. Tổng độ dài đoạn thẳng thứ nhất và đoạn thẳng thứ hai là 18 dm. Độ dài đoạn thẳng thứ ba dài hơn độ dài đoạn thẳng thứ nhất là 16 dm. Khi đó độ dài đoạn thẳng thứ hai là?",
     "options": [
       "15 dm",
       "31 dm",

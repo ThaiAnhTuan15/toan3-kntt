@@ -150,7 +150,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Bà mang trứng ra chợ bán. Biết rằng bà còn lại 6 quả trứng và số trứng bà",
+    "question": "Câu 1: Bà mang trứng ra chợ bán. Biết rằng bà còn lại 6 quả trứng và số trứng bà đã bán gấp 7 lần số trứng còn lại. Hỏi bà đã bán bao nhiêu quả trứng?",
     "options": [
       "42 quả trứng",
       "43 quả trứng",
@@ -190,7 +190,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Lớp 3A có 12 học sinh nữ, số học sinh nam gấp 2 lần thì được số học sinh",
+    "question": "Câu 3: Lớp 3A có 12 học sinh nữ, số học sinh nam gấp 2 lần thì được số học sinh nữ. Hỏi lớp 3A có bao nhiêu học sinh nam?",
     "options": [
       "24 học sinh",
       "14 học sinh",
@@ -230,7 +230,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Năm nay Lan 4 tuổi, số tuổi của mẹ gấp 7 lần số tuổi của Lan. Hỏi mẹ Lan",
+    "question": "Câu 5: Năm nay Lan 4 tuổi, số tuổi của mẹ gấp 7 lần số tuổi của Lan. Hỏi mẹ Lan năm nay bao nhiêu tuổi?",
     "options": [
       "28 tuổi",
       "29 tuổi",
@@ -250,7 +250,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Duy đố Bình một số, biết rằng số đó gấp 5 lần số 17. Hỏi số Duy đố Bình l",
+    "question": "Câu 1: Duy đố Bình một số, biết rằng số đó gấp 5 lần số 17. Hỏi số Duy đố Bình là số bao nhiêu?",
     "options": [
       "82",
       "85",
@@ -270,7 +270,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Trong một phép trừ, nếu cùng gấp cả số trừ và số bị trừ lên 5 lần thì hiệ",
+    "question": "Câu 2: Trong một phép trừ, nếu cùng gấp cả số trừ và số bị trừ lên 5 lần thì hiệu sẽ thay đổi như thế nào, biết hiệu là một số khác 0?",
     "options": [
       "không thay đổi",
       "giảm đi 5 lần",
@@ -290,7 +290,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Có ba hộp bút chì, hộp thứ nhất có 15 bút chì, hộp thứ hai có số bút chì",
+    "question": "Câu 1: Có ba hộp bút chì, hộp thứ nhất có 15 bút chì, hộp thứ hai có số bút chì gấp 2 lần số bút chì của hộp thứ nhất, hộp thứ ba có nhiều hơn hộp thứ hai 3 bút chì. Hỏi hộp thứ ba có bao nhiêu bút chì?",
     "options": [
       "27 bút chì",
       "20 bút chì",
@@ -450,7 +450,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Con hái được 6 quả cam, mẹ hái được 6 lần số cam của con. Hỏi mẹ hái được",
+    "question": "Câu 7: Con hái được 6 quả cam, mẹ hái được 6 lần số cam của con. Hỏi mẹ hái được bao nhiêu quả cam?",
     "options": [
       "36 quả cam",
       "35 quả cam",
@@ -470,7 +470,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Năm nay con 6 tuổi, tuổi mẹ gấp 5 lần tuổi con. Hỏi 5 năm nữa, mẹ có số t",
+    "question": "Câu 8: Năm nay con 6 tuổi, tuổi mẹ gấp 5 lần tuổi con. Hỏi 5 năm nữa, mẹ có số tuổi là ..?..",
     "options": [
       "30 tuổi",
       "25 tuổi",
@@ -490,7 +490,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Lan gấp được 8 bông hoa, Minh gấp được số bông hoa gấp 2 lần số bông hoa",
+    "question": "Câu 9: Lan gấp được 8 bông hoa, Minh gấp được số bông hoa gấp 2 lần số bông hoa của Lan gấp được. Hỏi Minh gấp được số bông hoa là ..?..",
     "options": [
       "20 bông hoa",
       "18 bông hoa",
@@ -530,7 +530,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Linh gấp được 23 ngôi sao, Mai gấp được số ngôi sao gấp 3 lần số ngôi sao",
+    "question": "Câu 4: Linh gấp được 23 ngôi sao, Mai gấp được số ngôi sao gấp 3 lần số ngôi sao của Linh. Hỏi hai bạn gấp được bao nhiêu ngôi sao?",
     "options": [
       "91 ngôi sao",
       "93 ngôi sao",
@@ -550,7 +550,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Con hái được 9 quả cam. Con cho bạn 6 quả cam. Số quả cam mẹ hái được gấp",
+    "question": "Câu 5: Con hái được 9 quả cam. Con cho bạn 6 quả cam. Số quả cam mẹ hái được gấp 6 lần số quả cam còn lại của con. Hỏi mẹ hái được bao nhiêu quả cam?",
     "options": [
       "6",
       "9",
@@ -570,7 +570,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Một nhóm công nhân sửa đường trong ngày hôm nay. Buổi sáng nhóm sửa được",
+    "question": "Câu 2: Một nhóm công nhân sửa đường trong ngày hôm nay. Buổi sáng nhóm sửa được 7m đường. Số mét đường buổi trưa nhóm sửa được gấp 3 lần số mét đường buổi sáng sửa được. Do buổi chiều có thêm các máy móc hỗ trợ nên số mét đường nhóm sửa được gấp 3 lần số mét đường buổi trưa sửa được. Biết hôm nay nhóm đã sửa được nhiều hơn hôm qua là 17m đường. Hỏi ngày hôm qua nhóm đã sửa được bao nhiêu mét đường?",
     "options": [
       "74m",
       "91m",
@@ -590,7 +590,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Ba bạn Minh, Hải, Hưng đi câu cá. Minh câu được 8 con cá. Số cá Hải câu đ",
+    "question": "Câu 3: Ba bạn Minh, Hải, Hưng đi câu cá. Minh câu được 8 con cá. Số cá Hải câu được bằng một nửa số cá của Minh. Số cá Hưng câu được gấp 4 lần số cá của Hải. Vậy Hưng câu được ..?.. con cá.",
     "options": [
       "8",
       "4",
@@ -751,7 +751,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Cô giáo chia đều 15 quyển vở cho 3 bạn. Hỏi mỗi bạn được nhận bao nhiêu q",
+    "question": "Câu 1: Cô giáo chia đều 15 quyển vở cho 3 bạn. Hỏi mỗi bạn được nhận bao nhiêu quyển vở?",
     "options": [
       "5 quyển vở",
       "4 quyển vở",
@@ -811,7 +811,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Nếu lấy một số lớn nhất có hai chữ số chia cho 5 thì số dư lớn nhất có th",
+    "question": "Câu 4: Nếu lấy một số lớn nhất có hai chữ số chia cho 5 thì số dư lớn nhất có thể là?",
     "options": [
       "1",
       "2",
@@ -851,7 +851,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: An có 15 viên bi, Minh có 13 viên bi. Số bi của Minh và An có thể chia đề",
+    "question": "Câu 1: An có 15 viên bi, Minh có 13 viên bi. Số bi của Minh và An có thể chia đều vào các túi, mỗi túi 5 viên bi thì có thể chia được ..?.. túi và còn dư ..?.. viên bi.\nSố thích hợp điền vào chỗ chấm lần lượt là",
     "options": [
       "5; 4",
       "3; 4",
@@ -871,7 +871,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Muốn đưa một phép chia có dư về phép chia hết thì ta thường ..?.. số bị c",
+    "question": "Câu 2: Muốn đưa một phép chia có dư về phép chia hết thì ta thường ..?.. số bị chia một số đơn vị bằng đúng số dư.",
     "options": [
       "tăng",
       "giảm",
@@ -891,7 +891,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Trong một cuộc thi là hoa giấy, Lan làm được 60 bông hoa giấy. Số hoa Lan",
+    "question": "Câu 1: Trong một cuộc thi là hoa giấy, Lan làm được 60 bông hoa giấy. Số hoa Lan làm gấp 3 lần Mai và gấp Nga 4 lần. Nếu Ngọc làm thêm 17 bông hoa nữa thì gấp đôi số hoa của Mai. Hỏi số hoa Ngọc làm được là?",
     "options": [
       "40 bông",
       "23 bông",
@@ -1051,7 +1051,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Một phép chia có số bị chia bằng tích của 11 và 6, số chia là 3. Thường c",
+    "question": "Câu 7: Một phép chia có số bị chia bằng tích của 11 và 6, số chia là 3. Thường của phép chia đó bằng bao nhiêu?",
     "options": [
       "33",
       "23",
@@ -1071,7 +1071,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Người ta lắp bánh xe vào ô tô, mỗi ô tô cần phải lắp 4 bánh xe. Hỏi có 87",
+    "question": "Câu 8: Người ta lắp bánh xe vào ô tô, mỗi ô tô cần phải lắp 4 bánh xe. Hỏi có 87 bánh xe thì lắp được nhiều nhất bao nhiêu ô tô như thế?",
     "options": [
       "21 ô tô",
       "22 ô tô",
@@ -1111,7 +1111,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Minh có 24 viên bi, hai lần số viên bi của Minh bằng ba lần số viên bi củ",
+    "question": "Câu 3: Minh có 24 viên bi, hai lần số viên bi của Minh bằng ba lần số viên bi của Hùng. Hỏi Minh có nhiều hơn Hùng bao nhiêu viên bi?",
     "options": [
       "9 viên bi",
       "7 viên bi",
@@ -1131,7 +1131,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Mỗi hộp có chứa 4 cái bánh. Hỏi nếu có 74 cái bánh thì cần ít nhất bao nh",
+    "question": "Câu 4: Mỗi hộp có chứa 4 cái bánh. Hỏi nếu có 74 cái bánh thì cần ít nhất bao nhiêu hộp để đựng hết số bánh?",
     "options": [
       "18 hộp",
       "17 hộp",
@@ -1251,7 +1251,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Trong các hình dưới đây, quả bóng bay màu nào chứa số dư của phép chia 98",
+    "question": "Câu 3: Trong các hình dưới đây, quả bóng bay màu nào chứa số dư của phép chia 98 : 8?",
     "options": [
       "Màu xanh",
       "Màu đỏ",
@@ -1311,7 +1311,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 6: Bà đi chợ mua 22 cái bánh về chia đều cho 2 anh em Hiếu. Hỏi 2 anh em Hiế",
+    "question": "Câu 6: Bà đi chợ mua 22 cái bánh về chia đều cho 2 anh em Hiếu. Hỏi 2 anh em Hiếu mỗi người được chia mấy cái bánh?",
     "options": [
       "13 cái bánh",
       "11 cái bánh",
@@ -1351,7 +1351,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Nam và Yến cùng thực hiện phép tính 24 : 2\nNam ra kết quả là 21, Yến ra k",
+    "question": "Câu 1: Nam và Yến cùng thực hiện phép tính 24 : 2\nNam ra kết quả là 21, Yến ra kết quả là 12\nHỏi bạn nào thực hiện đúng?",
     "options": [
       "Cả hai bạn",
       "Không bạn nào",
@@ -1431,7 +1431,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Cho các phép chia dưới đây.\n1. 36 : 3\n2. 48 : 4\n3. 42 : 2\nTrong các phép",
+    "question": "Câu 5: Cho các phép chia dưới đây.\n1. 36 : 3\n2. 48 : 4\n3. 42 : 2\nTrong các phép chia đã cho, có mấy phép chia có kết quả bằng 12?",
     "options": [
       "2 phép chia",
       "3 phép chia",
@@ -1451,7 +1451,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Một số chia cho 7 thì được thương bằng 9. Biết phép chia của số đó cho 7",
+    "question": "Câu 1: Một số chia cho 7 thì được thương bằng 9. Biết phép chia của số đó cho 7 là phép chia hết. Lấy số đó chia cho 5 thì có số dư là ..?..",
     "options": [
       "5",
       "3",
@@ -1471,7 +1471,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Có 48 chiếc kẹo chia đều cho 4 bạn. Sau đó mẹ Lan cho mỗi bạn thêm 3 chiế",
+    "question": "Câu 2: Có 48 chiếc kẹo chia đều cho 4 bạn. Sau đó mẹ Lan cho mỗi bạn thêm 3 chiếc kẹo nữa. Hỏi mỗi bạn được tổng bao nhiêu chiếc kẹo?",
     "options": [
       "16 chiếc kẹo",
       "12 chiếc kẹo",
@@ -1491,7 +1491,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Nếu lấy số liền trước của số lớn nhất có hai chữ số chia 5 là được thương",
+    "question": "Câu 1: Nếu lấy số liền trước của số lớn nhất có hai chữ số chia 5 là được thương và số dư lần lượt là?",
     "options": [
       "18 và 3",
       "15 và 3",
@@ -1571,7 +1571,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 11: Phép tính nào dưới đây là phéo nhân số có hai chữ số với số có một chữ s",
+    "question": "Câu 11: Phép tính nào dưới đây là phéo nhân số có hai chữ số với số có một chữ số (có nhớ)?",
     "options": [
       "C",
       "A",
@@ -1631,7 +1631,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Minh nghĩ ra một số, nếu lấy số đó nhân với 3 thì được kết quả là 36. Số",
+    "question": "Câu 6: Minh nghĩ ra một số, nếu lấy số đó nhân với 3 thì được kết quả là 36. Số Minh nghĩ ra là ..?..",
     "options": [
       "12",
       "11",
@@ -1671,7 +1671,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Cho phép chia “82 : 4”. Hỏi trong phép chia trên thương gấp mấy lần số dư",
+    "question": "Câu 8: Cho phép chia “82 : 4”. Hỏi trong phép chia trên thương gấp mấy lần số dư?",
     "options": [
       "1 lần",
       "10 lần",
@@ -1711,7 +1711,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Trong hình dưới đây các con chó cân nặng như nhau. Khi đó, mỗi con chó câ",
+    "question": "Câu 3: Trong hình dưới đây các con chó cân nặng như nhau. Khi đó, mỗi con chó cân nặng ..?.. kg",
     "options": [
       "6kg",
       "16kg",
@@ -1731,7 +1731,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Khi chia số lớn nhất có hai chữ số cho 8 thì ta được thương là ..?.. và s",
+    "question": "Câu 4: Khi chia số lớn nhất có hai chữ số cho 8 thì ta được thương là ..?.. và số dư là 3",
     "options": [
       "11",
       "12",
@@ -1751,7 +1751,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Bạn Quang nghĩ ra một số. Số đó có chữ số hàng đơn vị là 2 và chữ số hàng",
+    "question": "Câu 5: Bạn Quang nghĩ ra một số. Số đó có chữ số hàng đơn vị là 2 và chữ số hàng chục gấp 4 lần chữ số hàng đơn vị. Lấy số đó chia cho 6 ta được thương là 13 và số dư .?.",
     "options": [
       "1",
       "2",
@@ -1791,7 +1791,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Bạn An có một số quả trứng. Nếu xếp số trứng đó vào các khay, mỗi khay 14",
+    "question": "Câu 3: Bạn An có một số quả trứng. Nếu xếp số trứng đó vào các khay, mỗi khay 14 quả thì xếp được nhiều nhất 5 khay và thừa 4 quả trứng. Hỏi nếu xếp số trứng ấy vào các khay, mỗi khay 6 quả thì xếp được nhiều nhất bao nhiêu khay?",
     "options": [
       "16 khay",
       "15 khay",
@@ -1952,7 +1952,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Nhà Linh có 6 con chó. Nếu số chó giảm đi 3 lần thì bằng số mèo trong nhà",
+    "question": "Câu 1: Nhà Linh có 6 con chó. Nếu số chó giảm đi 3 lần thì bằng số mèo trong nhà đang nuôi. Vậy nhà Linh có số mèo là ..?.. con",
     "options": [
       "1",
       "2",
@@ -1992,7 +1992,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Mẹ có 63 quả trứng. Sau khi đem bán thì số trứng giảm đi 3 lần. Hỏi sau k",
+    "question": "Câu 3: Mẹ có 63 quả trứng. Sau khi đem bán thì số trứng giảm đi 3 lần. Hỏi sau khi bán mẹ còn lại bao nhiêu quả trứng?",
     "options": [
       "21 quả",
       "60 quả",
@@ -2012,7 +2012,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Mai gấp được 18 ngôi sao. Giảm số ngôi sao mà Mai gấp được đi 2 lần thì đ",
+    "question": "Câu 4: Mai gấp được 18 ngôi sao. Giảm số ngôi sao mà Mai gấp được đi 2 lần thì được số ngôi sao mà Hoa gấp được. Hỏi Hoa gấp được bao nhiêu ngôi sao?",
     "options": [
       "9 ngôi sao",
       "10 ngôi sao",
@@ -2052,7 +2052,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Một sợi dây dài 15m. Sau khi đem cắt thì độ dài sợi dây giảm đi 5 lần. Vậ",
+    "question": "Câu 1: Một sợi dây dài 15m. Sau khi đem cắt thì độ dài sợi dây giảm đi 5 lần. Vậy sợi dây còn lại ..?.. m",
     "options": [
       "1",
       "3",
@@ -2072,7 +2072,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Một cửa hàng buổi sáng bán được 66 lít dầu, số lít dầu bán được trong buổ",
+    "question": "Câu 2: Một cửa hàng buổi sáng bán được 66 lít dầu, số lít dầu bán được trong buổi chiều giảm đi 3 lần so với buổi sáng. Hỏi buổi chiều cửa hàng đó bán được bao nhiêu lít dầu?",
     "options": [
       "33",
       "11",
@@ -2092,7 +2092,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Số bị trừ là số tròn chục lớn nhất có hai chữ số, số trừ là số nhỏ nhất c",
+    "question": "Câu 1: Số bị trừ là số tròn chục lớn nhất có hai chữ số, số trừ là số nhỏ nhất có hai chữ số khác nhau và khác 10.Nếu cùng giảm cả số bị trừ và số trừ đi 3 lần, thì hiệu mới là ..(2)..",
     "options": [
       "26",
       "36",
@@ -2292,7 +2292,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Một cửa hàng có 36 hộp kem, sau khi bán buổi sáng thì số hộp kem còn lại",
+    "question": "Câu 9: Một cửa hàng có 36 hộp kem, sau khi bán buổi sáng thì số hộp kem còn lại giảm đi 3 lần. Cửa hàng còn lại ..?.. hộp kem",
     "options": [
       "12",
       "13",
@@ -2312,7 +2312,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Một quãng đường nếu có 4 người sửa thì hết 12 giờ. Nếu có 7 người sửa thì",
+    "question": "Câu 3: Một quãng đường nếu có 4 người sửa thì hết 12 giờ. Nếu có 7 người sửa thì thời gian giảm đi 3 lần. Vậy 7 người làm công việc đó hết ..?..",
     "options": [
       "3",
       "2",
@@ -2372,7 +2372,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Hoa có 30 ngôi sao màu vàng và một số ngôi sao màu xanh. Nếu giảm số ngôi",
+    "question": "Câu 2: Hoa có 30 ngôi sao màu vàng và một số ngôi sao màu xanh. Nếu giảm số ngôi sao màu vàng đi 3 lần thì ta được 1/2 số ngôi sao màu xanh. Vậy Hoa có tất cả ..?.. ngôi sao màu vàng và màu xanh.",
     "options": [
       "10",
       "20",
@@ -2392,7 +2392,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Lớp 6A và lớp 6B quyên góp được 99 quyển sách. Nếu giảm số sách lớp 6A và",
+    "question": "Câu 3: Lớp 6A và lớp 6B quyên góp được 99 quyển sách. Nếu giảm số sách lớp 6A và lớp 6B quyên góp được đi 3 lần thì bằng số sách lớp 6C quyên góp được. Tổng số sách của ba lớp 6A, 6B, 6C quyên góp được nhiều hơn số sách lớp 6D quyên góp được là 87 quyển. Hỏi lớp 6D quyên góp được bao nhiêu quyển sách?",
     "options": [
       "45 quyển sách",
       "30 quyển sách",
@@ -2413,7 +2413,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 1: Trong vườn có 14 cây xoài. Số cây bưởi gấp 2 lần số cây xoài. Tổng số cây",
+    "question": "Câu 1: Trong vườn có 14 cây xoài. Số cây bưởi gấp 2 lần số cây xoài. Tổng số cây trong vườn là?",
     "options": [
       "42 cây",
       "24 cây",
@@ -2433,7 +2433,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Hồng có 28 que tính, Lan có 15 que tính. Hồng cho Mai 5 que tính. Hỏi sau",
+    "question": "Câu 2: Hồng có 28 que tính, Lan có 15 que tính. Hồng cho Mai 5 que tính. Hỏi sau khi cho Mai, Hồng còn nhiều hơn Lan bao nhiêu que tính?",
     "options": [
       "6 que tính",
       "4 que tính",
@@ -2453,7 +2453,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Tổ 1 trồng được 9 cây, tổ 2 trồng được nhiều hơn tổ 1 là 5 cây. Hỏi cả ha",
+    "question": "Câu 3: Tổ 1 trồng được 9 cây, tổ 2 trồng được nhiều hơn tổ 1 là 5 cây. Hỏi cả hai tổ trồng được bao nhiêu cây?",
     "options": [
       "14 cây",
       "23 cây",
@@ -2473,7 +2473,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 4: Hai bạn Bình và An có tất cả 28 con tem, trong đó An có 10 con tem. Hỏi B",
+    "question": "Câu 4: Hai bạn Bình và An có tất cả 28 con tem, trong đó An có 10 con tem. Hỏi Bình có nhiều hơn An bao nhiêu con tem?",
     "options": [
       "Bình có nhiều hơn An 10 con tem",
       "Bình có nhiều hơn An 8 con tem",
@@ -2493,7 +2493,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 5: Tổ 1 trồng được 12 cây, tổ 2 trồng được nhiều hơn tổ 1 là 5 cây. Hỏi cả h",
+    "question": "Câu 5: Tổ 1 trồng được 12 cây, tổ 2 trồng được nhiều hơn tổ 1 là 5 cây. Hỏi cả hai tổ trồng được bao nhiêu cây?",
     "options": [
       "19 cây",
       "17 cây",
@@ -2513,7 +2513,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 6: Xe ô tô nhỏ chở được 7 người, xe ô tô to chở được số người gấp 4 lần xe o",
+    "question": "Câu 6: Xe ô tô nhỏ chở được 7 người, xe ô tô to chở được số người gấp 4 lần xe o ô tô nhỏ. Hỏi cả hai xe chở được bao nhiêu người?",
     "options": [
       "28 người",
       "11 người",
@@ -2533,7 +2533,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 7: Minh có 45 quyển sách. Dũng ít hơn Minh 10 quyển sách. Dũng chia đều số s",
+    "question": "Câu 7: Minh có 45 quyển sách. Dũng ít hơn Minh 10 quyển sách. Dũng chia đều số sách mình có vào 7 ngăn. Hỏi mỗi ngăn có bao nhiêu quyển sách?",
     "options": [
       "5 quyển sách",
       "4 quyển sách",
@@ -2553,7 +2553,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Người ta đựng 96 cái bánh trong 3 hộp bánh, mỗi hộp bánh có 4 gói bánh. K",
+    "question": "Câu 1: Người ta đựng 96 cái bánh trong 3 hộp bánh, mỗi hộp bánh có 4 gói bánh. Khẳng định nào dưới đây đúng?",
     "options": [
       "Số cái bánh của mỗi gói bánh ít hơn 5 cái",
       "Số cái bánh của mỗi gói bánh nhiều hơn 5 cái",
@@ -2573,7 +2573,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Minh có một số viên bi chia đều vào 9 túi, mỗi túi có 7 viên bi. Nếu Minh",
+    "question": "Câu 2: Minh có một số viên bi chia đều vào 9 túi, mỗi túi có 7 viên bi. Nếu Minh lấy số viên bi đó chia đều vào các túi, mỗi túi có chứa số viên bi bằng số liền trước của 4 thì cần bao nhiêu túi?",
     "options": [
       "22 túi",
       "20 túi",
@@ -2593,7 +2593,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Mẹ có 63 quả trứng. Sau khi đem bán thì số trứng giảm đi 3 lần. Hỏi sau k",
+    "question": "Câu 3: Mẹ có 63 quả trứng. Sau khi đem bán thì số trứng giảm đi 3 lần. Hỏi sau khi bán mẹ còn lại bao nhiêu quả trứng?",
     "options": [
       "21 quả",
       "60 quả",
@@ -2613,7 +2613,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Mai gấp được 18 ngôi sao. Giảm số ngôi sao mà Mai gấp được đi 2 lần thì đ",
+    "question": "Câu 4: Mai gấp được 18 ngôi sao. Giảm số ngôi sao mà Mai gấp được đi 2 lần thì được số ngôi sao mà Hoa gấp được. Hỏi Hoa gấp được bao nhiêu ngôi sao?",
     "options": [
       "9 ngôi sao",
       "10 ngôi sao",
@@ -2633,7 +2633,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Trong một cuộc thi làm hoa, bạn Hồng làm được 25 bông hoa. Bạn Hồng làm í",
+    "question": "Câu 5: Trong một cuộc thi làm hoa, bạn Hồng làm được 25 bông hoa. Bạn Hồng làm ít hơn bạn Mai 5 bông hoa và chỉ bằng một nửa số bông hoa bạn Hoà. Hỏi bạn làm được nhiều bông hoa nhất là?",
     "options": [
       "Hồng",
       "Hoà",
@@ -2653,7 +2653,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Trang có một số bộ quần áo. Trang mua thêm số quần áo mới gấp 3 lần số bộ",
+    "question": "Câu 1: Trang có một số bộ quần áo. Trang mua thêm số quần áo mới gấp 3 lần số bộ quần áo ban đầu. Sau khi giặt đồ thì một nửa số bộ quần áo vừa mua bị phải màu với nhau không thể mặc được nữa nên Trang còn lại 18 bộ quần áo mới. Khi đó, tổng số quần áo ban đầu và quần áo mới còn mặt được sau khi giặt là?",
     "options": [
       "36 bộ quần áo",
       "30 bộ quần áo",
@@ -2673,7 +2673,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Một tờ giấy gói quà dài 87dm, người ta dùng để gói 15 hộp quà, biết để bọ",
+    "question": "Câu 2: Một tờ giấy gói quà dài 87dm, người ta dùng để gói 15 hộp quà, biết để bọc mỗi hộp quà cần 5dm giấy. Sau khi bọc xong các hộp quà, phần giấy còn lại người ta dùng để làm nơ trang trí trên hộp quà. Biết làm nỗi cái nơ cần 2dm. Vậy có ..?.. hộp quà không có nơ.",
     "options": [
       "9",
       "12",
@@ -2693,7 +2693,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: An, Bình và Hoà được cô giáo cho một số nhãn vở. Nếu An cho Bình 6 nhãn v",
+    "question": "Câu 1: An, Bình và Hoà được cô giáo cho một số nhãn vở. Nếu An cho Bình 6 nhãn vở, Bình lại cho Hoà 4 nhãn vở thì số nhãn vở của mỗi bạn đều bằng 12 cái. Hỏi số nhãn vở lúc đầu của Bình là?",
     "options": [
       "10",
       "18",
@@ -2713,7 +2713,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 8: Có 5 bông hoa cúc. Số hoa hồng có nhiều hơn số hoa cúc là 3 bông. Hỏi có",
+    "question": "Câu 8: Có 5 bông hoa cúc. Số hoa hồng có nhiều hơn số hoa cúc là 3 bông. Hỏi có bao nhiêu bông hoa hồng và hoa cúc?",
     "options": [
       "8 bông",
       "12 bông",
@@ -2733,7 +2733,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 9: Ngăn trên có 10 quyển sách, ngăn dưới co nhiều hơn ngăn trên 3 quyển sách",
+    "question": "Câu 9: Ngăn trên có 10 quyển sách, ngăn dưới co nhiều hơn ngăn trên 3 quyển sách. Hỏi cả hai ngăn có bao nhiêu quyển sách?",
     "options": [
       "13 quyển sách",
       "23 quyển sách",
@@ -2753,7 +2753,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Can thứ nhất đựng được 5l nước, can thứ hai đựng số lít nước gấp 3 lần c",
+    "question": "Câu 10: Can thứ nhất đựng được 5l nước, can thứ hai đựng số lít nước gấp 3 lần can thứ nhất. Hỏi cả hai can đựng được bao nhiêu lít nước?",
     "options": [
       "20l nước",
       "15l nước",
@@ -2773,7 +2773,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 11: Mai gấp được 10 ngôi sao, Nam gấp được ít hơn Mai 3 ngôi sao. Hỏi cả hai",
+    "question": "Câu 11: Mai gấp được 10 ngôi sao, Nam gấp được ít hơn Mai 3 ngôi sao. Hỏi cả hai bạn gấp được bao nhiêu ngôi sao?",
     "options": [
       "7 ngôi sao",
       "17 ngôi sao",
@@ -2793,7 +2793,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 12: Buổi sáng cửa hàng bán được 10 cái xe đạp, buổi chiều cửa hàng bán được",
+    "question": "Câu 12: Buổi sáng cửa hàng bán được 10 cái xe đạp, buổi chiều cửa hàng bán được ít hơn buổi sáng 4 cái xe đạp. Hỏi cả hai buổi cửa hàng bán được bao nhiêu cái xe đạp?",
     "options": [
       "16 cái xe đạp",
       "14 cái xe đạp",
@@ -2813,7 +2813,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 13: Đường gấp khúc ABC có AB = 9 cm, đoạn BC dài gấp 2 lần đoạn AB. Hỏi đườn",
+    "question": "Câu 13: Đường gấp khúc ABC có AB = 9 cm, đoạn BC dài gấp 2 lần đoạn AB. Hỏi đường gấp khúc ABC dài bao nhiêu xăng-ti-mét?",
     "options": [
       "18cm",
       "27cm",
@@ -2833,7 +2833,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Thùng thứ nhất chứa 151 lít dầu. Người ta đổ thêm vào thùng thứ nhất 121l",
+    "question": "Câu 6: Thùng thứ nhất chứa 151 lít dầu. Người ta đổ thêm vào thùng thứ nhất 121lít dầu thì lúc nào thùng thứ hai vẫn nhiều hơn thùng thứ nhất 148 lít dầu. Hỏi thùng thứ hai chứa bao nhiêu lít dầu?",
     "options": [
       "571 lít dầu",
       "299 lít dầu",
@@ -2853,7 +2853,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Trong phòng bếp có một số bát. Mẹ mua thêm số bát mới bằng 4 lần số bát đ",
+    "question": "Câu 7: Trong phòng bếp có một số bát. Mẹ mua thêm số bát mới bằng 4 lần số bát đó. Khi nghịch ngợm, em bé làm vỡ 20 bát mẹ vừa mua thì số bát mới mua còn lại 4 cái. Khi đó, tổng số bát em bé làm vỡ và số bát ban đầu là?",
     "options": [
       "26 cái bát",
       "24 cái bát",
@@ -2873,7 +2873,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Một khu vườn hình tứ giác có chu vi là 56m, biết số đo 3 cạnh lần lượt là",
+    "question": "Câu 8: Một khu vườn hình tứ giác có chu vi là 56m, biết số đo 3 cạnh lần lượt là 13m, 10m, 20m. Cạnh dài nhất hơn cạnh ngắn nhất ..?.. m",
     "options": [
       "13m",
       "7m",
@@ -2893,7 +2893,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Một cửa hàng có 36 hộp kem, sau khi bán buổi sáng thì số hộp kem còn lại",
+    "question": "Câu 9: Một cửa hàng có 36 hộp kem, sau khi bán buổi sáng thì số hộp kem còn lại giảm đi 3 lần. Cửa hàng còn lại ..?.. hộp kem",
     "options": [
       "12",
       "13",
@@ -2913,7 +2913,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Tấm vải xanh dài gấp 3 lần tấm vải đỏ. Cửa hàng đã bán được 7m vải đỏ và",
+    "question": "Câu 3: Tấm vải xanh dài gấp 3 lần tấm vải đỏ. Cửa hàng đã bán được 7m vải đỏ và 37m vải xanh, số mét vảo đỏ còn lại là 33m. Vậy cửa hàng ban đầu có ..(1)..vải xanh và sau khi bán còn lại ..(2).. m vải xanh. Số cần điền vào dấu chấm ..(2).. là?",
     "options": [
       "120",
       "83",
@@ -2933,7 +2933,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Trong túi có ba loại bi: bi đỏ, bi vàng và bi xanh. Biết rằng số bi của c",
+    "question": "Câu 4: Trong túi có ba loại bi: bi đỏ, bi vàng và bi xanh. Biết rằng số bi của cả túi nhiều hơn tổng số bi vàng và bi đỏ là 15 viên, số bi xanh ít hơn số bi vàng là 3 viên và nhiều hơn số bi đỏ là 4 viên. Hỏi trong túi có bao nhiêu viên bi?",
     "options": [
       "48 viên bi",
       "44 viên bi",
@@ -2953,7 +2953,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Bạn Tú ban đầu có một số viên bi. Sau khi Tú được Hiếu cho thêm 30 viên b",
+    "question": "Câu 5: Bạn Tú ban đầu có một số viên bi. Sau khi Tú được Hiếu cho thêm 30 viên bi thì Tú có số viên bi gấp 4 lấn số bi ban đầu. Hỏi sau khi Tú được Hiếu cho thêm thì tổng số bi của Tú là ..?..",
     "options": [
       "40 viên bi",
       "10 viên bi",
@@ -2973,7 +2973,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Hoa có 30 ngôi sao màu vàng và một số ngôi sao màu xanh. Nếu giảm số ngôi",
+    "question": "Câu 2: Hoa có 30 ngôi sao màu vàng và một số ngôi sao màu xanh. Nếu giảm số ngôi sao màu vàng đi 3 lần thì ta được 1/2 số ngôi sao màu xanh. Vậy Hoa có tất cả ..?.. ngôi sao màu vàng và màu xanh.",
     "options": [
       "10",
       "20",
@@ -2993,7 +2993,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "GIAI_TOAN",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Buổi sáng cửa hàng bán được ít hơn 76kg gạo nhưng lại nhiều hơn 74kg gạo.",
+    "question": "Câu 3: Buổi sáng cửa hàng bán được ít hơn 76kg gạo nhưng lại nhiều hơn 74kg gạo. Số gạo bán được buổi chiều bằng số gạo buổi sáng giảm đi 5 lần. Hỏi buổi chiều cửa hàng đó bán được ít hơn buổi sáng bao nhiêu ki-lô-gam gạo?",
     "options": [
       "60kg",
       "50kg",
@@ -3034,7 +3034,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Trung bình một sọt cam nặng 25kg, một sọt quýt nặng 20kg. Hỏi 4 sọt cam n",
+    "question": "Câu 2: Trung bình một sọt cam nặng 25kg, một sọt quýt nặng 20kg. Hỏi 4 sọt cam nặng bằng bao nhiêu sọt quýt?",
     "options": [
       "100",
       "80",
@@ -3054,7 +3054,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Tuấn cắt được 15 lá cờ. Thu cắt được ít hơn Tuấn 4 lá cờ. Hỏi cả hai bạn",
+    "question": "Câu 3: Tuấn cắt được 15 lá cờ. Thu cắt được ít hơn Tuấn 4 lá cờ. Hỏi cả hai bạn cắt được bao nhiêu lá cờ?",
     "options": [
       "11 lá cờ",
       "19 lá cờ",
@@ -3094,7 +3094,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 5: Tâm cso 10 quả ổi, Tú có ít hơn Tâm 2 quả ổi. Số ổi của cả hai bạn là ..?",
+    "question": "Câu 5: Tâm cso 10 quả ổi, Tú có ít hơn Tâm 2 quả ổi. Số ổi của cả hai bạn là ..?.. quả",
     "options": [
       "18 quả",
       "8 quả",
@@ -3214,7 +3214,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Giảm số lớn nhất có hai chữ số đi 3 lần sau đó thêm vào 67 đơn vị ta được",
+    "question": "Câu 4: Giảm số lớn nhất có hai chữ số đi 3 lần sau đó thêm vào 67 đơn vị ta được số ..?..",
     "options": [
       "33",
       "30",
@@ -3254,7 +3254,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Bạn Hướng nghĩ ra một số. Số đó có chữ số hàng đơn vị là 3 và chữ số hàng",
+    "question": "Câu 1: Bạn Hướng nghĩ ra một số. Số đó có chữ số hàng đơn vị là 3 và chữ số hàng chục gấp ba lần chữ số hàng đơn vị. Lấy số đó chia cho 8 ta được thương là ..?.. và số dư là 5",
     "options": [
       "5",
       "11",
@@ -3274,7 +3274,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Một số chia cho 6 thì dư 1. Muốn phép chia đó không còn dư nữa thì số bị",
+    "question": "Câu 2: Một số chia cho 6 thì dư 1. Muốn phép chia đó không còn dư nữa thì số bị chia cần tăng ít nhất mấy đơn vị?",
     "options": [
       "1 đơn vị",
       "4 đơn vị",
@@ -3294,7 +3294,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Cho đường gấp khúc ABCDE như hình vẽ. Biết rằng đoạn thẳng AB dài 5dm. Gi",
+    "question": "Câu 1: Cho đường gấp khúc ABCDE như hình vẽ. Biết rằng đoạn thẳng AB dài 5dm. Giảm độ dài đoạn thẳng AB đi 5 lần thì ta được độ dài đoạn thẳng BC. Đoạn thẳng CD dài hơn đoạn thẳng BC 4cm. Độ dài đoạn thẳng DE gấp ba lần độ dài đoạn thẳng CD. Khi đó độ dài đường gấp khúc ABCDE bằng ..?.. cm",
     "options": [
       "50",
       "106",
@@ -3354,7 +3354,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Tổng số kẹo cam và kẹo dâu là 46 viên, trong đó kẹo cam là 22 viên. Hiệu",
+    "question": "Câu 10: Tổng số kẹo cam và kẹo dâu là 46 viên, trong đó kẹo cam là 22 viên. Hiệu số giữa kẹo dâu và kẹo cam là ..?.. viên",
     "options": [
       "24",
       "4",
@@ -3434,7 +3434,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Biết rằng số bi của Minh là số nhỏ nhất có hai chữ số. Số bi của Long gấp",
+    "question": "Câu 6: Biết rằng số bi của Minh là số nhỏ nhất có hai chữ số. Số bi của Long gấp 3 lần số bi của Minh. Khi đó, cả hai bạn Minh và Long có tất cả ..?.. viên bi",
     "options": [
       "10",
       "30",
@@ -3454,7 +3454,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Hằng nuôi gà và lợn. Hằng đếm được số chân gà là 64 và số chân gà gấp 2 l",
+    "question": "Câu 7: Hằng nuôi gà và lợn. Hằng đếm được số chân gà là 64 và số chân gà gấp 2 lần số chân lợn. Số gà của nhà Hằng hơn số lợn bao nhiêu con?",
     "options": [
       "8 con",
       "24 con",
@@ -3494,7 +3494,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Một lớp học có 35 học sinh, phòng học của lớp đó chỉ có loại bàn 4 chỗ ng",
+    "question": "Câu 9: Một lớp học có 35 học sinh, phòng học của lớp đó chỉ có loại bàn 4 chỗ ngồi. Hỏi cần có ít nhất bao nhiêu bàn học như thế để có thể xếp được hết số học sinh đó?",
     "options": [
       "7 chiếc bàn",
       "6 chiếc bàn",
@@ -3514,7 +3514,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Lan có 18 con tem, số tem của Thắng bằng số tem của Lan giảm đi 3 lần. An",
+    "question": "Câu 3: Lan có 18 con tem, số tem của Thắng bằng số tem của Lan giảm đi 3 lần. An có gấp đôi số tem của Thắng. Hỏi cả ba bạn có bao nhiêu con tem?",
     "options": [
       "36",
       "6",
@@ -3534,7 +3534,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Cho một số, biết 12 chia cho số đã cho được 4. Vậy 63 chia cho số đã cho",
+    "question": "Câu 4: Cho một số, biết 12 chia cho số đã cho được 4. Vậy 63 chia cho số đã cho được kết quả là ..?..",
     "options": [
       "4",
       "21",
@@ -3554,7 +3554,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Một bức tường dài 280cm. Một người thợ muốn lát gạch hoa ở chân tường của",
+    "question": "Câu 5: Một bức tường dài 280cm. Một người thợ muốn lát gạch hoa ở chân tường của bức tường đó, biết mỗi viên gạch hoa dài 40cm. Hỏi người thợ cần bao nhiêu viên gạch hoa để lát ở chân tường?",
     "options": [
       "70 viên",
       "17 viên",
@@ -3574,7 +3574,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Mảnh vải thứ nhất dài 18m, mảnh vải thứ hai dài hơn mảnh vảo thứ nhất 4m,",
+    "question": "Câu 2: Mảnh vải thứ nhất dài 18m, mảnh vải thứ hai dài hơn mảnh vảo thứ nhất 4m, mảnh vải thứ ba bằng 2 nhân với tổng độ dài mảnh vải thứ nhất và thứ hai. Độ dài của mảnh vải thứ ba là .?. mét.",
     "options": [
       "22",
       "66",
@@ -3594,7 +3594,7 @@ export const STAGE_4_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Cho ba số. Biết số thứ nhất bằng 1/3 số thứ ba, số thứ hai bằng 1/3 số th",
+    "question": "Câu 3: Cho ba số. Biết số thứ nhất bằng 1/3 số thứ ba, số thứ hai bằng 1/3 số thứ nhất. Số thứ ba là 36. Số thứ ba chia cho số thứ hai thì được thương là?",
     "options": [
       "9",
       "24",

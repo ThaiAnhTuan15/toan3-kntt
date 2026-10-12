@@ -190,7 +190,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Một mảnh vải dài 75dm, sau khi cắt đi 39dm mẹ chia mảnh vải còn lại thành",
+    "question": "Câu 2: Một mảnh vải dài 75dm, sau khi cắt đi 39dm mẹ chia mảnh vải còn lại thành 4 đoạn bằng nhau để may khăn. Khi đó mỗi mảnh vải để may khăn dài số đề-xi-mét là?",
     "options": [
       "8 dm",
       "10 dm",
@@ -210,7 +210,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Chọn dấu điền vào ô trống để được khẳng định đúng?\n28 : 4 + 13 .?. 5 × 4",
+    "question": "Câu 3: Chọn dấu điền vào ô trống để được khẳng định đúng?\n28 : 4 + 13 .?. 5 × 4 – 1",
     "options": [
       ">",
       "=",
@@ -230,7 +230,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Đàn bò nhà Huy có 32 con. Biết rằng số con bò đực bằng tổng số con bò chi",
+    "question": "Câu 4: Đàn bò nhà Huy có 32 con. Biết rằng số con bò đực bằng tổng số con bò chia cho 4. Khi đó số con bò cái nhà Huy là?",
     "options": [
       "8 con",
       "24 con",
@@ -270,7 +270,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Tùng nghĩ ra một số có hai chữ số. Tùng thấy rằng, thương của số đó và số",
+    "question": "Câu 2: Tùng nghĩ ra một số có hai chữ số. Tùng thấy rằng, thương của số đó và số liền trước của 5 là một số có một chữ số nhỏ hơn 10 và lớn hơn 8. Hỏi số Tùng nghĩ ra là?",
     "options": [
       "28",
       "24",
@@ -290,7 +290,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Một người trồng được số bông hoa là số tròn chục liền sau của 40. Ngày đầ",
+    "question": "Câu 1: Một người trồng được số bông hoa là số tròn chục liền sau của 40. Ngày đầu tiên người đó bán được 14 bông hoa. Số bông hoa bán ngày thứ hai bằng số bông hoa còn lại chia cho 4. Hỏi ngày thứ hai người đó bán được bao nhiêu bông hoa?",
     "options": [
       "9 bông",
       "6 bông",
@@ -390,7 +390,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 13: Có 28 bạn xếp hàng tập thể dục, các bạn xếp thành 4 hàng, mỗi hàng có số",
+    "question": "Câu 13: Có 28 bạn xếp hàng tập thể dục, các bạn xếp thành 4 hàng, mỗi hàng có số bạn bằng nhau. Hỏi mỗi hàng có mấy bạn?",
     "options": [
       "8 bạn",
       "6 bạn",
@@ -450,7 +450,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Biết thương của 36 với số một số bằng tổng của 4 với số liền sau của 4. S",
+    "question": "Câu 5: Biết thương của 36 với số một số bằng tổng của 4 với số liền sau của 4. Số đó là?",
     "options": [
       "9",
       "4",
@@ -470,7 +470,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Một cửa hàng có 42 bao gạo. Ngày thứ nhất cửa hàng đó bán được 18 bao gạo",
+    "question": "Câu 6: Một cửa hàng có 42 bao gạo. Ngày thứ nhất cửa hàng đó bán được 18 bao gạo. Ngày thứ hai bán được số bao gạo bằng số bao gạo còn lại chia cho 4. Hỏi ngày thứ hai cửa hàng bán được bao nhiêu bao gạo?",
     "options": [
       "5 bao gạo",
       "7 bao gạo",
@@ -510,7 +510,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Một người nuôi được 35 con cừu. Lần thứ nhất người đó bán được 11 con cừu",
+    "question": "Câu 3: Một người nuôi được 35 con cừu. Lần thứ nhất người đó bán được 11 con cừu. Lần thứ hai người đó bán được số con cừu bằng số con cừu còn lại chia cho 4. Hỏi sau hai lần bán người đó còn lại bao nhiêu con cừu?",
     "options": [
       "17 con cừu",
       "15 con cừu",
@@ -550,7 +550,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Tìm một số biết rằng thương của số đó với 4 bằng tích của 2 với số liền t",
+    "question": "Câu 5: Tìm một số biết rằng thương của số đó với 4 bằng tích của 2 với số liền trước của 4. Số cần tìm là?",
     "options": [
       "24",
       "20",
@@ -570,7 +570,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Biết thứ tự ô trống được tính từ trái qua phải. Số cần điền trong ô trống",
+    "question": "Câu 2: Biết thứ tự ô trống được tính từ trái qua phải. Số cần điền trong ô trống thứ nhất là?",
     "options": [
       "12",
       "28",
@@ -590,7 +590,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Cho một số có hai chữ số biết chữ số hàng chục bằng chữ số hàng đơn vị ch",
+    "question": "Câu 3: Cho một số có hai chữ số biết chữ số hàng chục bằng chữ số hàng đơn vị chia cho 4, chữ số hàng đơn vị là thương của 16 và 2. Số đã cho là?",
     "options": [
       "24",
       "18",
@@ -630,7 +630,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Cho phép toán 6 + 6 + 6 + 6 + 6 = ?\nTa thay dấu ? bởi phép toán nào dưới",
+    "question": "Câu 2: Cho phép toán 6 + 6 + 6 + 6 + 6 = ?\nTa thay dấu ? bởi phép toán nào dưới đây?",
     "options": [
       "5 + 6",
       "6 × 6",
@@ -950,7 +950,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Cho phép toán 7 + 7 + 7 + 7 + 7 = ?\nTa thay dấu ? bởi phép toán nào dưới",
+    "question": "Câu 2: Cho phép toán 7 + 7 + 7 + 7 + 7 = ?\nTa thay dấu ? bởi phép toán nào dưới đây?",
     "options": [
       "7 + 6",
       "7 x 6",
@@ -1070,7 +1070,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Con trâu cân nặng 650 kg, con nghé cân nặng 150 kg. Hỏi con trâu nặng hơn",
+    "question": "Câu 4: Con trâu cân nặng 650 kg, con nghé cân nặng 150 kg. Hỏi con trâu nặng hơn con nghé bao nhiêu ki-lô-gam?",
     "options": [
       "500 kg",
       "800 kg",
@@ -1090,7 +1090,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Tìm một số, biết rằng lấy số đó nhân với 5 rồi cộng với 15 thì được kết q",
+    "question": "Câu 5: Tìm một số, biết rằng lấy số đó nhân với 5 rồi cộng với 15 thì được kết quả là 50. Số đó là:",
     "options": [
       "10",
       "5",
@@ -1111,7 +1111,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Trong kho có 10 bao gạo. Mỗi bao gạo nặng 7 kg. Hỏi trong kho có tất cả b",
+    "question": "Câu 1: Trong kho có 10 bao gạo. Mỗi bao gạo nặng 7 kg. Hỏi trong kho có tất cả bao nhiêu ki-lô-gam gạo?",
     "options": [
       "63 kg",
       "56 kg",
@@ -1191,7 +1191,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 9: Một sợi dây dài 28 dm được cắt thành 7 đoạn bằng nhau. Hỏi mỗi đoạn dây đ",
+    "question": "Câu 9: Một sợi dây dài 28 dm được cắt thành 7 đoạn bằng nhau. Hỏi mỗi đoạn dây đó dài bao nhiêu đề-xi-mét?",
     "options": [
       "7 dm",
       "6 dm",
@@ -1231,7 +1231,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 11: Số tự nhiên lớn nhất có thể điền vào ô trống để phép so sánh sau đúng\n70",
+    "question": "Câu 11: Số tự nhiên lớn nhất có thể điền vào ô trống để phép so sánh sau đúng\n70 : 7 + 6 > .?.",
     "options": [
       "10",
       "14",
@@ -1251,7 +1251,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Cho bảng sau:\nSố bị chia\n14\nSố chia\n7\nThương\n?\nSố thích hợp điền vào dấu",
+    "question": "Câu 4: Cho bảng sau:\nSố bị chia\n14\nSố chia\n7\nThương\n?\nSố thích hợp điền vào dấu ? trong bảng trên là",
     "options": [
       "2",
       "3",
@@ -1271,7 +1271,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Nhím con phải giúp mẹ mang 35 hạt dẻ về nhà. Mỗi chuyến nhím con mang đượ",
+    "question": "Câu 5: Nhím con phải giúp mẹ mang 35 hạt dẻ về nhà. Mỗi chuyến nhím con mang được 7 hạt dẻ. Hỏi nhím con phải đi bao nhiêu chuyến để mang hết số hạt dẻ về nhà?",
     "options": [
       "6 chuyến",
       "4 chuyến",
@@ -1291,7 +1291,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Cho các phép tính sau:\nPhép tính 1: 42 : 7\nPhép tính 2: 14 : 7 + 5\nPhép t",
+    "question": "Câu 6: Cho các phép tính sau:\nPhép tính 1: 42 : 7\nPhép tính 2: 14 : 7 + 5\nPhép tính 3: 2  3\nTrong các phép tính trên, có bao nhiêu phép tính có kết quả bằng 6?",
     "options": [
       "1 phép tính",
       "2 phép tính",
@@ -1311,7 +1311,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Minh có 54 viên bi. Sau khi cho bạn 26 viên bi, Minh đen số viên bi còn l",
+    "question": "Câu 1: Minh có 54 viên bi. Sau khi cho bạn 26 viên bi, Minh đen số viên bi còn lại chia đều vào các túi, mỗi túi có 7 viên bi. Hỏi Minh chia được bao nhiêu túi?",
     "options": [
       "4 túi",
       "5 túi",
@@ -1331,7 +1331,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Một cửa hàng có chương trình khuyến mại, khi mua một lốc 6 hộp sữa sẽ đượ",
+    "question": "Câu 2: Một cửa hàng có chương trình khuyến mại, khi mua một lốc 6 hộp sữa sẽ được tặng thêm 1 hộp sữa cùng loại. Mẹ đã mua cho Trang 7 lốc sữa. Vậy Trang có tất cả .?. hộp sữa.",
     "options": [
       "42 hộp sữa",
       "49 hộp giữa",
@@ -1351,7 +1351,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Minh có 48 viên bi. Sau khi cho bạn 13 viên bi, Minh đem số viên bi còn l",
+    "question": "Câu 3: Minh có 48 viên bi. Sau khi cho bạn 13 viên bi, Minh đem số viên bi còn lại chia đều vào các túi, 'mỗi túi có 7 viên bi. Hỏi Minh chia được bao nhiêu túi?",
     "options": [
       "6 túi",
       "7 túi",
@@ -1371,7 +1371,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Tìm một số có 3 chữ số biết chữ số hàng trăm gấp 7 lần chữ số hàng chục v",
+    "question": "Câu 4: Tìm một số có 3 chữ số biết chữ số hàng trăm gấp 7 lần chữ số hàng chục và chữ số hàng đơn vị gấp 2 lần chữ số hàng chục. Số đó là?",
     "options": [
       "701",
       "710",
@@ -1391,7 +1391,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Mẹ cho Mai 50 nghìn đồng đi siêu thị mua năm quyển vở và hai cái bút. Biế",
+    "question": "Câu 5: Mẹ cho Mai 50 nghìn đồng đi siêu thị mua năm quyển vở và hai cái bút. Biết giá tiền của mỗi quyển vở là 7 nghìn đồng và giá tiền của mỗi cái bút là 6 nghìn đồng. Hỏi sau khi mua 5 quyển vở và 2 cái bút thì Mai còn lại bao nhiêu nghìn đồng?",
     "options": [
       "3 nghìn đồng",
       "4 nghìn đồng",
@@ -1411,7 +1411,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Một bạn viết liên tiếp một nhóm chữ gồm 7 chữ cái N, C, M, D, A, G, U thà",
+    "question": "Câu 1: Một bạn viết liên tiếp một nhóm chữ gồm 7 chữ cái N, C, M, D, A, G, U thành dãy theo quy luật lặp lại của nhóm chữ đó. Biết rằng chữ cái thứ 52 là chữ N, chữ cái thứ 40 là chữ C, chữ cái thứ 35 là chữ M, chữ cái thứ 57 là chữ D, chữ cái thứ 13 là chữ A, chữ cái thứ 46 là chữ G.\nThứ tự sắp xếp đúng thứ tự của các chữ cái trong nhóm chữ là?",
     "options": [
       "D; U; N; G; C; A; M",
       "N; G; A; M; D; U; C",
@@ -1431,7 +1431,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Tìm một số có 3 chữ số biết chữ số hàng trăm gấp 7 lần chữ số hàng chục v",
+    "question": "Câu 4: Tìm một số có 3 chữ số biết chữ số hàng trăm gấp 7 lần chữ số hàng chục và chữ số hàng đơn vị gấp 2 lần chữ số hàng chục. Số đó là?",
     "options": [
       "721",
       "712",
@@ -1451,7 +1451,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Một số đem chia cho 5, được bao nhiêu đem nhân với 7, sau đó trừ đi 18 đư",
+    "question": "Câu 3: Một số đem chia cho 5, được bao nhiêu đem nhân với 7, sau đó trừ đi 18 được kết quả là 17. Số đó là?",
     "options": [
       "35",
       "5",
@@ -1631,7 +1631,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 9: Một sợi dây dài 28 dm được cắt thành 7 đoạn bằng nhau. Hỏi mỗi đoạn dây đ",
+    "question": "Câu 9: Một sợi dây dài 28 dm được cắt thành 7 đoạn bằng nhau. Hỏi mỗi đoạn dây đó dài bao nhiêu đề-xi-mét?",
     "options": [
       "7 dm",
       "6 dm",
@@ -1651,7 +1651,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Số nào trong các số dưới đây là kết quả khi ta lấy 8 nhân với một số có",
+    "question": "Câu 10: Số nào trong các số dưới đây là kết quả khi ta lấy 9 nhân với một số có một chữ số?",
     "options": [
       "37",
       "67",
@@ -1751,7 +1751,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Một con bạch tuộc có 8 cái vòi. Hỏi 7 con bạch tuộc có tất cả bao nhiêu c",
+    "question": "Câu 1: Một con bạch tuộc có 8 cái vòi. Hỏi 7 con bạch tuộc có tất cả bao nhiêu cái vòi?",
     "options": [
       "56 cái vòi",
       "48 cái vòi",
@@ -1911,7 +1911,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 9: Một sợi dây dài 81 dm được cắt thành 9 đoạn bằng nhau. Hỏi mỗi đoạn dây đ",
+    "question": "Câu 9: Một sợi dây dài 81 dm được cắt thành 9 đoạn bằng nhau. Hỏi mỗi đoạn dây đó dài bao nhiêu đề-xi-mét?",
     "options": [
       "7 dm",
       "6 dm",
@@ -1931,7 +1931,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Số nào trong các số dưới đây là kết quả khi ta lấy 9 nhân với một số có",
+    "question": "Câu 10: Số nào trong các số dưới đây là kết quả khi ta lấy 9 nhân với một số có một chữ số?",
     "options": [
       "37",
       "67",
@@ -1951,7 +1951,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 11: Nam có 9 con tem, Hải có số tem gấp 4 lần số tem của Nam. Hỏi số tem của",
+    "question": "Câu 11: Nam có 9 con tem, Hải có số tem gấp 4 lần số tem của Nam. Hỏi số tem của Hải là?",
     "options": [
       "27",
       "45",
@@ -2051,7 +2051,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Có 54kg gạo chia đều vào các bao, mỗi bao nặng 9kg. Vậy chia được bao nhi",
+    "question": "Câu 3: Có 54kg gạo chia đều vào các bao, mỗi bao nặng 9kg. Vậy chia được bao nhiêu bao gạo?",
     "options": [
       "6 bao gạo",
       "7 bao gạo",
@@ -2411,7 +2411,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 4: Cho băng giấy được tô màu như hình vẽ dưới đây. Hỏi phần tô màu tím chiếm",
+    "question": "Câu 4: Cho băng giấy được tô màu như hình vẽ dưới đây. Hỏi phần tô màu tím chiếm 1/.?. băng giấy?",
     "options": [
       "1/6",
       "1/4",
@@ -2451,7 +2451,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 6: Bạn Minh đã thực hiện tô màu như hình vẽ dưới đây. Hỏi Minh đã tô màu .?.",
+    "question": "Câu 6: Bạn Minh đã thực hiện tô màu như hình vẽ dưới đây. Hỏi Minh đã tô màu .?. hình tròn?",
     "options": [
       "1/6",
       "1/7",
@@ -2471,7 +2471,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 7: Ngọc đã ăn 1/8 chiếc bánh. Hỏi bạn Ngọc đã ăn phần bánh của chiếc bánh tr",
+    "question": "Câu 7: Ngọc đã ăn 1/8 chiếc bánh. Hỏi bạn Ngọc đã ăn phần bánh của chiếc bánh trong hình nào dưới đây?",
     "options": [
       "Hình A",
       "Hình B",
@@ -2611,7 +2611,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 5: Trong các hình dưới đây, hình nào không có phần tô màu bằng 1/4 của hình",
+    "question": "Câu 5: Trong các hình dưới đây, hình nào không có phần tô màu bằng 1/4 của hình đó?",
     "options": [
       "Hình 4",
       "Hình 1",
@@ -2711,7 +2711,7 @@ export const STAGE_2_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Bạn Lan muốn khoanh vào 1/5 số chiếc ô trong hình dưới đây. Hỏi bạn Lan",
+    "question": "Câu 10: Bạn Lan muốn khoanh vào 1/5 số chiếc ô trong hình dưới đây. Hỏi bạn Lan cần khoanh vào bao nhiêu chiếc ô?",
     "options": [
       "1 chiếc ô",
       "2 chiếc ô",

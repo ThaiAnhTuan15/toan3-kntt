@@ -190,7 +190,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Đoạn thẳng AB dài 56mm, đoạn thẳng AB dài hơn đoạn thẳng CD 17mm. Hỏi đoạ",
+    "question": "Câu 3: Đoạn thẳng AB dài 56mm, đoạn thẳng AB dài hơn đoạn thẳng CD 17mm. Hỏi đoạn thẳng CD dài bao nhiêu mm?",
     "options": [
       "73",
       "39",
@@ -210,7 +210,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Cào cào tậo nhảy ngày đầu tiên được 11mm. Sau một tuần thì cào cào nhảy x",
+    "question": "Câu 4: Cào cào tậo nhảy ngày đầu tiên được 11mm. Sau một tuần thì cào cào nhảy xa được gấp 5 lần ngày đầu tiên. Hỏi khi đó cào cào nhảy xa được bao nhiêu mi-li-mét?",
     "options": [
       "55mm",
       "16mm",
@@ -270,7 +270,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Cho các phép tính sau\nPhép tính (1) 5cm + 25mm – 15mm\nPhép tính (2) 35mm",
+    "question": "Câu 2: Cho các phép tính sau\nPhép tính (1) 5cm + 25mm – 15mm\nPhép tính (2) 35mm + 20mm\nHỏi trong hai phép tính trên, phép tính nào có kết quả lớn hơn?",
     "options": [
       "Phép tính (2)",
       "Phép tính (1)",
@@ -290,7 +290,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Cho đường gấp khúc MNPQ gồm ba đoạn thẳng. Đoạn thẳng MN bằng đoạn thẳng",
+    "question": "Câu 1: Cho đường gấp khúc MNPQ gồm ba đoạn thẳng. Đoạn thẳng MN bằng đoạn thẳng PQ và bằng 2cm. Đoạn thẳng NP dài hơn đoạn thẳng PQ là 15mm. Hỏi đường gấp khúc MNPQ dài bao nhiêu mi-li-mét?",
     "options": [
       "55mm",
       "19mm",
@@ -450,7 +450,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Hằng nuôi gà và lợn. Hằng đếm được số chân gà là 64 và số chân gà gấp 2 l",
+    "question": "Câu 7: Hằng nuôi gà và lợn. Hằng đếm được số chân gà là 64 và số chân gà gấp 2 lần số chân lợn. Số gà của nhà Hằng hơn số lợn bao nhiêu con?",
     "options": [
       "8 con",
       "24 con",
@@ -490,7 +490,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Bạn kiến đi từ nhà đến trường. Bạn ấy đi được 156mm. Quãng đường còn lại",
+    "question": "Câu 9: Bạn kiến đi từ nhà đến trường. Bạn ấy đi được 156mm. Quãng đường còn lại kiến phải đi dài 344mm. Hỏi quãng đường bạn kiến đi từ nhà đến trường dài bao nhiêu xăng-ti-mét?",
     "options": [
       "40cm",
       "4cm",
@@ -510,7 +510,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Sợi dây màu đỏ dài 95mm được chia thành 5 đoạn bằng nhau. Sợi dây màu xan",
+    "question": "Câu 3: Sợi dây màu đỏ dài 95mm được chia thành 5 đoạn bằng nhau. Sợi dây màu xanh dài 72mm được chia thành 4 đoạn bằng nhau. Hỏi trong mỗi đoạn dây, mỗi đoạn dây màu nào dài hơn?",
     "options": [
       "Đoạn dây màu xanh",
       "Cả hai đoạn dây bằng nhau",
@@ -550,7 +550,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Cho các phép tính\nPhép tính (1) 45cm\n9 + 15mm\nPhép tính (2) 85mm – 46mm +",
+    "question": "Câu 5: Cho các phép tính\nPhép tính (1) 45cm\n9 + 15mm\nPhép tính (2) 85mm – 46mm + 6mm\nPhép tính (3) 15mm\n3 + 2cm\nTrong các phép tính trên, có bao nhiêu phép tính bằng 65mm?",
     "options": [
       "1 phép tính",
       "2 phép tính",
@@ -590,7 +590,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Có 8 lá cờ xếp thẳng hàng, biết rằng khoảng cách giữa hai lá cờ gần nhau",
+    "question": "Câu 3: Có 8 lá cờ xếp thẳng hàng, biết rằng khoảng cách giữa hai lá cờ gần nhau là 200mm. Hỏi khoảng cách từ lá cờ đầu tiên đến lá cờ cuối cùng bằng bao nhiêu?",
     "options": [
       "140cm",
       "1600mm",
@@ -830,7 +830,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Một con gà có cân nặng 700g; một con cá cân nặng 300g. Vậy một con gà và",
+    "question": "Câu 5: Một con gà có cân nặng 700g; một con cá cân nặng 300g. Vậy một con gà và một con cá cân nặng ..?.. kg",
     "options": [
       "3",
       "3000",
@@ -850,7 +850,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Một khối kim loại A và một khối kim loại B được đặt về hai phía của một c",
+    "question": "Câu 1: Một khối kim loại A và một khối kim loại B được đặt về hai phía của một cân đòn và một chiếc cân bị mất thăng bằng. Biết khối kim loại A nặng 350g, khối kim loại B nặng 600g. Phải đặt 1 quả cân nặng 200g và ..?.. quả cân nặng 50g vào đĩa cân có khối kim loại A để hai cán cân được cân bằng.",
     "options": [
       "0",
       "1",
@@ -870,7 +870,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Mẹ của Hoa mua một hộp chè khô nặng 1kg. Ông của Hoa dùng hết 750g chè kh",
+    "question": "Câu 2: Mẹ của Hoa mua một hộp chè khô nặng 1kg. Ông của Hoa dùng hết 750g chè khô để pha nước uống đãi khách. Sau đó, bố của Hoa lại mua thêm 500g để đổ vào hộp. Lúc đó, hộp chè nặng ..?.. gam",
     "options": [
       "250g",
       "500g",
@@ -890,7 +890,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Một hộp đường nặng 85g có 9 túi đường nhỏ bên trong. Số gam đường trong m",
+    "question": "Câu 1: Một hộp đường nặng 85g có 9 túi đường nhỏ bên trong. Số gam đường trong mỗi túi là bao nhiêu? Biết vỏ hộp nặng 4g, mỗi vỏ túi nặng 1g.",
     "options": [
       "800g",
       "8g",
@@ -1050,7 +1050,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Hằng nuôi gà và lợn. Hằng đếm được số chân gà là 64 và số chân gà gấp 2 l",
+    "question": "Câu 7: Hằng nuôi gà và lợn. Hằng đếm được số chân gà là 64 và số chân gà gấp 2 lần số chân lợn. Số gà của nhà Hằng hơn số lợn bao nhiêu con?",
     "options": [
       "8 con",
       "24 con",
@@ -1070,7 +1070,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Mẹ mua 4 gói kẹo và 1 gói bánh. Mỗi gói kẹo cân nặng 120g và gói bánh nặn",
+    "question": "Câu 8: Mẹ mua 4 gói kẹo và 1 gói bánh. Mỗi gói kẹo cân nặng 120g và gói bánh nặng 156g. Mẹ đã mua tất cả số gam bánh và kẹo là?",
     "options": [
       "626g",
       "636g",
@@ -1110,7 +1110,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Mẹ đi chợ mua 63g bột ngô và 84g bột nở để làm bánh. Trong đó có 3 gói bộ",
+    "question": "Câu 3: Mẹ đi chợ mua 63g bột ngô và 84g bột nở để làm bánh. Trong đó có 3 gói bột ngô và 4 gói bột nở. Hỏi tổng khối lượng của 1 gói bột ngô và 1 gói bột nở là bao nhiêu gam?",
     "options": [
       "21g",
       "31g",
@@ -1130,7 +1130,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Mẹ bảo Nam mua 80g gia vị A và 72g gia vị B. Tại cửa hàng có bán túi gia",
+    "question": "Câu 4: Mẹ bảo Nam mua 80g gia vị A và 72g gia vị B. Tại cửa hàng có bán túi gia vị A loại mỗi túi nặng 8g và túi gia vị B loại mỗi túi nặng 9g. Nam phải mua tổng cộng ..?.. gói gia vị A và B.",
     "options": [
       "18",
       "10",
@@ -1150,7 +1150,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Một cửa hàng có một cái cân và các quả cân có khối lượng khác nhau. Đĩa c",
+    "question": "Câu 5: Một cửa hàng có một cái cân và các quả cân có khối lượng khác nhau. Đĩa cân bên trái đặt một túi đường nặng 1kg. Đĩa cân bên phải đặt một quả cân nặng 700g. Khi đó đĩa cân đang bị lệch về phía túi đường. Để hai đĩa cân ở vị trí cân bằng thì ta phải đặt thêm quả cân nặng bao nhiêu gam?",
     "options": [
       "300g",
       "30g",
@@ -1170,7 +1170,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Cho một quả thanh long nặng 470g, một quả táo nặng 220g và ba quả cân như",
+    "question": "Câu 2: Cho một quả thanh long nặng 470g, một quả táo nặng 220g và ba quả cân như hình vẽ (200g, 100g, 50g). Có bao nhiêu cách đặt các quả cân đã cho vào hai đĩa cân để cân ở trạng thái cân bằng? (Có thể không sử dụng hết các quả cân).",
     "options": [
       "0 cách",
       "1 cách",
@@ -1190,7 +1190,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Mẹ mua một túi gia vị nặng 81g gồm 9 gói để nấu ba món ăn. Mẹ sử dụng 2 g",
+    "question": "Câu 3: Mẹ mua một túi gia vị nặng 81g gồm 9 gói để nấu ba món ăn. Mẹ sử dụng 2 gói để nấu món thứ nhất. Số gói để nấu món thứ hai gấp đôi số gói để nấu món thứ nhất. Như vậy, mẹ sử dụng ..?.. g gia vị để nấu món thứ ba.",
     "options": [
       "4",
       "7",
@@ -1351,7 +1351,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Rót hết nước từ bình sang 3 ca như hình dưới đây. Hỏi lúc đầu, lượng nước",
+    "question": "Câu 1: Rót hết nước từ bình sang 3 ca như hình dưới đây. Hỏi lúc đầu, lượng nước trong bình có là ..?.. ml",
     "options": [
       "200ml",
       "300ml",
@@ -1391,7 +1391,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Người ta rót vào ba cốc, mỗi cốc 80ml nước. Hỏi người ta đã rót hết tất c",
+    "question": "Câu 3: Người ta rót vào ba cốc, mỗi cốc 80ml nước. Hỏi người ta đã rót hết tất cả bao nhiêu mi-li-lít nước?",
     "options": [
       "230ml",
       "240ml",
@@ -1411,7 +1411,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Trong phích có 1l nước. Rót nước ở phích sang 2 ca, mỗi ca 200ml. Hỏi sau",
+    "question": "Câu 4: Trong phích có 1l nước. Rót nước ở phích sang 2 ca, mỗi ca 200ml. Hỏi sau khi rót xong, lượng nước còn lại trong phích là bao nhiêu?",
     "options": [
       "600ml",
       "400ml",
@@ -1431,7 +1431,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Một chai dầu ăn có 620ml dầu. Sau khi mẹ đã dùng để nấu ăn thì trong chai",
+    "question": "Câu 5: Một chai dầu ăn có 620ml dầu. Sau khi mẹ đã dùng để nấu ăn thì trong chai còn lại 290ml dầu. Hỏi mẹ đã dùng bao nhiêu mi-li-lít dầu để nấu ăn?",
     "options": [
       "320ml",
       "340ml",
@@ -1451,7 +1451,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Nhà An có một bình nước. Sau khi dùng được 115ml nước An rót đầy nước vào",
+    "question": "Câu 1: Nhà An có một bình nước. Sau khi dùng được 115ml nước An rót đầy nước vào một cốc loại 150ml và một cốc loại 200ml thì trong bình còn lại 80ml nước. Hỏi lúc đầu, bình nước nhà An đựng bao nhiêu mi-li-lít nước?",
     "options": [
       "450",
       "554",
@@ -1471,7 +1471,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Có 5 chai dầu, chai thứ nhất đựng 178ml dầu, 4 chai còn lại mỗi chai đựng",
+    "question": "Câu 2: Có 5 chai dầu, chai thứ nhất đựng 178ml dầu, 4 chai còn lại mỗi chai đựng 82ml dầu. Hỏi tổng số mi-li-lít dầu trong 5 chai đó là bao nhiêu?",
     "options": [
       "507ml",
       "506ml",
@@ -1491,7 +1491,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Bạn Linh làm thí nghiệm rót lần lượt mật ong, nước lọc, và dầu ăn vào bìn",
+    "question": "Câu 1: Bạn Linh làm thí nghiệm rót lần lượt mật ong, nước lọc, và dầu ăn vào bình đo như hình dưới đây. Hỏi có bao nhiêu mi-li-lít dầu ăn?",
     "options": [
       "100ml",
       "250ml",
@@ -1651,7 +1651,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Chai thứ nhất chứa 560ml xăng, chai thứ hai chứa ít hơn chai thứ nhất 170",
+    "question": "Câu 7: Chai thứ nhất chứa 560ml xăng, chai thứ hai chứa ít hơn chai thứ nhất 170ml xăng. Vậy cả hai chai chứa ..?.. ml xăng",
     "options": [
       "390",
       "950",
@@ -1671,7 +1671,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Mẹ mua 4 gói kẹo và 1 gói bánh. Mỗi gói kẹo cân nặng 120g và gói bánh nặn",
+    "question": "Câu 8: Mẹ mua 4 gói kẹo và 1 gói bánh. Mỗi gói kẹo cân nặng 120g và gói bánh nặng 156g. Mẹ đã mua tất cả số gam bánh và kẹo là?",
     "options": [
       "626g",
       "636g",
@@ -1691,7 +1691,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Bạn Minh rót hết nước từ chai sang 3 ống như hình vẽ dưới đây. Hỏi lúc đầ",
+    "question": "Câu 9: Bạn Minh rót hết nước từ chai sang 3 ống như hình vẽ dưới đây. Hỏi lúc đầu, lượng nước trong chai có ..?.. 190ml",
     "options": [
       "nhiều hơn",
       "ít hơn",
@@ -1711,7 +1711,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Cho bốn ca đựng nước như hình dưới đây. Hỏi tổng số mi-li-lít nước trong",
+    "question": "Câu 3: Cho bốn ca đựng nước như hình dưới đây. Hỏi tổng số mi-li-lít nước trong hai ca nào là 190ml?",
     "options": [
       "A và B",
       "C và D",
@@ -1771,7 +1771,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Có ba ca nước, mỗi ca đựng 120ml nước. Nếu rót từ ca thứ nhất sang ca thứ",
+    "question": "Câu 2: Có ba ca nước, mỗi ca đựng 120ml nước. Nếu rót từ ca thứ nhất sang ca thứ hai 25ml nước và rót từ ca thứ hai sang ca thứ ba 35ml nước thì tổng số lượng nước của ca thứ hai và ca thứ ba là bao nhiêu? Biết rằng sau khi rót thì nước trong các ca đều không bị tràn ra.",
     "options": [
       "265ml",
       "260ml",
@@ -1791,7 +1791,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Có 4 chai dầu, chai thứ nhất đựng 200ml, 3 chai còn lại mỗi chai đựng 60m",
+    "question": "Câu 3: Có 4 chai dầu, chai thứ nhất đựng 200ml, 3 chai còn lại mỗi chai đựng 60ml dầu. Hỏi tổng số mi-li-lít dầu trong 4 chai đó là bao nhiêu?",
     "options": [
       "360ml",
       "340ml",
@@ -1832,7 +1832,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Cho bảng nhiệt độ trong không khí như sau:\n• Buổi Sáng: 26°C\n• Buổi Trưa:",
+    "question": "Câu 2: Cho bảng nhiệt độ trong không khí như sau:\n• Buổi Sáng: 26°C\n• Buổi Trưa: 30°C\n• Buổi Đêm: 17°C\nNhiệt độ buổi sáng là ..?..",
     "options": [
       "Mười bảy độ xê",
       "Hai mươi sáu độ xê",
@@ -1852,7 +1852,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Cho bảng nhiệt độ trong không khí như sau:\n• Buổi Sáng: 28°C\n• Buổi Trưa:",
+    "question": "Câu 3: Cho bảng nhiệt độ trong không khí như sau:\n• Buổi Sáng: 28°C\n• Buổi Trưa: 34°C\n• Buổi Đêm: 16°C\nNhiệt độ buổi trưa là ..?..",
     "options": [
       "Mười sáu độ xê",
       "Hai mươi tám độ xê",
@@ -1992,7 +1992,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Bạn Liên thấy trên thang đo của nhiệt kế, mức thuỷ ngân ở vạch 30. Khi đ",
+    "question": "Câu 10: Bạn Liên thấy trên thang đo của nhiệt kế, mức thuỷ ngân ở vạch 35. Khi đó, nhiệt độ là ..?.. °C",
     "options": [
       "35°C",
       "20°C",
@@ -2214,7 +2214,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Bạn Liên thấy trên thang đo của nhiệt kế, mức thuỷ ngân ở vạch 35. Khi đ",
+    "question": "Câu 10: Bạn Liên thấy trên thang đo của nhiệt kế, mức thuỷ ngân ở vạch 35. Khi đó, nhiệt độ là ..?.. °C",
     "options": [
       "35°C",
       "20°C",
@@ -2415,7 +2415,7 @@ export const STAGE_5_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Bạn Liên thấy trên thang đo của nhiệt kế, mức thuỷ ngân ở vạch 31. Khi đ",
+    "question": "Câu 10: Bạn Liên thấy trên thang đo của nhiệt kế, mức thuỷ ngân ở vạch 35. Khi đó, nhiệt độ là ..?.. °C",
     "options": [
       "35°C",
       "20°C",

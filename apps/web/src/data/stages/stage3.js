@@ -70,7 +70,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 4: Cho hình vẽ dưới đây.   \nBạn An nói rằng “E là điểm ở giữa hai điểm H và",
+    "question": "Câu 4: Cho hình vẽ dưới đây.   \nBạn An nói rằng “E là điểm ở giữa hai điểm H và K”\nBạn Trang nói rằng “E là điểm ở giữa hai điểm G và N”.\nNhận xét nào dưới đây đúng?",
     "options": [
       "Bạn Trang đúng, bạn An sai",
       "Cả hai bạn nói sai",
@@ -110,7 +110,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 6: Chia đoạn thẳng Ab thành các phần bằng nhau. Hỏi cào cào cần nhảy thêm mấ",
+    "question": "Câu 6: Chia đoạn thẳng Ab thành các phần bằng nhau. Hỏi cào cào cần nhảy thêm mấy bước nữa để đến trung điểm của đoạn thẳng AB?",
     "options": [
       "3 bước",
       "5 bước",
@@ -150,7 +150,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Cho hình vẽ dưới đây.\nBạn An nói rằng “E là điểm ở giữa hai điểm H và K”",
+    "question": "Câu 1: Cho hình vẽ dưới đây.\nBạn An nói rằng “E là điểm ở giữa hai điểm H và K”\nBạn Trang nói rằng “E là điểm ở giữa hai điểm G và N”.\nNhận xét nào dưới đây đúng?",
     "options": [
       "Bạn Trang đúng, bạn An sai",
       "Cả hai bạn nói sai",
@@ -190,7 +190,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Đánh dấu diểm M trên đoạn thẳng AB ứng với vạch mấy xăng-ti-mét của thước",
+    "question": "Câu 3: Đánh dấu diểm M trên đoạn thẳng AB ứng với vạch mấy xăng-ti-mét của thước để M là trung điểm của đoạn thẳng AB?",
     "options": [
       "3 cm",
       "4 cm",
@@ -250,7 +250,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Cho hình vuông ABCD, điểm M ở giữa hai điểm A và B, điểm N ở giữa hai điể",
+    "question": "Câu 1: Cho hình vuông ABCD, điểm M ở giữa hai điểm A và B, điểm N ở giữa hai điểm D và C; điểm O vừa ở giữa hai điểm M và N, vừa ở giữa hai điểm A và C. Trong các hình sau hình nào đúng?",
     "options": [
       "Hình 1",
       "Hình 2",
@@ -270,7 +270,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Cho điểm H ở giữa hai điểm D và F, độ dài đoạn thẳng DF = 38 cm, HF = 20",
+    "question": "Câu 2: Cho điểm H ở giữa hai điểm D và F, độ dài đoạn thẳng DF = 38 cm, HF = 20 cm. Khi đó, độ dài đoạn thẳng DH là?",
     "options": [
       "10 cm",
       "18 cm",
@@ -290,7 +290,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Thỏ và Rùa thi chạy từ điểm xuất phát A đến điểm đích B. Sau 15 phút, Thỏ",
+    "question": "Câu 1: Thỏ và Rùa thi chạy từ điểm xuất phát A đến điểm đích B. Sau 15 phút, Thỏ dừng lại đùa nghịch tại điểm C cách A một khoảng 120m, Rùa chậm hơn Thỏ và đang ở điểm D cách C một khoảng 50m. Biết bốn điểm A, B, C, D đều nằm trên một đường thẳng và AB = 200m.\nChọn khẳng định sai trong những khẳng định dưới đây?",
     "options": [
       "Rùa đang ở giữa điểm xuất phát A và điểm dừng của Thỏ",
       "Thỏ đang dừng tại điểm là điểm ở giữa điểm xuất phát A và điểm đích B",
@@ -450,7 +450,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Cho hình vẽ dưới đây.\nSố điểm ở giữa hai điểm C và D .?. số điểm ở giữa h",
+    "question": "Câu 7: Cho hình vẽ dưới đây.\nSố điểm ở giữa hai điểm C và D .?. số điểm ở giữa hai điểm A và B",
     "options": [
       "ít hơn",
       "bằng",
@@ -510,7 +510,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Cho K là trung điểm của đoạn thẳng HI, M là trung điểm của đoạn thẳng HK.",
+    "question": "Câu 3: Cho K là trung điểm của đoạn thẳng HI, M là trung điểm của đoạn thẳng HK. Biết HI = 144cm, thì MK = .?. cm",
     "options": [
       "72cm",
       "40cm",
@@ -530,7 +530,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Cho hình vẽ dưới đây. Biết B là trung điểm của đoạn thẳng AC. Độ dài đoạn",
+    "question": "Câu 4: Cho hình vẽ dưới đây. Biết B là trung điểm của đoạn thẳng AC. Độ dài đoạn thẳng BD là .?. cm.",
     "options": [
       "3 cm",
       "5cm",
@@ -550,7 +550,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Cho hình vẽ dưới đây.\nBiết M là trung điểm của đoạn thẳng AO, N là trung",
+    "question": "Câu 5: Cho hình vẽ dưới đây.\nBiết M là trung điểm của đoạng thẳng AO, N là trung điểm của đoạn thẳng OB và AM = 6cm; NB = 4cm. Khi đó độ dài đoạn thẳng MN ..?.. 12cm",
     "options": [
       "ngắn hơn",
       "bằng",
@@ -570,7 +570,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Bạn Minh có một sợi dây AB. Minh gấp đôi sợi dây và đánh dấu điểm gấp là",
+    "question": "Câu 2: Bạn Minh có một sợi dây AB. Minh gấp đôi sợi dây và đánh dấu điểm gấp là điểm C, sau đó gấp đôi sợi dây AC đánh dấu điểm gấp là điểm D. Minh tiếp tục gấp đôi đoạn DB và đánh dấu điểm gấp là điểm D. Minh tiếp tục gấp đôi đoạn DB và đánh dấu điểm gấp là điểm E (minh hoạ như hình dưới). Biết AD = 2cm và CE = 1cm. Hỏi độ dài sợi dây AB bằng bao nhiêu xăng-ti-mét?",
     "options": [
       "10cm",
       "8cm",
@@ -590,7 +590,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: I là trung điểm của đoạn thẳng MN, Q là điểm ở giữa M và N, trong đó MN=",
+    "question": "Câu 3: I là trung điểm của đoạn thẳng MN, Q là điểm ở giữa M và N, trong đó MN= 212cm, MQ = 78cm.\nVậy MQ + MI + IQ + NQ = .?. cm",
     "options": [
       "346cm",
       "364cm",
@@ -751,7 +751,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 8: Cho hình vẽ dưới đây. Hỏi đáp án nào nêu đúng tên các bán kính có trong h",
+    "question": "Câu 8: Cho hình vẽ dưới đây. Hỏi đáp án nào nêu đúng tên các bán kính có trong hình tròn?",
     "options": [
       "AM, MB",
       "OA, OB",
@@ -771,7 +771,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 9: Cho hình tròn tâm I có bán kính bằng 4cm. Hỏi đường kính của hình tròn tâ",
+    "question": "Câu 9: Cho hình tròn tâm I có bán kính bằng 4cm. Hỏi đường kính của hình tròn tâm I bằng bao nhiêu xăng-ti-mét?",
     "options": [
       "8",
       "80",
@@ -791,7 +791,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Cho hình tròn tâm O như hình dưới đây. Biết AB = 6cm. Độ dài của CD = .?",
+    "question": "Câu 10: Cho hình tròn tâm O như hình dưới đây. Biết AB = 6cm. Độ dài của CD = .?. cm",
     "options": [
       "CD > 6cm",
       "CD < 6cm",
@@ -952,7 +952,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Cho hình dưới đây.\nBạn Lan nói rằng: “Hình trên có góc đỉnh O và hai cạnh",
+    "question": "Câu 1: Cho hình dưới đây.\nBạn Lan nói rằng: “Hình trên có góc đỉnh O và hai cạnh ON, OM”\nBạn Mai nói rằng: “Hình trên không có góc”\nHỏi bạn nào nói đúng, bạn nào nói sai?",
     "options": [
       "Bạn Mai nói đúng, bạn Lan nói sai",
       "Bạn Lan nói đúng, bạn Mai nói sai",
@@ -1052,7 +1052,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Quan sát hình vẽ dưới đây và lần lượt điền số thích hợp vào chỗ trống\nCó",
+    "question": "Câu 1: Quan sát hình vẽ dưới đây và lần lượt điền số thích hợp vào chỗ trống\nCó .?. góc đỉnh E trong tứ giác AFED\nTrong tam giác AEB có .?. góc đỉnhA\nTứ giác FBCE có .?. góc chung đỉnh B và cạnh BC",
     "options": [
       "9; 1; 3",
       "3; 1; 3",
@@ -1072,7 +1072,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Cho hình vẽ dưới đây\nHỏi có thêm bao nhiêu góc được tạo thành khi nối N v",
+    "question": "Câu 2: Cho hình vẽ dưới đây\nHỏi có thêm bao nhiêu góc được tạo thành khi nối N và P?",
     "options": [
       "8",
       "4",
@@ -1092,7 +1092,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Điền số thích hợp vào ô trống để được khẳng định đúng.\nNếu a là số góc vu",
+    "question": "Câu 1: Điền số thích hợp vào ô trống để được khẳng định đúng.\nNếu a là số góc vuông của hình trên, b là số góc không vuông của hình trên thì b×a=.?.",
     "options": [
       "20",
       "40",
@@ -1292,7 +1292,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Cho các hình vẽ dưới đây. Hỏi tổng số góc vuông của cả hai hình là bao nh",
+    "question": "Câu 9: Cho các hình vẽ dưới đây. Hỏi tổng số góc vuông của cả hai hình là bao nhiêu?",
     "options": [
       "4 góc",
       "5 góc",
@@ -1312,7 +1312,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Cho hình chứ nhật ABCD, kẻ thêm một đoạn thẳng ta được hình dưới đây.\nHỏi",
+    "question": "Câu 3: Cho hình chứ nhật ABCD, kẻ thêm một đoạn thẳng ta được hình dưới đây.\nHỏi số góc trong hình mới gấp bao nhiêu lần số góc trong hình ban đầu?",
     "options": [
       "4",
       "3",
@@ -1352,7 +1352,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Cho hình vẽ dưới đây.\nBạn An nối 2 điểm B và C tạo thành một hình mới. Kh",
+    "question": "Câu 5: Cho hình vẽ dưới đây.\nBạn An nối 2 điểm B và C tạo thành một hình mới. Khi đó hình mới có .?. góc vuông",
     "options": [
       "8",
       "6",
@@ -1513,7 +1513,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 6: Hình vẽ dưới đây có bao nhiêu tam giác có đỉnh D?\nTrong hình vẽ trên, có",
+    "question": "Câu 6: Hình vẽ dưới đây có bao nhiêu tam giác có đỉnh D?\nTrong hình vẽ trên, có bao nhiêu tam giác có đỉnh D?",
     "options": [
       "1 tam giác",
       "2 tam giác",
@@ -1533,7 +1533,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 7: Cho tam giác ABC như hình vẽ dưới đây.\nBiết rằng độ dài cạnh BC lớn hơn đ",
+    "question": "Câu 7: Cho tam giác ABC như hình vẽ dưới đây.\nBiết rằng độ dài cạnh BC lớn hơn độ dài cạnh AB là 2cm.\nHỏi độ dài cạnh BC bằng bao nhiêu xăng-ti-mét?",
     "options": [
       "6cm",
       "5cm",
@@ -1553,7 +1553,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: An đánh dấu một số điểm như hình vẽ dưới đây\nQua hai điểm trong các điểm",
+    "question": "Câu 1: An đánh dấu một số điểm như hình vẽ dưới đây\nQua hai điểm trong các điểm đã đánh dấu, An có thể nổi hai điểm nào dưới đây với nhau để được 3 hình tứ giác?",
     "options": [
       "Nối A với F",
       "Nối A với C",
@@ -1573,7 +1573,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Cho hình vẽ dưới đây.\nBiết độ dài cạnh MN nhỏ hơn độ dài cạnh PQ là 4cm.",
+    "question": "Câu 2: Cho hình vẽ dưới đây.\nBiết độ dài cạnh MN nhỏ hơn độ dài cạnh PQ là 4cm. Khi đó, tổng độ dài cạnh MN và PQ là .?. 10cm",
     "options": [
       "lớn hơn",
       "nhỏ hơn",
@@ -1593,7 +1593,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Cho hình vẽ dưới đây.\nKhi nối D với E ta được .?. hình tứ giác, .?. hình",
+    "question": "Câu 3: Cho hình vẽ dưới đây.\nKhi nối D với E ta được .?. hình tứ giác, .?. hình tam giác",
     "options": [
       "1; 1",
       "1; 2",
@@ -1653,7 +1653,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Cho hình vẽ sau.\nBiết độ dài cạnh MN nhỏ hơn độ dài cạnh MQ là 2cm, độ dà",
+    "question": "Câu 1: Cho hình vẽ sau.\nBiết độ dài cạnh MN nhỏ hơn độ dài cạnh MQ là 2cm, độ dài cạnh BC lớn hơn độ dài cạnh AC là 4cm. Tổng độ dài 2 cạnh MN và MQ ..?.. tổng độ dài hai cạnh BC và AC.",
     "options": [
       "bằng",
       "lớn hơn",
@@ -1673,7 +1673,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Cho hình dưới đây. Biết tứ giác AEFD là hình chữ nhật có chiều dài bằng c",
+    "question": "Câu 2: Cho hình dưới đây. Biết tứ giác AEFD là hình chữ nhật có chiều dài bằng chiều rộng. Vậy hình chữ nhật ABCD có chiều dài là .?. cm, chiều rộng là .?. cm.",
     "options": [
       "4; 2",
       "2; 4",
@@ -1693,7 +1693,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Cho hình chữ nhật ABCD và hình chữ nhật ABNM như hình vẽ. Biết BC = 16cm,",
+    "question": "Câu 1: Cho hình chữ nhật ABCD và hình chữ nhật ABNM như hình vẽ. Biết BC = 16cm, OM = 6cm và tổng độ dài các cạnh của hình chữ nhật ABCD là 56cm. Độ dài đoạn thẳng ON là?",
     "options": [
       "10cm",
       "8cm",
@@ -1753,7 +1753,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Cho hình vẽ sau, đoạn thẳng EF có độ dài là bao nhiêu biết ADFE là hình",
+    "question": "Câu 10: Cho hình vẽ sau, đoạn thẳng EF có độ dài là bao nhiêu biết ADFE là hình vuông?",
     "options": [
       "6cm",
       "2cm",
@@ -1833,7 +1833,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Cho hình vẽ sau\nKẻ thêm một nét trong hình để được hình vuông. Hình vẽ nà",
+    "question": "Câu 6: Cho hình vẽ sau\nKẻ thêm một nét trong hình để được hình vuông. Hình vẽ nào dưới đây kẻ đúng?",
     "options": [
       "Hình 1",
       "Hình 2",
@@ -1873,7 +1873,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 8: Cho tứ giác MNPQ như hình vẽ dưới đây.\nBiết độ dài cạnh MN nhỏ hơn độ dài",
+    "question": "Câu 8: Cho tứ giác MNPQ như hình vẽ dưới đây.\nBiết độ dài cạnh MN nhỏ hơn độ dài cạnh NP là 4cm.\nHỏi độ dài cạnh MN bằng bao nhiêu xăng-ti-mét?",
     "options": [
       "3cm",
       "5cm",
@@ -1893,7 +1893,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Cho tam giác KML như hình vẽ dưới đây.\nBiết độ dài cạnh ML lớn hơn độ dài",
+    "question": "Câu 9: Cho tam giác KML như hình vẽ dưới đây.\nBiết độ dài cạnh ML lớn hơn độ dài cạnh KL là 1cm, độ dài cạnh ML nhỏ hơn độ dài cạnh KM là 1cm. Tổng độ dài 3 cạnh của tam giác KLM là .?. cm",
     "options": [
       "4cm",
       "5cm",
@@ -1913,7 +1913,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Một hình chữ nhật có tổng độ dài các cạnh là 74dm, độ dài cạnh ngắn là 15",
+    "question": "Câu 3: Một hình chữ nhật có tổng độ dài các cạnh là 74dm, độ dài cạnh ngắn là 15dm. Độ dài cạnh dài của hình chữ nhật đó là?",
     "options": [
       "44dm",
       "42dm",
@@ -1933,7 +1933,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Trong một hình chữ nhật, chiều dài gấp 3 lần chiều rộng, 2 lần chiều rộng",
+    "question": "Câu 4: Trong một hình chữ nhật, chiều dài gấp 3 lần chiều rộng, 2 lần chiều rộng bằng 36cm. Chiều dài của hình chữ nhật là ..?.. cm",
     "options": [
       "18cm",
       "54cm",
@@ -1973,7 +1973,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Một mảnh vườn hình chữ nhật có chiều rộng 20m, chiều dài gấp 3 lần chiều",
+    "question": "Câu 2: Một mảnh vườn hình chữ nhật có chiều rộng 20m, chiều dài gấp 3 lần chiều rộng. Người ta muốn làm một hàng rào xung quanh mảnh vườn đó, biết mảnh vườn có 2 cửa ra vào, mỗi cửa rộng 3m. Hỏi hàng rào dài bao nhiêu mét?",
     "options": [
       "154m",
       "160m",
@@ -1993,7 +1993,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Một miếng bìa hình chữ nhật có tổng chiều dài và chiều rộng là 50cm. Cắt",
+    "question": "Câu 3: Một miếng bìa hình chữ nhật có tổng chiều dài và chiều rộng là 50cm. Cắt dọc theo chiều rộng của nó, ta được một hình vuông và một hình chữ nhật mới, biết tổng chiều dài và chiều rộng của hình chữ nhật mới là 30cm. Hỏi cạnh của hình vuông dài bao nhiêu xăng-ti-mét?",
     "options": [
       "20cm",
       "10cm",
@@ -2174,7 +2174,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Cho hình dưới đây.\nAn cho rằng “MN là cạnh của tam giác MNP”\nBình cho rằn",
+    "question": "Câu 2: Cho hình dưới đây.\nAn cho rằng “MN là cạnh của tam giác MNP”\nBình cho rằng “MQ là cạnh của tam giác MNP”\nHỏi bạn nào trả lời đúng, bạn nào trả lời sai?",
     "options": [
       "Bình đúng",
       "An đúng",
@@ -2214,7 +2214,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 4: Cho hình vuông ABCD như hình vẽ dưới đây. Biết độ dài cạnh AB = 3cm. Khi",
+    "question": "Câu 4: Cho hình vuông ABCD như hình vẽ dưới đây. Biết độ dài cạnh AB = 3cm. Khi đó, độ dài cạnh BC = ..?.. cm",
     "options": [
       "6cm",
       "2cm",
@@ -2234,7 +2234,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Cho tam giác EFG như hình vẽ dưới đây.\nBiết rằng độ dài cạnh FG lớn hơn đ",
+    "question": "Câu 5: Cho tam giác EFG như hình vẽ dưới đây.\nBiết rằng độ dài cạnh FG lớn hơn độ dài cạnh EF là 3cm. Hỏi độ dài cạnh EF bằng bao nhiêu xăng-ti-mét?",
     "options": [
       "5cm",
       "3cm",
@@ -2294,7 +2294,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Chỉ cần vẽ thêm 2 đoạn thẳng để hình vuông dưới đây có 8 góc vuông. Hỏi h",
+    "question": "Câu 1: Chỉ cần vẽ thêm 2 đoạn thẳng để hình vuông dưới đây có 8 góc vuông. Hỏi hình nào dưới đây là cách vẽ đúng?",
     "options": [
       "Hình 1 và 4",
       "Hình 1 và 2",
@@ -2354,7 +2354,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 10: Hạnh dùng thước kẻ và bút chì vẽ một hình trên giấy. Dưới đây là hình mà",
+    "question": "Câu 10: Hạnh dùng thước kẻ và bút chì vẽ một hình trên giấy. Dưới đây là hình mà Hạnh vẽ. Hỏi Hạnh đã vẽ hình gì?",
     "options": [
       "Hình tròn",
       "Hình chữ nhật",
@@ -2434,7 +2434,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Cho hình chữ nhật ABCD như hình vẽ dưới đây. Hỏi độ dài cạnh CD lớn hơn đ",
+    "question": "Câu 6: Cho hình chữ nhật ABCD như hình vẽ dưới đây. Hỏi độ dài cạnh CD lớn hơn độ dài cạnh AD bao nhiêu xăng-ti-mét?",
     "options": [
       "2cm",
       "4cm",
@@ -2454,7 +2454,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Hằng vẽ hình có một góc vuông. Hỏi hình nào dưới đây là hình mà Hằng đã v",
+    "question": "Câu 7: Hằng vẽ hình có một góc vuông. Hỏi hình nào dưới đây là hình mà Hằng đã vẽ?",
     "options": [
       "Hình a",
       "Hình b",
@@ -2514,7 +2514,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Huệ cho rằng “Để vẽ hình dưới đây, cần phải vẽ hình tròn”\nHải cho rằng “Đ",
+    "question": "Câu 3: Huệ cho rằng “Để vẽ hình dưới đây, cần phải vẽ hình tròn”\nHải cho rằng “Để vẽ hình dưới đây, không phải vẽ hình tròn”\nTheo em, bạn bạn bạn nào đúng, bạn nào sai?",
     "options": [
       "Hải đúng",
       "Huệ đúng",
@@ -2534,7 +2534,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Cô giáo yêu cầu Bình dùng com-pa để vẽ đồng hồ chỉ 12 giờ 55 phút. Dưới đ",
+    "question": "Câu 4: Cô giáo yêu cầu Bình dùng com-pa để vẽ đồng hồ chỉ 12 giờ 55 phút. Dưới đây là đồng hồ Bình đã vẽ. Hỏi kim giờ và kim phút đồng hồ Bình đã vẽ tạo thành góc gì?",
     "options": [
       "Góc vuông",
       "Góc không vuông",
@@ -2554,7 +2554,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Qua hai điểm trong các điểm đã đánh dấu, An có thể nối hai điểm nào dưới",
+    "question": "Câu 5: Qua hai điểm trong các điểm đã đánh dấu, An có thể nối hai điểm nào dưới đây để được 2 hình tứ giác và 1 hình tam giác?",
     "options": [
       "Nối MN",
       "Nối AP",
@@ -2574,7 +2574,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Rùa và Cua thi chạy. Hai bạn cùng xuất phát từ điểm A chạy đến đích ở điể",
+    "question": "Câu 2: Rùa và Cua thi chạy. Hai bạn cùng xuất phát từ điểm A chạy đến đích ở điểm B nhưng theo hai đường khác nhau. Cua chạy đến đích theo cạnh AB, còn Rùa chạy đến đích theo đường gấp khúc ADCB. Biết rằng ABCD là hình chữ nhật có BC = 30cm.\nĐoạn đường Rùa chạy dài hơn đoạn đường Cua chạy là ..?.. cm",
     "options": [
       "30cm",
       "60cm",
@@ -2594,7 +2594,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Cho hình chữ nhật ABCD có AD = 20cm, CD = 40cm. Một con ốc sên đang ở điể",
+    "question": "Câu 3: Cho hình chữ nhật ABCD có AD = 20cm, CD = 40cm. Một con ốc sên đang ở điểm A (như hình vẽ).\nNếu con ốc sên muốn bò đến điểm C theo đường gấp khúc ABC thì phải bò một đoạn đường dài ..?.. cm",
     "options": [
       "20cm",
       "40cm",
@@ -2614,7 +2614,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 1: Một chiếc khung sắt có dạng khối lập phương như hình dưới đây.\nNgười ta l",
+    "question": "Câu 1: Một chiếc khung sắt có dạng khối lập phương như hình dưới đây.\nNgười ta lắp một tấm gỗ vừa khít vào mặt trước của khung sắt đó. Hỏi miếng gỗ cần được lắp có dạng hình gì?",
     "options": [
       "Hình chữ nhật",
       "Hình vuông",
@@ -2634,7 +2634,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 2: Một khung sắt có dạng khối lập phương có các cạnh được sơn màu như hình v",
+    "question": "Câu 2: Một khung sắt có dạng khối lập phương có các cạnh được sơn màu như hình vẽ dưới đây. Hỏi có mấy cạnh được sơn màu đỏ?",
     "options": [
       "4 cạnh",
       "8 cạnh",
@@ -2654,7 +2654,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Một thùng carton có dạng như hình dưới đây. Hỏi các mặt của thùng carton",
+    "question": "Câu 3: Một thùng carton có dạng như hình dưới đây. Hỏi các mặt của thùng carton đó là các hình gì?",
     "options": [
       "Hình tam giác",
       "Hình vuông",
@@ -2734,7 +2734,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 7: Quan sát hình dưới đây và cho biết bên phải khối cầu có bao nhiêu khối hì",
+    "question": "Câu 7: Quan sát hình dưới đây và cho biết bên phải khối cầu có bao nhiêu khối hình có 6 mặt, 8 đỉnh và 12 cạnh?",
     "options": [
       "Không có khối nào",
       "2 khối",
@@ -2754,7 +2754,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: An là một chiếc hộp có dạng khối hộp chữ nhật; Mỗi mặt dùng 1 tờ giấy màu",
+    "question": "Câu 1: An là một chiếc hộp có dạng khối hộp chữ nhật; Mỗi mặt dùng 1 tờ giấy màu. Hỏi để là 5 chiếc hộp như thế An cần bao nhiêu tờ giấy màu tất cả?",
     "options": [
       "20 tờ",
       "25 tờ",
@@ -2774,7 +2774,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 2: Một chiếc khung sắt dạng khối hộp chữ nhật như hình vẽ dưới đây.\nNgười ta",
+    "question": "Câu 2: Một chiếc khung sắt dạng khối hộp chữ nhật như hình vẽ dưới đây.\nNgười ta lắp các miếng gỗ vào tất cả các mặt của chiếc khung sắt đó. Biết mỗi mặt lắp vừa khít 1 miếng gỗ. Hỏi người ta cần lắp tất cả bao nhiêu miếng gỗ?",
     "options": [
       "4 miếng gỗ",
       "6 miếng gỗ",
@@ -2794,7 +2794,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Người ta đánh dấu các đỉnh của một khối hộp chữ nhật bằng 2 điểm màu đỏ,",
+    "question": "Câu 3: Người ta đánh dấu các đỉnh của một khối hộp chữ nhật bằng 2 điểm màu đỏ, 1 điểm màu vàng và các đỉnh còn lại không được đánh dấu. Hỏi có bao nhiêu đỉnh không được đánh dấu?",
     "options": [
       "5 đỉnh",
       "6 đỉnh",
@@ -2854,7 +2854,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Ghép 8 khối lập phương nhỏ để được một khối lập phương lớn như hình dưới",
+    "question": "Câu 8: Ghép 8 khối lập phương nhỏ để được một khối lập phương lớn như hình dưới đây. Người ta muốn sơn màu đỏ vào một mặt của khối lập phương lớn. Hỏi có bao nhiêu mặt của khối lập phương nhỏ được sơn màu?",
     "options": [
       "2 mặt",
       "1 mặt",
@@ -2874,7 +2874,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Người ta ghép 4 khối hộp chữ nhật nhỏ được khối chữ nhật lớn (như hình vẽ",
+    "question": "Câu 2: Người ta ghép 4 khối hộp chữ nhật nhỏ được khối chữ nhật lớn (như hình vẽ). Người ta sơn màu đỏ vào tất cả các mặt của khối hộp chữ nhật lớn. Hỏi có tất cả bao nhiêu mặt của các khối hộp chữ nhật nhỏ được sơn màu đỏ?",
     "options": [
       "16 mặt",
       "12 mặt",
@@ -2894,7 +2894,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Minh muốn sơn màu vào tất cả các mặt của ba khối hộp chữ nhật. Biết mỗi k",
+    "question": "Câu 1: Minh muốn sơn màu vào tất cả các mặt của ba khối hộp chữ nhật. Biết mỗi khối hộp chữ nhật sẽ được sơn 2 mặt màu đỏ, 2 mặt màu vàng và các mặt còn lại được sơn màu xanh. Hỏi Minh cần phải sơn tất cả bao nhiêu mặt màu xanh?",
     "options": [
       "4 mặt",
       "6 mặt",
@@ -2914,7 +2914,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 8: Ghép 8 khối lập phương nhỏ để được một khối lập phương lớn như hình dưới",
+    "question": "Câu 8: Ghép 8 khối lập phương nhỏ để được một khối lập phương lớn như hình dưới đây. Người ta muốn sơn màu đỏ vào một mặt của khối lập phương lớn. Hỏi có bao nhiêu mặt của khối lập phương nhỏ được sơn màu?",
     "options": [
       "2 mặt",
       "1 mặt",
@@ -3034,7 +3034,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 6: Cho hình vẽ sau\nKẻ thêm một nét trong hình để được hình vuông. Hình vẽ nà",
+    "question": "Câu 6: Cho hình vẽ sau\nKẻ thêm một nét trong hình để được hình vuông. Hình vẽ nào dưới đây kẻ đúng?",
     "options": [
       "Hình 1",
       "Hình 2",
@@ -3054,7 +3054,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Mỗi mặt của khối hộp chữ nhật, người ta in hai bông hoa. Hỏi người ta cần",
+    "question": "Câu 7: Mỗi mặt của khối hộp chữ nhật, người ta in hai bông hoa. Hỏi người ta cần in bao nhiêu bống hoa để đảm bảo tất cả các mặt của khối hộp chữ nhật đều có 2 bông hoa?",
     "options": [
       "8 bông",
       "10 bông",
@@ -3094,7 +3094,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 9: Người ta đo được độ dài một cạnh của một chiếc hộp có dạng khối lập phươn",
+    "question": "Câu 9: Người ta đo được độ dài một cạnh của một chiếc hộp có dạng khối lập phương là 3cm. Độ dài các cạnh còn lại của khối lập phương đó là ..?.. cm",
     "options": [
       "3cm",
       "3m",
@@ -3114,7 +3114,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Để làm 2 mô hình khối lập phương như hình dưới đây cần tất cả bao nhiêu q",
+    "question": "Câu 3: Để làm 2 mô hình khối lập phương như hình dưới đây cần tất cả bao nhiêu que tính?",
     "options": [
       "12 que tính",
       "20 que tính",
@@ -3134,7 +3134,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Ở gần mỗi đỉnh của một chiếc hộp dạng khối lập phương, bác Dũng đã vẽ các",
+    "question": "Câu 4: Ở gần mỗi đỉnh của một chiếc hộp dạng khối lập phương, bác Dũng đã vẽ các ngôi sao như hình dưới đây.\nHỏi bác Dũng đã vẽ tất cả bao nhiêu ngôi sao?",
     "options": [
       "18 ngôi sao",
       "36 ngôi sao",
@@ -3154,7 +3154,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Minh xếp tất cả các khối hình như hình sau.\nNếu Minh cho em 2 khối hộp ch",
+    "question": "Câu 5: Minh xếp tất cả các khối hình như hình sau.\nNếu Minh cho em 2 khối hộp chữ nhật thì số khối hộp chữ nhật Minh còn lại có tất cả bao nhiêu mặt?",
     "options": [
       "24 mặt",
       "12 mặt",
@@ -3174,7 +3174,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Xếp 27 khối lập phương nhỏ để được một khối lập phương lớn như hình dưới",
+    "question": "Câu 2: Xếp 27 khối lập phương nhỏ để được một khối lập phương lớn như hình dưới đây.\nNgười ta sơn màu đỏ vào tất cả các mặt của khối lập phương lớn. Hỏi có bao nhiêu khối lập phương nhỏ được sơn đúng ba mặt?",
     "options": [
       "6 khối",
       "7 khối",
@@ -3194,7 +3194,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "HINH_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Cho hai khối lập phương A và B được tô màu một số cạnh như hình dưới đây.",
+    "question": "Câu 3: Cho hai khối lập phương A và B được tô màu một số cạnh như hình dưới đây.\nHỏi trong các khẳng định dưới đây, có bao nhiêu khẳng định đúng?\n  \n1. Số cạnh được tô màu đỏ của khối lập phương A nhiều hơn số cạnh được tô màu đỏ của khối lập phương B.\n2. Số cạnh được tô màu xanh của khối lập phương A ít hơn số cạnh được tô màu xanh của khối lập phương B là 2 cạnh.\n3. Số mặt chứa cạnh tô màu đỏ của khối lập phương A ít hơn số mặt chứa cạnh tô màu đỏ của khối lập phương B là 1 mặt.",
     "options": [
       "2 khẳng định",
       "3 khẳng định",
@@ -3355,7 +3355,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 1: Cho hình vẽ dưới đây. Biết C là trung điểm của đoạn thẳng AB. Khẳng định",
+    "question": "Câu 1: Cho hình vẽ dưới đây. Biết C là trung điểm của đoạn thẳng AB. Khẳng định nào dưới đây đúng?",
     "options": [
       "CD = 6cm",
       "CD = 7cm",
@@ -3435,7 +3435,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 5: Một cục tẩy dạng khối hộp chữ nhật gồm hai nửa màu xám và màu xanh (như h",
+    "question": "Câu 5: Một cục tẩy dạng khối hộp chữ nhật gồm hai nửa màu xám và màu xanh (như hình vẽ).\nHỏi khối hộp chữ nhật đó có .?. đỉnh ở nửa màu xanh?",
     "options": [
       "6",
       "8",
@@ -3455,7 +3455,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 1: Bạn An vẽ thêm đoạn thẳng vào hình sau để số góc vuông tăng thêm 2.\nHình",
+    "question": "Câu 1: Bạn An vẽ thêm đoạn thẳng vào hình sau để số góc vuông tăng thêm 2.\nHình nào sau đây là hình vẽ đúng của An?",
     "options": [
       "Hình A",
       "Hình B",
@@ -3475,7 +3475,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 2: Cái áo của chú ếch có dạng hình chữ nhật (như hình vẽ). Mỗi lá súng có dạ",
+    "question": "Câu 2: Cái áo của chú ếch có dạng hình chữ nhật (như hình vẽ). Mỗi lá súng có dạng hình tròn đường kính 1dm. Chiều rộng của cái ao là?",
     "options": [
       "1dm",
       "4cm",
@@ -3495,7 +3495,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 1: Với 6 que tính, Rô-bốt xếp được một hình chữ nhật như hình dưới đây.\nNếu",
+    "question": "Câu 1: Với 6 que tính, Rô-bốt xếp được một hình chữ nhật như hình dưới đây.\nNếu sử dụng 10 que tính, có mấy cách xếp?",
     "options": [
       "1 cách",
       "2 cách",
@@ -3595,7 +3595,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 12: Để làm mô hình khối lập phương như hình dưới đây, cần bao nhiêu ống hút",
+    "question": "Câu 12: Để làm mô hình khối lập phương như hình dưới đây, cần bao nhiêu ống hút nhựa?",
     "options": [
       "12 ống hút",
       "10 ống hút",
@@ -3655,7 +3655,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 7: Chú Tư làm những chiếc đèn lồng có khung dạng khối lập phương (như hình v",
+    "question": "Câu 7: Chú Tư làm những chiếc đèn lồng có khung dạng khối lập phương (như hình vẽ). Ở mỗi đỉnh của chiếc khung, chú Tư dùng một sợi dây lạt để buộc. Để làm 5 chiếc khung đèn như vậy thì chú Tư cần dùng .?. sợi dây lạt",
     "options": [
       "12 nan tre",
       "8 nan tre",
@@ -3715,7 +3715,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 3: Để cắt tờ giấy như hình dưới đây thành một hình vuông, Rô-bốt cần cắt the",
+    "question": "Câu 3: Để cắt tờ giấy như hình dưới đây thành một hình vuông, Rô-bốt cần cắt theo đoạn thẳng nào dưới đây?",
     "options": [
       "Đoạn thẳng MQ",
       "Đoạn thẳng PN",
@@ -3735,7 +3735,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 4: Trong hình là các khối dạng khối lập phương đặt sát nhau. Một con kiến bò",
+    "question": "Câu 4: Trong hình là các khối dạng khối lập phương đặt sát nhau. Một con kiến bò từ A đến B theo đường kẻ màu trắng (như hình vẽ).\nĐường đi của con kiến đã chạm vào tất cả ..?.. cạnh của các khối gỗ",
     "options": [
       "6",
       "7",
@@ -3755,7 +3755,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "hard",
     "level_vn": "VẬN DỤNG",
-    "question": "Câu 5: Cho hình vẽ dưới đây.\nBiết M là trung điểm của đoạng thẳng AO, N là trung",
+    "question": "Câu 5: Cho hình vẽ dưới đây.\nBiết M là trung điểm của đoạng thẳng AO, N là trung điểm của đoạn thẳng OB và AM = 6cm; NB = 4cm. Khi đó độ dài đoạn thẳng MN ..?.. 12cm",
     "options": [
       "ngắn hơn",
       "bằng",
@@ -3775,7 +3775,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 2: Mỗi hình tròn trong hình dưới đây đều có bán kính 10cm. Bạn Kiến đang ở đ",
+    "question": "Câu 2: Mỗi hình tròn trong hình dưới đây đều có bán kính 10cm. Bạn Kiến đang ở điểm A bò theo đường gấp khúc ABCD để đến chỗ bạn Châu Chấu ở điểm D. Hỏi bạn Kiến phải bò bao nhiêu xăng-ti-mét?",
     "options": [
       "40cm",
       "60cm",
@@ -3795,7 +3795,7 @@ export const STAGE_3_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "expert",
     "level_vn": "VẬN DỤNG CAO",
-    "question": "Câu 3: Cho hình dưới đây.\nBiết rằng điểm D ở giữa hai điểm A và B, điểm C ở giữa",
+    "question": "Câu 3: Cho hình dưới đây.\nBiết rằng điểm D ở giữa hai điểm A và B, điểm C ở giữa hai điểm A và D, điểm E ở giữa hai điểm C và D. Khi đó điểm E ở vị trí số mấy?",
     "options": [
       "Vị trí số 1",
       "Vị trí số 2",

@@ -632,7 +632,7 @@ export const STAGE_6_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Khi lấy tổng của 45 và 73 rồi trừ bớt đi 15 thì ta viết được biểu thức nà",
+    "question": "Câu 3: Khi lấy tổng của 45 và 73 rồi trừ bớt đi 15 thì ta viết được biểu thức nào?",
     "options": [
       "45 + 73 - 15",
       "45 + 15 - 73",
@@ -672,7 +672,7 @@ export const STAGE_6_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 5: Lấy 98 trừ đi 6 cộng với 56 ta được biểu thức nào trong các biểu thức dướ",
+    "question": "Câu 5: Lấy 98 trừ đi 6 cộng với 56 ta được biểu thức nào trong các biểu thức dưới đây?",
     "options": [
       "98 + 6 + 56",
       "98 - 6 + 56",
@@ -892,7 +892,7 @@ export const STAGE_6_QUESTIONS = [
     "topic": "PHEP_TINH",
     "difficulty": "medium",
     "level_vn": "THÔNG HIỂU",
-    "question": "Câu 3: Dấu thích hợp điền vào chỗ chấm để được phép tính đúng là:\n80 : 2 ..?.. 1",
+    "question": "Câu 3: Dấu thích hợp điền vào chỗ chấm để được phép tính đúng là:\n80 : 2 ..?.. 10 × 4",
     "options": [
       "<",
       ">",
@@ -2217,7 +2217,7 @@ export const STAGE_6_QUESTIONS = [
     "topic": "SO_HOC",
     "difficulty": "easy",
     "level_vn": "NHẬN BIẾT",
-    "question": "Câu 3: Cho hình chữ nhật MNPQ như hình vẽ dưới đây (MN = 4cm, NP = 3cm). Độ dài",
+    "question": "Câu 3: Cho hình chữ nhật MNPQ như hình vẽ dưới đây (MN = 4cm, NP = 3cm). Độ dài của đoạn MQ là?",
     "options": [
       "4cm",
       "3cm",
