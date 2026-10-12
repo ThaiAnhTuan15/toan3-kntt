@@ -503,6 +503,11 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
 
     // Check Badges
     checkBadges(newHistory, totalStars + earnedStars);
+
+    return {
+      earnedStars,
+      earnedCoins
+    };
   };
 
   // Toggle Free Mode
