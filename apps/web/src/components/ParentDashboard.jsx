@@ -57,23 +57,26 @@ export const ParentDashboard = () => {
 
   // Topic Performance Analysis
   const topicStats = {};
-  currentCategories.forEach(cat => {
-    topicStats[cat.id] = { total: 0, correct: 0 };
-  });
+  if (Array.isArray(currentCategories)) {
+    currentCategories.forEach(cat => {
+      topicStats[cat.id] = { total: 0, correct: 0 };
+    });
+  }
 
   subjectHistory.forEach(h => {
     if (h.details && Array.isArray(h.details)) {
       h.details.forEach(d => {
-        if (d.category && topicStats[d.category]) {
-          topicStats[d.category].total += 1;
-          if (d.isCorrect) topicStats[d.category].correct += 1;
+        const catKey = d.category || d.topic;
+        if (catKey && topicStats[catKey]) {
+          topicStats[catKey].total += 1;
+          if (d.isCorrect) topicStats[catKey].correct += 1;
         }
       });
     }
   });
 
   // Calculate percentage and status for each topic
-  const topicBreakdown = currentCategories.map(cat => {
+  const topicBreakdown = Array.isArray(currentCategories) ? currentCategories.map(cat => {
     const stat = topicStats[cat.id] || { total: 0, correct: 0 };
     const accuracy = stat.total > 0 ? Math.round((stat.correct / stat.total) * 100) : null;
     

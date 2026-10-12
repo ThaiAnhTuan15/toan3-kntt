@@ -51,10 +51,13 @@ export const RoadmapView = ({ onStartQuiz }) => {
   };
 
   const getCategoryBadge = (catId) => {
-    const cat = currentCategories.find(c => c.id === catId);
+    if (!catId || !currentCategories) return null;
+    const cat = Array.isArray(currentCategories)
+      ? currentCategories.find(c => c.id === catId)
+      : currentCategories[catId];
     if (!cat) return null;
     return (
-      <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${cat.color}`}>
+      <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${cat.color || 'bg-blue-100 text-blue-800 border-blue-300'}`}>
         {cat.name}
       </span>
     );
@@ -249,12 +252,12 @@ export const RoadmapView = ({ onStartQuiz }) => {
               {/* Weeks Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {stageWeeks.map((weekNum) => {
-                  const meta = currentMetadata[weekNum] || { title: `Bài học Tuần ${weekNum}`, category: 'grammar' };
+                  const meta = currentMetadata?.[weekNum] || { title: `Đề ${weekNum}`, category: 'SO_HOC' };
                   const weekData = progress[weekNum] || { bestScore: 0, stars: 0, attempts: 0 };
                   const unlocked = isWeekUnlocked(weekNum);
                   const isCompleted = (weekData.bestScore || 0) >= 70;
                   const isPerfect = (weekData.bestScore || 0) === 100;
-                  const totalWeekQuestions = getQuestionsByWeek(weekNum).length;
+                  const totalWeekQuestions = (getQuestionsByWeek(weekNum) || []).length;
 
                   return (
                     <div
@@ -283,7 +286,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
                             }`}>
                               Đề {weekNum}
                             </span>
-                            {getCategoryBadge(meta.category)}
+                            {getCategoryBadge(meta.category || (meta.topics && meta.topics[0]))}
                           </div>
 
                           {/* Lock or Star Icons */}
@@ -403,7 +406,7 @@ export const RoadmapView = ({ onStartQuiz }) => {
                   <span className="text-2xl">⭐</span>
                   <div>
                     <div className="font-bold text-base text-slate-800 group-hover:text-amber-800">
-                      Đề Tiêu Chuẩn ({getQuestionsByWeek(activeWeekModal).length} Câu: Dễ ➔ Khó)
+                      Đề Tiêu Chuẩn ({(activeWeekModal ? (getQuestionsByWeek(activeWeekModal) || []) : []).length} Câu: Dễ ➔ Khó)
                     </div>
                     <div className="text-xs font-semibold text-slate-500">
                       Toàn bộ câu hỏi phân bổ lũy tiến từ Nhận biết ➔ Thông hiểu ➔ Vận dụng cao

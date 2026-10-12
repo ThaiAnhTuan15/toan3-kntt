@@ -10,9 +10,10 @@ import { BadgesModal } from './BadgesModal';
 import { QuizArena } from './QuizArena';
 import { ResultModal } from './ResultModal';
 import { ExplanationView } from './ExplanationView';
+import { LogOut } from 'lucide-react';
 
 const MainContent = ({ onLogout }) => {
-  const { profile, saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading } = useLearning();
+  const { profile, saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading, currentMetadata } = useLearning();
   const [currentTab, setCurrentTab] = useState('roadmap'); // 'roadmap' | 'practice' | 'wrong' | 'dashboard' | 'badges'
   const [activeQuizConfig, setActiveQuizConfig] = useState(null);
   const [currentResultData, setCurrentResultData] = useState(null);

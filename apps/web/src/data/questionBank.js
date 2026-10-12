@@ -77,12 +77,33 @@ export const STAGES = [
   }
 ];
 
-export const TOPIC_CATEGORIES = {
-  SO_HOC: { id: 'SO_HOC', name: 'Số học', color: 'bg-blue-100 text-blue-800' },
-  PHEP_TINH: { id: 'PHEP_TINH', name: 'Phép tính', color: 'bg-green-100 text-green-800' },
-  HINH_HOC: { id: 'HINH_HOC', name: 'Hình học & Đo lường', color: 'bg-purple-100 text-purple-800' },
-  GIAI_TOAN: { id: 'GIAI_TOAN', name: 'Giải toán có lời văn', color: 'bg-amber-100 text-amber-800' }
-};
+export const TOPIC_CATEGORIES = [
+  { id: "SO_HOC", name: "Số học & Cấu tạo số", color: "bg-blue-100 text-blue-800 border-blue-300" },
+  { id: "PHEP_TINH", name: "Phép tính cộng, trừ, nhân, chia", color: "bg-emerald-100 text-emerald-800 border-emerald-300" },
+  { id: "HINH_HOC", name: "Hình học & Không gian", color: "bg-purple-100 text-purple-800 border-purple-300" },
+  { id: "GIAI_TOAN", name: "Giải toán có lời văn", color: "bg-amber-100 text-amber-800 border-amber-300" },
+  { id: "DO_LUONG", name: "Đại lượng & Đo lường", color: "bg-orange-100 text-orange-800 border-orange-300" },
+  { id: "PHAN_SO", name: "Một phần mấy & Phân số", color: "bg-rose-100 text-rose-800 border-rose-300" },
+  { id: "natural_num", name: "Số học & Cấu tạo số", color: "bg-blue-100 text-blue-800 border-blue-300" },
+  { id: "operations", name: "Phép tính cộng, trừ, nhân, chia", color: "bg-emerald-100 text-emerald-800 border-emerald-300" },
+  { id: "geometry", name: "Hình học & Không gian", color: "bg-purple-100 text-purple-800 border-purple-300" },
+  { id: "measurement", name: "Đại lượng & Đo lường", color: "bg-orange-100 text-orange-800 border-orange-300" },
+  { id: "word_problems", name: "Giải toán có lời văn", color: "bg-amber-100 text-amber-800 border-amber-300" },
+  { id: "fractions", name: "Một phần mấy & Phân số", color: "bg-rose-100 text-rose-800 border-rose-300" }
+];
+
+TOPIC_CATEGORIES.SO_HOC = TOPIC_CATEGORIES[0];
+TOPIC_CATEGORIES.PHEP_TINH = TOPIC_CATEGORIES[1];
+TOPIC_CATEGORIES.HINH_HOC = TOPIC_CATEGORIES[2];
+TOPIC_CATEGORIES.GIAI_TOAN = TOPIC_CATEGORIES[3];
+TOPIC_CATEGORIES.DO_LUONG = TOPIC_CATEGORIES[4];
+TOPIC_CATEGORIES.PHAN_SO = TOPIC_CATEGORIES[5];
+TOPIC_CATEGORIES.natural_num = TOPIC_CATEGORIES[0];
+TOPIC_CATEGORIES.operations = TOPIC_CATEGORIES[1];
+TOPIC_CATEGORIES.geometry = TOPIC_CATEGORIES[2];
+TOPIC_CATEGORIES.measurement = TOPIC_CATEGORIES[4];
+TOPIC_CATEGORIES.word_problems = TOPIC_CATEGORIES[3];
+TOPIC_CATEGORIES.fractions = TOPIC_CATEGORIES[5];
 
 export const WEEKS_METADATA = {
   "1": {
@@ -101,7 +122,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "2": {
     "id": 2,
@@ -119,7 +141,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "3": {
     "id": 3,
@@ -137,7 +160,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "4": {
     "id": 4,
@@ -155,7 +179,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "5": {
     "id": 5,
@@ -173,7 +198,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "6": {
     "id": 6,
@@ -191,7 +217,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "7": {
     "id": 7,
@@ -209,7 +236,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "8": {
     "id": 8,
@@ -227,7 +255,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "9": {
     "id": 9,
@@ -245,7 +274,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "10": {
     "id": 10,
@@ -263,7 +293,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "11": {
     "id": 11,
@@ -281,7 +312,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "12": {
     "id": 12,
@@ -299,7 +331,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "13": {
     "id": 13,
@@ -317,7 +350,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "14": {
     "id": 14,
@@ -335,7 +369,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "15": {
     "id": 15,
@@ -353,7 +388,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "16": {
     "id": 16,
@@ -371,7 +407,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "17": {
     "id": 17,
@@ -389,7 +426,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "18": {
     "id": 18,
@@ -407,7 +445,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "19": {
     "id": 19,
@@ -425,7 +464,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "20": {
     "id": 20,
@@ -443,7 +483,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "21": {
     "id": 21,
@@ -461,7 +502,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "22": {
     "id": 22,
@@ -479,7 +521,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "23": {
     "id": 23,
@@ -497,7 +540,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "24": {
     "id": 24,
@@ -515,7 +559,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "25": {
     "id": 25,
@@ -533,7 +578,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "26": {
     "id": 26,
@@ -551,7 +597,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "27": {
     "id": 27,
@@ -569,7 +616,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "28": {
     "id": 28,
@@ -587,7 +635,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "29": {
     "id": 29,
@@ -605,7 +654,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "30": {
     "id": 30,
@@ -623,7 +673,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "31": {
     "id": 31,
@@ -641,7 +692,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "32": {
     "id": 32,
@@ -659,7 +711,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "33": {
     "id": 33,
@@ -677,7 +730,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "34": {
     "id": 34,
@@ -695,7 +749,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "35": {
     "id": 35,
@@ -713,7 +768,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "36": {
     "id": 36,
@@ -731,7 +787,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "37": {
     "id": 37,
@@ -749,7 +806,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "38": {
     "id": 38,
@@ -767,7 +825,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "39": {
     "id": 39,
@@ -785,7 +844,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "40": {
     "id": 40,
@@ -803,7 +863,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "41": {
     "id": 41,
@@ -821,7 +882,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "42": {
     "id": 42,
@@ -839,7 +901,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "43": {
     "id": 43,
@@ -857,7 +920,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "44": {
     "id": 44,
@@ -875,7 +939,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "45": {
     "id": 45,
@@ -893,7 +958,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "46": {
     "id": 46,
@@ -911,7 +977,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "47": {
     "id": 47,
@@ -929,7 +996,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "48": {
     "id": 48,
@@ -947,7 +1015,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "49": {
     "id": 49,
@@ -965,7 +1034,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "50": {
     "id": 50,
@@ -983,7 +1053,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "51": {
     "id": 51,
@@ -1001,7 +1072,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "52": {
     "id": 52,
@@ -1019,7 +1091,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "53": {
     "id": 53,
@@ -1037,7 +1110,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "54": {
     "id": 54,
@@ -1055,7 +1129,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "55": {
     "id": 55,
@@ -1073,7 +1148,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "56": {
     "id": 56,
@@ -1091,7 +1167,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "57": {
     "id": 57,
@@ -1109,7 +1186,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "58": {
     "id": 58,
@@ -1127,7 +1205,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "59": {
     "id": 59,
@@ -1145,7 +1224,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "60": {
     "id": 60,
@@ -1163,7 +1243,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "61": {
     "id": 61,
@@ -1181,7 +1262,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "GIAI_TOAN"
-    ]
+    ],
+    "category": "GIAI_TOAN"
   },
   "62": {
     "id": 62,
@@ -1199,7 +1281,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   },
   "63": {
     "id": 63,
@@ -1217,7 +1300,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "64": {
     "id": 64,
@@ -1235,7 +1319,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "PHEP_TINH"
-    ]
+    ],
+    "category": "PHEP_TINH"
   },
   "65": {
     "id": 65,
@@ -1253,7 +1338,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "HINH_HOC"
-    ]
+    ],
+    "category": "HINH_HOC"
   },
   "66": {
     "id": 66,
@@ -1271,7 +1357,8 @@ export const WEEKS_METADATA = {
     },
     "topics": [
       "SO_HOC"
-    ]
+    ],
+    "category": "SO_HOC"
   }
 };
 
@@ -1293,11 +1380,29 @@ export const getQuestionsByQuiz = (quizNum) => {
   return getQuestionsByWeek(quizNum);
 };
 
-export const getFilteredQuestions = ({ stageId, difficulty, topic }) => {
-  return QUESTION_BANK.filter(q => {
-    if (stageId && stageId !== 'all' && q.stage !== Number(stageId)) return false;
-    if (difficulty && difficulty !== 'all' && q.difficulty !== difficulty) return false;
-    if (topic && topic !== 'all' && q.topic !== topic) return false;
-    return true;
-  });
+export const getFilteredQuestions = ({ week, semester, stage, stageId, difficulty, category, topic, count = 10 } = {}) => {
+  let list = [...QUESTION_BANK];
+  const targetStage = stage || stageId;
+  const targetTopic = topic || category;
+
+  if (week && week !== 'all') {
+    list = list.filter(q => q.week === Number(week) || q.quiz_id === Number(week));
+  }
+  if (targetStage && targetStage !== 'all') {
+    list = list.filter(q => q.stage === Number(targetStage));
+  }
+  if (semester && semester !== 'all') {
+    if (Number(semester) === 1) {
+      list = list.filter(q => q.stage >= 1 && q.stage <= 6);
+    }
+  }
+  if (difficulty && difficulty !== 'all') {
+    list = list.filter(q => q.difficulty === difficulty);
+  }
+  if (targetTopic && targetTopic !== 'all') {
+    list = list.filter(q => q.topic === targetTopic || q.category === targetTopic);
+  }
+
+  const shuffled = list.sort(() => 0.5 - Math.random());
+  return count ? shuffled.slice(0, count) : shuffled;
 };

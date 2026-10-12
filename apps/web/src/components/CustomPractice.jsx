@@ -282,7 +282,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
               className="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 font-bold text-sm text-slate-800 focus:border-amber-400 focus:outline-none bg-slate-50"
             >
               <option value="all">Tất cả chủ đề</option>
-              {currentCategories.map((c) => (
+              {Array.isArray(currentCategories) && currentCategories.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>
