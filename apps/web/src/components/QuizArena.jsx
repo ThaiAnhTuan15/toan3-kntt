@@ -10,7 +10,8 @@ import {
   CheckCircle2, 
   AlertCircle,
   X,
-  Volume2
+  Volume2,
+  ZoomIn
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { Scratchpad } from './Scratchpad';
@@ -34,6 +35,7 @@ export const QuizArena = ({
   const [showHint, setShowHint] = useState(false);
   const [showConfirmSubmit, setShowConfirmSubmit] = useState(false);
   const [reportModalQuestion, setReportModalQuestion] = useState(null);
+  const [zoomImage, setZoomImage] = useState(null);
 
   // Timer countdown
   useEffect(() => {
@@ -138,7 +140,7 @@ export const QuizArena = ({
   const isTimeCritical = timeLeft <= 120; // < 2 mins
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-4 sm:py-6 space-y-5">
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 py-2 sm:py-4 space-y-3 sm:space-y-4">
       {/* Top Bar: Navigation, Title & Floating Scratchpad / Timer */}
       <div className="bg-white rounded-2xl border-2 border-amber-200 p-3 sm:p-4 shadow-sm flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -292,105 +294,117 @@ export const QuizArena = ({
           </div>
         )}
 
-        {/* Question Text */}
-        <div className="text-lg sm:text-2xl font-extrabold text-slate-800 leading-relaxed font-nunito">
-          <MathRenderer text={currentQuestion.question} />
-        </div>
+        {/* Content Body: Responsive 2 columns on lg screens when image is present */}
+        {currentQuestion.image ? (
+          <div className="lg:grid lg:grid-cols-12 lg:gap-6 items-start space-y-4 lg:space-y-0">
+            {/* Left Column: Question Text + Image */}
+            <div className="lg:col-span-6 space-y-3">
+              <div className="text-base sm:text-lg font-extrabold text-slate-800 leading-relaxed font-nunito">
+                <MathRenderer text={currentQuestion.question} />
+              </div>
 
-        {/* Question Illustration Image (if available) */}
-        {currentQuestion.image && (
-          <div className="flex justify-center my-4 p-3 bg-slate-50/90 rounded-2xl border-2 border-slate-100 max-w-xl mx-auto shadow-sm">
-            <img 
-              src={currentQuestion.image} 
-              alt="Hình minh họa câu hỏi" 
-              className="max-h-72 max-w-full object-contain rounded-xl hover:scale-105 transition-transform duration-200" 
-            />
+              {/* Illustration Image with Zoom Lightbox */}
+              <div 
+                className="relative group flex justify-center p-2 bg-slate-50/90 hover:bg-amber-50/40 rounded-2xl border-2 border-slate-100 hover:border-amber-300 shadow-xs cursor-zoom-in transition-all"
+                onClick={() => setZoomImage(currentQuestion.image)}
+                title="Bấm vào để phóng to hình ảnh"
+              >
+                <img 
+                  src={currentQuestion.image} 
+                  alt="Hình minh họa câu hỏi" 
+                  className="max-h-48 sm:max-h-56 max-w-full object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-200" 
+                />
+                <div className="absolute bottom-2 right-2 px-2 py-1 bg-slate-900/75 group-hover:bg-amber-600 text-white rounded-lg text-xs font-bold flex items-center gap-1 backdrop-blur-xs transition-colors shadow-sm">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Phóng to</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: 4 Options stacked cleanly */}
+            <div className="lg:col-span-6 space-y-2.5">
+              {currentQuestion.options.map((opt, optIdx) => {
+                const isSelected = answers[currentIndex] === optIdx;
+                return (
+                  <button
+                    key={optIdx}
+                    onClick={() => handleSelectOption(optIdx)}
+                    className={`w-full p-3 sm:p-3.5 rounded-2xl border-2 text-left transition-all flex items-center gap-3 group ${
+                      isSelected
+                        ? 'bg-amber-100/90 border-amber-500 shadow-bouncy-sm ring-2 ring-amber-400/50 scale-[1.01]'
+                        : 'bg-slate-50/70 border-slate-200 hover:border-amber-300 hover:bg-amber-50/30'
+                    }`}
+                  >
+                    <span className={`w-8 h-8 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center shrink-0 transition-all ${
+                      isSelected
+                        ? 'bg-amber-500 text-white shadow-sm'
+                        : 'bg-white border-2 border-slate-300 text-slate-600 group-hover:border-amber-400'
+                    }`}>
+                      {optionLetters[optIdx]}
+                    </span>
+                    <div className="text-sm sm:text-base font-bold text-slate-800 leading-snug">
+                      <MathRenderer text={opt} />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="text-base sm:text-xl font-extrabold text-slate-800 leading-relaxed font-nunito">
+              <MathRenderer text={currentQuestion.question} />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              {currentQuestion.options.map((opt, optIdx) => {
+                const isSelected = answers[currentIndex] === optIdx;
+                return (
+                  <button
+                    key={optIdx}
+                    onClick={() => handleSelectOption(optIdx)}
+                    className={`p-3.5 sm:p-4 rounded-2xl border-2 text-left transition-all flex items-center gap-3 group ${
+                      isSelected
+                        ? 'bg-amber-100/90 border-amber-500 shadow-bouncy-sm ring-2 ring-amber-400/50 scale-[1.01]'
+                        : 'bg-slate-50/70 border-slate-200 hover:border-amber-300 hover:bg-amber-50/30'
+                    }`}
+                  >
+                    <span className={`w-8 h-8 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center shrink-0 transition-all ${
+                      isSelected
+                        ? 'bg-amber-500 text-white shadow-sm'
+                        : 'bg-white border-2 border-slate-300 text-slate-600 group-hover:border-amber-400'
+                    }`}>
+                      {optionLetters[optIdx]}
+                    </span>
+                    <div className="text-sm sm:text-base font-bold text-slate-800 leading-snug">
+                      <MathRenderer text={opt} />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
-
-        {/* 4 Options Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-          {currentQuestion.options.map((opt, optIdx) => {
-            const isSelected = answers[currentIndex] === optIdx;
-            return (
-              <button
-                key={optIdx}
-                onClick={() => handleSelectOption(optIdx)}
-                className={`p-4 rounded-2xl border-2 text-left transition-all flex items-center gap-3.5 group ${
-                  isSelected
-                    ? 'bg-amber-100/90 border-amber-500 shadow-bouncy-sm ring-2 ring-amber-400/50 scale-[1.01]'
-                    : 'bg-slate-50/70 border-slate-200 hover:border-amber-300 hover:bg-amber-50/30'
-                }`}
-              >
-                {/* Letter Circle (A, B, C, D) */}
-                <span className={`w-9 h-9 rounded-xl font-bold text-sm flex items-center justify-center shrink-0 transition-all ${
-                  isSelected
-                    ? 'bg-amber-500 text-white shadow-sm'
-                    : 'bg-white border-2 border-slate-300 text-slate-600 group-hover:border-amber-400'
-                }`}>
-                  {optionLetters[optIdx]}
-                </span>
-
-                {/* Option Content with Math Rendering */}
-                <div className="text-base sm:text-lg font-bold text-slate-800">
-                  <MathRenderer text={opt} />
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Bottom Bar: Prev / Next Buttons */}
-        <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-          <button
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            className={`px-4 py-2.5 rounded-2xl font-extrabold text-sm flex items-center gap-1.5 transition-all ${
-              currentIndex === 0
-                ? 'bg-slate-100 text-slate-300 cursor-not-allowed'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200 active:scale-95'
-            }`}
-          >
-            <ChevronLeft className="w-4 h-4" />
-            Câu trước
-          </button>
-
-          <div className="text-xs font-extrabold text-slate-400 hidden sm:block">
-            Sử dụng bảng nháp để tính nhẩm nếu cần
-          </div>
-
-          {currentIndex < totalQuestions - 1 ? (
-            <button
-              onClick={handleNext}
-              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-sm rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center gap-1.5"
-            >
-              Câu tiếp theo
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          ) : (
-            <button
-              onClick={() => handleSubmit(false)}
-              className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center gap-1.5"
-            >
-              Hoàn thành & Nộp bài
-              <CheckCircle2 className="w-4 h-4" />
-            </button>
-          )}
-        </div>
       </div>
 
-      {/* Question Jump Palette (1, 2, 3, 4, 5, ...) */}
-      <div className="bg-white rounded-2xl border-2 border-slate-200 p-4 shadow-sm">
-        <div className="text-xs font-bold text-slate-500 mb-2.5 flex items-center justify-between">
-          <span>Danh sách câu hỏi:</span>
-          <div className="flex items-center gap-3 text-[11px]">
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"/> Đã chọn</span>
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"/> Cắm cờ</span>
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-slate-200 inline-block"/> Chưa làm</span>
-          </div>
-        </div>
+      {/* Sticky Bottom Navigation & Jump Bar */}
+      <div className="sticky bottom-2 sm:bottom-3 z-30 bg-white/95 backdrop-blur-md rounded-2xl border-2 border-amber-300 p-2 sm:p-2.5 shadow-xl flex items-center justify-between gap-1.5 sm:gap-3">
+        {/* Prev Button */}
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+          className={`px-3 sm:px-4 py-2 rounded-xl font-extrabold text-xs sm:text-sm flex items-center gap-1 transition-all shrink-0 ${
+            currentIndex === 0
+              ? 'bg-slate-100 text-slate-300 cursor-not-allowed'
+              : 'bg-slate-100 text-slate-700 hover:bg-slate-200 active:scale-95'
+          }`}
+        >
+          <ChevronLeft className="w-4 h-4" />
+          <span className="hidden sm:inline">Câu trước</span>
+        </button>
 
-        <div className="flex flex-wrap gap-2">
+        {/* Scrollable Question Number Dots (1..15) */}
+        <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto scrollbar-none py-1 px-1 max-w-[55vw] sm:max-w-md mx-auto">
           {questions.map((_, qIdx) => {
             const isAnswered = answers[qIdx] !== undefined;
             const isCurrent = currentIndex === qIdx;
@@ -400,24 +414,46 @@ export const QuizArena = ({
               <button
                 key={qIdx}
                 onClick={() => handleJumpTo(qIdx)}
-                className={`w-9 h-9 rounded-xl font-bold text-xs relative transition-all ${
+                className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg font-bold text-xs shrink-0 relative transition-all ${
                   isCurrent
-                    ? 'ring-2 ring-amber-500 ring-offset-2 scale-110 z-10'
+                    ? 'ring-2 ring-amber-500 ring-offset-1 scale-110 z-10'
                     : ''
                 } ${
                   isAnswered
-                    ? 'bg-amber-400 text-amber-950 font-bold'
+                    ? 'bg-amber-400 text-amber-950 font-black'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
+                title={`Câu ${qIdx + 1}${isAnswered ? ' (Đã chọn)' : ''}`}
               >
                 {qIdx + 1}
                 {isFlagged && (
-                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-rose-500 rounded-full border border-white" />
+                  <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-rose-500 rounded-full border border-white" />
                 )}
               </button>
             );
           })}
         </div>
+
+        {/* Next / Submit Button */}
+        {currentIndex < totalQuestions - 1 ? (
+          <button
+            onClick={handleNext}
+            className="px-3 sm:px-4 py-2 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-xs sm:text-sm rounded-xl shadow-bouncy-sm btn-bouncy flex items-center gap-1 shrink-0"
+          >
+            <span className="hidden sm:inline">Câu tiếp</span>
+            <span className="sm:hidden">Tiếp</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        ) : (
+          <button
+            onClick={() => handleSubmit(false)}
+            className="px-3 sm:px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm rounded-xl shadow-bouncy-sm btn-bouncy flex items-center gap-1 shrink-0"
+          >
+            <span className="hidden sm:inline">Nộp bài</span>
+            <span className="sm:hidden">Nộp</span>
+            <CheckCircle2 className="w-4 h-4" />
+          </button>
+        )}
       </div>
 
       {/* Scratchpad Floating Canvas Component */}
@@ -463,6 +499,37 @@ export const QuizArena = ({
           question={reportModalQuestion}
           onClose={() => setReportModalQuestion(null)}
         />
+      )}
+
+      {/* Image Zoom Lightbox Modal */}
+      {zoomImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6 animate-fade-in"
+          onClick={() => setZoomImage(null)}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] bg-white rounded-3xl p-3 sm:p-4 shadow-2xl border-4 border-amber-300 flex flex-col items-center" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setZoomImage(null)}
+              className="absolute -top-3 -right-3 w-10 h-10 bg-rose-500 hover:bg-rose-600 text-white rounded-full flex items-center justify-center shadow-lg font-bold text-xl transition-transform hover:scale-110 z-10"
+              title="Đóng phóng to"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="overflow-auto max-h-[75vh] w-full flex items-center justify-center p-2">
+              <img 
+                src={zoomImage} 
+                alt="Hình minh họa phóng to" 
+                className="max-h-[72vh] max-w-full object-contain rounded-xl select-none"
+              />
+            </div>
+            <div className="text-center text-xs sm:text-sm font-bold text-slate-600 mt-2 flex items-center gap-2">
+              <span>🔍 Bấm nút [✕] hoặc bấm bên ngoài để thu nhỏ lại</span>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

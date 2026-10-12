@@ -152,30 +152,10 @@ const MainContent = ({ onLogout }) => {
           } else {
             setCurrentTab(tab);
           }
-        }} 
+        }}
+        isQuizActive={Boolean(activeQuizConfig && !currentResultData)}
+        onLogout={onLogout}
       />
-        {/* Switch Profile Button */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="text-xs sm:text-sm font-bold text-slate-500">Đang học:</span>
-            <span className="text-sm sm:text-base font-extrabold text-amber-900 bg-amber-100/90 border border-amber-300 px-3.5 py-1 rounded-full flex items-center gap-2 shadow-sm">
-              <span className="text-xl">{profile?.avatar || '🐯'}</span>
-              <span>{profile?.name || 'Bé Bi'}</span>
-            </span>
-          </div>
-          <button 
-            onClick={onLogout}
-            className="flex items-center gap-2.5 px-4 py-2 bg-white hover:bg-amber-50 border-2 border-amber-200 hover:border-amber-400 text-slate-700 hover:text-amber-950 font-bold rounded-full shadow-sm hover:shadow transition-all group"
-            title="Đổi hoặc chỉnh sửa tài khoản học sinh"
-          >
-            <div className="text-xl bg-amber-100 w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-              {profile?.avatar || '🐯'}
-            </div>
-            <span className="text-sm sm:text-base font-extrabold">{profile?.name || 'Bé Bi'}</span>
-            <span className="text-xs text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full font-bold">Đổi bé ↩</span>
-            <LogOut className="w-4 h-4 text-slate-400 group-hover:text-rose-500 transition-colors" />
-          </button>
-        </div>
 
       {/* Main Tab Routing */}
       <main className={`pb-16 pt-4 ${(activeQuizConfig || currentResultData) ? 'hidden' : ''}`}>

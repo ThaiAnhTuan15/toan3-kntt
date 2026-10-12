@@ -32,7 +32,7 @@ const MASCOTS = [
   { id: 'cat', name: 'Mèo Miu Đáng Yêu', emoji: '🐱', desc: 'Chăm chỉ mỗi ngày' },
 ];
 
-export const Navbar = ({ currentTab, onSelectTab }) => {
+export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout }) => {
   const { 
     currentGrade,
     switchGrade,
@@ -99,239 +99,239 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-amber-200 shadow-sm">
-      {/* Top Banner with Switchers, Stats & Profile */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-3">
-        {/* Brand / Logo */}
-        <div 
-          onClick={() => { sounds.playClick(); onSelectTab('roadmap'); }}
-          className="flex items-center gap-2.5 cursor-pointer group"
-        >
-          <div className={`w-11 h-11 rounded-2xl flex items-center justify-center text-2xl shadow-bouncy-sm group-hover:scale-105 transition-transform ${
-            isMath 
-              ? (isGrade7 ? 'bg-gradient-to-br from-blue-500 to-indigo-600' : 'bg-gradient-to-br from-amber-400 to-orange-500') 
-              : (isGrade7 ? 'bg-gradient-to-br from-rose-500 to-purple-600' : 'bg-gradient-to-br from-rose-400 to-pink-500')
-          }`}>
-            {currentMascotObj.emoji}
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-lg sm:text-xl text-slate-800 tracking-tight font-nunito">
-                {getSubjectTitle()}
-              </span>
-              <span className={`text-white text-[11px] font-bold px-2 py-0.5 rounded-full shadow-sm ${
+    <>
+      <header className="sticky top-0 z-40 bg-white border-b-2 border-amber-200 shadow-sm transition-all">
+        {/* ROW 1: Brand Logo + Profile + Stats + Mini Switchers (Height ~48px) */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-5 py-1.5 flex items-center justify-between gap-2 sm:gap-3">
+          
+          {/* Left: Brand + Mascot + Student Name Badge */}
+          <div className="flex items-center gap-2 shrink-0">
+            <div 
+              onClick={() => { sounds.playClick(); if (!isQuizActive) onSelectTab('roadmap'); }}
+              className="flex items-center gap-2 cursor-pointer group"
+            >
+              <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-xl shadow-xs group-hover:scale-105 transition-transform ${
                 isMath 
-                  ? (isGrade7 ? 'bg-gradient-to-r from-blue-600 to-indigo-600' : 'bg-gradient-to-r from-amber-500 to-orange-500')
-                  : (isGrade7 ? 'bg-gradient-to-r from-rose-600 to-purple-600' : 'bg-gradient-to-r from-rose-500 to-pink-500')
+                  ? (isGrade7 ? 'bg-gradient-to-br from-blue-500 to-indigo-600' : 'bg-gradient-to-br from-amber-400 to-orange-500') 
+                  : (isGrade7 ? 'bg-gradient-to-br from-rose-500 to-purple-600' : 'bg-gradient-to-br from-rose-400 to-pink-500')
               }`}>
-                GDPT 2018
-              </span>
+                {currentMascotObj.emoji}
+              </div>
+              <div className="leading-tight hidden sm:block">
+                <div className="flex items-center gap-1">
+                  <span className="font-black text-sm sm:text-base text-slate-800 tracking-tight font-nunito">
+                    {getSubjectTitle()}
+                  </span>
+                  <span className="text-[10px] font-extrabold px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-800">
+                    GDPT
+                  </span>
+                </div>
+              </div>
             </div>
-            <p className={`text-[12px] font-bold font-quicksand ${
-              isMath 
-                ? (isGrade7 ? 'text-blue-600' : 'text-amber-600') 
-                : (isGrade7 ? 'text-purple-600' : 'text-pink-600')
-            }`}>
-              {getSubjectSubtitle()}
-            </p>
-          </div>
-        </div>
 
-        {/* Grade & Subject Switchers */}
-        <div className="flex items-center flex-wrap gap-2">
-          {/* Grade Switcher (Lớp 4 / Lớp 7) */}
-          <div className="bg-slate-100 p-1 rounded-2xl border-2 border-slate-200 flex items-center gap-1 shadow-inner">
-            <button
-              onClick={() => switchGrade('4')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl font-bold text-xs transition-all ${
-                !isGrade7
-                  ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-amber-950 shadow-sm scale-105'
-                  : 'text-slate-600 hover:text-amber-800'
-              }`}
-            >
-              <GraduationCap className="w-3.5 h-3.5" />
-              <span>Lớp 3</span>
-            </button>
-
-            <button
-              onClick={() => switchGrade('7')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl font-bold text-xs transition-all ${
-                isGrade7
-                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-sm scale-105'
-                  : 'text-slate-600 hover:text-blue-800'
-              }`}
-            >
-              <GraduationCap className="w-3.5 h-3.5" />
-              <span>Lớp 7 🚀</span>
-            </button>
-          </div>
-
-          {/* Subject Switcher (Toán / Tiếng Việt - Ngữ Văn) */}
-          <div className="bg-slate-100 p-1 rounded-2xl border-2 border-slate-200 flex items-center gap-1 shadow-inner">
-            <button
-              onClick={() => switchSubject('math')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl font-bold text-xs sm:text-sm transition-all ${
-                isMath
-                  ? isGrade7
-                    ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-sm scale-105'
-                    : 'bg-gradient-to-r from-amber-400 to-orange-400 text-amber-950 shadow-sm scale-105'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-              }`}
-            >
-              <Calculator className="w-3.5 h-3.5" />
-              <span>🧮 Toán Học</span>
-            </button>
-
-            <button
-              onClick={() => switchSubject('vietnamese')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-xl font-bold text-xs sm:text-sm transition-all ${
-                !isMath
-                  ? isGrade7
-                    ? 'bg-gradient-to-r from-rose-500 to-purple-600 text-white shadow-sm scale-105'
-                    : 'bg-gradient-to-r from-rose-400 to-pink-500 text-white shadow-sm scale-105'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-              }`}
-            >
-              <BookMarked className="w-3.5 h-3.5" />
-              <span>{isGrade7 ? '📖 Ngữ Văn 7' : '📖 Tiếng Việt 3'}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Stats Pill Badges */}
-        <div className="flex items-center flex-wrap gap-2 text-xs sm:text-sm font-extrabold">
-          {/* Stars */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border-2 border-amber-300 rounded-xl text-amber-900 shadow-sm">
-            <Star className="w-4 h-4 text-amber-500 fill-amber-400 animate-pulse-subtle" />
-            <span>{totalStars} <span className="text-amber-700 text-xs hidden sm:inline">Sao</span></span>
-          </div>
-
-          {/* Coins */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-yellow-50 border-2 border-yellow-300 rounded-xl text-yellow-900 shadow-sm">
-            <Coins className="w-4 h-4 text-yellow-500 fill-yellow-400" />
-            <span>{coins} <span className="text-yellow-700 text-xs hidden sm:inline">Xu</span></span>
-          </div>
-
-          {/* Streak */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 border-2 border-orange-300 rounded-xl text-orange-900 shadow-sm">
-            <Flame className="w-4 h-4 text-orange-500 fill-orange-400" />
-            <span>{streakData.currentStreak} <span className="text-orange-700 text-xs hidden sm:inline">Ngày</span></span>
-          </div>
-
-          {/* Piggy Bank Pill */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 border-2 border-rose-300 rounded-xl text-rose-900 shadow-sm font-extrabold text-xs sm:text-sm">
-            <span className="text-base sm:text-lg">🐷</span>
-            <span>{(piggyBalance || 0).toLocaleString('vi-VN')} <span className="text-rose-700 text-xs hidden sm:inline">đ</span></span>
-          </div>
-
-          {/* Reward Rules Button */}
-          <button
-            onClick={() => setShowRulesModal(true)}
-            className="flex items-center gap-1 px-2.5 py-1.5 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 rounded-xl text-amber-900 font-extrabold text-xs transition-all shadow-sm"
-            title="Xem quy tắc thưởng Heo Đất Tri Thức"
-          >
-            <span className="text-sm">📜</span>
-            <span className="hidden md:inline">Quy Tắc Thưởng</span>
-          </button>
-
-          {/* Withdraw Button */}
-          <button
-            onClick={() => setShowWithdrawModal(true)}
-            className="flex items-center gap-1 px-2.5 py-1.5 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white rounded-xl font-extrabold text-xs transition-all shadow-sm"
-            title="Xin Ba Mẹ đổi quà từ Heo Đất"
-          >
-            <span>🎁</span>
-            <span className="hidden md:inline">Đổi Quà</span>
-          </button>
-
-          {/* Sound Toggle */}
-          <button
-            onClick={toggleSound}
-            className={`p-2 rounded-xl border-2 transition-all ${
-              soundEnabled 
-                ? 'bg-emerald-50 border-emerald-300 text-emerald-700 hover:bg-emerald-100' 
-                : 'bg-slate-100 border-slate-300 text-slate-500 hover:bg-slate-200'
-            }`}
-            title={soundEnabled ? "Tắt âm thanh" : "Bật âm thanh"}
-          >
-            {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-          </button>
-
-          {/* Free Mode Unlock Switch */}
-          <button
-            onClick={() => {
-              sounds.playClick();
-              setShowPinModal(true);
-            }}
-            className={`px-2.5 py-1.5 rounded-xl border-2 flex items-center gap-1.5 text-xs transition-all ${
-              isFreeMode 
-                ? 'bg-purple-100 border-purple-400 text-purple-800 font-bold' 
-                : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
-            }`}
-            title="Bật/Tắt chế độ mở khóa tự do tất cả tuần"
-          >
-            {isFreeMode ? <Unlock className="w-3.5 h-3.5 text-purple-600" /> : <Lock className="w-3.5 h-3.5" />}
-            <span className="hidden md:inline">{isFreeMode ? 'Đã Mở Tất Cả' : 'Mở Khóa Tự Do'}</span>
-          </button>
-
-          {/* Mascot Profile Trigger */}
-          <button
-            onClick={() => {
-              sounds.playPop();
-              setTempName(profile?.name || 'Học Sinh');
-              setTempAvatar(profile?.avatar || '🐯');
-              setShowProfileModal(true);
-            }}
-            className="flex items-center gap-2 pl-2 pr-3 py-1 bg-indigo-50 hover:bg-indigo-100 border-2 border-indigo-200 text-indigo-900 rounded-xl transition-all shadow-sm"
-          >
-            <span className="text-lg">{profile?.avatar || '🐯'}</span>
-            <span className="max-w-[80px] sm:max-w-[110px] truncate text-xs font-bold">{profile?.name || 'Học Sinh'}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-1.5">
-        <nav className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = currentTab === item.id;
-            return (
+            {/* Profile Pill Trigger */}
+            <div className="flex items-center gap-1 pl-1 border-l border-slate-200">
               <button
-                key={item.id}
                 onClick={() => {
-                  sounds.playClick();
-                  onSelectTab(item.id);
+                  sounds.playPop();
+                  setTempName(profile?.name || 'Học Sinh');
+                  setTempAvatar(profile?.avatar || '🐯');
+                  setShowProfileModal(true);
                 }}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl font-extrabold text-xs sm:text-sm whitespace-nowrap transition-all ${
-                  isActive
-                    ? isMath
-                      ? isGrade7
-                        ? 'bg-blue-600 text-white shadow-bouncy-sm btn-bouncy'
-                        : 'bg-amber-400 text-amber-950 shadow-bouncy-sm btn-bouncy'
-                      : isGrade7
-                      ? 'bg-purple-600 text-white shadow-bouncy-sm btn-bouncy'
-                      : 'bg-rose-500 text-white shadow-bouncy-sm btn-bouncy'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                className="flex items-center gap-1 px-2.5 py-1 bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 rounded-full font-black text-xs transition-all shadow-xs"
+                title="Bấm để xem và sửa hồ sơ bé"
+              >
+                <span className="text-sm">{profile?.avatar || '🐯'}</span>
+                <span className="max-w-[65px] sm:max-w-[85px] truncate">{profile?.name || 'Học Sinh'}</span>
+              </button>
+
+              {onLogout && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); sounds.playClick(); onLogout(); }}
+                  className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 text-[11px] font-bold rounded-full transition-colors inline-flex items-center gap-0.5"
+                  title="Đổi sang tài khoản học sinh khác"
+                >
+                  Đổi bé ↩
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Middle: Performance Badges & Reward Actions */}
+          <div className="flex items-center gap-1 sm:gap-2 text-xs font-black overflow-x-auto scrollbar-none py-0.5">
+            {/* Stars */}
+            <div className="flex items-center gap-1 px-2 py-1 bg-amber-50 border border-amber-300 rounded-xl text-amber-900 shrink-0 shadow-2xs">
+              <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-400" />
+              <span>{totalStars}</span>
+            </div>
+
+            {/* Coins */}
+            <div className="flex items-center gap-1 px-2 py-1 bg-yellow-50 border border-yellow-300 rounded-xl text-yellow-900 shrink-0 shadow-2xs">
+              <Coins className="w-3.5 h-3.5 text-yellow-500 fill-yellow-400" />
+              <span>{coins}</span>
+            </div>
+
+            {/* Streak */}
+            <div className="flex items-center gap-1 px-2 py-1 bg-orange-50 border border-orange-300 rounded-xl text-orange-900 shrink-0 shadow-2xs hidden lg:flex">
+              <Flame className="w-3.5 h-3.5 text-orange-500 fill-orange-400" />
+              <span>{streakData.currentStreak}d</span>
+            </div>
+
+            {/* Piggy Bank Pill */}
+            <div className="flex items-center gap-1 px-2.5 py-1 bg-rose-50 border border-rose-300 rounded-xl text-rose-900 shrink-0 shadow-2xs">
+              <span className="text-sm">🐷</span>
+              <span>{(piggyBalance || 0).toLocaleString('vi-VN')} <span className="text-[10px] text-rose-700">đ</span></span>
+            </div>
+
+            {/* Rules Button */}
+            <button
+              onClick={() => { sounds.playClick(); setShowRulesModal(true); }}
+              className="flex items-center gap-1 px-2.5 py-1 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-xl text-amber-900 text-xs shrink-0 transition-all shadow-2xs"
+              title="Xem quy tắc thưởng Heo Đất Tri Thức"
+            >
+              <span>📜</span>
+              <span className="hidden sm:inline">Quy Tắc</span>
+            </button>
+
+            {/* Withdraw Button */}
+            <button
+              onClick={() => { sounds.playClick(); setShowWithdrawModal(true); }}
+              className="flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white rounded-xl text-xs shrink-0 transition-all shadow-2xs"
+              title="Xin Ba Mẹ đổi quà từ Heo Đất"
+            >
+              <span>🎁</span>
+              <span className="hidden sm:inline">Đổi Quà</span>
+            </button>
+          </div>
+
+          {/* Right: Switchers & Utility Toggles */}
+          <div className="flex items-center gap-1 shrink-0">
+            {/* Grade Switcher */}
+            <div className="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200 text-[11px] font-extrabold">
+              <button
+                onClick={() => switchGrade('4')}
+                className={`px-2 py-0.5 rounded-lg transition-all ${
+                  !isGrade7
+                    ? 'bg-amber-400 text-amber-950 shadow-2xs'
+                    : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
-                <Icon className="w-4 h-4" />
-                <span>{item.label}</span>
-                {item.badge && (
-                  <span className="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-rose-500 text-white">
-                    {item.badge}
-                  </span>
-                )}
+                Lớp 3
               </button>
-            );
-          })}
-        </nav>
-      </div>
+              <button
+                onClick={() => switchGrade('7')}
+                className={`px-2 py-0.5 rounded-lg transition-all ${
+                  isGrade7
+                    ? 'bg-blue-600 text-white shadow-2xs'
+                    : 'text-slate-500 hover:text-slate-800'
+                }`}
+              >
+                Lớp 7
+              </button>
+            </div>
 
-      {/* Profile & Mascot Customizer Modal */}
+            {/* Subject Switcher */}
+            <div className="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200 text-[11px] font-extrabold">
+              <button
+                onClick={() => switchSubject('math')}
+                className={`px-2 py-0.5 rounded-lg transition-all ${
+                  isMath
+                    ? isGrade7 ? 'bg-blue-600 text-white shadow-2xs' : 'bg-amber-400 text-amber-950 shadow-2xs'
+                    : 'text-slate-500 hover:text-slate-800'
+                }`}
+              >
+                🧮 Toán
+              </button>
+              <button
+                onClick={() => switchSubject('vietnamese')}
+                className={`px-2 py-0.5 rounded-lg transition-all ${
+                  !isMath
+                    ? isGrade7 ? 'bg-purple-600 text-white shadow-2xs' : 'bg-rose-500 text-white shadow-2xs'
+                    : 'text-slate-500 hover:text-slate-800'
+                }`}
+              >
+                📖 Văn
+              </button>
+            </div>
+
+            {/* Sound Toggle */}
+            <button
+              onClick={toggleSound}
+              className={`p-1.5 rounded-xl border transition-all ${
+                soundEnabled 
+                  ? 'bg-emerald-50 border-emerald-300 text-emerald-700 hover:bg-emerald-100' 
+                  : 'bg-slate-100 border-slate-300 text-slate-400 hover:bg-slate-200'
+              }`}
+              title={soundEnabled ? "Tắt âm thanh" : "Bật âm thanh"}
+            >
+              {soundEnabled ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
+            </button>
+
+            {/* Free Mode Unlock Switch */}
+            <button
+              onClick={() => {
+                sounds.playClick();
+                setShowPinModal(true);
+              }}
+              className={`p-1.5 rounded-xl border transition-all ${
+                isFreeMode 
+                  ? 'bg-purple-100 border-purple-400 text-purple-800' 
+                  : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100'
+              }`}
+              title={isFreeMode ? "Đã mở khóa tự do tất cả tuần" : "Mở khóa tự do (cần mã PIN)"}
+            >
+              {isFreeMode ? <Unlock className="w-3.5 h-3.5 text-purple-600" /> : <Lock className="w-3.5 h-3.5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* ROW 2: Navigation Tab Bar (Chỉ hiển thị khi KHÔNG trong bài thi) */}
+        {!isQuizActive && (
+          <div className="border-t border-amber-100/80 bg-amber-50/30">
+            <div className="max-w-7xl mx-auto px-3 sm:px-5">
+              <nav className="flex items-center gap-1 sm:gap-2 overflow-x-auto py-1 scrollbar-none">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = currentTab === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        sounds.playClick();
+                        onSelectTab(item.id);
+                      }}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-black text-xs sm:text-sm whitespace-nowrap transition-all ${
+                        isActive
+                          ? isMath
+                            ? isGrade7
+                              ? 'bg-blue-600 text-white shadow-xs'
+                              : 'bg-amber-400 text-amber-950 shadow-xs'
+                            : isGrade7
+                            ? 'bg-purple-600 text-white shadow-xs'
+                            : 'bg-rose-500 text-white shadow-xs'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-amber-100/50'
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                      <span>{item.label}</span>
+                      {item.badge && (
+                        <span className="px-1.5 py-0.2 text-[10px] font-black rounded-full bg-rose-500 text-white">
+                          {item.badge}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* Profile & Mascot Customizer Modal (ĐƯỢC RENDER NGOÀI HEADER) */}
       {showProfileModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-md w-full p-6 animate-scale-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-md w-full p-6 animate-scale-in my-auto">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-amber-500" />
@@ -404,8 +404,8 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
 
       {/* PIN Modal for Free Mode */}
       {showPinModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-sm w-full p-6 animate-scale-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-sm w-full p-6 animate-scale-in my-auto">
             <h3 className="text-xl font-bold text-slate-800 mb-2">Góc Phụ Huynh</h3>
             <p className="text-sm font-bold text-slate-600 mb-4">
               Vui lòng nhập mã PIN của phụ huynh để {isFreeMode ? 'tắt' : 'bật'} tính năng này.
@@ -457,7 +457,7 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
         </div>
       )}
 
-      {/* Reward Rules Modal */}
+      {/* Reward Rules Modal (ĐƯỢC RENDER NGOÀI HEADER) */}
       {showRulesModal && (
         <RewardRulesModal 
           onClose={() => setShowRulesModal(false)}
@@ -465,14 +465,14 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
         />
       )}
 
-      {/* Withdraw Modal */}
+      {/* Withdraw Modal (ĐƯỢC RENDER NGOÀI HEADER) */}
       {showWithdrawModal && (
         <WithdrawModal 
           onClose={() => setShowWithdrawModal(false)}
           onOpenRules={() => setShowRulesModal(true)}
         />
       )}
-    </header>
+    </>
   );
 };
 
