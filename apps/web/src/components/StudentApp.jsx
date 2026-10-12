@@ -10,7 +10,7 @@ import { BadgesModal } from './BadgesModal';
 import { QuizArena } from './QuizArena';
 import { ResultModal } from './ResultModal';
 import { ExplanationView } from './ExplanationView';
-import { Users, Lock, LogOut } from 'lucide-react';
+import { Users, Lock, LogOut, Edit2, Trash2, Check, X, User } from 'lucide-react';
 
 const MainContent = ({ onLogout }) => {
   const { profile, saveQuizResult, getQuestionsByWeek, currentSubject, isMath, isApiLoading, currentMetadata } = useLearning();
@@ -155,17 +155,25 @@ const MainContent = ({ onLogout }) => {
         }} 
       />
         {/* Switch Profile Button */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 flex justify-end">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <span className="text-xs sm:text-sm font-bold text-slate-500">Đang học:</span>
+            <span className="text-sm sm:text-base font-extrabold text-amber-900 bg-amber-100/90 border border-amber-300 px-3.5 py-1 rounded-full flex items-center gap-2 shadow-sm">
+              <span className="text-xl">{profile?.avatar || '🐯'}</span>
+              <span>{profile?.name || 'Bé Bi'}</span>
+            </span>
+          </div>
           <button 
             onClick={onLogout}
-            className="flex items-center gap-3 px-5 py-2 bg-white hover:bg-slate-50 border-2 border-slate-200 text-slate-700 font-bold rounded-full shadow-sm transition-all group"
-            title="Đổi tài khoản"
+            className="flex items-center gap-2.5 px-4 py-2 bg-white hover:bg-amber-50 border-2 border-amber-200 hover:border-amber-400 text-slate-700 hover:text-amber-950 font-bold rounded-full shadow-sm hover:shadow transition-all group"
+            title="Đổi hoặc chỉnh sửa tài khoản học sinh"
           >
-            <div className="text-2xl bg-amber-100 w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="text-xl bg-amber-100 w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
               {profile?.avatar || '🐯'}
             </div>
-            <span className="text-lg">{profile?.name || 'Học Sinh'}</span>
-            <LogOut className="w-5 h-5 ml-2 text-slate-400 group-hover:text-rose-500" />
+            <span className="text-sm sm:text-base font-extrabold">{profile?.name || 'Bé Bi'}</span>
+            <span className="text-xs text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full font-bold">Đổi bé ↩</span>
+            <LogOut className="w-4 h-4 text-slate-400 group-hover:text-rose-500 transition-colors" />
           </button>
         </div>
 
@@ -247,50 +255,178 @@ const ProfileSelector = ({ onSelect }) => {
   });
   const [newProfileName, setNewProfileName] = useState('');
   const [selectedAvatar, setSelectedAvatar] = useState('🐯');
+  const [editingProfile, setEditingProfile] = useState(null);
   const avatars = ['🐯', '🐰', '🐼', '🦊', '🐶', '🐱', '🦁', '🐸', '🐵', '🦉'];
   
+  const handleSelectProfile = (p) => {
+    // 1. Keep activeProfileId and activeProfileData up to date
+    localStorage.setItem('activeProfileId', p.id);
+    localStorage.setItem('activeProfileData', JSON.stringify(p));
+    
+    // 2. Ensure agy_profile_{p.id} exists and has matching name & avatar
+    const key = `agy_profile_${p.id}`;
+    const existing = localStorage.getItem(key);
+    if (!existing) {
+      localStorage.setItem(key, JSON.stringify({
+        name: p.name,
+        avatar: p.avatar,
+        mascot: p.avatar,
+        avatarColor: '#FFD166'
+      }));
+    } else {
+      try {
+        const parsed = JSON.parse(existing);
+        parsed.name = p.name;
+        parsed.avatar = p.avatar;
+        parsed.mascot = p.avatar;
+        localStorage.setItem(key, JSON.stringify(parsed));
+      } catch (e) {}
+    }
+    
+    onSelect(p.id);
+  };
+
   const handleAdd = () => {
     if (!newProfileName.trim()) return;
+    const newId = 'p_' + Date.now();
     const newP = {
-      id: 'p_' + Date.now(),
-      name: newProfileName,
+      id: newId,
+      name: newProfileName.trim(),
       avatar: selectedAvatar
     };
     const updated = [...profiles, newP];
     setProfiles(updated);
     localStorage.setItem('agy_profiles', JSON.stringify(updated));
+    localStorage.setItem(`agy_profile_${newId}`, JSON.stringify({
+      name: newP.name,
+      avatar: newP.avatar,
+      mascot: newP.avatar,
+      avatarColor: '#FFD166'
+    }));
     setNewProfileName('');
+  };
+
+  const handleStartEdit = (p, e) => {
+    e.stopPropagation();
+    setEditingProfile({ ...p });
+  };
+
+  const handleSaveEdit = () => {
+    if (!editingProfile || !editingProfile.name.trim()) return;
+    const trimmedName = editingProfile.name.trim();
+    const updated = profiles.map(p => 
+      p.id === editingProfile.id 
+        ? { ...p, name: trimmedName, avatar: editingProfile.avatar }
+        : p
+    );
+    setProfiles(updated);
+    localStorage.setItem('agy_profiles', JSON.stringify(updated));
+
+    // Update specific storage
+    const key = `agy_profile_${editingProfile.id}`;
+    const existing = localStorage.getItem(key);
+    const parsed = existing ? JSON.parse(existing) : {};
+    localStorage.setItem(key, JSON.stringify({
+      ...parsed,
+      name: trimmedName,
+      avatar: editingProfile.avatar,
+      mascot: editingProfile.avatar
+    }));
+
+    // If currently active was this one, update activeProfileData
+    const activeId = localStorage.getItem('activeProfileId');
+    if (activeId === editingProfile.id) {
+      localStorage.setItem('activeProfileData', JSON.stringify({
+        id: editingProfile.id,
+        name: trimmedName,
+        avatar: editingProfile.avatar
+      }));
+    }
+
+    setEditingProfile(null);
+  };
+
+  const handleDelete = (pId, e) => {
+    e.stopPropagation();
+    if (profiles.length <= 1) {
+      alert('Phải giữ lại ít nhất 1 tài khoản học sinh!');
+      return;
+    }
+    const target = profiles.find(p => p.id === pId);
+    if (window.confirm(`Bạn có chắc chắn muốn xóa tài khoản "${target?.name || 'học sinh này'}" không? Dữ liệu điểm số của bé sẽ bị xóa.`)) {
+      const updated = profiles.filter(p => p.id !== pId);
+      setProfiles(updated);
+      localStorage.setItem('agy_profiles', JSON.stringify(updated));
+
+      // Cleanup
+      const keysToRemove = [
+        `agy_profile_${pId}`,
+        `agy_prog_g4m_${pId}`,
+        `agy_history_${pId}`,
+        `agy_wrong_g4m_${pId}`,
+        `agy_badges_${pId}`,
+        `agy_streak_${pId}`,
+        `agy_coins_${pId}`
+      ];
+      keysToRemove.forEach(k => localStorage.removeItem(k));
+    }
   };
 
   return (
     <div className="min-h-screen bg-amber-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl shadow-xl p-8 max-w-lg w-full text-center border-4 border-amber-300">
-        <h1 className="text-3xl font-bold text-amber-600 mb-8">Ai đang học toán thế nhỉ?</h1>
-        <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 max-w-lg w-full text-center border-4 border-amber-300 relative">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-amber-600 mb-2">Ai đang học toán thế nhỉ?</h1>
+        <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-6">Chọn tài khoản của bé hoặc thêm bé mới để lưu kết quả riêng</p>
+
+        {/* Profiles Grid */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
           {profiles.map(p => (
-            <button
+            <div
               key={p.id}
-              onClick={() => {
-                // Keep global profile up to date
-                localStorage.setItem('activeProfileData', JSON.stringify(p));
-                onSelect(p.id);
-              }}
-              className="p-6 rounded-2xl bg-amber-50 hover:bg-amber-100 border-2 border-amber-200 hover:border-amber-400 transition-all flex flex-col items-center gap-3 group"
+              onClick={() => handleSelectProfile(p)}
+              className="relative p-5 rounded-2xl bg-amber-50/80 hover:bg-amber-100/90 border-2 border-amber-200 hover:border-amber-400 transition-all flex flex-col items-center gap-2.5 group cursor-pointer shadow-sm hover:shadow-md"
             >
-              <div className="text-5xl group-hover:scale-110 transition-transform">{p.avatar}</div>
-              <div className="font-bold text-slate-700 text-lg">{p.name}</div>
-            </button>
+              {/* Action buttons (Edit & Delete) */}
+              <div className="absolute top-2 right-2 flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={(e) => handleStartEdit(p, e)}
+                  title="Chỉnh sửa tên và linh vật"
+                  className="p-1.5 rounded-lg bg-white/90 hover:bg-amber-200 text-amber-800 transition-colors shadow-xs"
+                >
+                  <Edit2 className="w-3.5 h-3.5" />
+                </button>
+                {profiles.length > 1 && (
+                  <button
+                    type="button"
+                    onClick={(e) => handleDelete(p.id, e)}
+                    title="Xóa tài khoản này"
+                    className="p-1.5 rounded-lg bg-white/90 hover:bg-rose-100 text-rose-600 transition-colors shadow-xs"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+
+              <div className="text-5xl group-hover:scale-110 transition-transform mt-2">{p.avatar}</div>
+              <div className="font-extrabold text-slate-800 text-base sm:text-lg truncate max-w-full">{p.name}</div>
+              <span className="text-[11px] font-bold text-amber-700 bg-amber-200/80 px-2.5 py-0.5 rounded-full">
+                Vào học 🚀
+              </span>
+            </div>
           ))}
         </div>
         
-        <div className="bg-slate-50 p-4 rounded-2xl border-2 border-slate-100">
-          <h3 className="text-slate-500 font-bold mb-3">Thêm tài khoản mới</h3>
-          <div className="flex flex-wrap justify-center gap-2 mb-4">
+        {/* Add New Profile Section */}
+        <div className="bg-slate-50 p-4 sm:p-5 rounded-2xl border-2 border-slate-100 text-left">
+          <h3 className="text-slate-600 font-extrabold text-sm mb-2 text-center">Thêm tài khoản bé mới</h3>
+          <div className="flex flex-wrap justify-center gap-1.5 mb-3">
             {avatars.map(av => (
               <button 
                 key={av} 
+                type="button"
                 onClick={() => setSelectedAvatar(av)}
-                className={`text-2xl p-2 rounded-xl transition-all ${selectedAvatar === av ? 'bg-amber-200 scale-110 ring-2 ring-amber-400' : 'bg-white hover:bg-slate-100'}`}
+                className={`text-2xl p-1.5 rounded-xl transition-all ${selectedAvatar === av ? 'bg-amber-300 scale-110 ring-2 ring-amber-400' : 'bg-white hover:bg-slate-100'}`}
               >
                 {av}
               </button>
@@ -301,17 +437,70 @@ const ProfileSelector = ({ onSelect }) => {
               type="text" 
               placeholder="Tên bé mới..." 
               value={newProfileName}
+              maxLength={20}
               onChange={(e) => setNewProfileName(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-xl border-2 border-slate-200 outline-none focus:border-amber-400 font-bold text-slate-700"
+              onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
+              className="flex-1 px-4 py-2.5 rounded-xl border-2 border-slate-200 outline-none focus:border-amber-400 font-bold text-slate-700 text-sm"
             />
             <button 
+              type="button"
               onClick={handleAdd}
-              className="px-6 py-3 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl transition-all"
+              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl transition-all text-sm whitespace-nowrap shadow-sm"
             >
               + Thêm
             </button>
           </div>
         </div>
+
+        {/* Edit Modal */}
+        {editingProfile && (
+          <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+            <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-sm w-full p-6 text-center animate-scale-in">
+              <h3 className="text-xl font-bold text-slate-800 mb-4">Sửa Thông Tin Bé</h3>
+              
+              <div className="flex flex-wrap justify-center gap-2 mb-4">
+                {avatars.map(av => (
+                  <button 
+                    key={av} 
+                    type="button"
+                    onClick={() => setEditingProfile({ ...editingProfile, avatar: av })}
+                    className={`text-2xl p-1.5 rounded-xl transition-all ${editingProfile.avatar === av ? 'bg-amber-300 scale-110 ring-2 ring-amber-400' : 'bg-slate-100 hover:bg-slate-200'}`}
+                  >
+                    {av}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mb-4">
+                <input
+                  type="text"
+                  value={editingProfile.name}
+                  maxLength={20}
+                  onChange={(e) => setEditingProfile({ ...editingProfile, name: e.target.value })}
+                  placeholder="Tên bé..."
+                  className="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 focus:border-amber-400 focus:outline-none font-bold text-slate-800 text-center"
+                />
+              </div>
+
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEditingProfile(null)}
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl text-sm"
+                >
+                  Hủy
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSaveEdit}
+                  className="px-5 py-2 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl text-sm"
+                >
+                  Lưu Lại
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -33,8 +33,9 @@ const getStorageKeys = (profileId) => ({
 });
 
 const DEFAULT_PROFILE = {
-  name: 'Học Sinh Chăm Chỉ',
-  mascot: 'elephant',
+  name: 'Bé Bi',
+  avatar: '🐯',
+  mascot: '🐯',
   avatarColor: '#FFD166',
 };
 
@@ -74,7 +75,54 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   const [profile, setProfile] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.PROFILE);
-      return saved ? JSON.parse(saved) : DEFAULT_PROFILE;
+      let parsed = saved ? JSON.parse(saved) : null;
+
+      // Check agy_profiles list
+      let itemInList = null;
+      try {
+        const rawList = localStorage.getItem('agy_profiles');
+        const list = rawList ? JSON.parse(rawList) : [];
+        itemInList = list.find(p => p.id === profileId);
+      } catch (e) {}
+
+      // Check activeProfileData
+      let activeData = null;
+      try {
+        const rawActive = localStorage.getItem('activeProfileData');
+        if (rawActive) {
+          const a = JSON.parse(rawActive);
+          if (a.id === profileId) activeData = a;
+        }
+      } catch (e) {}
+
+      const bestSource = activeData || itemInList;
+
+      if (parsed) {
+        // If parsed is missing avatar or has obsolete default name 'Học Sinh Chăm Chỉ'
+        if (bestSource) {
+          if (!parsed.avatar || parsed.name === 'Học Sinh Chăm Chỉ') {
+            parsed.name = bestSource.name || parsed.name;
+            parsed.avatar = bestSource.avatar || parsed.avatar || '🐯';
+            parsed.mascot = bestSource.avatar || parsed.mascot || '🐯';
+          }
+        } else if (!parsed.avatar) {
+          parsed.avatar = '🐯';
+        }
+        return parsed;
+      }
+
+      if (bestSource) {
+        return {
+          name: bestSource.name,
+          avatar: bestSource.avatar || '🐯',
+          mascot: bestSource.avatar || '🐯',
+          avatarColor: '#FFD166'
+        };
+      }
+
+      return profileId === 'default'
+        ? { name: 'Bé Bi', avatar: '🐯', mascot: '🐯', avatarColor: '#FFD166' }
+        : { name: 'Học Sinh', avatar: '🐯', mascot: '🐯', avatarColor: '#FFD166' };
     } catch {
       return DEFAULT_PROFILE;
     }
@@ -225,7 +273,24 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   // Save to LocalStorage
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.GRADE, currentGrade); }, [currentGrade]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.SUBJECT, currentSubject); }, [currentSubject]);
-  useEffect(() => { localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(profile)); }, [profile]);
+  useEffect(() => { 
+    localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(profile)); 
+    try {
+      const rawList = localStorage.getItem('agy_profiles');
+      if (rawList) {
+        const list = JSON.parse(rawList);
+        const idx = list.findIndex(p => p.id === profileId);
+        if (idx !== -1) {
+          const targetAvatar = profile.avatar || profile.mascot || list[idx].avatar;
+          if (list[idx].name !== profile.name || list[idx].avatar !== targetAvatar) {
+            list[idx].name = profile.name;
+            list[idx].avatar = targetAvatar;
+            localStorage.setItem('agy_profiles', JSON.stringify(list));
+          }
+        }
+      }
+    } catch (e) {}
+  }, [profile]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.PROGRESS_G4_MATH, JSON.stringify(g4MathProgress)); }, [g4MathProgress]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.PROGRESS_G4_TV, JSON.stringify(g4TvProgress)); }, [g4TvProgress]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.PROGRESS_G7_MATH, JSON.stringify(g7MathProgress)); }, [g7MathProgress]);
@@ -479,7 +544,28 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   };
 
   const updateProfile = (newProfile) => {
-    setProfile(prev => ({ ...prev, ...newProfile }));
+    setProfile(prev => {
+      const updated = { ...prev, ...newProfile };
+      try {
+        localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(updated));
+        const rawList = localStorage.getItem('agy_profiles');
+        if (rawList) {
+          const list = JSON.parse(rawList);
+          const idx = list.findIndex(p => p.id === profileId);
+          if (idx !== -1) {
+            list[idx].name = updated.name;
+            list[idx].avatar = updated.avatar || updated.mascot || list[idx].avatar;
+            localStorage.setItem('agy_profiles', JSON.stringify(list));
+          }
+        }
+        localStorage.setItem('activeProfileData', JSON.stringify({
+          id: profileId,
+          name: updated.name,
+          avatar: updated.avatar || updated.mascot
+        }));
+      } catch (e) {}
+      return updated;
+    });
     sounds.playClick();
   };
 

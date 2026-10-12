@@ -51,8 +51,8 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   } = useLearning();
 
   const [showProfileModal, setShowProfileModal] = useState(false);
-  const [tempName, setTempName] = useState(profile.name);
-  const [tempMascot, setTempMascot] = useState(profile.mascot);
+  const [tempName, setTempName] = useState(profile?.name || 'Học Sinh');
+  const [tempAvatar, setTempAvatar] = useState(profile?.avatar || '🐯');
 
   const [showPinModal, setShowPinModal] = useState(false);
   const [pinInput, setPinInput] = useState('');
@@ -63,8 +63,9 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
   const handleSaveProfile = () => {
     sounds.playClick();
     updateProfile({
-      name: tempName.trim() || 'Học Sinh Chăm Chỉ',
-      mascot: tempMascot
+      name: tempName.trim() || 'Học Sinh',
+      avatar: tempAvatar,
+      mascot: tempAvatar
     });
     setShowProfileModal(false);
   };
@@ -246,14 +247,14 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
           <button
             onClick={() => {
               sounds.playPop();
-              setTempName(profile.name);
-              setTempMascot(profile.mascot);
+              setTempName(profile?.name || 'Học Sinh');
+              setTempAvatar(profile?.avatar || '🐯');
               setShowProfileModal(true);
             }}
             className="flex items-center gap-2 pl-2 pr-3 py-1 bg-indigo-50 hover:bg-indigo-100 border-2 border-indigo-200 text-indigo-900 rounded-xl transition-all shadow-sm"
           >
-            <span className="text-lg">{currentMascotObj.emoji}</span>
-            <span className="max-w-[80px] sm:max-w-[110px] truncate text-xs font-bold">{profile.name}</span>
+            <span className="text-lg">{profile?.avatar || '🐯'}</span>
+            <span className="max-w-[80px] sm:max-w-[110px] truncate text-xs font-bold">{profile?.name || 'Học Sinh'}</span>
           </button>
         </div>
       </div>
@@ -328,33 +329,26 @@ export const Navbar = ({ currentTab, onSelectTab }) => {
               />
             </div>
 
-            {/* Mascot Selector */}
+            {/* Mascot / Avatar Selector */}
             <div className="mb-6">
               <label className="block text-xs font-bold text-slate-600 mb-2">
-                Chọn Linh Vật Đồng Hành:
+                Chọn Linh Vật / Hình Đại Diện:
               </label>
-              <div className="grid grid-cols-2 gap-2.5">
-                {MASCOTS.map((m) => {
-                  const isSelected = tempMascot === m.id;
-                  return (
-                    <div
-                      key={m.id}
-                      onClick={() => setTempMascot(m.id)}
-                      className={`p-3 rounded-2xl border-2 cursor-pointer transition-all flex items-center gap-3 ${
-                        isSelected 
-                          ? 'border-amber-400 bg-amber-50/80 shadow-sm' 
-                          : 'border-slate-200 hover:border-slate-300 bg-slate-50/50'
-                      }`}
-                    >
-                      <span className="text-3xl">{m.emoji}</span>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-extrabold text-xs text-slate-800 truncate">{m.name}</div>
-                        <div className="text-[11px] text-slate-500 truncate">{m.desc}</div>
-                      </div>
-                      {isSelected && <Check className="w-4 h-4 text-amber-600" />}
-                    </div>
-                  );
-                })}
+              <div className="flex flex-wrap justify-center gap-2">
+                {['🐯', '🐰', '🐼', '🦊', '🐶', '🐱', '🦁', '🐸', '🐵', '🦉'].map((av) => (
+                  <button
+                    key={av}
+                    type="button"
+                    onClick={() => setTempAvatar(av)}
+                    className={`text-2xl p-2 rounded-xl transition-all ${
+                      tempAvatar === av
+                        ? 'bg-amber-300 scale-110 ring-2 ring-amber-400'
+                        : 'bg-slate-100 hover:bg-slate-200'
+                    }`}
+                  >
+                    {av}
+                  </button>
+                ))}
               </div>
             </div>
 
