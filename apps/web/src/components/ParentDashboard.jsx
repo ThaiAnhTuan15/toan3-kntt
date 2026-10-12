@@ -19,8 +19,10 @@ import {
   Plus,
   Check,
   Send,
-  XCircle
+  XCircle,
+  Flag
 } from 'lucide-react';
+import { MathRenderer } from './MathRenderer';
 import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
@@ -37,6 +39,11 @@ export const ParentDashboard = () => {
     approveWithdrawal,
     rejectWithdrawal,
     manualAdjustPiggy,
+    reportedQuestions,
+    verifiedErrorIds,
+    verifyQuestionError,
+    rejectQuestionError,
+    unverifyQuestionError,
     streakData,
     isMath,
     currentGrade,
@@ -49,6 +56,7 @@ export const ParentDashboard = () => {
   const [showAdjustModal, setShowAdjustModal] = useState(false);
   const [adjustAmount, setAdjustAmount] = useState('');
   const [adjustReason, setAdjustReason] = useState('');
+  const [errorFilter, setErrorFilter] = useState('pending'); // 'pending' | 'verified' | 'all'
 
   // Filter history by current grade & subject
   const subjectHistory = history.filter(h => {
@@ -457,6 +465,279 @@ export const ParentDashboard = () => {
             </div>
           )}
         </div>
+      </div>
+
+      {/* Thẩm Định Câu Hỏi Báo Lỗi Từ Bé */}
+      <div className="bg-white rounded-3xl border-2 border-rose-200 p-6 shadow-bouncy space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-rose-100 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 to-red-500 flex items-center justify-center text-2xl shadow-md shadow-rose-200 text-white">
+              🔍
+            </div>
+            <div>
+              <h2 className="text-lg sm:text-xl font-black text-slate-800 flex items-center gap-2">
+                Thẩm Định Câu Hỏi Báo Lỗi Từ Bé
+                {reportedQuestions?.filter(r => r.status === 'pending').length > 0 && (
+                  <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-500 text-white font-extrabold animate-pulse">
+                    {reportedQuestions.filter(r => r.status === 'pending').length} chờ duyệt
+                  </span>
+                )}
+              </h2>
+              <p className="text-xs font-semibold text-slate-500">
+                Xác nhận câu hỏi lỗi để thưởng bé <strong className="text-rose-600 font-black">+5.000 đ/lỗi</strong> và tự động loại trừ khỏi phạt trừ tiền Heo Đất
+              </p>
+            </div>
+          </div>
+
+          {/* Filter Tabs */}
+          <div className="flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs font-extrabold">
+            <button
+              onClick={() => setErrorFilter('pending')}
+              className={`px-3 py-1.5 rounded-xl transition ${
+                errorFilter === 'pending'
+                  ? 'bg-rose-500 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Chờ Duyệt ({reportedQuestions?.filter(r => r.status === 'pending').length || 0})
+            </button>
+            <button
+              onClick={() => setErrorFilter('verified')}
+              className={`px-3 py-1.5 rounded-xl transition ${
+                errorFilter === 'verified'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Đã Xác Nhận ({reportedQuestions?.filter(r => r.status === 'verified').length || 0})
+            </button>
+            <button
+              onClick={() => setErrorFilter('all')}
+              className={`px-3 py-1.5 rounded-xl transition ${
+                errorFilter === 'all'
+                  ? 'bg-slate-800 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Tất Cả ({reportedQuestions?.length || 0})
+            </button>
+          </div>
+        </div>
+
+        {/* Danh sách câu hỏi báo lỗi */}
+        {(() => {
+          const filteredReports = (reportedQuestions || []).filter(r => {
+            if (errorFilter === 'pending') return r.status === 'pending';
+            if (errorFilter === 'verified') return r.status === 'verified';
+            return true;
+          });
+
+          if (filteredReports.length === 0) {
+            return (
+              <div className="py-8 text-center text-slate-400 font-bold text-sm bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                {errorFilter === 'pending'
+                  ? '🎉 Tuyệt vời! Hiện tại không có câu hỏi nào đang chờ phụ huynh thẩm định.'
+                  : errorFilter === 'verified'
+                  ? 'Chưa có câu hỏi nào được xác nhận là lỗi.'
+                  : 'Bé chưa gửi báo lỗi câu hỏi nào.'}
+              </div>
+            );
+          }
+
+          return (
+            <div className="space-y-4">
+              {filteredReports.map(rep => {
+                const q = rep.question;
+                const isPending = rep.status === 'pending';
+                const isVerified = rep.status === 'verified';
+
+                return (
+                  <div 
+                    key={rep.id} 
+                    className={`rounded-2xl border-2 p-4 sm:p-5 transition-all shadow-sm space-y-4 ${
+                      isPending 
+                        ? 'bg-rose-50/40 border-rose-300' 
+                        : isVerified 
+                        ? 'bg-emerald-50/40 border-emerald-300' 
+                        : 'bg-slate-50 border-slate-200'
+                    }`}
+                  >
+                    {/* Header Report Card */}
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b pb-3 border-slate-200">
+                      <div className="flex items-center gap-2">
+                        <span className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-black text-xs text-slate-800 shadow-2xs">
+                          Mã câu: {rep.questionId}
+                        </span>
+                        {rep.week && (
+                          <span className="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 font-bold text-xs">
+                            Đề Tuần {rep.week}
+                          </span>
+                        )}
+                        <span className="text-[11px] text-slate-400 font-semibold">
+                          Báo lúc: {new Date(rep.reportedAt).toLocaleString('vi-VN')}
+                        </span>
+                      </div>
+
+                      <div>
+                        {isPending && (
+                          <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 font-extrabold text-xs flex items-center gap-1">
+                            <span>⏳</span> Đang Chờ Thẩm Định
+                          </span>
+                        )}
+                        {isVerified && (
+                          <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold text-xs flex items-center gap-1">
+                            <span>✅</span> Đã Thưởng 5.000 đ & Miễn Trừ
+                          </span>
+                        )}
+                        {rep.status === 'rejected' && (
+                          <span className="px-3 py-1 rounded-full bg-slate-200 text-slate-700 font-bold text-xs">
+                            ✕ Câu Hỏi Chuẩn Xác
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Lý do bé báo lỗi */}
+                    <div className="bg-white p-3 rounded-xl border border-rose-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+                      <div>
+                        <span className="font-black text-rose-800 block">
+                          Lý do bé báo: <span className="font-extrabold text-slate-800">{rep.reason}</span>
+                        </span>
+                        {rep.note && (
+                          <p className="text-slate-600 font-semibold mt-0.5">
+                            Ghi chú của con: <em>"{rep.note}"</em>
+                          </p>
+                        )}
+                        {rep.adminNote && (
+                          <p className="text-blue-700 font-semibold mt-0.5">
+                            Lời dặn của Ba Mẹ: <em>"{rep.adminNote}"</em>
+                          </p>
+                        )}
+                      </div>
+                      <span className="px-2 py-0.5 rounded bg-rose-100 text-rose-700 font-bold text-[11px] shrink-0">
+                        Thưởng công phát hiện: +5.000 đ 🎖️
+                      </span>
+                    </div>
+
+                    {/* Chi tiết câu hỏi cần kiểm tra */}
+                    <div className="bg-white rounded-xl border border-slate-200 p-4 space-y-3">
+                      <div className="text-sm sm:text-base font-extrabold text-slate-800">
+                        <MathRenderer text={q.question} />
+                      </div>
+
+                      {/* Ảnh minh họa nếu có */}
+                      {q.image ? (
+                        <div className="flex justify-center my-2 p-2 bg-slate-50 rounded-xl border border-slate-200 max-w-sm mx-auto">
+                          <img 
+                            src={q.image} 
+                            alt="Hình minh họa câu hỏi" 
+                            className="max-h-40 object-contain rounded-lg"
+                          />
+                        </div>
+                      ) : (
+                        <div className="text-[11px] text-slate-400 italic">
+                          (Câu hỏi này trong hệ thống không có file ảnh đính kèm)
+                        </div>
+                      )}
+
+                      {/* 4 Đáp án */}
+                      {q.options && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                          {q.options.map((opt, optIdx) => {
+                            const isCorrectOpt = q.correctIndex === optIdx;
+                            return (
+                              <div
+                                key={optIdx}
+                                className={`p-2.5 rounded-xl border flex items-center justify-between gap-2 ${
+                                  isCorrectOpt
+                                    ? 'bg-emerald-50 border-emerald-400 text-emerald-950 font-extrabold ring-1 ring-emerald-300'
+                                    : 'bg-slate-50 border-slate-200 text-slate-600'
+                                }`}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className={`w-5 h-5 rounded-md text-[10px] font-bold flex items-center justify-center ${
+                                    isCorrectOpt ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-600'
+                                  }`}>
+                                    {['A', 'B', 'C', 'D'][optIdx]}
+                                  </span>
+                                  <span><MathRenderer text={opt} /></span>
+                                </div>
+                                {isCorrectOpt && (
+                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">
+                                    Đáp án hệ thống ✓
+                                  </span>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      {/* Hướng dẫn giải chi tiết */}
+                      {q.explanation && (
+                        <div className="text-xs text-slate-600 bg-amber-50/50 p-2.5 rounded-xl border border-amber-200">
+                          <strong className="text-amber-900 block mb-0.5">Lời giải hệ thống:</strong>
+                          <MathRenderer text={q.explanation} />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Nút hành động thẩm định */}
+                    <div className="flex flex-wrap items-center justify-end gap-2 pt-1">
+                      {isPending && (
+                        <>
+                          <button
+                            onClick={() => {
+                              verifyQuestionError(rep.id, 5000);
+                            }}
+                            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-bouncy-sm transition flex items-center gap-1.5"
+                          >
+                            <Check className="w-4 h-4" />
+                            Xác Nhận Đúng Lỗi & Thưởng Bé 5.000 đ
+                          </button>
+                          <button
+                            onClick={() => {
+                              const note = prompt('Nhập lời dặn dò cho bé (tùy chọn):', 'Câu hỏi này chính xác con nhé, con đọc kỹ lại gợi ý và lời giải!');
+                              rejectQuestionError(rep.id, note || '');
+                            }}
+                            className="px-3.5 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-xs rounded-xl transition flex items-center gap-1"
+                          >
+                            <XCircle className="w-4 h-4" />
+                            Câu Hỏi Chuẩn (Bỏ Qua)
+                          </button>
+                        </>
+                      )}
+
+                      {isVerified && (
+                        <button
+                          onClick={() => {
+                            if (confirm('Bạn có chắc chắn muốn hoàn tác xác nhận lỗi cho câu hỏi này không?')) {
+                              unverifyQuestionError(rep.id);
+                            }
+                          }}
+                          className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-xs rounded-xl transition"
+                        >
+                          Hoàn tác xác nhận
+                        </button>
+                      )}
+
+                      {rep.status === 'rejected' && (
+                        <button
+                          onClick={() => {
+                            verifyQuestionError(rep.id, 5000);
+                          }}
+                          className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs rounded-xl transition"
+                        >
+                          Đổi ý: Xác nhận câu lỗi & Thưởng 5.000 đ
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })()}
       </div>
 
       {/* Recent History Table */}

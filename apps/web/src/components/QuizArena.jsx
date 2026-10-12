@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { Scratchpad } from './Scratchpad';
+import { ReportErrorModal } from './ReportErrorModal';
+import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
 export const QuizArena = ({ 
@@ -23,6 +25,7 @@ export const QuizArena = ({
   onFinishQuiz,
   onExitQuiz 
 }) => {
+  const { reportedQuestions, verifiedErrorIds } = useLearning();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({}); // { [qIndex]: selectedOptionIndex }
   const [flagged, setFlagged] = useState({}); // { [qIndex]: boolean }
@@ -30,6 +33,7 @@ export const QuizArena = ({
   const [isScratchpadOpen, setIsScratchpadOpen] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [showConfirmSubmit, setShowConfirmSubmit] = useState(false);
+  const [reportModalQuestion, setReportModalQuestion] = useState(null);
 
   // Timer countdown
   useEffect(() => {
@@ -252,6 +256,28 @@ export const QuizArena = ({
               <Flag className={`w-4 h-4 ${flagged[currentIndex] ? 'fill-rose-500 text-rose-500' : ''}`} />
               <span className="hidden sm:inline">{flagged[currentIndex] ? 'Đã cắm cờ' : 'Cắm cờ'}</span>
             </button>
+
+            {/* Nút Báo Lỗi Cho Ba Mẹ */}
+            <button
+              onClick={() => { sounds.playClick(); setReportModalQuestion(currentQuestion); }}
+              className={`p-1.5 rounded-xl border text-xs font-bold flex items-center gap-1 transition-colors ${
+                verifiedErrorIds?.includes(currentQuestion.id)
+                  ? 'bg-emerald-100 border-emerald-300 text-emerald-800'
+                  : reportedQuestions?.some(r => r.questionId === currentQuestion.id && r.status === 'pending')
+                  ? 'bg-amber-100 border-amber-300 text-amber-800'
+                  : 'bg-rose-50 border-rose-200 text-rose-600 hover:bg-rose-100'
+              }`}
+              title="Báo câu hỏi bị lỗi cho Ba Mẹ để nhận thưởng 5.000đ"
+            >
+              <Flag className="w-4 h-4 text-rose-500" />
+              <span className="hidden sm:inline">
+                {verifiedErrorIds?.includes(currentQuestion.id)
+                  ? 'Lỗi đã duyệt (+5k)'
+                  : reportedQuestions?.some(r => r.questionId === currentQuestion.id && r.status === 'pending')
+                  ? 'Đã báo lỗi ⏳'
+                  : 'Báo lỗi 🚩'}
+              </span>
+            </button>
           </div>
         </div>
 
@@ -429,6 +455,14 @@ export const QuizArena = ({
             </div>
           </div>
         </div>
+      )}
+
+      {/* Report Error Modal */}
+      {reportModalQuestion && (
+        <ReportErrorModal
+          question={reportModalQuestion}
+          onClose={() => setReportModalQuestion(null)}
+        />
       )}
     </div>
   );

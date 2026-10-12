@@ -9,9 +9,12 @@ import {
   RotateCcw,
   Sparkles,
   HelpCircle,
-  Filter
+  Filter,
+  Flag
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
+import { ReportErrorModal } from './ReportErrorModal';
+import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
 export const ExplanationView = ({ 
@@ -20,7 +23,9 @@ export const ExplanationView = ({
   onBack, 
   onRetryWrongOnly 
 }) => {
+  const { reportedQuestions, verifiedErrorIds } = useLearning();
   const [filterMode, setFilterMode] = useState('all'); // 'all' | 'wrong' | 'correct'
+  const [reportModalQuestion, setReportModalQuestion] = useState(null);
 
   const optionLetters = ['A', 'B', 'C', 'D'];
   const wrongCount = details.filter(d => !d.isCorrect).length;
@@ -131,21 +136,43 @@ export const ExplanationView = ({
                   </span>
                 </div>
 
-                <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
-                  isCorrect 
-                    ? 'bg-emerald-50 border-emerald-300 text-emerald-700' 
-                    : 'bg-rose-50 border-rose-300 text-rose-700'
-                }`}>
-                  {isCorrect ? (
-                    <>
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      <span>ĐÚNG (+10 điểm)</span>
-                    </>
+                <div className="flex items-center gap-2">
+                  <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
+                    isCorrect 
+                      ? 'bg-emerald-50 border-emerald-300 text-emerald-700' 
+                      : 'bg-rose-50 border-rose-300 text-rose-700'
+                  }`}>
+                    {isCorrect ? (
+                      <>
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                        <span>ĐÚNG (+10 điểm)</span>
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="w-4 h-4 text-rose-600" />
+                        <span>CHƯA ĐÚNG</span>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Nút hoặc Badge Báo Lỗi */}
+                  {verifiedErrorIds?.includes(q.id) ? (
+                    <span className="px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1">
+                      <span>🎖️</span> Đã xác nhận lỗi (+5k)
+                    </span>
+                  ) : reportedQuestions?.some(r => r.questionId === q.id && r.status === 'pending') ? (
+                    <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 flex items-center gap-1">
+                      <span>⏳</span> Chờ duyệt lỗi
+                    </span>
                   ) : (
-                    <>
-                      <XCircle className="w-4 h-4 text-rose-600" />
-                      <span>CHƯA ĐÚNG</span>
-                    </>
+                    <button
+                      onClick={() => { sounds.playClick(); setReportModalQuestion(q); }}
+                      className="px-2.5 py-1 rounded-full text-xs font-bold border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 transition flex items-center gap-1"
+                      title="Báo câu hỏi này bị lỗi cho Ba Mẹ (Thưởng 5.000đ)"
+                    >
+                      <Flag className="w-3.5 h-3.5 text-rose-500" />
+                      <span>Báo lỗi 🚩</span>
+                    </button>
                   )}
                 </div>
               </div>
@@ -232,6 +259,14 @@ export const ExplanationView = ({
           );
         })}
       </div>
+
+      {/* Report Error Modal */}
+      {reportModalQuestion && (
+        <ReportErrorModal
+          question={reportModalQuestion}
+          onClose={() => setReportModalQuestion(null)}
+        />
+      )}
     </div>
   );
 };

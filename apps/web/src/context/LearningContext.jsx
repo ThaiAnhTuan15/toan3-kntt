@@ -34,7 +34,9 @@ const getStorageKeys = (profileId) => ({
   PIGGY_HISTORY: `agy_piggy_hist_${profileId}`,
   PIGGY_REQUESTS: `agy_piggy_req_${profileId}`,
   CLAIMED_STAGES: `agy_piggy_stages_${profileId}`,
-  CLAIMED_FINAL: `agy_piggy_final_${profileId}`
+  CLAIMED_FINAL: `agy_piggy_final_${profileId}`,
+  REPORTED_QUESTIONS: `agy_reported_q_${profileId}`,
+  VERIFIED_ERROR_IDS: `agy_verified_err_${profileId}`
 });
 
 const DEFAULT_PROFILE = {
@@ -349,6 +351,125 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
     sounds.playClick();
   };
 
+  // Reported Questions & Error Verification
+  const [reportedQuestions, setReportedQuestions] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.REPORTED_QUESTIONS);
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  const [verifiedErrorIds, setVerifiedErrorIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.VERIFIED_ERROR_IDS);
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  // Report Question Error from student
+  const reportQuestionError = (question, week, reason, note) => {
+    if (!question || !question.id) return { success: false, message: 'Thiếu thông tin câu hỏi!' };
+    
+    // Check if already reported and pending
+    const existing = reportedQuestions.find(r => r.questionId === question.id && r.status === 'pending');
+    if (existing) {
+      return { success: false, message: 'Câu hỏi này con đã gửi báo lỗi tới Ba Mẹ rồi nhé!' };
+    }
+
+    const newReport = {
+      id: 'err_' + Date.now(),
+      questionId: question.id,
+      week: week || null,
+      question: {
+        id: question.id,
+        question: question.question,
+        options: question.options,
+        correctIndex: question.correctIndex,
+        explanation: question.explanation,
+        hint: question.hint,
+        image: question.image,
+        topic: question.topic || question.category,
+        difficulty: question.difficulty
+      },
+      reason: reason || 'Bé nghi ngờ câu hỏi bị lỗi',
+      note: note || '',
+      reportedAt: new Date().toISOString(),
+      status: 'pending', // 'pending' | 'verified' | 'rejected'
+      adminNote: '',
+      verifiedAt: null
+    };
+
+    setReportedQuestions(prev => [newReport, ...prev]);
+    sounds.playVictory();
+    return { 
+      success: true, 
+      message: 'Đã gửi báo lỗi tới Ba Mẹ thành công! Khi Ba Mẹ xác nhận đúng là câu lỗi, con sẽ nhận +5.000 đ thưởng Heo Đất nhé! 🎖️' 
+    };
+  };
+
+  // Verify Question Error by parent -> reward +5.000d & exempt from wrong lists
+  const verifyQuestionError = (reportId, customReward = 5000) => {
+    const report = reportedQuestions.find(r => r.id === reportId);
+    if (!report) return;
+
+    const qId = report.questionId;
+    const rewardAmt = Number(customReward) || 5000;
+
+    // Update report status
+    setReportedQuestions(prev => prev.map(r => r.id === reportId ? {
+      ...r,
+      status: 'verified',
+      verifiedAt: new Date().toISOString(),
+      rewardAmount: rewardAmt
+    } : r));
+
+    // Add to verified error IDs
+    if (!verifiedErrorIds.includes(qId)) {
+      setVerifiedErrorIds(prev => [...prev, qId]);
+    }
+
+    // Reward child +5.000d into Piggy Bank
+    setPiggyBalance(prev => prev + rewardAmt);
+    const trans = {
+      id: Date.now(),
+      date: new Date().toISOString(),
+      title: 'Thưởng Phát Hiện Câu Lỗi 🔍',
+      amount: rewardAmt,
+      type: 'earn',
+      note: `Ba Mẹ xác nhận câu (${qId}) bị lỗi. Thưởng nóng bé ${rewardAmt.toLocaleString('vi-VN')} đ!`
+    };
+    setPiggyHistory(prev => [trans, ...prev]);
+
+    // Remove this question from wrong questions lists so child is not marked wrong
+    const removeFromList = (list) => list.filter(q => q.id !== qId);
+    setG4MathWrong(removeFromList);
+    setG4TvWrong(removeFromList);
+    setG7MathWrong(removeFromList);
+    setG7LitWrong(removeFromList);
+
+    sounds.playVictory();
+  };
+
+  // Reject Question Error by parent
+  const rejectQuestionError = (reportId, adminNote) => {
+    setReportedQuestions(prev => prev.map(r => r.id === reportId ? {
+      ...r,
+      status: 'rejected',
+      adminNote: adminNote || 'Câu hỏi này chính xác, con đọc kỹ lại gợi ý và lời giải nhé!'
+    } : r));
+    sounds.playClick();
+  };
+
+  // Undo verification by parent
+  const unverifyQuestionError = (reportId) => {
+    const report = reportedQuestions.find(r => r.id === reportId);
+    if (!report) return;
+    const qId = report.questionId;
+    setReportedQuestions(prev => prev.map(r => r.id === reportId ? { ...r, status: 'pending', verifiedAt: null } : r));
+    setVerifiedErrorIds(prev => prev.filter(id => id !== qId));
+    sounds.playClick();
+  };
+
   const [soundEnabled, setSoundEnabled] = useState(sounds.isSoundEnabled());
 
   const [apiQuestions, setApiQuestions] = useState([]);
@@ -413,6 +534,8 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(piggyRequests)); }, [piggyRequests]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.CLAIMED_STAGES, JSON.stringify(claimedStages)); }, [claimedStages]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.CLAIMED_FINAL, JSON.stringify(claimedFinal)); }, [claimedFinal]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.REPORTED_QUESTIONS, JSON.stringify(reportedQuestions)); }, [reportedQuestions]);
+  useEffect(() => { localStorage.setItem(STORAGE_KEYS.VERIFIED_ERROR_IDS, JSON.stringify(verifiedErrorIds)); }, [verifiedErrorIds]);
 
   // Derived active state
   const isMath = currentSubject === 'math';
@@ -525,7 +648,9 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
     // Calculate Piggy Reward Money (VNĐ)
     let earnedMoney = 0;
     const prevAttempts = (progress[week]?.attempts) || 0;
-    const wrongCount = totalCount - correctCount;
+    // Miễn trừ câu hỏi lỗi đã được xác nhận để không bị phạt trừ tiền heo đất:
+    const verifiedErrorsInDetails = details ? details.filter(d => !d.isCorrect && verifiedErrorIds.includes(d.question.id)).length : 0;
+    const wrongCount = Math.max(0, (totalCount - correctCount) - verifiedErrorsInDetails);
 
     if (prevAttempts === 0) {
       // Lần 1: Đúng hết 10.000đ, sai 1 câu trừ 2.000đ, sai >= 5 câu là 0đ
@@ -616,11 +741,11 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       }
     }
 
-    // Update wrong list
+    // Update wrong list (Tự động loại trừ các câu hỏi bị lỗi đã xác nhận)
     const updateWrongList = (prevList) => {
       const updated = [...prevList];
       details.forEach(item => {
-        if (!item.isCorrect) {
+        if (!item.isCorrect && !verifiedErrorIds.includes(item.question.id)) {
           if (!updated.some(w => w.id === item.question.id)) {
             updated.push(item.question);
           }
@@ -812,6 +937,12 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       approveWithdrawal,
       rejectWithdrawal,
       manualAdjustPiggy,
+      reportedQuestions,
+      verifiedErrorIds,
+      reportQuestionError,
+      verifyQuestionError,
+      rejectQuestionError,
+      unverifyQuestionError,
       streakData,
       isFreeMode,
       isApiLoading,

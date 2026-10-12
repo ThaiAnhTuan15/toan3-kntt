@@ -152,7 +152,33 @@ export const RewardRulesModal = ({ onClose, onOpenWithdraw }) => {
             </div>
           </div>
 
-          {/* Rule Card 4: Nguyên Tắc An Toàn Quỹ */}
+          {/* Rule Card 4: Thưởng Thám Tử Nhí Phát Hiện Lỗi */}
+          <div className="bg-gradient-to-r from-rose-50 via-pink-50 to-orange-50 rounded-2xl p-4 border-2 border-rose-300">
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">🔍</span>
+                <h4 className="font-black text-rose-900 text-sm sm:text-base">Thưởng Thám Tử Nhí Báo Lỗi Đề Bài</h4>
+              </div>
+              <span className="text-xs font-black px-2.5 py-0.5 bg-rose-200 text-rose-900 rounded-full">
+                +5.000 đ / lỗi
+              </span>
+            </div>
+            <p className="text-xs font-semibold text-slate-700 leading-relaxed">
+              Nếu phát hiện câu hỏi nào bị lỗi (thiếu ảnh, sai đáp án, số liệu chưa chuẩn), bé hãy bấm nút <strong className="text-rose-600">"Báo lỗi 🚩"</strong> trên câu hỏi đó. Khi Ba Mẹ xác nhận đúng là câu bị lỗi:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 text-xs font-bold">
+              <div className="bg-white p-2.5 rounded-xl border border-rose-200 text-rose-700 flex items-center gap-2">
+                <span className="text-base">🎁</span>
+                <span>Thưởng nóng bé: <strong>+5.000 đ</strong> Heo Đất</span>
+              </div>
+              <div className="bg-white p-2.5 rounded-xl border border-emerald-200 text-emerald-800 flex items-center gap-2">
+                <span className="text-base">🛡️</span>
+                <span><strong>Miễn trừ câu lỗi:</strong> Không bị trừ tiền!</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Rule Card 5: Nguyên Tắc An Toàn Quỹ */}
           <div className="bg-slate-50 rounded-2xl p-3.5 border border-slate-200 text-xs font-semibold text-slate-600 flex items-start gap-2.5">
             <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
             <div>
