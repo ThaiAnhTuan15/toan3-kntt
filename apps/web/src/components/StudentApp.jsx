@@ -490,7 +490,7 @@ const ProfileSelector = ({ onSelect }) => {
 const ProtectedDashboard = () => {
   const [pin, setPin] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { parentPin, updateParentPin, resetProgress } = useLearning();
+  const { parentPin, updateParentPin, resetProgress, account } = useLearning();
 
   const [newPin, setNewPin] = useState('');
   const [isChangingPin, setIsChangingPin] = useState(false);
@@ -500,7 +500,7 @@ const ProtectedDashboard = () => {
       <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded-3xl shadow-xl border-4 border-slate-200 text-center relative">
         <Lock className="w-12 h-12 text-slate-400 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-slate-800 mb-2">Góc Phụ Huynh</h2>
-        <p className="text-slate-500 mb-6 font-semibold">Vui lòng nhập mã PIN của phụ huynh</p>
+        <p className="text-slate-500 mb-3 font-semibold text-sm">Vui lòng nhập mật khẩu riêng của Ba Mẹ</p>
         <input 
           type="password"
           pattern="[0-9]*"
@@ -508,31 +508,27 @@ const ProtectedDashboard = () => {
           maxLength={4}
           value={pin}
           onChange={(e) => setPin(e.target.value)}
-          className="w-full text-center text-3xl tracking-widest px-4 py-3 rounded-xl border-2 border-slate-200 mb-4 focus:border-blue-400 outline-none"
+          className="w-full text-center text-3xl tracking-widest px-4 py-3 rounded-xl border-2 border-slate-200 mb-2 focus:border-blue-400 outline-none"
           placeholder="••••"
         />
+        <p className="text-[11px] font-bold text-rose-500 mb-4">
+          🔒 Không thể dùng mật khẩu của bé để mở Góc Phụ Huynh.
+        </p>
         <button 
           onClick={() => {
+            if (account?.pin && pin === account.pin && pin !== parentPin) {
+              alert('Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Ba Mẹ (Mặc định: 2026).');
+              return;
+            }
             if (pin === parentPin) {
               setIsAuthenticated(true);
             } else {
-              alert('Mã PIN không đúng!');
+              alert('Mật khẩu Ba Mẹ không đúng!');
             }
           }}
           className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl mb-4"
         >
-          Xác Nhận
-        </button>
-        <button 
-          onClick={() => {
-            if (window.confirm('Khôi phục mã PIN về mặc định (2026)?')) {
-              updateParentPin('2026');
-              alert('Đã khôi phục mã PIN về 2026.');
-            }
-          }}
-          className="text-xs text-slate-400 hover:text-slate-600 font-semibold underline"
-        >
-          Quên mã PIN?
+          Xác Nhận Mở Khóa 🔑
         </button>
       </div>
     );

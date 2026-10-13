@@ -25,13 +25,18 @@ export async function POST(request: Request) {
     }
 
     const account = rows[0];
+    let data = account.data || {};
+    const expectedParentPin = data.parentPin || '2026';
 
-    // Verify parent PIN
-    if (parentPin !== '2026' && parentPin !== account.pin) {
-      return NextResponse.json({ success: false, error: 'Mã PIN phụ huynh không đúng!' }, { status: 401 });
+    // Tuyệt đối không cho dùng mật khẩu của bé
+    if (parentPin === account.pin && account.pin !== expectedParentPin) {
+      return NextResponse.json({ success: false, error: 'Không thể dùng mật khẩu của bé để thực hiện tác vụ của Cha Mẹ!' }, { status: 401 });
     }
 
-    let data = account.data || {};
+    // Verify parent PIN
+    if (parentPin !== expectedParentPin) {
+      return NextResponse.json({ success: false, error: 'Mã PIN phụ huynh không đúng!' }, { status: 401 });
+    }
     let msg = 'Thao tác thành công!';
 
     switch (action) {

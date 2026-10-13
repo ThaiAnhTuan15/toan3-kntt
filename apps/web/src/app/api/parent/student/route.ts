@@ -35,12 +35,22 @@ export async function POST(request: Request) {
     }
 
     const account = rows[0];
+    const accountData = account.data || {};
+    const expectedParentPin = accountData.parentPin || '2026';
 
-    // Parent PIN verification: Accept default '2026' OR the student's own PIN
-    if (parentPin !== '2026' && parentPin !== account.pin) {
+    // Không được dùng mật khẩu của bé để vào cổng cha mẹ
+    if (parentPin === account.pin && account.pin !== expectedParentPin) {
       return NextResponse.json({ 
         success: false, 
-        error: 'Mã PIN phụ huynh không đúng! (Ba Mẹ có thể dùng mã mặc định 2026 hoặc mã 4 số của bé)' 
+        error: 'Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Cha Mẹ (Mặc định: 2026).' 
+      }, { status: 401 });
+    }
+
+    // Xác thực mã PIN phụ huynh
+    if (parentPin !== expectedParentPin) {
+      return NextResponse.json({ 
+        success: false, 
+        error: 'Mật khẩu cha mẹ không chính xác! (Mặc định ban đầu: 2026)' 
       }, { status: 401 });
     }
 

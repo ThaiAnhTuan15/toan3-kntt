@@ -19,25 +19,18 @@ const STAGES_LIST = [
 ];
 
 export default function ParentAdminPage() {
-  // Auth state
-  const [authData, setAuthData] = useState(() => {
-    try {
-      const saved = localStorage.getItem('agy_parent_auth');
-      return saved ? JSON.parse(saved) : null;
-    } catch { return null; }
-  });
+  // Auth state - KHÔNG tự động đăng nhập, luôn bắt buộc nhập mật khẩu cha mẹ mỗi lần truy cập
+  const [authData, setAuthData] = useState(null);
 
   const [inputUsername, setInputUsername] = useState(() => {
     try {
-      const saved = localStorage.getItem('agy_parent_auth');
-      if (saved) return JSON.parse(saved).username || '';
       const lastAcc = localStorage.getItem('agy_active_account');
       if (lastAcc) return JSON.parse(lastAcc).username || '';
     } catch {}
     return 'phuongchi';
   });
 
-  const [inputPin, setInputPin] = useState('2026');
+  const [inputPin, setInputPin] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [authError, setAuthError] = useState('');
 
@@ -92,14 +85,14 @@ export default function ParentAdminPage() {
     }
   };
 
-  // Initial load if authenticated
+  // Clear any previously stored parent session to prevent auto-login
   useEffect(() => {
-    if (authData?.username && authData?.pin) {
-      fetchStudentData(authData.username, authData.pin);
-    }
+    try {
+      localStorage.removeItem('agy_parent_auth');
+    } catch {}
   }, []);
 
-  // Auto-refresh interval (every 30 seconds)
+  // Auto-refresh interval (every 30 seconds while parent is in current session)
   useEffect(() => {
     if (!autoRefresh || !authData?.username || !authData?.pin) return;
     const interval = setInterval(() => {
@@ -108,7 +101,7 @@ export default function ParentAdminPage() {
     return () => clearInterval(interval);
   }, [autoRefresh, authData]);
 
-  // Handle Parent Login
+  // Handle Parent Login (Chỉ lưu vào bộ nhớ tạm session, đóng tab/truy cập lại phải nhập lại)
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!inputUsername.trim()) {
@@ -127,8 +120,9 @@ export default function ParentAdminPage() {
     if (loadedStudent) {
       const creds = { username: inputUsername.trim().toLowerCase(), pin: inputPin.trim() };
       setAuthData(creds);
+      // Không lưu vào localStorage để tránh tự động đăng nhập khi mở lại
       try {
-        localStorage.setItem('agy_parent_auth', JSON.stringify(creds));
+        localStorage.removeItem('agy_parent_auth');
       } catch {}
     }
   };
@@ -137,6 +131,7 @@ export default function ParentAdminPage() {
   const handleLogout = () => {
     setAuthData(null);
     setStudent(null);
+    setInputPin('');
     try {
       localStorage.removeItem('agy_parent_auth');
     } catch {}
@@ -242,9 +237,9 @@ export default function ParentAdminPage() {
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="text-xs font-black text-slate-700">
-                  Mã PIN Quản trị Phụ huynh:
+                  Mật khẩu Cha Mẹ (Mã PIN):
                 </label>
-                <span className="text-[10px] font-bold text-indigo-600">Mặc định: 2026 hoặc mã của bé</span>
+                <span className="text-[10px] font-bold text-indigo-600">Mặc định: 2026</span>
               </div>
               <div className="relative">
                 <input
@@ -253,12 +248,15 @@ export default function ParentAdminPage() {
                   maxLength={4}
                   value={inputPin}
                   onChange={(e) => setInputPin(e.target.value.replace(/\D/g, ''))}
-                  placeholder="••••"
+                  placeholder="Nhập 4 số PIN của Ba Mẹ"
                   className="w-full px-3.5 py-2.5 pl-10 rounded-xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-black text-base tracking-widest text-slate-800 bg-slate-50 focus:bg-white text-center"
                   required
                 />
                 <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               </div>
+              <span className="text-[11px] font-bold text-rose-500 mt-1.5 block">
+                🔒 Lưu ý: Không dùng mật khẩu của bé để tránh bé tự vào Cổng Quản Trị.
+              </span>
             </div>
 
             <button

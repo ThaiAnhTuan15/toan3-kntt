@@ -51,7 +51,8 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
     toggleSound, 
     isFreeMode, 
     toggleFreeMode,
-    account
+    account,
+    parentPin
   } = useLearning();
 
   const [showProfileModal, setShowProfileModal] = useState(false);
@@ -548,13 +549,17 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
               </button>
               <button 
                 onClick={() => {
-                  if (pinInput === '2026') {
+                  if (account?.pin && pinInput === account.pin && pinInput !== (parentPin || '2026')) {
+                    setPinError('Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Ba Mẹ.');
+                    return;
+                  }
+                  if (pinInput === (parentPin || '2026')) {
                     toggleFreeMode();
                     setShowPinModal(false);
                     setPinInput('');
                     setPinError('');
                   } else {
-                    setPinError('Mã PIN không đúng!');
+                    setPinError('Mật khẩu Ba Mẹ không đúng!');
                   }
                 }}
                 className="flex-1 py-2 bg-amber-400 text-amber-950 font-bold rounded-xl shadow-bouncy-sm hover:bg-amber-500"
