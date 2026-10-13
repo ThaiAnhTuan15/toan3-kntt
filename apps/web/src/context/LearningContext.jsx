@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import sounds from '../utils/soundEffects';
 
 // Grade 4 Data
@@ -474,9 +474,106 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.REPORTED_QUESTIONS, JSON.stringify(reportedQuestions)); }, [reportedQuestions]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.VERIFIED_ERROR_IDS, JSON.stringify(verifiedErrorIds)); }, [verifiedErrorIds]);
 
+  const isHydratedRef = useRef(false);
+
+  // Hydrate state from cloud account when account prop is available or updated
+  useEffect(() => {
+    if (!account) {
+      isHydratedRef.current = true;
+      return;
+    }
+    if (!account.data || typeof account.data !== 'object') {
+      isHydratedRef.current = true;
+      return;
+    }
+
+    const cloud = account.data;
+
+    if (cloud.g4MathProgress && Object.keys(cloud.g4MathProgress).length > 0) {
+      setG4MathProgress(prev => {
+        const merged = { ...cloud.g4MathProgress };
+        for (const [k, v] of Object.entries(prev || {})) {
+          if (!merged[k]) {
+            merged[k] = v;
+          } else {
+            merged[k] = {
+              ...merged[k],
+              bestScore: Math.max(merged[k]?.bestScore || 0, v?.bestScore || 0),
+              stars: Math.max(merged[k]?.stars || 0, v?.stars || 0),
+              attempts: Math.max(merged[k]?.attempts || 0, v?.attempts || 0),
+              unlocked: Boolean(merged[k]?.unlocked || v?.unlocked)
+            };
+          }
+        }
+        return merged;
+      });
+    }
+
+    if (cloud.g4TvProgress && Object.keys(cloud.g4TvProgress).length > 0) {
+      setG4TvProgress(prev => ({ ...cloud.g4TvProgress, ...prev }));
+    }
+    if (cloud.g7MathProgress && Object.keys(cloud.g7MathProgress).length > 0) {
+      setG7MathProgress(prev => ({ ...cloud.g7MathProgress, ...prev }));
+    }
+    if (cloud.g7LitProgress && Object.keys(cloud.g7LitProgress).length > 0) {
+      setG7LitProgress(prev => ({ ...cloud.g7LitProgress, ...prev }));
+    }
+
+    if (Array.isArray(cloud.history) && cloud.history.length > 0) {
+      setHistory(prev => {
+        const idMap = new Map();
+        cloud.history.forEach(h => idMap.set(String(h.id || `${h.date}_${h.week}`), h));
+        (prev || []).forEach(h => {
+          const k = String(h.id || `${h.date}_${h.week}`);
+          if (!idMap.has(k)) idMap.set(k, h);
+        });
+        return Array.from(idMap.values()).sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
+      });
+    }
+
+    if (typeof cloud.piggyBalance === 'number') {
+      setPiggyBalance(prev => Math.max(prev, cloud.piggyBalance));
+    }
+    if (typeof cloud.coins === 'number') {
+      setCoins(prev => Math.max(prev, cloud.coins));
+    }
+    if (Array.isArray(cloud.piggyHistory) && cloud.piggyHistory.length > 0) {
+      setPiggyHistory(prev => {
+        const idMap = new Map();
+        cloud.piggyHistory.forEach(h => idMap.set(String(h.id || `${h.date}_${h.title}`), h));
+        (prev || []).forEach(h => {
+          const k = String(h.id || `${h.date}_${h.title}`);
+          if (!idMap.has(k)) idMap.set(k, h);
+        });
+        return Array.from(idMap.values()).sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
+      });
+    }
+    if (Array.isArray(cloud.piggyRequests)) {
+      setPiggyRequests(cloud.piggyRequests);
+    }
+    if (Array.isArray(cloud.claimedStages) && cloud.claimedStages.length > 0) {
+      setClaimedStages(prev => Array.from(new Set([...(prev || []), ...cloud.claimedStages])));
+    }
+    if (cloud.claimedFinal) {
+      setClaimedFinal(true);
+    }
+    if (Array.isArray(cloud.badges) && cloud.badges.length > 0) {
+      setUnlockedBadges(prev => Array.from(new Set([...(prev || []), ...cloud.badges])));
+    }
+    if (Array.isArray(cloud.reportedQuestions)) {
+      setReportedQuestions(cloud.reportedQuestions);
+    }
+    if (Array.isArray(cloud.verifiedErrorIds)) {
+      setVerifiedErrorIds(cloud.verifiedErrorIds);
+    }
+
+    isHydratedRef.current = true;
+  }, [account?.id, account?.username]);
+
   // Auto-sync debounced to Cloud whenever progress, coins, piggy, etc. changes
   useEffect(() => {
     if (!account || !account.username || !account.pin) return;
+    if (!isHydratedRef.current) return;
 
     const timer = setTimeout(() => {
       const fullData = {
@@ -837,6 +934,48 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
 
     // Check Badges
     checkBadges(newHistory, totalStars + earnedStars);
+
+    // Immediate Cloud Sync on Quiz Finish
+    if (account?.id && account?.username && account?.pin) {
+      try {
+        const syncPayload = {
+          accountId: account.id,
+          username: account.username,
+          pin: account.pin,
+          data: {
+            currentGrade: activeGrade,
+            currentSubject: activeSubj,
+            g4MathProgress: isActG7 ? g4MathProgress : (isActMath ? updateProgressObj(g4MathProgress) : g4MathProgress),
+            g4TvProgress: isActG7 ? g4TvProgress : (!isActMath ? updateProgressObj(g4TvProgress) : g4TvProgress),
+            g7MathProgress: isActG7 && isActMath ? updateProgressObj(g7MathProgress) : g7MathProgress,
+            g7LitProgress: isActG7 && !isActMath ? updateProgressObj(g7LitProgress) : g7LitProgress,
+            history: newHistory,
+            wrongG4Math: isActG7 || !isActMath ? g4MathWrong : updateWrongList(g4MathWrong),
+            wrongG4Tv: isActG7 || isActMath ? g4TvWrong : updateWrongList(g4TvWrong),
+            wrongG7Math: !isActG7 || !isActMath ? g7MathWrong : updateWrongList(g7MathWrong),
+            wrongG7Lit: !isActG7 || isActMath ? g7LitWrong : updateWrongList(g7LitWrong),
+            badges: unlockedBadges,
+            streakData,
+            coins: coins + earnedCoins,
+            piggyBalance: piggyBalance + earnedMoney + (stageReward ? stageReward.amount : 0) + (finalReward ? finalReward.amount : 0),
+            piggyHistory: earnedMoney > 0 ? [{ id: Date.now() + 1, date: new Date().toISOString(), title: `Làm Đề ${week} (Lần ${prevAttempts + 1})`, amount: earnedMoney, type: 'earn', note: `Đúng ${correctCount}/${totalCount} câu` }, ...piggyHistory] : piggyHistory,
+            piggyRequests,
+            claimedStages: stageReward ? [...claimedStages, stageReward.stageId] : claimedStages,
+            claimedFinal: finalReward ? true : claimedFinal,
+            reportedQuestions,
+            verifiedErrorIds
+          }
+        };
+
+        fetch('/api/student/sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(syncPayload)
+        }).catch(err => console.warn('Immediate quiz sync error:', err));
+      } catch (e) {
+        console.warn('Sync payload build error:', e);
+      }
+    }
 
     return {
       earnedStars,

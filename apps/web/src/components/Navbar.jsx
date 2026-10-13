@@ -340,6 +340,18 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
                     </button>
                   );
                 })}
+
+                {/* Parent Portal Direct Link */}
+                <a
+                  href="/parent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 hover:text-indigo-900 rounded-xl font-black text-xs sm:text-sm shrink-0 transition-all shadow-2xs ml-auto cursor-pointer"
+                  title="Mở Cổng Ba Mẹ Quản Trị (Theo dõi tiến trình từ xa trên điện thoại/máy tính)"
+                >
+                  <span>👨‍👩‍👧</span>
+                  <span className="hidden sm:inline">Cổng Ba Mẹ</span>
+                </a>
               </nav>
             </div>
           </div>
