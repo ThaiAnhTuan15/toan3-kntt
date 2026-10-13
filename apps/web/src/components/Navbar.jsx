@@ -50,12 +50,15 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
     soundEnabled, 
     toggleSound, 
     isFreeMode, 
-    toggleFreeMode 
+    toggleFreeMode,
+    account
   } = useLearning();
 
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [tempName, setTempName] = useState(profile?.name || 'Học Sinh');
   const [tempAvatar, setTempAvatar] = useState(profile?.avatar || '🐯');
+  const [tempPin, setTempPin] = useState('');
+  const [showChangePin, setShowChangePin] = useState(false);
   const [showRulesModal, setShowRulesModal] = useState(false);
   const [showWithdrawModal, setShowWithdrawModal] = useState(false);
 
@@ -67,12 +70,18 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
 
   const handleSaveProfile = () => {
     sounds.playClick();
-    updateProfile({
+    const updatePayload = {
       name: tempName.trim() || 'Học Sinh',
       avatar: tempAvatar,
       mascot: tempAvatar
-    });
+    };
+    if (showChangePin && tempPin && tempPin.length === 4) {
+      updatePayload.pin = tempPin;
+    }
+    updateProfile(updatePayload);
     setShowProfileModal(false);
+    setShowChangePin(false);
+    setTempPin('');
   };
 
   const navItems = [
@@ -335,7 +344,7 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-amber-500" />
-                <h3 className="text-xl font-bold text-slate-800">Hồ Sơ Của Bạn</h3>
+                <h3 className="text-xl font-bold text-slate-800">Hồ Sơ & Biệt Danh Của Bé</h3>
               </div>
               <button 
                 onClick={() => setShowProfileModal(false)}
@@ -345,25 +354,51 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
               </button>
             </div>
 
-            {/* Name Input */}
-            <div className="mb-5">
-              <label className="block text-xs font-bold text-slate-600 mb-1.5">
-                Tên hiển thị:
+            {/* Account Credentials Info Badge */}
+            {account ? (
+              <div className="mb-4 p-3 bg-amber-50 rounded-2xl border-2 border-amber-200 flex items-center justify-between">
+                <div>
+                  <span className="text-[11px] font-bold text-slate-500 block">Tên đăng nhập (khi đổi máy):</span>
+                  <span className="text-sm font-black text-amber-950 font-mono">@{account.username}</span>
+                </div>
+                <div className="text-right">
+                  <span className="text-[11px] font-bold text-slate-500 block">Mật khẩu 4 số:</span>
+                  <span className="text-sm font-black text-amber-950 font-mono tracking-widest">••••</span>
+                </div>
+              </div>
+            ) : (
+              <div className="mb-4 p-3 bg-amber-50 rounded-2xl border-2 border-amber-200">
+                <p className="text-xs font-bold text-amber-900 mb-1">
+                  💡 Bé đang học ở chế độ máy này (chưa liên kết đám mây).
+                </p>
+                <p className="text-[11px] text-slate-600">
+                  Để học tiếp lịch sử trên điện thoại hoặc máy tính mới, bé hãy bấm nút <span className="font-bold text-amber-950">"Đổi bé ↩"</span> ở thanh menu và chọn <span className="font-bold text-amber-950">"Tạo Tài Khoản Mới"</span> nhé!
+                </p>
+              </div>
+            )}
+
+            {/* Nickname Input */}
+            <div className="mb-4">
+              <label className="block text-xs font-black text-slate-700 mb-1">
+                Biệt danh của bé (Nickname hiển thị trong app):
               </label>
               <input
                 type="text"
                 value={tempName}
-                maxLength={25}
+                maxLength={30}
                 onChange={(e) => setTempName(e.target.value)}
-                placeholder="Nhập tên của bạn..."
-                className="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 focus:border-amber-400 focus:outline-none font-bold text-slate-800"
+                placeholder="Ví dụ: Bé Bi Yêu, Siêu Nhân Chip..."
+                className="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 focus:border-amber-400 focus:outline-none font-bold text-slate-800 bg-slate-50 focus:bg-white"
               />
+              <span className="text-[10px] font-bold text-amber-700 mt-1 block">
+                ⭐ Bé có thể đổi biệt danh này bất cứ lúc nào, không liên quan và không làm thay đổi tên đăng nhập.
+              </span>
             </div>
 
             {/* Mascot / Avatar Selector */}
-            <div className="mb-6">
-              <label className="block text-xs font-bold text-slate-600 mb-2">
-                Chọn Linh Vật / Hình Đại Diện:
+            <div className="mb-4">
+              <label className="block text-xs font-black text-slate-700 mb-1.5">
+                Chọn linh vật / hình đại diện:
               </label>
               <div className="flex flex-wrap justify-center gap-2">
                 {['🐯', '🐰', '🐼', '🦊', '🐶', '🐱', '🦁', '🐸', '🐵', '🦉'].map((av) => (
@@ -383,10 +418,47 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
               </div>
             </div>
 
+            {/* Change 4-digit PIN Section */}
+            {account && (
+              <div className="mb-5 pt-3 border-t border-slate-100">
+                {!showChangePin ? (
+                  <button
+                    type="button"
+                    onClick={() => setShowChangePin(true)}
+                    className="text-xs font-bold text-amber-700 hover:text-amber-900 underline flex items-center gap-1"
+                  >
+                    <span>🔑 Đổi mật khẩu 4 số mới</span>
+                  </button>
+                ) : (
+                  <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <label className="text-xs font-black text-slate-700">Mật khẩu 4 số mới:</label>
+                      <button
+                        type="button"
+                        onClick={() => { setShowChangePin(false); setTempPin(''); }}
+                        className="text-[11px] font-bold text-slate-400 hover:text-slate-600"
+                      >
+                        Hủy
+                      </button>
+                    </div>
+                    <input
+                      type="password"
+                      inputMode="numeric"
+                      maxLength={4}
+                      value={tempPin}
+                      onChange={(e) => setTempPin(e.target.value.replace(/\D/g, ''))}
+                      placeholder="Nhập 4 số mới (VD: 8888)"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-300 font-black text-center tracking-widest text-slate-800"
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Actions */}
             <div className="flex items-center justify-end gap-2.5">
               <button
-                onClick={() => setShowProfileModal(false)}
+                onClick={() => { setShowProfileModal(false); setShowChangePin(false); setTempPin(''); }}
                 className="px-4 py-2 rounded-xl font-bold text-xs text-slate-500 hover:bg-slate-100"
               >
                 Hủy bỏ
@@ -395,7 +467,7 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
                 onClick={handleSaveProfile}
                 className="px-6 py-2 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-xl shadow-bouncy-sm btn-bouncy text-xs"
               >
-                Lưu Thay Đổi
+                Lưu Thay Đổi 💾
               </button>
             </div>
           </div>

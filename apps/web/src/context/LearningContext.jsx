@@ -57,29 +57,42 @@ export const BADGE_DEFINITIONS = [
   { id: 'star_hunter_30', name: 'Thợ Săn Ngôi Sao', desc: 'Tích lũy được trên 30 ngôi sao', icon: 'Star', req: (h, p, s, stars) => stars >= 30 }
 ];
 
-export const LearningProvider = ({ children, profileId = 'default' }) => {
+export const LearningProvider = ({ children, profileId = 'default', account = null, onUpdateAccount = null }) => {
   const STORAGE_KEYS = getStorageKeys(profileId);
+
+  // Helper: Read from LocalStorage -> fallback to account cloud data -> default
+  const getInitialVal = (storageKey, cloudProp, defaultVal) => {
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved !== null && saved !== undefined) return JSON.parse(saved);
+    } catch (e) {}
+    if (account?.data && account.data[cloudProp] !== undefined) {
+      return account.data[cloudProp];
+    }
+    return defaultVal;
+  };
+
   // Current active Grade: '4' | '7'
   const [currentGrade, setCurrentGrade] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.GRADE);
-      return saved === '7' ? '7' : '4';
-    } catch {
-      return '4';
-    }
+    return getInitialVal(STORAGE_KEYS.GRADE, 'currentGrade', '4');
   });
 
   // Current active Subject: 'math' | 'vietnamese'
   const [currentSubject, setCurrentSubject] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.SUBJECT);
-      return saved === 'vietnamese' ? 'vietnamese' : 'math';
-    } catch {
-      return 'math';
-    }
+    return getInitialVal(STORAGE_KEYS.SUBJECT, 'currentSubject', 'math');
   });
 
   const [profile, setProfile] = useState(() => {
+    if (account) {
+      return {
+        name: account.nickname || account.username || 'Học Sinh',
+        avatar: account.avatar || '🐯',
+        mascot: account.avatar || '🐯',
+        avatarColor: '#FFD166',
+        username: account.username,
+        pin: account.pin
+      };
+    }
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.PROFILE);
       let parsed = saved ? JSON.parse(saved) : null;
@@ -105,7 +118,6 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       const bestSource = activeData || itemInList;
 
       if (parsed) {
-        // If parsed is missing avatar or has obsolete default name 'Học Sinh Chăm Chỉ'
         if (bestSource) {
           if (!parsed.avatar || parsed.name === 'Học Sinh Chăm Chỉ') {
             parsed.name = bestSource.name || parsed.name;
@@ -137,115 +149,61 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
 
   // Progress Stores
   const [g4MathProgress, setG4MathProgress] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PROGRESS_G4_MATH);
-      return saved ? JSON.parse(saved) : { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    } catch {
-      return { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    }
+    return getInitialVal(STORAGE_KEYS.PROGRESS_G4_MATH, 'g4MathProgress', { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } });
   });
 
   const [g4TvProgress, setG4TvProgress] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PROGRESS_G4_TV);
-      return saved ? JSON.parse(saved) : { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    } catch {
-      return { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    }
+    return getInitialVal(STORAGE_KEYS.PROGRESS_G4_TV, 'g4TvProgress', { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } });
   });
 
   const [g7MathProgress, setG7MathProgress] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PROGRESS_G7_MATH);
-      return saved ? JSON.parse(saved) : { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    } catch {
-      return { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    }
+    return getInitialVal(STORAGE_KEYS.PROGRESS_G7_MATH, 'g7MathProgress', { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } });
   });
 
   const [g7LitProgress, setG7LitProgress] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PROGRESS_G7_LIT);
-      return saved ? JSON.parse(saved) : { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    } catch {
-      return { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } };
-    }
+    return getInitialVal(STORAGE_KEYS.PROGRESS_G7_LIT, 'g7LitProgress', { 1: { bestScore: 0, stars: 0, attempts: 0, unlocked: true } });
   });
 
   // Quiz History
   const [history, setHistory] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.HISTORY);
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
+    return getInitialVal(STORAGE_KEYS.HISTORY, 'history', []);
   });
 
   // Wrong Questions Stores
   const [g4MathWrong, setG4MathWrong] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.WRONG_G4_MATH);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.WRONG_G4_MATH, 'wrongG4Math', []);
   });
 
   const [g4TvWrong, setG4TvWrong] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.WRONG_G4_TV);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.WRONG_G4_TV, 'wrongG4Tv', []);
   });
 
   const [g7MathWrong, setG7MathWrong] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.WRONG_G7_MATH);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.WRONG_G7_MATH, 'wrongG7Math', []);
   });
 
   const [g7LitWrong, setG7LitWrong] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.WRONG_G7_LIT);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.WRONG_G7_LIT, 'wrongG7Lit', []);
   });
 
   const [unlockedBadges, setUnlockedBadges] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.BADGES);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.BADGES, 'badges', []);
   });
 
   const [streakData, setStreakData] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.STREAK);
-      return saved ? JSON.parse(saved) : { currentStreak: 1, lastDate: new Date().toISOString().split('T')[0] };
-    } catch {
-      return { currentStreak: 1, lastDate: new Date().toISOString().split('T')[0] };
-    }
+    return getInitialVal(STORAGE_KEYS.STREAK, 'streakData', { currentStreak: 1, lastDate: new Date().toISOString().split('T')[0] });
   });
 
   const [isFreeMode, setIsFreeMode] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.FREE_MODE);
-      return saved ? JSON.parse(saved) : false;
-    } catch { return false; }
+    return getInitialVal(STORAGE_KEYS.FREE_MODE, 'isFreeMode', false);
   });
 
   const [coins, setCoins] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.COINS);
-      return saved ? JSON.parse(saved) : 50;
-    } catch { return 50; }
+    return getInitialVal(STORAGE_KEYS.COINS, 'coins', 50);
   });
 
   const [parentPin, setParentPin] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PARENT_PIN);
-      return saved ? JSON.parse(saved) : '2026';
-    } catch { return '2026'; }
+    return getInitialVal(STORAGE_KEYS.PARENT_PIN, 'parentPin', '2026');
   });
 
   const updateParentPin = (newPin) => {
@@ -255,38 +213,23 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
 
   // Piggy Bank (Heo Đất Tri Thức)
   const [piggyBalance, setPiggyBalance] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PIGGY_BANK);
-      return saved ? JSON.parse(saved) : 0;
-    } catch { return 0; }
+    return getInitialVal(STORAGE_KEYS.PIGGY_BANK, 'piggyBalance', 0);
   });
 
   const [piggyHistory, setPiggyHistory] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PIGGY_HISTORY);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.PIGGY_HISTORY, 'piggyHistory', []);
   });
 
   const [piggyRequests, setPiggyRequests] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.PIGGY_REQUESTS);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.PIGGY_REQUESTS, 'piggyRequests', []);
   });
 
   const [claimedStages, setClaimedStages] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.CLAIMED_STAGES);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.CLAIMED_STAGES, 'claimedStages', []);
   });
 
   const [claimedFinal, setClaimedFinal] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.CLAIMED_FINAL);
-      return saved ? JSON.parse(saved) : false;
-    } catch { return false; }
+    return getInitialVal(STORAGE_KEYS.CLAIMED_FINAL, 'claimedFinal', false);
   });
 
   // Request withdrawal from student
@@ -353,17 +296,11 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
 
   // Reported Questions & Error Verification
   const [reportedQuestions, setReportedQuestions] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.REPORTED_QUESTIONS);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.REPORTED_QUESTIONS, 'reportedQuestions', []);
   });
 
   const [verifiedErrorIds, setVerifiedErrorIds] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.VERIFIED_ERROR_IDS);
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
+    return getInitialVal(STORAGE_KEYS.VERIFIED_ERROR_IDS, 'verifiedErrorIds', []);
   });
 
   // Report Question Error from student
@@ -536,6 +473,73 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.CLAIMED_FINAL, JSON.stringify(claimedFinal)); }, [claimedFinal]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.REPORTED_QUESTIONS, JSON.stringify(reportedQuestions)); }, [reportedQuestions]);
   useEffect(() => { localStorage.setItem(STORAGE_KEYS.VERIFIED_ERROR_IDS, JSON.stringify(verifiedErrorIds)); }, [verifiedErrorIds]);
+
+  // Auto-sync debounced to Cloud whenever progress, coins, piggy, etc. changes
+  useEffect(() => {
+    if (!account || !account.username || !account.pin) return;
+
+    const timer = setTimeout(() => {
+      const fullData = {
+        currentGrade,
+        currentSubject,
+        g4MathProgress,
+        g4TvProgress,
+        g7MathProgress,
+        g7LitProgress,
+        history,
+        wrongG4Math: g4MathWrong,
+        wrongG4Tv: g4TvWrong,
+        wrongG7Math: g7MathWrong,
+        wrongG7Lit: g7LitWrong,
+        badges: unlockedBadges,
+        streakData,
+        coins,
+        piggyBalance,
+        piggyHistory,
+        piggyRequests,
+        claimedStages,
+        claimedFinal,
+        reportedQuestions,
+        verifiedErrorIds
+      };
+
+      fetch('/api/student/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          accountId: account.id,
+          username: account.username,
+          pin: account.pin,
+          data: fullData
+        })
+      }).catch(err => console.warn('Background auto-sync error:', err));
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [
+    account,
+    currentGrade,
+    currentSubject,
+    g4MathProgress,
+    g4TvProgress,
+    g7MathProgress,
+    g7LitProgress,
+    history,
+    g4MathWrong,
+    g4TvWrong,
+    g7MathWrong,
+    g7LitWrong,
+    unlockedBadges,
+    streakData,
+    coins,
+    piggyBalance,
+    piggyHistory,
+    piggyRequests,
+    claimedStages,
+    claimedFinal,
+    reportedQuestions,
+    verifiedErrorIds
+  ]);
 
   // Derived active state
   const isMath = currentSubject === 'math';
@@ -902,6 +906,37 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
           avatar: updated.avatar || updated.mascot
         }));
       } catch (e) {}
+
+      // If logged in to Cloud Account, sync Nickname, Avatar and PIN to Cloud database
+      if (account && account.username && account.pin) {
+        fetch('/api/student/profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            accountId: account.id,
+            username: account.username,
+            pin: account.pin,
+            nickname: updated.name,
+            avatar: updated.avatar || updated.mascot,
+            newPin: newProfile.pin || undefined
+          })
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.success && data.account) {
+              const updatedAccount = {
+                ...account,
+                nickname: data.account.nickname,
+                avatar: data.account.avatar,
+                pin: data.account.pin || account.pin
+              };
+              localStorage.setItem('agy_active_account', JSON.stringify(updatedAccount));
+              if (onUpdateAccount) onUpdateAccount(updatedAccount);
+            }
+          })
+          .catch(err => console.warn('Profile cloud update error:', err));
+      }
+
       return updated;
     });
     sounds.playClick();
@@ -959,7 +994,8 @@ export const LearningProvider = ({ children, profileId = 'default' }) => {
       currentCategories,
       currentMetadata,
       getQuestionsByWeek: getQuestionsByWeekDynamic,
-      getFilteredQuestions: getFilteredQuestionsDynamic
+      getFilteredQuestions: getFilteredQuestionsDynamic,
+      account
     }}>
       {children}
     </LearningContext.Provider>

@@ -10,6 +10,7 @@ import { BadgesModal } from './BadgesModal';
 import { QuizArena } from './QuizArena';
 import { ResultModal } from './ResultModal';
 import { ExplanationView } from './ExplanationView';
+import { StudentAuthModal } from './StudentAuthModal';
 import { Users, Lock, LogOut, Edit2, Trash2, Check, X, User } from 'lucide-react';
 
 const MainContent = ({ onLogout }) => {
@@ -614,21 +615,102 @@ const ProtectedDashboard = () => {
 };
 
 export default function App() {
-  const [activeProfileId, setActiveProfileId] = useState(() => localStorage.getItem('activeProfileId'));
+  const [activeAccount, setActiveAccount] = useState(() => {
+    try {
+      const saved = localStorage.getItem('agy_active_account');
+      return saved ? JSON.parse(saved) : null;
+    } catch { return null; }
+  });
 
+  const [activeProfileId, setActiveProfileId] = useState(() => {
+    try {
+      const acc = localStorage.getItem('agy_active_account');
+      if (acc) {
+        return JSON.parse(acc).id;
+      }
+      return localStorage.getItem('activeProfileId');
+    } catch { return null; }
+  });
+
+  const [isOfflineGuest, setIsOfflineGuest] = useState(false);
+
+  // Background refresh cloud account on startup if logged in
+  React.useEffect(() => {
+    if (activeAccount?.username && activeAccount?.pin) {
+      fetch('/api/student/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: activeAccount.username,
+          pin: activeAccount.pin
+        })
+      })
+      .then(res => res.json())
+      .then(resData => {
+        if (resData.success && resData.account) {
+          const fresh = resData.account;
+          setActiveAccount(fresh);
+          localStorage.setItem('agy_active_account', JSON.stringify(fresh));
+          localStorage.setItem('activeProfileData', JSON.stringify({
+            id: fresh.id,
+            name: fresh.nickname || fresh.username,
+            avatar: fresh.avatar || '🐯'
+          }));
+        }
+      })
+      .catch(err => console.warn('Could not refresh cloud account from server:', err));
+    }
+  }, []);
+
+  // If not logged in and not choosing offline guest, show StudentAuthModal
+  if (!activeAccount && !isOfflineGuest) {
+    return (
+      <StudentAuthModal 
+        onLoginSuccess={(acc) => {
+          localStorage.setItem('agy_active_account', JSON.stringify(acc));
+          localStorage.setItem('activeProfileId', acc.id);
+          localStorage.setItem('activeProfileData', JSON.stringify({
+            id: acc.id,
+            name: acc.nickname || acc.username,
+            avatar: acc.avatar || '🐯'
+          }));
+          setActiveAccount(acc);
+          setActiveProfileId(acc.id);
+        }}
+        onContinueOffline={() => {
+          setIsOfflineGuest(true);
+        }}
+      />
+    );
+  }
+
+  // If in guest mode and no profile selected yet
   if (!activeProfileId) {
-    return <ProfileSelector onSelect={(id) => {
-      localStorage.setItem('activeProfileId', id);
-      setActiveProfileId(id);
-    }} />;
+    return (
+      <ProfileSelector onSelect={(id) => {
+        localStorage.setItem('activeProfileId', id);
+        setActiveProfileId(id);
+      }} />
+    );
   }
 
   return (
-    <LearningProvider key={activeProfileId} profileId={activeProfileId}>
+    <LearningProvider 
+      key={activeProfileId} 
+      profileId={activeProfileId}
+      account={activeAccount}
+      onUpdateAccount={(updatedAcc) => {
+        setActiveAccount(updatedAcc);
+        localStorage.setItem('agy_active_account', JSON.stringify(updatedAcc));
+      }}
+    >
       <MainContent 
         onLogout={() => {
+          localStorage.removeItem('agy_active_account');
           localStorage.removeItem('activeProfileId');
+          setActiveAccount(null);
           setActiveProfileId(null);
+          setIsOfflineGuest(false);
         }} 
       />
     </LearningProvider>
