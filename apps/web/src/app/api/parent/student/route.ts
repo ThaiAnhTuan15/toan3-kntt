@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     username = username.trim().toLowerCase();
 
     if (!parentPin || typeof parentPin !== 'string') {
-      return NextResponse.json({ success: false, error: 'Vui lòng nhập mã PIN phụ huynh (Mặc định: 2026 hoặc mã 4 số của bé)!' }, { status: 400 });
+      return NextResponse.json({ success: false, error: 'Vui lòng nhập mã PIN phụ huynh!' }, { status: 400 });
     }
     parentPin = parentPin.trim();
 
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     if (parentPin === account.pin && account.pin !== expectedParentPin) {
       return NextResponse.json({ 
         success: false, 
-        error: 'Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Cha Mẹ (Mặc định: 2026).' 
+        error: 'Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Cha Mẹ.' 
       }, { status: 401 });
     }
 
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     if (parentPin !== expectedParentPin) {
       return NextResponse.json({ 
         success: false, 
-        error: 'Mật khẩu cha mẹ không chính xác! (Mặc định ban đầu: 2026)' 
+        error: 'Mật khẩu cha mẹ không chính xác!' 
       }, { status: 401 });
     }
 

@@ -54,6 +54,8 @@ export default function ParentAdminPage() {
   // Change PIN modal
   const [showChangePinModal, setShowChangePinModal] = useState(false);
   const [newChildPin, setNewChildPin] = useState('');
+  const [showChangeParentPinModal, setShowChangeParentPinModal] = useState(false);
+  const [newParentPinInput, setNewParentPinInput] = useState('');
 
   // Fetch student data from server
   const fetchStudentData = async (username, pin) => {
@@ -159,8 +161,12 @@ export default function ParentAdminPage() {
       }
 
       setActionSuccessMsg(resJson.message);
+      const activePin = (action === 'change_parent_pin' && payload?.newParentPin) ? payload.newParentPin : authData.pin;
+      if (action === 'change_parent_pin' && payload?.newParentPin) {
+        setAuthData(prev => prev ? { ...prev, pin: payload.newParentPin } : prev);
+      }
       // Refresh student data
-      await fetchStudentData(authData.username, authData.pin);
+      await fetchStudentData(authData.username, activePin);
       setTimeout(() => setActionSuccessMsg(''), 4000);
     } catch (err) {
       alert(err.message || 'Lỗi khi thực hiện thao tác');
@@ -168,6 +174,7 @@ export default function ParentAdminPage() {
       setIsSubmittingAction(false);
       setShowBonusModal(false);
       setShowChangePinModal(false);
+      setShowChangeParentPinModal(false);
     }
   };
 
@@ -235,11 +242,10 @@ export default function ParentAdminPage() {
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-1.5">
+              <div className="mb-1.5">
                 <label className="text-xs font-black text-slate-700">
                   Mật khẩu Cha Mẹ (Mã PIN):
                 </label>
-                <span className="text-[10px] font-bold text-indigo-600">Mặc định: 2026</span>
               </div>
               <div className="relative">
                 <input
@@ -911,9 +917,22 @@ export default function ParentAdminPage() {
                 </button>
               </div>
             </div>
-            <div className="flex justify-between py-2 border-b">
+            <div className="flex justify-between py-2 border-b items-center">
               <span className="text-slate-500">Mã PIN Quản trị Phụ huynh:</span>
-              <span className="font-mono text-slate-800">2026 (Mặc định)</span>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-base font-black text-slate-800">
+                  {studentData.parentPin || '••••'}
+                </span>
+                <button
+                  onClick={() => {
+                    setNewParentPinInput('');
+                    setShowChangeParentPinModal(true);
+                  }}
+                  className="px-2.5 py-1 bg-purple-50 text-purple-700 rounded-lg text-[11px] font-bold hover:bg-purple-100"
+                >
+                  Đổi PIN Ba Mẹ
+                </button>
+              </div>
             </div>
             <div className="flex justify-between py-2 border-b">
               <span className="text-slate-500">Ngày tạo tài khoản:</span>
@@ -1114,6 +1133,57 @@ export default function ParentAdminPage() {
                 disabled={isSubmittingAction || newChildPin.length !== 4}
                 onClick={() => handleParentAction('change_pin', { newPin: newChildPin })}
                 className="flex-1 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-xl shadow-xs disabled:opacity-50"
+              >
+                Lưu Mã PIN Mới
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ------------------------------------------------------------- */}
+      {/* MODAL 4: CHANGE PARENT PIN                                    */}
+      {/* ------------------------------------------------------------- */}
+      {showChangeParentPinModal && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl border-4 border-purple-300 shadow-2xl max-w-sm w-full p-6 animate-scale-in">
+            <h3 className="text-lg font-black text-slate-800 mb-2">Đổi Mật Khẩu Cha Mẹ</h3>
+            <p className="text-xs font-bold text-slate-600 mb-4">
+              Nhập mã 4 số mới của Ba Mẹ để quản trị và bảo vệ ứng dụng.
+            </p>
+
+            <input
+              type="password"
+              inputMode="numeric"
+              maxLength={4}
+              value={newParentPinInput}
+              onChange={(e) => setNewParentPinInput(e.target.value.replace(/\D/g, ''))}
+              placeholder="••••"
+              className="w-full px-3 py-3 rounded-xl border-2 border-slate-200 text-center font-black text-xl tracking-widest text-slate-800 mb-4"
+            />
+
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowChangeParentPinModal(false);
+                  setNewParentPinInput('');
+                }}
+                className="flex-1 py-2 text-xs font-bold text-slate-500 hover:bg-slate-100 rounded-xl"
+              >
+                Hủy
+              </button>
+              <button
+                type="button"
+                disabled={isSubmittingAction || newParentPinInput.length !== 4}
+                onClick={() => {
+                  if (student?.pin && newParentPinInput === student.pin) {
+                    alert('Mã PIN Ba Mẹ không được trùng với mật khẩu của bé!');
+                    return;
+                  }
+                  handleParentAction('change_parent_pin', { newParentPin: newParentPinInput });
+                }}
+                className="flex-1 py-2 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs rounded-xl shadow-xs disabled:opacity-50"
               >
                 Lưu Mã PIN Mới
               </button>

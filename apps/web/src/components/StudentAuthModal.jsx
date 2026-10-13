@@ -352,7 +352,7 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
                 ) : (
                   <div className="space-y-2 pt-2 border-t border-amber-200">
                     <label className="block text-[11px] font-black text-slate-700">
-                      Nhập mã PIN Ba Mẹ (Mặc định: 2026 hoặc mã con) để mở khóa chuyển máy:
+                      Nhập mã PIN Ba Mẹ để mở khóa chuyển máy:
                     </label>
                     <div className="flex items-center gap-2">
                       <input
@@ -360,7 +360,7 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
                         maxLength={4}
                         value={parentPinForTransfer}
                         onChange={(e) => setParentPinForTransfer(e.target.value.replace(/\D/g, ''))}
-                        placeholder="2026"
+                        placeholder="••••"
                         className="w-24 px-3 py-1.5 rounded-xl border-2 border-amber-300 font-black text-center text-sm focus:outline-none focus:border-amber-500 bg-white"
                       />
                       <button

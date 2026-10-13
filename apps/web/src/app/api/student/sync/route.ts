@@ -167,6 +167,7 @@ export async function POST(request: Request) {
 
     // Combine all merged data
     const mergedData = {
+      parentPin: inData.parentPin || curData.parentPin || '2026',
       currentGrade: inData.currentGrade || curData.currentGrade || '4',
       currentSubject: inData.currentSubject || curData.currentSubject || 'math',
       g4MathProgress: mergedG4MathProg,

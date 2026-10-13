@@ -56,9 +56,10 @@ export async function POST(request: Request) {
       // Nếu máy kia có tín hiệu hoạt động trong vòng 90 giây:
       if (diffSec < 90) {
         if (forceTransfer) {
-          // Xác thực mã PIN Ba Mẹ (chấp nhận 2026 hoặc mã của bé)
+          // Xác thực mã PIN Ba Mẹ
           const cleanParentPin = (parentPin || '').trim();
-          if (cleanParentPin !== '2026' && cleanParentPin !== account.pin) {
+          const expectedParentPin = account.data?.parentPin || '2026';
+          if (cleanParentPin !== expectedParentPin) {
             return NextResponse.json({
               success: false,
               isSessionLocked: true,

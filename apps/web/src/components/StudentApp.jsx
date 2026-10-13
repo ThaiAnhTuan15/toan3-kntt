@@ -517,7 +517,7 @@ const ProtectedDashboard = () => {
         <button 
           onClick={() => {
             if (account?.pin && pin === account.pin && pin !== parentPin) {
-              alert('Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Ba Mẹ (Mặc định: 2026).');
+              alert('Đây là mật khẩu của bé! Vui lòng nhập mật khẩu riêng của Ba Mẹ.');
               return;
             }
             if (pin === parentPin) {
@@ -541,7 +541,7 @@ const ProtectedDashboard = () => {
       {/* Change PIN Settings */}
       <div className="bg-slate-50 border-2 border-slate-200 p-6 rounded-3xl text-center">
         <h3 className="text-xl font-bold text-slate-700 mb-2">Đổi Mã PIN</h3>
-        <p className="text-slate-500 text-sm font-semibold mb-4">Mã PIN dùng để bảo vệ Góc Phụ Huynh và chức năng Mở Khóa Tự Do.</p>
+        <p className="text-slate-500 text-sm font-semibold mb-4">Mã PIN dùng để bảo vệ Góc Phụ Huynh và Cổng Ba Mẹ Quản Trị.</p>
         
         {isChangingPin ? (
           <div className="flex flex-col items-center gap-3">
@@ -551,7 +551,7 @@ const ProtectedDashboard = () => {
               inputMode="numeric"
               maxLength={4}
               value={newPin}
-              onChange={(e) => setNewPin(e.target.value)}
+              onChange={(e) => setNewPin(e.target.value.replace(/\D/g, ''))}
               className="w-48 text-center text-2xl tracking-widest px-4 py-2 rounded-xl border-2 border-slate-200 focus:border-amber-400 outline-none"
               placeholder="Mã PIN mới"
             />
@@ -566,15 +566,19 @@ const ProtectedDashboard = () => {
                 Hủy
               </button>
               <button 
-                onClick={() => {
-                  if (newPin.length !== 4) {
+                onClick={async () => {
+                  if (!/^\d{4}$/.test(newPin)) {
                     alert('Mã PIN phải có đúng 4 chữ số!');
                     return;
                   }
-                  updateParentPin(newPin);
+                  if (account?.pin && newPin === account.pin) {
+                    alert('Mã PIN của Ba Mẹ không được trùng với mật khẩu của bé!');
+                    return;
+                  }
+                  await updateParentPin(newPin);
                   setIsChangingPin(false);
                   setNewPin('');
-                  alert('Đổi mã PIN thành công!');
+                  alert('Đổi mã PIN thành công! Mã mới đã được đồng bộ lên Cổng Quản Trị.');
                 }}
                 className="flex-1 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm"
               >

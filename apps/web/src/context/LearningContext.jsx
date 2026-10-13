@@ -535,9 +535,34 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     return getInitialVal(STORAGE_KEYS.PARENT_PIN, 'parentPin', '2026');
   });
 
-  const updateParentPin = (newPin) => {
-    setParentPin(newPin);
+  const updateParentPin = async (newPin) => {
+    const clean = String(newPin).trim();
+    setParentPin(clean);
     sounds.playClick();
+    try {
+      localStorage.setItem(STORAGE_KEYS.PARENT_PIN, JSON.stringify(clean));
+    } catch {}
+
+    if (account && account.id) {
+      setAccount(prev => prev ? {
+        ...prev,
+        data: { ...(prev.data || {}), parentPin: clean }
+      } : prev);
+
+      try {
+        await fetch('/api/student/parent-pin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            accountId: account.id,
+            username: account.username,
+            newParentPin: clean
+          })
+        });
+      } catch (e) {
+        console.warn('Sync parent PIN error:', e);
+      }
+    }
   };
 
   // Piggy Bank (Heo Đất Tri Thức)
@@ -895,6 +920,12 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     if (Array.isArray(cloud.verifiedErrorIds)) {
       setVerifiedErrorIds(cloud.verifiedErrorIds);
     }
+    if (cloud.parentPin && /^\d{4}$/.test(String(cloud.parentPin))) {
+      setParentPin(String(cloud.parentPin));
+      try {
+        localStorage.setItem(STORAGE_KEYS.PARENT_PIN, JSON.stringify(String(cloud.parentPin)));
+      } catch {}
+    }
 
     isHydratedRef.current = true;
   }, [account?.id, account?.username]);
@@ -926,7 +957,8 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
         claimedStages,
         claimedFinal,
         reportedQuestions,
-        verifiedErrorIds
+        verifiedErrorIds,
+        parentPin
       };
 
       fetch('/api/student/sync', {
@@ -964,7 +996,8 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     claimedStages,
     claimedFinal,
     reportedQuestions,
-    verifiedErrorIds
+    verifiedErrorIds,
+    parentPin
   ]);
 
   // Derived active state
@@ -1334,7 +1367,8 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
             claimedStages: stageReward ? [...claimedStages, stageReward.stageId] : claimedStages,
             claimedFinal: finalReward ? true : claimedFinal,
             reportedQuestions,
-            verifiedErrorIds
+            verifiedErrorIds,
+            parentPin
           }
         };
 

@@ -172,6 +172,20 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: true, message: msg, newPin });
       }
 
+      // 6. Change parent 4-digit PIN
+      case 'change_parent_pin': {
+        const newParentPin = String(payload?.newParentPin || '').trim();
+        if (!/^\d{4}$/.test(newParentPin)) {
+          return NextResponse.json({ success: false, error: 'Mã PIN Ba Mẹ phải có đúng 4 chữ số!' }, { status: 400 });
+        }
+        if (newParentPin === account.pin) {
+          return NextResponse.json({ success: false, error: 'Mã PIN Ba Mẹ không được trùng với mật khẩu của bé!' }, { status: 400 });
+        }
+        data.parentPin = newParentPin;
+        msg = 'Đã đổi mã PIN Ba Mẹ thành công!';
+        break;
+      }
+
       default:
         return NextResponse.json({ success: false, error: 'Hành động không hợp lệ!' }, { status: 400 });
     }
