@@ -47,14 +47,343 @@ const DEFAULT_PROFILE = {
 };
 
 export const BADGE_DEFINITIONS = [
-  { id: 'first_quiz', name: 'Bước Chân Đầu Tiên', desc: 'Hoàn thành bài luyện tập đầu tiên', icon: 'Footprints', req: (h) => h.length >= 1 },
-  { id: 'perfect_10', name: 'Điểm 10 Hoàn Hảo', desc: 'Đạt điểm tối đa 100% trong 1 bài thi', icon: 'Award', req: (h) => h.some(q => q.score === 100) },
-  { id: 'g4_math_master', name: 'Hiệp Sĩ Toán Lớp 4', desc: 'Hoàn thành trên 15 tuần Toán 4', icon: 'ShieldCheck', req: (h, p) => Object.keys(p.g4Math || {}).filter(w => p.g4Math[w]?.bestScore >= 70).length >= 15 },
-  { id: 'g4_tv_master', name: 'Trạng Nguyên Tiếng Việt 4', desc: 'Hoàn thành trên 15 tuần Tiếng Việt 4', icon: 'BookOpen', req: (h, p) => Object.keys(p.g4Tv || {}).filter(w => p.g4Tv[w]?.bestScore >= 70).length >= 15 },
-  { id: 'g7_math_master', name: 'Thần Đồng Toán Lớp 7', desc: 'Hoàn thành trên 15 tuần Toán 7', icon: 'Zap', req: (h, p) => Object.keys(p.g7Math || {}).filter(w => p.g7Math[w]?.bestScore >= 70).length >= 15 },
-  { id: 'g7_lit_master', name: 'Nhà Văn Nhí Lớp 7', desc: 'Hoàn thành trên 15 tuần Ngữ Văn 7', icon: 'Feather', req: (h, p) => Object.keys(p.g7Lit || {}).filter(w => p.g7Lit[w]?.bestScore >= 70).length >= 15 },
-  { id: 'streak_3', name: 'Chăm Chỉ Chuyên Cần', desc: 'Học liên tục trong 3 ngày', icon: 'Flame', req: (h, p, s) => (s?.currentStreak || 1) >= 3 },
-  { id: 'star_hunter_30', name: 'Thợ Săn Ngôi Sao', desc: 'Tích lũy được trên 30 ngôi sao', icon: 'Star', req: (h, p, s, stars) => stars >= 30 }
+  // 1. Khởi Đầu & Điểm Số Xuất Sắc
+  { 
+    id: 'first_quiz', 
+    name: 'Bước Chân Đầu Tiên', 
+    desc: 'Hoàn thành bài luyện tập Toán đầu tiên', 
+    icon: 'Footprints', 
+    category: 'accuracy',
+    color: 'from-amber-400 to-orange-400',
+    req: (h) => (h || []).length >= 1 
+  },
+  { 
+    id: 'perfect_10', 
+    name: 'Điểm 10 Hoàn Hảo', 
+    desc: 'Đạt điểm tối đa 100% trong 1 bài thi Toán', 
+    icon: 'Award', 
+    category: 'accuracy',
+    color: 'from-yellow-400 to-amber-500',
+    req: (h) => (h || []).some(q => q.score === 100) 
+  },
+  { 
+    id: 'speedy_math', 
+    name: 'Thần Tốc Tính Nhẩm', 
+    desc: 'Đạt từ 90% trở lên với thời gian dưới 3 phút', 
+    icon: 'Zap', 
+    category: 'accuracy',
+    color: 'from-cyan-400 to-blue-500',
+    req: (h) => (h || []).some(q => q.score >= 90 && q.timeSpent > 0 && q.timeSpent <= 180) 
+  },
+  { 
+    id: 'triple_ten', 
+    name: 'Tam Hoa Điểm 10', 
+    desc: 'Đạt điểm 100% tuyệt đối trong 3 bài thi Toán', 
+    icon: 'Target', 
+    category: 'accuracy',
+    color: 'from-rose-400 to-pink-500',
+    req: (h) => (h || []).filter(q => q.score === 100).length >= 3 
+  },
+  { 
+    id: 'five_ten', 
+    name: 'Ngũ Quý Điểm 10', 
+    desc: 'Đạt điểm 100% tuyệt đối trong 5 bài thi Toán', 
+    icon: 'Sparkles', 
+    category: 'accuracy',
+    color: 'from-purple-400 to-indigo-500',
+    req: (h) => (h || []).filter(q => q.score === 100).length >= 5 
+  },
+  { 
+    id: 'ten_ten', 
+    name: 'Thập Toàn Thập Mỹ', 
+    desc: 'Đạt điểm 100% tuyệt đối trong 10 bài thi Toán', 
+    icon: 'Crown', 
+    category: 'accuracy',
+    color: 'from-amber-400 to-yellow-500',
+    req: (h) => (h || []).filter(q => q.score === 100).length >= 10 
+  },
+
+  // 2. Chinh Phục 6 Chặng Toán Lớp 3
+  { 
+    id: 'stage1_hero', 
+    name: 'Dũng Sĩ Số Học', 
+    desc: 'Chinh phục toàn bộ Đề 1 đến 13 (Chặng 1)', 
+    icon: 'Rocket', 
+    category: 'stage',
+    color: 'from-amber-400 to-orange-500',
+    req: (h, p) => [1,2,3,4,5,6,7,8,9,10,11,12,13].every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+  { 
+    id: 'stage2_hero', 
+    name: 'Phù Thủy Cửu Chương', 
+    desc: 'Chinh phục toàn bộ Đề 14 đến 23 (Chặng 2)', 
+    icon: 'Sparkles', 
+    category: 'stage',
+    color: 'from-emerald-400 to-teal-500',
+    req: (h, p) => [14,15,16,17,18,19,20,21,22,23].every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+  { 
+    id: 'stage3_hero', 
+    name: 'Kiến Trúc Sư Hình Học', 
+    desc: 'Chinh phục toàn bộ Đề 24 đến 36 (Chặng 3)', 
+    icon: 'ShieldCheck', 
+    category: 'stage',
+    color: 'from-blue-400 to-indigo-600',
+    req: (h, p) => [24,25,26,27,28,29,30,31,32,33,34,35,36].every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+  { 
+    id: 'stage4_hero', 
+    name: 'Chiến Binh Hai Bước Tính', 
+    desc: 'Chinh phục toàn bộ Đề 37 đến 48 (Chặng 4)', 
+    icon: 'Flame', 
+    category: 'stage',
+    color: 'from-rose-400 to-red-600',
+    req: (h, p) => [37,38,39,40,41,42,43,44,45,46,47,48].every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+  { 
+    id: 'stage5_hero', 
+    name: 'Nhà Thám Hiểm Đo Lường', 
+    desc: 'Chinh phục toàn bộ Đề 49 đến 57 (Chặng 5)', 
+    icon: 'Compass', 
+    category: 'stage',
+    color: 'from-teal-400 to-cyan-600',
+    req: (h, p) => [49,50,51,52,53,54,55,56,57].every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+  { 
+    id: 'stage6_hero', 
+    name: 'Đại Trí Tuệ Ôn Tập', 
+    desc: 'Chinh phục toàn bộ Đề 58 đến 66 (Chặng 6)', 
+    icon: 'Award', 
+    category: 'stage',
+    color: 'from-violet-500 to-purple-700',
+    req: (h, p) => [58,59,60,61,62,63,64,65,66].every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+  { 
+    id: 'grandmaster_math3', 
+    name: 'Đại Kiện Tướng Toán 3', 
+    desc: 'Chinh phục trọn vẹn toàn bộ 66 đề thi Toán 3', 
+    icon: 'Crown', 
+    category: 'stage',
+    color: 'from-amber-400 via-yellow-400 to-orange-500',
+    req: (h, p) => Array.from({length: 66}, (_, i) => i + 1).every(w => (p.g4Math?.[w]?.bestScore || 0) >= 75) 
+  },
+
+  // 3. Số Lượng Bài Đã Làm (Milestones)
+  { 
+    id: 'quiz_count_3', 
+    name: 'Mầm Non Toán Học', 
+    desc: 'Hoàn thành 3 đề thi Toán 3', 
+    icon: 'BookOpen', 
+    category: 'milestone',
+    color: 'from-lime-400 to-emerald-500',
+    req: (h) => (h || []).length >= 3 
+  },
+  { 
+    id: 'quiz_count_5', 
+    name: 'Hạt Giống Tri Thức', 
+    desc: 'Hoàn thành 5 đề thi Toán 3', 
+    icon: 'BookOpen', 
+    category: 'milestone',
+    color: 'from-emerald-400 to-green-600',
+    req: (h) => (h || []).length >= 5 
+  },
+  { 
+    id: 'quiz_count_10', 
+    name: 'Chồi Non Bứt Phá', 
+    desc: 'Hoàn thành 10 đề thi Toán 3', 
+    icon: 'TrendingUp', 
+    category: 'milestone',
+    color: 'from-teal-400 to-emerald-600',
+    req: (h) => (h || []).length >= 10 
+  },
+  { 
+    id: 'quiz_count_20', 
+    name: 'Nhà Leo Núi Kiên Trì', 
+    desc: 'Hoàn thành 20 đề thi Toán 3', 
+    icon: 'ShieldCheck', 
+    category: 'milestone',
+    color: 'from-blue-400 to-cyan-600',
+    req: (h) => (h || []).length >= 20 
+  },
+  { 
+    id: 'quiz_count_35', 
+    name: 'Nhà Du Hành Không Gian', 
+    desc: 'Hoàn thành 35 đề thi Toán 3', 
+    icon: 'Rocket', 
+    category: 'milestone',
+    color: 'from-indigo-400 to-purple-600',
+    req: (h) => (h || []).length >= 35 
+  },
+  { 
+    id: 'quiz_count_50', 
+    name: 'Hiệp Sĩ Bất Bại', 
+    desc: 'Hoàn thành 50 đề thi Toán 3', 
+    icon: 'Crown', 
+    category: 'milestone',
+    color: 'from-amber-400 to-rose-500',
+    req: (h) => (h || []).length >= 50 
+  },
+
+  // 4. Ngôi Sao Tri Thức
+  { 
+    id: 'star_hunter_9', 
+    name: 'Ngôi Sao Đầu Đời', 
+    desc: 'Tích lũy được từ 9 ngôi sao', 
+    icon: 'Star', 
+    category: 'star',
+    color: 'from-yellow-300 to-amber-400',
+    req: (h, p, s, stars) => stars >= 9 
+  },
+  { 
+    id: 'star_hunter_30', 
+    name: 'Thợ Săn Ngôi Sao', 
+    desc: 'Tích lũy được trên 30 ngôi sao', 
+    icon: 'Star', 
+    category: 'star',
+    color: 'from-amber-400 to-orange-400',
+    req: (h, p, s, stars) => stars >= 30 
+  },
+  { 
+    id: 'star_hunter_60', 
+    name: 'Bầu Trời Sao Sáng', 
+    desc: 'Tích lũy được trên 60 ngôi sao', 
+    icon: 'Sparkles', 
+    category: 'star',
+    color: 'from-orange-400 to-pink-500',
+    req: (h, p, s, stars) => stars >= 60 
+  },
+  { 
+    id: 'star_hunter_100', 
+    name: 'Dải Ngân Hà Tri Thức', 
+    desc: 'Tích lũy được trên 100 ngôi sao', 
+    icon: 'Crown', 
+    category: 'star',
+    color: 'from-purple-400 to-indigo-600',
+    req: (h, p, s, stars) => stars >= 100 
+  },
+  { 
+    id: 'star_hunter_150', 
+    name: 'Mặt Trời Tỏa Sáng', 
+    desc: 'Tích lũy được trên 150 ngôi sao', 
+    icon: 'Award', 
+    category: 'star',
+    color: 'from-yellow-400 to-red-500',
+    req: (h, p, s, stars) => stars >= 150 
+  },
+
+  // 5. Heo Đất Tri Thức & Tiết Kiệm
+  { 
+    id: 'piggy_30k', 
+    name: 'Heo Con No Nê', 
+    desc: 'Tích lũy được từ 30.000đ trong Heo Đất', 
+    icon: 'Coins', 
+    category: 'piggy',
+    color: 'from-pink-400 to-rose-500',
+    req: (h, p, s, stars, extra) => (extra?.piggyBalance || 0) >= 30000 
+  },
+  { 
+    id: 'piggy_50k', 
+    name: 'Túi Càng Khôn', 
+    desc: 'Tích lũy được từ 50.000đ trong Heo Đất', 
+    icon: 'Coins', 
+    category: 'piggy',
+    color: 'from-rose-400 to-red-500',
+    req: (h, p, s, stars, extra) => (extra?.piggyBalance || 0) >= 50000 
+  },
+  { 
+    id: 'piggy_100k', 
+    name: 'Kho Báu Tri Thức', 
+    desc: 'Tích lũy được từ 100.000đ trong Heo Đất', 
+    icon: 'Award', 
+    category: 'piggy',
+    color: 'from-purple-500 to-rose-500',
+    req: (h, p, s, stars, extra) => (extra?.piggyBalance || 0) >= 100000 
+  },
+  { 
+    id: 'piggy_200k', 
+    name: 'Triệu Phú Heo Đất', 
+    desc: 'Tích lũy được từ 200.000đ trong Heo Đất', 
+    icon: 'Crown', 
+    category: 'piggy',
+    color: 'from-amber-400 to-pink-500',
+    req: (h, p, s, stars, extra) => (extra?.piggyBalance || 0) >= 200000 
+  },
+
+  // 6. Chăm Chỉ & Rèn Luyện (Streak)
+  { 
+    id: 'streak_3', 
+    name: 'Chăm Chỉ Chuyên Cần', 
+    desc: 'Học liên tục trong 3 ngày', 
+    icon: 'Flame', 
+    category: 'streak',
+    color: 'from-orange-400 to-red-500',
+    req: (h, p, s) => (s?.currentStreak || 1) >= 3 
+  },
+  { 
+    id: 'streak_7', 
+    name: 'Ý Chí Thép', 
+    desc: 'Học liên tục trong 7 ngày', 
+    icon: 'Flame', 
+    category: 'streak',
+    color: 'from-red-500 to-rose-600',
+    req: (h, p, s) => (s?.currentStreak || 1) >= 7 
+  },
+  { 
+    id: 'streak_14', 
+    name: 'Chiến Binh Bất Bại', 
+    desc: 'Học liên tục trong 14 ngày', 
+    icon: 'ShieldCheck', 
+    category: 'streak',
+    color: 'from-purple-500 to-red-500',
+    req: (h, p, s) => (s?.currentStreak || 1) >= 14 
+  },
+
+  // 7. Xu Thưởng & Thám Tử Tinh Mắt
+  { 
+    id: 'coin_hunter_200', 
+    name: 'Thỏi Vàng Đầu Tiên', 
+    desc: 'Tích lũy được 200 xu thưởng', 
+    icon: 'Coins', 
+    category: 'piggy',
+    color: 'from-yellow-400 to-amber-500',
+    req: (h, p, s, stars, extra) => (extra?.coins || 0) >= 200 
+  },
+  { 
+    id: 'coin_hunter_500', 
+    name: 'Kho Báu Vàng Ròng', 
+    desc: 'Tích lũy được 500 xu thưởng', 
+    icon: 'Coins', 
+    category: 'piggy',
+    color: 'from-amber-400 to-yellow-600',
+    req: (h, p, s, stars, extra) => (extra?.coins || 0) >= 500 
+  },
+  { 
+    id: 'coin_hunter_1000', 
+    name: 'Thần Tài Nhí', 
+    desc: 'Tích lũy được 1.000 xu thưởng', 
+    icon: 'Crown', 
+    category: 'piggy',
+    color: 'from-yellow-400 via-amber-500 to-orange-500',
+    req: (h, p, s, stars, extra) => (extra?.coins || 0) >= 1000 
+  },
+  { 
+    id: 'bug_detective', 
+    name: 'Thám Tử Tinh Mắt', 
+    desc: 'Phát hiện và báo cáo câu hỏi lỗi tới Ba Mẹ', 
+    icon: 'Search', 
+    category: 'accuracy',
+    color: 'from-sky-400 to-blue-600',
+    req: (h, p, s, stars, extra) => (extra?.reportedQuestions?.length || 0) >= 1 
+  },
+  { 
+    id: 'g4_tv_master', 
+    name: 'Trạng Nguyên Tiếng Việt', 
+    desc: 'Hoàn thành trên 10 tuần Tiếng Việt 3', 
+    icon: 'BookOpen', 
+    category: 'milestone',
+    color: 'from-pink-400 to-rose-600',
+    req: (h, p) => Object.keys(p.g4Tv || {}).filter(w => p.g4Tv[w]?.bestScore >= 70).length >= 10 
+  }
 ];
 
 export const LearningProvider = ({ children, profileId = 'default', account = null, onUpdateAccount = null }) => {
@@ -713,9 +1042,15 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       g7Math: g7MathProgress,
       g7Lit: g7LitProgress
     };
+    const extra = {
+      coins,
+      piggyBalance,
+      reportedQuestions,
+      verifiedErrorIds
+    };
     BADGE_DEFINITIONS.forEach(b => {
       if (!unlockedBadges.includes(b.id)) {
-        if (b.req(newHistory, fullProgress, streakData, currentStars)) {
+        if (b.req(newHistory, fullProgress, streakData, currentStars, extra)) {
           newlyUnlocked.push(b.id);
         }
       }
@@ -725,6 +1060,42 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       sounds.playUnlock();
     }
   };
+
+  // Auto check badges on load & whenever stats change
+  useEffect(() => {
+    if (!isHydratedRef.current) return;
+    checkBadges(history, totalStars);
+  }, [history.length, totalStars, coins, piggyBalance, reportedQuestions.length]);
+
+  // Session Heartbeat Check (every 30s)
+  useEffect(() => {
+    if (!account?.id) return;
+    let sid = null;
+    try { sid = localStorage.getItem('agy_session_id'); } catch {}
+    if (!sid) return;
+
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch('/api/student/session/heartbeat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            accountId: account.id,
+            username: account.username,
+            sessionId: sid
+          })
+        });
+        const data = await res.json();
+        if (data && data.active === false && data.reason === 'transferred') {
+          alert('⚠️ Thông báo chuyển máy:\nTài khoản của bé vừa được đăng nhập trên một thiết bị khác. Phiên học trên máy này đã tạm dừng để tránh xung đột bài làm.');
+          localStorage.removeItem('agy_active_account');
+          window.location.reload();
+        }
+      } catch (err) {}
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [account?.id, account?.username]);
 
   // Save Quiz Result
   const saveQuizResult = (resultData) => {

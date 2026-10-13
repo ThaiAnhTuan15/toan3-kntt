@@ -706,6 +706,16 @@ export default function App() {
     >
       <MainContent 
         onLogout={() => {
+          try {
+            const sid = localStorage.getItem('agy_session_id');
+            if (activeAccount?.id) {
+              fetch('/api/student/session/logout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ accountId: activeAccount.id, sessionId: sid })
+              }).catch(() => {});
+            }
+          } catch {}
           localStorage.removeItem('agy_active_account');
           localStorage.removeItem('activeProfileId');
           setActiveAccount(null);

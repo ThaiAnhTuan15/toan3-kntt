@@ -43,6 +43,43 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [lockedSessionInfo, setLockedSessionInfo] = useState(null);
+  const [showForceTransfer, setShowForceTransfer] = useState(false);
+  const [parentPinForTransfer, setParentPinForTransfer] = useState('');
+
+  const getSessionId = () => {
+    try {
+      let sid = localStorage.getItem('agy_session_id');
+      if (!sid) {
+        sid = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+        localStorage.setItem('agy_session_id', sid);
+      }
+      return sid;
+    } catch {
+      return 'sess_' + Date.now();
+    }
+  };
+
+  const getDeviceInfo = () => {
+    try {
+      const ua = navigator.userAgent;
+      let os = "Máy tính";
+      if (/windows/i.test(ua)) os = "Máy tính Windows";
+      else if (/macintosh|mac os x/i.test(ua)) os = "Máy Mac";
+      else if (/iphone|ipad|ipod/i.test(ua)) os = "Thiết bị Apple";
+      else if (/android/i.test(ua)) os = "Thiết bị Android";
+
+      let browser = "Web";
+      if (/edg/i.test(ua)) browser = "Edge";
+      else if (/chrome/i.test(ua)) browser = "Chrome";
+      else if (/safari/i.test(ua)) browser = "Safari";
+      else if (/firefox/i.test(ua)) browser = "Firefox";
+
+      return `${os} (${browser})`;
+    } catch {
+      return "Trình duyệt Web";
+    }
+  };
 
   // Collect any existing local progress on this device to migrate to cloud
   const collectLocalStudentData = () => {
@@ -98,9 +135,8 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
     return null;
   };
 
-  // Handle Login
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  // Execute Login with optional forceTransfer
+  const executeLogin = async (force = false) => {
     setErrorMsg('');
 
     const cleanUsername = loginUsername.trim().toLowerCase();
@@ -122,18 +158,41 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
     sounds.playClick();
 
     try {
+      const payload = {
+        username: cleanUsername,
+        pin: cleanPin,
+        sessionId: getSessionId(),
+        deviceInfo: getDeviceInfo(),
+        forceTransfer: force,
+        parentPin: force ? parentPinForTransfer.trim() : undefined
+      };
+
       const res = await fetch('/api/student/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: cleanUsername, pin: cleanPin })
+        body: JSON.stringify(payload)
       });
 
       const data = await res.json();
+
+      if (data.isSessionLocked) {
+        setLockedSessionInfo({
+          activeDevice: data.activeDevice,
+          lastActiveSecondsAgo: data.lastActiveSecondsAgo,
+          error: data.error
+        });
+        sounds.playWrong();
+        return;
+      }
 
       if (!res.ok || !data.success) {
         throw new Error(data.error || 'Đăng nhập không thành công');
       }
 
+      // Success!
+      setLockedSessionInfo(null);
+      setShowForceTransfer(false);
+      setParentPinForTransfer('');
       sounds.playVictory();
       onLoginSuccess(data.account);
     } catch (err) {
@@ -142,6 +201,12 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // Handle Login form submit
+  const handleLogin = (e) => {
+    if (e) e.preventDefault();
+    executeLogin(false);
   };
 
   // Handle Register
@@ -249,6 +314,77 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
             <span>Tạo Tài Khoản Mới</span>
           </button>
         </div>
+
+        {/* Session Lock Warning Banner */}
+        {lockedSessionInfo && (
+          <div className="p-4 mb-4 rounded-2xl bg-amber-50 border-2 border-amber-300 text-slate-800 shadow-sm animate-fadeIn">
+            <div className="flex items-start gap-2.5">
+              <span className="text-2xl shrink-0">⚠️</span>
+              <div className="flex-1">
+                <h4 className="font-black text-sm text-amber-900 mb-1">
+                  Tài Khoản Đang Học Trên Thiết Bị Khác!
+                </h4>
+                <p className="text-xs font-semibold text-slate-600 mb-2 leading-relaxed">
+                  {lockedSessionInfo.error}
+                </p>
+                <div className="text-[11px] font-bold text-amber-800 bg-amber-100/80 px-2.5 py-1.5 rounded-xl mb-3 flex items-center justify-between">
+                  <span>📱 Đang mở trên: <span className="font-extrabold">{lockedSessionInfo.activeDevice}</span></span>
+                  <span className="text-[10px] text-amber-700">Cách đây {lockedSessionInfo.lastActiveSecondsAgo}s</span>
+                </div>
+
+                {!showForceTransfer ? (
+                  <div className="flex flex-wrap items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => executeLogin(false)}
+                      className="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs rounded-xl transition-all"
+                    >
+                      Thử Lại 🔄
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowForceTransfer(true)}
+                      className="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-white font-black text-xs rounded-xl shadow-xs transition-all"
+                    >
+                      Chuyển Sang Máy Này 🔑
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-2 pt-2 border-t border-amber-200">
+                    <label className="block text-[11px] font-black text-slate-700">
+                      Nhập mã PIN Ba Mẹ (Mặc định: 2026 hoặc mã con) để mở khóa chuyển máy:
+                    </label>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="password"
+                        maxLength={4}
+                        value={parentPinForTransfer}
+                        onChange={(e) => setParentPinForTransfer(e.target.value.replace(/\D/g, ''))}
+                        placeholder="2026"
+                        className="w-24 px-3 py-1.5 rounded-xl border-2 border-amber-300 font-black text-center text-sm focus:outline-none focus:border-amber-500 bg-white"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => executeLogin(true)}
+                        disabled={isLoading}
+                        className="px-4 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-black text-xs rounded-xl shadow-xs transition-all"
+                      >
+                        Xác Nhận Chuyển 🚀
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setShowForceTransfer(false)}
+                        className="px-2 py-1.5 text-slate-500 hover:text-slate-700 text-xs font-bold"
+                      >
+                        Hủy
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Error Notification Banner */}
         {errorMsg && (
