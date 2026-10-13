@@ -90,6 +90,12 @@ class SoundManager {
     osc.stop(now + 0.06);
   }
 
+  // Pop / bubble sound
+  playPop() {
+    if (!this.enabled) return;
+    this.playTone(580, 'sine', 0.08, 0.12);
+  }
+
   // Option selected sound
   playSelect() {
     if (!this.enabled) return;

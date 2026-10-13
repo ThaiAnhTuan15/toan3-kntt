@@ -66,10 +66,16 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
   const [pinInput, setPinInput] = useState('');
   const [pinError, setPinError] = useState('');
 
+  // Keep temp states in sync with current profile
+  React.useEffect(() => {
+    if (profile?.name) setTempName(profile.name);
+    if (profile?.avatar) setTempAvatar(profile.avatar);
+  }, [profile?.name, profile?.avatar]);
+
   const currentMascotObj = MASCOTS.find(m => m.id === profile.mascot) || MASCOTS[0];
 
   const handleSaveProfile = () => {
-    sounds.playClick();
+    try { sounds.playVictory(); } catch {}
     const updatePayload = {
       name: tempName.trim() || 'Học Sinh',
       avatar: tempAvatar,
@@ -141,17 +147,20 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
             {/* Profile Pill Trigger */}
             <div className="flex items-center gap-1 pl-1 border-l border-slate-200">
               <button
-                onClick={() => {
-                  sounds.playPop();
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  try { sounds.playClick(); } catch {}
                   setTempName(profile?.name || 'Học Sinh');
                   setTempAvatar(profile?.avatar || '🐯');
                   setShowProfileModal(true);
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 rounded-full font-black text-xs transition-all shadow-xs"
-                title="Bấm để xem và sửa hồ sơ bé"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 hover:bg-amber-100 active:bg-amber-200 border-2 border-amber-300 hover:border-amber-400 text-amber-950 rounded-full font-black text-xs transition-all shadow-xs cursor-pointer select-none group"
+                title="Bấm vào đây để đổi Hình đại diện & Biệt danh của bé"
               >
-                <span className="text-sm">{profile?.avatar || '🐯'}</span>
-                <span className="max-w-[65px] sm:max-w-[85px] truncate">{profile?.name || 'Học Sinh'}</span>
+                <span className="text-base leading-none group-hover:scale-110 transition-transform">{profile?.avatar || '🐯'}</span>
+                <span className="max-w-[70px] sm:max-w-[110px] truncate">{profile?.name || 'Học Sinh'}</span>
+                <span className="text-[10px] text-amber-700/60 group-hover:text-amber-950 transition-colors">✏️</span>
               </button>
 
               {onLogout && (
@@ -377,6 +386,19 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
               </div>
             )}
 
+            {/* Live Preview of the Badge */}
+            <div className="mb-4 p-3 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border-2 border-amber-200 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-black text-amber-950 block">Biểu tượng hiển thị:</span>
+                <span className="text-[10px] font-bold text-amber-700">Xem trước khi lưu</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-amber-400 text-amber-950 rounded-full font-black text-sm shadow-xs">
+                <span className="text-lg leading-none">{tempAvatar}</span>
+                <span className="max-w-[120px] truncate">{tempName.trim() || 'Học Sinh'}</span>
+                <span className="text-[10px] text-amber-600">✏️</span>
+              </div>
+            </div>
+
             {/* Nickname Input */}
             <div className="mb-4">
               <label className="block text-xs font-black text-slate-700 mb-1">
@@ -398,18 +420,21 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
             {/* Mascot / Avatar Selector */}
             <div className="mb-4">
               <label className="block text-xs font-black text-slate-700 mb-1.5">
-                Chọn linh vật / hình đại diện:
+                Chọn linh vật / hình đại diện mới:
               </label>
               <div className="flex flex-wrap justify-center gap-2">
                 {['🐯', '🐰', '🐼', '🦊', '🐶', '🐱', '🦁', '🐸', '🐵', '🦉'].map((av) => (
                   <button
                     key={av}
                     type="button"
-                    onClick={() => setTempAvatar(av)}
-                    className={`text-2xl p-2 rounded-xl transition-all ${
+                    onClick={() => {
+                      try { sounds.playClick(); } catch {}
+                      setTempAvatar(av);
+                    }}
+                    className={`text-2xl p-2 rounded-xl transition-all cursor-pointer ${
                       tempAvatar === av
-                        ? 'bg-amber-300 scale-110 ring-2 ring-amber-400'
-                        : 'bg-slate-100 hover:bg-slate-200'
+                        ? 'bg-amber-300 scale-110 ring-2 ring-amber-400 shadow-sm'
+                        : 'bg-slate-100 hover:bg-slate-200 hover:scale-105'
                     }`}
                   >
                     {av}
