@@ -15,7 +15,8 @@ import {
   Flame,
   Award,
   BookOpen,
-  Feather
+  Feather,
+  Compass
 } from 'lucide-react';
 import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
@@ -38,15 +39,57 @@ export const RoadmapView = ({ onStartQuiz }) => {
   const [selectedStage, setSelectedStage] = useState('all'); // 'all' | 1 | 2 | 3 | 4
   const [activeWeekModal, setActiveWeekModal] = useState(null);
 
-  const getStageIcon = (iconName) => {
+  const getStageIcon = (iconName, stageId) => {
     switch (iconName) {
-      case 'Rocket': return <Rocket className="w-6 h-6" />;
-      case 'Target': return <Target className="w-6 h-6" />;
-      case 'Sparkles': return <Sparkles className="w-6 h-6" />;
-      case 'Trophy': return <Trophy className="w-6 h-6" />;
-      case 'BookOpen': return <BookOpen className="w-6 h-6" />;
-      case 'Feather': return <Feather className="w-6 h-6" />;
-      default: return <Sparkles className="w-6 h-6" />;
+      case 'Rocket': return <Rocket className="w-6 h-6 text-white" />;
+      case 'Target': return <Target className="w-6 h-6 text-white" />;
+      case 'Sparkles': return <Sparkles className="w-6 h-6 text-white" />;
+      case 'Flame': return <Flame className="w-6 h-6 text-white" />;
+      case 'Compass': return <Compass className="w-6 h-6 text-white" />;
+      case 'BookOpen': return <BookOpen className="w-6 h-6 text-white" />;
+      case 'Trophy': return <Trophy className="w-6 h-6 text-white" />;
+      case 'Feather': return <Feather className="w-6 h-6 text-white" />;
+      case 'Award': return <Award className="w-6 h-6 text-white" />;
+      default: {
+        if (stageId === 1) return <Rocket className="w-6 h-6 text-white" />;
+        if (stageId === 2) return <Sparkles className="w-6 h-6 text-white" />;
+        if (stageId === 3) return <Target className="w-6 h-6 text-white" />;
+        if (stageId === 4) return <Flame className="w-6 h-6 text-white" />;
+        if (stageId === 5) return <Compass className="w-6 h-6 text-white" />;
+        if (stageId === 6) return <Trophy className="w-6 h-6 text-white" />;
+        return <Sparkles className="w-6 h-6 text-white" />;
+      }
+    }
+  };
+
+  const getStageGradient = (stage) => {
+    switch (Number(stage?.id)) {
+      case 1:
+        return 'from-amber-400 to-orange-500 shadow-amber-200/50';
+      case 2:
+        return 'from-emerald-400 to-teal-600 shadow-emerald-200/50';
+      case 3:
+        return 'from-blue-400 to-indigo-600 shadow-blue-200/50';
+      case 4:
+        return 'from-rose-400 to-red-500 shadow-rose-200/50';
+      case 5:
+        return 'from-cyan-400 to-blue-600 shadow-cyan-200/50';
+      case 6:
+        return 'from-purple-500 to-pink-600 shadow-purple-200/50';
+      default:
+        return 'from-amber-400 to-orange-500 shadow-amber-200/50';
+    }
+  };
+
+  const getStageInlineBg = (stage) => {
+    switch (Number(stage?.id)) {
+      case 1: return { background: 'linear-gradient(135deg, #f59e0b, #f97316)' };
+      case 2: return { background: 'linear-gradient(135deg, #10b981, #0d9488)' };
+      case 3: return { background: 'linear-gradient(135deg, #3b82f6, #4f46e5)' };
+      case 4: return { background: 'linear-gradient(135deg, #fb7185, #ef4444)' };
+      case 5: return { background: 'linear-gradient(135deg, #06b6d4, #2563eb)' };
+      case 6: return { background: 'linear-gradient(135deg, #a855f7, #ec4899)' };
+      default: return {};
     }
   };
 
@@ -214,8 +257,11 @@ export const RoadmapView = ({ onStartQuiz }) => {
               {/* Stage Header */}
               <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b-2 border-slate-100">
                 <div className="flex items-center gap-3.5">
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${stage.color} text-white flex items-center justify-center shadow-md`}>
-                    {getStageIcon(stage.icon)}
+                  <div 
+                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${getStageGradient(stage)} text-white flex items-center justify-center shadow-md shrink-0`}
+                    style={getStageInlineBg(stage)}
+                  >
+                    {getStageIcon(stage.icon, stage.id)}
                   </div>
                   <div>
                     <div className="flex items-center gap-2">

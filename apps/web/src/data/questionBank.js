@@ -59,7 +59,7 @@ export const STAGES = [
     subtitle: "Đề 49 đến Đề 57 (Bài 30 - 35)",
     weeks: [49, 50, 51, 52, 53, 54, 55, 56, 57],
     semester: 1,
-    icon: "BookOpen",
+    icon: "Compass",
     color: "from-cyan-400 to-blue-600",
     badge: "Nhà Thám Hiểm Đo Lường",
     description: "Thực hành cân đo đong đếm cùng Mi-li-mét (mm), Gam (g), Mi-li-lít (ml) và Nhiệt độ (°C)."
