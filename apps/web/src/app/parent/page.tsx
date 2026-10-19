@@ -862,9 +862,20 @@ export default function ParentAdminPage() {
                       <strong>Câu hỏi:</strong> {rep.question?.question || 'Nội dung câu hỏi'}
                     </div>
 
-                    <div className="text-xs font-bold text-slate-600 mb-3">
-                      <strong>Lý do bé báo:</strong> {rep.reason} {rep.note && `(${rep.note})`}
+                    <div className="text-xs font-bold text-slate-600 mb-2">
+                      <strong>Lý do bé báo:</strong> {rep.reason}
                     </div>
+
+                    {rep.note && (
+                      <div className="mb-3 p-2.5 bg-amber-50/90 rounded-xl border border-amber-200">
+                        <span className="font-bold text-amber-900 block text-[11px]">
+                          ✍️ Lời giải trình chi tiết của bé:
+                        </span>
+                        <p className="text-slate-800 font-extrabold text-xs mt-0.5 italic whitespace-pre-wrap">
+                          "{rep.note}"
+                        </p>
+                      </div>
+                    )}
 
                     {!isVerified && (
                       <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">

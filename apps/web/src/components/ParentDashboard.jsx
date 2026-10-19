@@ -604,9 +604,14 @@ export const ParentDashboard = () => {
                           Lý do bé báo: <span className="font-extrabold text-slate-800">{rep.reason}</span>
                         </span>
                         {rep.note && (
-                          <p className="text-slate-600 font-semibold mt-0.5">
-                            Ghi chú của con: <em>"{rep.note}"</em>
-                          </p>
+                          <div className="mt-1.5 p-2 bg-amber-50/90 rounded-lg border border-amber-200">
+                            <span className="font-bold text-amber-900 block text-[11px]">
+                              ✍️ Lời giải trình chi tiết của bé:
+                            </span>
+                            <p className="text-slate-800 font-extrabold text-xs mt-0.5 italic whitespace-pre-wrap">
+                              "{rep.note}"
+                            </p>
+                          </div>
                         )}
                         {rep.adminNote && (
                           <p className="text-blue-700 font-semibold mt-0.5">

@@ -37,12 +37,30 @@ export const ReportErrorModal = ({ question, week, onClose }) => {
     { id: 'other', label: 'Lý do khác...', icon: '💡' },
   ];
 
+  const minNoteLength = 15;
+  const currentLength = customNote.trim().length;
+  const isValid = currentLength >= minNoteLength;
+
+  const STARTERS = [
+    "Theo con đáp án đúng là... vì ",
+    "Đề bài bị nhầm lẫn ở số liệu: ",
+    "Hình minh họa không hiển thị rõ: "
+  ];
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isAlreadyReported) {
       setSubmitStatus({
         type: 'error',
         message: 'Câu hỏi này bé đã gửi báo lỗi tới Ba Mẹ rồi nhé!'
+      });
+      return;
+    }
+
+    if (!isValid) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Bé hãy nhập lời nhắn giải thích chi tiết tối thiểu 15 ký tự nhé!'
       });
       return;
     }
@@ -168,17 +186,58 @@ export const ReportErrorModal = ({ question, week, onClose }) => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1">
-                  2. Lời nhắn thêm cho Ba Mẹ (tùy chọn):
-                </label>
-                <input
-                  type="text"
-                  maxLength={100}
+                <div className="flex items-center justify-between mb-1">
+                  <label className="block text-xs font-black text-rose-700">
+                    2. Lời nhắn giải thích chi tiết cho Ba Mẹ (Bắt buộc):
+                  </label>
+                  <span className={`text-[11px] font-extrabold ${isValid ? 'text-emerald-600' : 'text-amber-600'}`}>
+                    {currentLength}/{minNoteLength} ký tự {isValid ? '✓ Đạt' : '(Tối thiểu 15)'}
+                  </span>
+                </div>
+
+                {/* Gợi ý mở đầu câu mẫu */}
+                <div className="mb-2 space-y-1">
+                  <div className="text-[10px] font-bold text-slate-500 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-amber-500" /> Bấm chọn gợi ý mở đầu nếu cần:
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {STARTERS.map((st, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          if (!customNote.includes(st)) {
+                            setCustomNote(prev => (prev ? prev + ' ' : '') + st);
+                          }
+                        }}
+                        className="px-2 py-0.5 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 text-[10px] font-bold transition active:scale-95 text-left"
+                      >
+                        {st}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <textarea
+                  rows={3}
+                  maxLength={300}
                   value={customNote}
                   onChange={(e) => setCustomNote(e.target.value)}
-                  placeholder="Ví dụ: Con tính ra 45 mà đề chỉ có 40, 50..."
-                  className="w-full px-3 py-2 rounded-xl border-2 border-slate-200 focus:border-rose-400 font-bold text-slate-800 text-xs outline-none"
+                  placeholder="Bé hãy viết rõ: Con thấy câu này sai ở đâu? Vì sao sai? Theo con đáp án hoặc số liệu đúng phải là bao nhiêu để Ba Mẹ duyệt thưởng 5.000đ nhé..."
+                  className={`w-full p-2.5 rounded-xl border-2 font-bold text-slate-800 text-xs outline-none transition resize-none ${
+                    isValid 
+                      ? 'border-emerald-400 focus:ring-2 focus:ring-emerald-200 bg-emerald-50/20' 
+                      : currentLength > 0 
+                      ? 'border-amber-400 focus:ring-2 focus:ring-amber-200 bg-amber-50/20'
+                      : 'border-slate-200 focus:border-rose-400'
+                  }`}
                 />
+
+                {!isValid && (
+                  <p className="text-[11px] font-bold text-amber-700 mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-3.5 h-3.5" /> Bé hãy viết thêm ít nhất {Math.max(0, minNoteLength - currentLength)} ký tự nữa để giải thích rõ cho Ba Mẹ nhé!
+                  </p>
+                )}
               </div>
 
               {submitStatus && (
@@ -199,10 +258,15 @@ export const ReportErrorModal = ({ question, week, onClose }) => {
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="w-full py-2.5 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-black text-xs sm:text-sm rounded-xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-1.5 transition-all"
+                  disabled={!isValid}
+                  className={`w-full py-2.5 font-black text-xs sm:text-sm rounded-xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-1.5 transition-all ${
+                    isValid
+                      ? 'bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white cursor-pointer'
+                      : 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
+                  }`}
                 >
                   <Send className="w-4 h-4" />
-                  Gửi Cho Ba Mẹ Kiểm Tra Ngay 🚀
+                  {isValid ? 'Gửi Cho Ba Mẹ Kiểm Tra Ngay 🚀' : 'Bé cần nhập đủ lý do để mở nút Gửi ✍️'}
                 </button>
               </div>
             </form>
