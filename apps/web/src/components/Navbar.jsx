@@ -101,17 +101,11 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
 
   // Dynamic titles
   const getSubjectTitle = () => {
-    if (isGrade7) {
-      return isMath ? 'Toán Lớp 7' : 'Ngữ Văn 7';
-    }
-    return isMath ? 'Toán Lớp 3' : 'Tiếng Việt 3';
+    return 'Toán Lớp 3';
   };
 
   const getSubjectSubtitle = () => {
-    if (isGrade7) {
-      return isMath ? 'Chinh Phục Đại Số & Hình Học 🚀' : 'Khám Phá Văn Học & Tiếng Việt 7 📖';
-    }
-    return isMath ? 'Phiêu Lưu Ký Toán Học 🚀' : 'Hành Trình Khám Phá Tiếng Việt 📖';
+    return 'Phiêu Lưu Ký Toán Học 🚀';
   };
 
   return (
@@ -225,52 +219,10 @@ export const Navbar = ({ currentTab, onSelectTab, isQuizActive = false, onLogout
 
           {/* Right: Switchers & Utility Toggles */}
           <div className="flex items-center gap-1 shrink-0">
-            {/* Grade Switcher */}
-            <div className="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200 text-[11px] font-extrabold">
-              <button
-                onClick={() => switchGrade('4')}
-                className={`px-2 py-0.5 rounded-lg transition-all ${
-                  !isGrade7
-                    ? 'bg-amber-400 text-amber-950 shadow-2xs'
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                Lớp 3
-              </button>
-              <button
-                onClick={() => switchGrade('7')}
-                className={`px-2 py-0.5 rounded-lg transition-all ${
-                  isGrade7
-                    ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                Lớp 7
-              </button>
-            </div>
-
-            {/* Subject Switcher */}
-            <div className="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200 text-[11px] font-extrabold">
-              <button
-                onClick={() => switchSubject('math')}
-                className={`px-2 py-0.5 rounded-lg transition-all ${
-                  isMath
-                    ? isGrade7 ? 'bg-blue-600 text-white shadow-2xs' : 'bg-amber-400 text-amber-950 shadow-2xs'
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                🧮 Toán
-              </button>
-              <button
-                onClick={() => switchSubject('vietnamese')}
-                className={`px-2 py-0.5 rounded-lg transition-all ${
-                  !isMath
-                    ? isGrade7 ? 'bg-purple-600 text-white shadow-2xs' : 'bg-rose-500 text-white shadow-2xs'
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                📖 Văn
-              </button>
+            {/* Grade Badge - Lock to Toán 3 */}
+            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-amber-50 border border-amber-200 text-amber-900 rounded-xl text-xs font-black">
+              <span className="text-sm">🧮</span>
+              <span>Toán Lớp 3 (KNTT)</span>
             </div>
 
             {/* Sound Toggle */}

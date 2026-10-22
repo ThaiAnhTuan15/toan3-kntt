@@ -86,7 +86,7 @@ export const RewardRulesModal = ({ onClose, onOpenWithdraw }) => {
                 <span className="text-amber-700 font-black">+2.000 đ</span>
               </div>
               <div className="bg-rose-50 p-2.5 rounded-xl border border-rose-200 flex items-center justify-between text-rose-700">
-                <span>Sai $\ge$ 5 câu:</span>
+                <span>Sai ≥ 5 câu:</span>
                 <span className="font-black">Làm lại bài 🔄</span>
               </div>
             </div>

@@ -133,36 +133,19 @@ export const RoadmapView = ({ onStartQuiz }) => {
   };
 
   // Calculate overall completion
-  const completedWeeksCount = Object.keys(progress).filter(w => (progress[w]?.bestScore || 0) >= 70).length;
+  const completedWeeksCount = Object.keys(progress).filter(w => !isNaN(Number(w)) && Number(w) >= 1 && (progress[w]?.bestScore || 0) >= 70).length;
   const progressPercent = Math.round((completedWeeksCount / (Object.keys(currentMetadata).length || 66)) * 100);
 
   const getBannerTitle = () => {
-    if (isGrade7) {
-      return isMath ? 'Chinh Phục Toán Lớp 7 (GDPT 2018) 🚀' : 'Hành Trình Khám Phá Ngữ Văn Lớp 7 📖';
-    }
-    return isMath ? 'Chinh Phục Thế Giới Toán Lớp 3 🌟' : 'Hành Trình Khám Phá Tiếng Việt 3 📖';
+    return 'Chinh Phục Thế Giới Toán Lớp 3 🌟';
   };
 
   const getBannerDesc = () => {
-    if (isGrade7) {
-      return isMath
-        ? 'Làm chủ số hữu tỉ, số thực, đại số và hình học tam giác cùng hơn 350 bài tập phân cấp độ khó lũy tiến!'
-        : 'Rèn luyện đọc hiểu thơ văn, làm chủ tiếng Việt và phân tích văn bản cùng 350+ câu hỏi và đề thi chuẩn GDPT mới!';
-    }
-    return isMath 
-      ? 'Hoàn thành mỗi tuần với điểm số trên 75% để mở khóa trạm tiếp theo và thu thập đủ 105 Ngôi Sao Danh Giá!'
-      : 'Rèn luyện đọc hiểu cảm thụ, thành thạo ngữ pháp và làm chủ vốn từ phong phú cùng 350+ bài tập đặc sắc!';
+    return 'Làm chủ toàn bộ 66 bài học Toán 3 Kết Nối Tri Thức với hơn 930 câu hỏi trắc nghiệm chuẩn sư phạm, phân loại 4 cấp độ và giải thích chi tiết!';
   };
 
   const getBannerGradient = () => {
-    if (isGrade7) {
-      return isMath
-        ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600'
-        : 'bg-gradient-to-r from-purple-600 via-rose-600 to-indigo-600';
-    }
-    return isMath
-      ? 'bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400'
-      : 'bg-gradient-to-r from-rose-500 via-pink-500 to-indigo-500';
+    return 'bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400';
   };
 
   return (
