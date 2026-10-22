@@ -389,16 +389,16 @@ export const BADGE_DEFINITIONS = [
 export const LearningProvider = ({ children, profileId = 'default', account = null, onUpdateAccount = null }) => {
   const STORAGE_KEYS = getStorageKeys(profileId);
 
-  // Helper: Read from LocalStorage -> fallback to account cloud data -> default
-  const getInitialVal = (storageKey, cloudProp, defaultVal) => {
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved !== null && saved !== undefined) return JSON.parse(saved);
-    } catch (e) {}
-    if (account?.data && account.data[cloudProp] !== undefined) {
-      return account.data[cloudProp];
-    }
-    return defaultVal;
+  // Helper: Uu tien du lieu dam may cua tai khoan (Cloud Account) lam goc, fallback sang LocalStorage khi offline
+  const getInitialVal = (storageKey, cloudProp, defaultVal) => {
+    if (account?.data && account.data[cloudProp] !== undefined) {
+      return account.data[cloudProp];
+    }
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved !== null && saved !== undefined) return JSON.parse(saved);
+    } catch (e) {}
+    return defaultVal;
   };
 
   // Current active Grade: '4' | '7'
@@ -872,10 +872,12 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     }
 
     if (typeof cloud.piggyBalance === 'number') {
-      setPiggyBalance(prev => Math.max(prev, cloud.piggyBalance));
+      setPiggyBalance(cloud.piggyBalance);
+      try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(cloud.piggyBalance)); } catch {}
     }
     if (typeof cloud.coins === 'number') {
-      setCoins(prev => Math.max(prev, cloud.coins));
+      setCoins(cloud.coins);
+      try { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(cloud.coins)); } catch {}
     }
     if (Array.isArray(cloud.piggyHistory) && cloud.piggyHistory.length > 0) {
       setPiggyHistory(prev => {
@@ -947,16 +949,28 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
         parentPin
       };
 
-      fetch('/api/student/sync', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          accountId: account.id,
-          username: account.username,
-          pin: account.pin,
-          data: fullData
-        })
-      }).catch(err => console.warn('Background auto-sync error:', err));
+      fetch('/api/student/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          accountId: account.id,
+          username: account.username,
+          pin: account.pin,
+          data: fullData
+        })
+      })
+      .then(res => res.json())
+      .then(resData => {
+        if (resData?.data && typeof resData.data.piggyBalance === 'number') {
+          setPiggyBalance(resData.data.piggyBalance);
+          try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(resData.data.piggyBalance)); } catch {}
+        }
+        if (resData?.data && Array.isArray(resData.data.piggyRequests)) {
+          setPiggyRequests(resData.data.piggyRequests);
+          try { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(resData.data.piggyRequests)); } catch {}
+        }
+      })
+      .catch(err => console.warn('Background auto-sync error:', err));
     }, 1500);
 
     return () => clearTimeout(timer);

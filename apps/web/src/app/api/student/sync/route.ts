@@ -90,15 +90,35 @@ export async function POST(request: Request) {
     const mergedG7MathProg = mergeProgressStore(curData.g7MathProgress, inData.g7MathProgress);
     const mergedG7LitProg = mergeProgressStore(curData.g7LitProgress, inData.g7LitProgress);
 
-    // 3. Merge Piggy Bank & Coins (never downgrade)
+    // 3. Merge Piggy Bank & Coins
     const curPiggy = typeof curData.piggyBalance === 'number' ? curData.piggyBalance : 0;
     const inPiggy = typeof inData.piggyBalance === 'number' ? inData.piggyBalance : 0;
-    // If incoming is 0 but existing > 0 (e.g. client just opened fresh), protect existing!
-    const mergedPiggyBalance = (inPiggy === 0 && curPiggy > 0) ? curPiggy : Math.max(curPiggy, inPiggy);
+
+    // Check if parent approved any withdrawal requests that incoming client still considers pending
+    const clientReqMap = new Map((inData.piggyRequests || []).map((r: any) => [String(r.id), r.status]));
+    let unreflectedWithdrawals = 0;
+    (curData.piggyRequests || []).forEach((cr: any) => {
+      if (cr.status === 'approved' && clientReqMap.get(String(cr.id)) === 'pending') {
+        unreflectedWithdrawals += Number(cr.amount || 0);
+      }
+    });
+
+    let mergedPiggyBalance = typeof inData.piggyBalance === 'number' ? inData.piggyBalance : curPiggy;
+    if (unreflectedWithdrawals > 0) {
+      mergedPiggyBalance = Math.max(0, mergedPiggyBalance - unreflectedWithdrawals);
+    } else if (curPiggy < inPiggy) {
+      const serverWithdrawCount = (curData.piggyHistory || []).filter((h: any) => h.type === 'withdraw').length;
+      const clientWithdrawCount = (inData.piggyHistory || []).filter((h: any) => h.type === 'withdraw').length;
+      if (serverWithdrawCount > clientWithdrawCount) {
+        mergedPiggyBalance = curPiggy;
+      }
+    } else if (inPiggy === 0 && curPiggy > 0) {
+      mergedPiggyBalance = curPiggy;
+    }
 
     const curCoins = typeof curData.coins === 'number' ? curData.coins : 50;
     const inCoins = typeof inData.coins === 'number' ? inData.coins : 50;
-    const mergedCoins = Math.max(curCoins, inCoins);
+    const mergedCoins = typeof inData.coins === 'number' ? inData.coins : curCoins;
 
     // 4. Merge Piggy History
     const piggyHistMap = new Map<string, any>();
