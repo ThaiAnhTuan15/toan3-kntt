@@ -186,6 +186,32 @@ export async function POST(request: Request) {
         break;
       }
 
+            // 7. Reset all learning & quiz progress to clean state
+      case 'reset_student_data': {
+        const nextVersion = (data.resetVersion || 1) + 1;
+        data = {
+          ...data,
+          resetVersion: nextVersion,
+          g4MathProgress: { "1": { bestScore: 0, stars: 0, attempts: 0, unlocked: true } },
+          g4TvProgress: { "1": { bestScore: 0, stars: 0, attempts: 0, unlocked: true } },
+          history: [],
+          wrongG4Math: [],
+          wrongG4Tv: [],
+          badges: [],
+          streakData: { currentStreak: 1, lastDate: new Date().toISOString().split('T')[0] },
+          coins: 50,
+          piggyBalance: 0,
+          piggyHistory: [],
+          piggyRequests: [],
+          claimedStages: [],
+          claimedFinal: false,
+          reportedQuestions: [],
+          verifiedErrorIds: []
+        };
+        msg = 'Đã đặt lại toàn bộ tiến trình học, điểm số, câu sai và heo đất về mặc định ban đầu!';
+        break;
+      }
+
       default:
         return NextResponse.json({ success: false, error: 'Hành động không hợp lệ!' }, { status: 400 });
     }

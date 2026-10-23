@@ -486,6 +486,7 @@ const ProtectedDashboard = () => {
 
   const [newPin, setNewPin] = useState('');
   const [isChangingPin, setIsChangingPin] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
 
   if (!isAuthenticated) {
     return (
@@ -592,14 +593,19 @@ const ProtectedDashboard = () => {
         <h3 className="text-xl font-bold text-rose-700 mb-2">Cài Đặt Dữ Liệu</h3>
         <p className="text-rose-600/80 text-sm font-semibold mb-6">Xóa toàn bộ điểm số, huy chương và tiến trình của tài khoản hiện tại để bắt đầu lại từ đầu.</p>
         <button 
-          onClick={() => {
-            if(window.confirm('Bạn có CHẮC CHẮN muốn xóa toàn bộ dữ liệu của bé này không? Không thể khôi phục!')) {
-              resetProgress();
+          onClick={async () => {
+            if (window.confirm('Ba Mẹ có CHẮC CHẮN muốn xóa toàn bộ lịch sử thi thử, điểm số và Heo Đất của bé để bắt đầu học mới tinh từ đầu không? Hành động này không thể hoàn tác!')) {
+              setIsResetting(true);
+              const ok = await resetProgress(pin);
+              if (!ok) {
+                setIsResetting(false);
+              }
             }
           }}
-          className="px-8 py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-200"
+          disabled={isResetting}
+          className="px-8 py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-200 disabled:opacity-50 cursor-pointer transition-all"
         >
-          Xóa Dữ Liệu & Học Lại Từ Đầu
+          {isResetting ? 'Đang Đặt Lại Dữ Liệu Mới Tinh...' : 'Xóa Dữ Liệu & Học Lại Từ Đầu'}
         </button>
       </div>
     </div>

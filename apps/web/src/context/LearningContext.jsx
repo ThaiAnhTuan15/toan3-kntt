@@ -1496,9 +1496,67 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     sounds.playClick();
   };
 
-  const resetProgress = () => {
-    Object.values(STORAGE_KEYS).forEach(key => localStorage.removeItem(key));
-    window.location.reload();
+    const resetProgress = async (providedParentPin) => {
+    sounds.playClick();
+    const pinToUse = providedParentPin || parentPin || account?.data?.parentPin || '2026';
+
+    // 1. Neu tai khoan dang nhap Cloud, goi API de xoa sach du lieu tren Neon DB
+    if (account && account.username) {
+      try {
+        const res = await fetch('/api/parent/action', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: account.username,
+            parentPin: pinToUse,
+            action: 'reset_student_data',
+            payload: {}
+          })
+        });
+        const resJson = await res.json();
+        if (!res.ok || !resJson.success) {
+          throw new Error(resJson.error || 'Lỗi khi đặt lại dữ liệu trên máy chủ!');
+        }
+
+        // Cap nhat lai thong tin tai khoan sach trong localStorage
+        if (resJson.data) {
+          const updatedAccount = { ...account, data: resJson.data };
+          try {
+            localStorage.setItem('agy_active_account', JSON.stringify(updatedAccount));
+          } catch {}
+          if (onUpdateAccount) {
+            onUpdateAccount(updatedAccount);
+          }
+        }
+      } catch (err) {
+        console.error('Reset Progress Error:', err);
+        alert(err.message || 'Lỗi khi đặt lại dữ liệu trên máy chủ!');
+        return false;
+      }
+    }
+
+    // 2. Xoa toan bo key luu tru cuc bo cua profile nay
+    Object.values(STORAGE_KEYS).forEach(key => {
+      try { localStorage.removeItem(key); } catch {}
+    });
+
+    // 3. Quet sach cac key cache cu
+    try {
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && (k.startsWith('agy_prog') || k.startsWith('agy_history') || k.startsWith('agy_wrong') || k.startsWith('agy_piggy') || k.startsWith('agy_badges') || k.startsWith('agy_coins') || k.startsWith('agy_streak'))) {
+          keysToRemove.push(k);
+        }
+      }
+      keysToRemove.forEach(k => {
+        try { localStorage.removeItem(k); } catch {}
+      });
+    } catch {}
+
+    alert('Đã đặt lại toàn bộ dữ liệu học tập về mới tinh 100%! Ứng dụng sẽ tự động tải lại.');
+    window.location.reload();
+    return true;
   };
 
   return (
