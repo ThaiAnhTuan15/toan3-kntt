@@ -23,7 +23,7 @@ export const ExplanationView = ({
   onBack, 
   onRetryWrongOnly 
 }) => {
-  const { reportedQuestions, verifiedErrorIds } = useLearning();
+  const { profile, reportedQuestions, verifiedErrorIds } = useLearning();
   const [filterMode, setFilterMode] = useState('all'); // 'all' | 'wrong' | 'correct'
   const [reportModalQuestion, setReportModalQuestion] = useState(null);
 
@@ -51,6 +51,10 @@ export const ExplanationView = ({
           </button>
           <div>
             <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full text-[11px] font-black">
+                <span>{profile?.avatar || '📖'}</span>
+                <span>Bài làm của {profile?.name || 'bé'}</span>
+              </span>
               <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">
                 Lời Giải & Sửa Bài Chi Tiết
               </span>
@@ -231,8 +235,9 @@ export const ExplanationView = ({
                         </span>
                       )}
                       {isUserSelection && !isTargetCorrect && (
-                        <span className="text-[11px] font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded-full border border-rose-300 shrink-0">
-                          Bé đã chọn ✗
+                        <span className="text-[11px] font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded-full border border-rose-300 shrink-0 inline-flex items-center gap-1">
+                          <span>{profile?.avatar || '✗'}</span>
+                          <span>{profile?.name || 'Bé'} đã chọn ✗</span>
                         </span>
                       )}
                     </div>

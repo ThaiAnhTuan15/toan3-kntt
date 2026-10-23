@@ -17,7 +17,7 @@ import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
 export const WrongQuestionsReview = ({ onStartQuiz }) => {
-  const { wrongQuestions, reportedQuestions, verifiedErrorIds } = useLearning();
+  const { profile, wrongQuestions, reportedQuestions, verifiedErrorIds } = useLearning();
   const [reportModalQuestion, setReportModalQuestion] = useState(null);
 
   const handleStartReviewQuiz = () => {
@@ -37,14 +37,20 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
       <div className="bg-gradient-to-r from-rose-400 via-pink-400 to-orange-400 rounded-3xl p-6 sm:p-8 text-white shadow-bouncy">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-xl">
-            <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
-              Kho Luyện Tập Phục Hồi Kiến Thức
-            </span>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+                Kho Luyện Tập Phục Hồi Kiến Thức
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/25 backdrop-blur-md rounded-full text-xs font-black text-yellow-200 border border-white/30 shadow-xs">
+                <span>{profile?.avatar || '🌟'}</span>
+                <span>Góc rèn luyện của {profile?.name || 'bé'}</span>
+              </span>
+            </div>
             <h1 className="text-2xl sm:text-3xl font-bold mb-1">
               Phòng Sửa Câu Sai & Khắc Phục Lỗ Hổng 🔄
             </h1>
             <p className="text-xs sm:text-sm font-bold text-rose-50">
-              Làm lại các câu hỏi bé đã từng chọn chưa đúng để hiểu sâu bản chất và không bị lặp lại lỗi sai nhé!
+              Làm lại các câu hỏi {profile?.name || "bé"} đã từng chọn chưa đúng để hiểu sâu bản chất và không bị lặp lại lỗi sai nhé!
             </p>
           </div>
 

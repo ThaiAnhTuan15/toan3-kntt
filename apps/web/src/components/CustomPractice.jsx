@@ -232,7 +232,7 @@ export const CustomPractice = ({ onStartQuiz }) => {
               Thiết Kế Phòng Luyện Tập Tùy Chọn 🛠️
             </h2>
             <p className="text-xs sm:text-sm font-bold text-slate-500 mt-0.5">
-              Tùy biến học kỳ, chặng học, chủ đề kiến thức và độ khó theo nhu cầu của bé
+              Tùy biến học kỳ, chặng học, chủ đề kiến thức và độ khó theo nhu cầu của {profile?.name || "bé"}
             </p>
           </div>
           <span className="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-600">

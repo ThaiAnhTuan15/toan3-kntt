@@ -26,7 +26,7 @@ export const QuizArena = ({
   onFinishQuiz,
   onExitQuiz 
 }) => {
-  const { reportedQuestions, verifiedErrorIds } = useLearning();
+  const { profile, reportedQuestions, verifiedErrorIds } = useLearning();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({}); // { [qIndex]: selectedOptionIndex }
   const [flagged, setFlagged] = useState({}); // { [qIndex]: boolean }
@@ -155,8 +155,12 @@ export const QuizArena = ({
             <h2 className="font-extrabold text-sm sm:text-base text-slate-800 line-clamp-1">
               {title}
             </h2>
-            <div className="text-xs font-bold text-slate-500">
-              Đã làm: <span className="text-amber-600">{answeredCount}/{totalQuestions} câu</span>
+            <div className="text-xs font-bold text-slate-500 flex items-center gap-2 mt-0.5">
+              <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full text-xs font-black shadow-xs">
+                <span>{profile?.avatar || '⭐'}</span>
+                <span>{profile?.name || 'Bé'}</span>
+              </span>
+              <span>• Đã làm: <span className="text-amber-600 font-black">{answeredCount}/{totalQuestions} câu</span></span>
             </div>
           </div>
         </div>
@@ -288,7 +292,7 @@ export const QuizArena = ({
           <div className="p-3.5 rounded-2xl bg-amber-50 border-2 border-amber-200 text-amber-900 text-sm font-semibold flex items-start gap-2 animate-fade-in">
             <span className="text-xl">💡</span>
             <div>
-              <span className="font-extrabold text-amber-800">Gợi ý dành cho bé: </span>
+              <span className="font-extrabold text-amber-800">Gợi ý dành cho {profile?.name || "bé"}: </span>
               {currentQuestion.hint}
             </div>
           </div>
@@ -466,14 +470,14 @@ export const QuizArena = ({
       {showConfirmSubmit && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-sm w-full p-6 text-center animate-scale-in">
-            <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-3xl mx-auto mb-3">
-              ⚠️
+            <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-3xl mx-auto mb-3 shadow-inner">
+              {profile?.avatar || '⚠️'}
             </div>
             <h3 className="text-xl font-bold text-slate-800 mb-2">
-              Bé Chưa Làm Hết Bài!
+              {profile?.name || 'Bé'} Ơi, Chưa Làm Hết Bài Nè!
             </h3>
             <p className="text-sm font-semibold text-slate-600 mb-6">
-              Bé còn <span className="text-rose-600 font-extrabold">{totalQuestions - answeredCount} câu</span> chưa trả lời. Bé có chắc chắn muốn nộp bài ngay bây giờ không?
+              {profile?.name || 'Bé'} còn <span className="text-rose-600 font-extrabold">{totalQuestions - answeredCount} câu</span> chưa trả lời. {profile?.name || 'Con'} có chắc chắn muốn nộp bài ngay bây giờ không?
             </p>
             <div className="grid grid-cols-2 gap-3">
               <button

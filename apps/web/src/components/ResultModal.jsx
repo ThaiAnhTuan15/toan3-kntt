@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import sounds from '../utils/soundEffects';
+import { useLearning } from '../context/LearningContext';
 
 export const ResultModal = ({
   resultData,
@@ -24,6 +25,9 @@ export const ResultModal = ({
   onRetryWrongOnly,
   onBackToRoadmap
 }) => {
+  const { profile } = useLearning();
+  const kidName = profile?.name || 'Bé';
+  const kidAvatar = profile?.avatar || '⭐';
   const { score, correctCount, totalCount, timeSpent, details } = resultData;
   const { earnedStars, earnedCoins, earnedMoney, stageReward, finalReward } = earnedRewards || { earnedStars: 0, earnedCoins: 0, earnedMoney: 0 };
 
@@ -67,24 +71,24 @@ export const ResultModal = ({
   };
 
   // Praise title & mascot message
-  let title = "Cố Gắng Lên Nào Bé Ơi! 💪";
-  let message = "Hãy xem lại lời giải chi tiết để hiểu bài hơn và thử lại nhé!";
+  let title = `Cố Gắng Lên Nào ${kidName} Ơi! 💪`;
+  let message = `Đừng buồn nhé ${kidName}! Hãy xem lại lời giải chi tiết để hiểu bài hơn và thử lại nhé!`;
   let badgeColor = "bg-amber-100 text-amber-800 border-amber-300";
   let emoji = "🌱";
 
   if (score === 100) {
-    title = "Tuyệt Đỉnh Thần Đồng Toán Học! 🌟";
-    message = "Bé đã trả lời chính xác tất cả các câu hỏi! Quá xuất sắc!";
+    title = `Tuyệt Đỉnh Thần Đồng Toán Học! 🌟`;
+    message = `${kidName} đã xuất sắc trả lời chính xác 100% tất cả các câu hỏi! Quá đỉnh!`;
     badgeColor = "bg-yellow-100 text-yellow-900 border-yellow-400";
     emoji = "👑";
   } else if (score >= 80) {
-    title = "Nhà Toán Học Xuất Sắc! 🚀";
-    message = "Kết quả rất tuyệt vời! Bé đã nắm vững kiến thức trọng tâm!";
+    title = `Xuất Sắc Quá Đi Thôi, ${kidName}! 🎉`;
+    message = `Kết quả rất tuyệt vời! ${kidName} đã nắm vững trọn vẹn kiến thức trọng tâm!`;
     badgeColor = "bg-emerald-100 text-emerald-900 border-emerald-400";
     emoji = "🎖️";
   } else if (score >= 50) {
-    title = "Chiến Binh Chăm Chỉ! 👏";
-    message = "Bé đã vượt qua bài thi! Hãy luyện tập thêm một chút nữa nhé!";
+    title = `Chiến Binh Chăm Chỉ ${kidName}! 👏`;
+    message = `${kidName} đã vượt qua bài thi! Hãy tiếp tục rèn luyện để bứt phá điểm 10 nhé!`;
     badgeColor = "bg-blue-100 text-blue-900 border-blue-400";
     emoji = "⭐";
   }
@@ -95,15 +99,21 @@ export const ResultModal = ({
     <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white rounded-3xl border-4 border-amber-300 shadow-2xl max-w-lg w-full p-6 sm:p-8 text-center my-auto animate-scale-in">
         {/* Mascot / Trophy Icon */}
-        <div className="relative inline-block mb-3">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-amber-400 via-yellow-400 to-orange-400 flex items-center justify-center text-4xl sm:text-5xl shadow-bouncy mx-auto">
-            {emoji}
+        <div className="flex flex-col items-center mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border-2 border-amber-200 text-amber-900 font-black text-xs sm:text-sm mb-3 shadow-xs">
+            <span className="text-xl sm:text-2xl">{kidAvatar}</span>
+            <span>{kidName}</span>
           </div>
-          {score >= 80 && (
-            <div className="absolute -top-2 -right-2 p-1.5 bg-yellow-300 rounded-full border-2 border-white shadow-sm animate-spin-slow">
-              <Sparkles className="w-5 h-5 text-amber-900" />
+          <div className="relative inline-block">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-amber-400 via-yellow-400 to-orange-400 flex items-center justify-center text-4xl sm:text-5xl shadow-bouncy mx-auto">
+              {emoji}
             </div>
-          )}
+            {score >= 80 && (
+              <div className="absolute -top-2 -right-2 p-1.5 bg-yellow-300 rounded-full border-2 border-white shadow-sm animate-spin-slow">
+                <Sparkles className="w-5 h-5 text-amber-900" />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Title & Feedback */}

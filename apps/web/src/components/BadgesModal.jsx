@@ -33,7 +33,7 @@ const CATEGORIES = [
 ];
 
 export const BadgesModal = () => {
-  const { unlockedBadges, totalStars, coins, piggyBalance } = useLearning();
+  const { profile, unlockedBadges, totalStars, coins, piggyBalance } = useLearning();
   const [activeCategory, setActiveCategory] = useState('all');
 
   const getBadgeIcon = (iconName, isUnlocked) => {
@@ -71,9 +71,15 @@ export const BadgesModal = () => {
       <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 rounded-3xl p-6 sm:p-8 text-white shadow-bouncy">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-xl">
-            <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-wider mb-2 inline-flex items-center gap-1 text-amber-950">
-              <Trophy className="w-3.5 h-3.5" /> Phòng Truyền Thống & Vinh Danh
-            </span>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-wider inline-flex items-center gap-1 text-amber-950">
+                <Trophy className="w-3.5 h-3.5" /> Phòng Truyền Thống & Vinh Danh
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/30 backdrop-blur-md rounded-full text-xs font-black text-amber-950 border border-white/40 shadow-xs">
+                <span>{profile?.avatar || '🏆'}</span>
+                <span>Bảng vàng của {profile?.name || 'bé'}</span>
+              </span>
+            </div>
             <h1 className="text-2xl sm:text-3xl font-black mb-1.5 text-slate-900 font-nunito">
               Bộ Sưu Tập Huy Hiệu Toán Lớp 3 🏆
             </h1>

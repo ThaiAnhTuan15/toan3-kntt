@@ -15,7 +15,7 @@ import {
 import { useLearning } from '../context/LearningContext';
 
 export const WithdrawModal = ({ onClose, onOpenRules }) => {
-  const { piggyBalance, piggyRequests, requestWithdrawal } = useLearning();
+  const { profile, piggyBalance, piggyRequests, requestWithdrawal } = useLearning();
   const [selectedAmount, setSelectedAmount] = useState('');
   const [customAmount, setCustomAmount] = useState('');
   const [itemNote, setItemNote] = useState('');
@@ -151,7 +151,7 @@ export const WithdrawModal = ({ onClose, onOpenRules }) => {
             {/* Item Note Input */}
             <div>
               <label className="block text-xs font-black text-slate-700 mb-1">
-                2. Món đồ bé muốn mua (hoặc lý do đổi quà):
+                2. Món đồ {profile?.name || "bé"} muốn mua (hoặc lý do đổi quà):
               </label>
               <input
                 type="text"
