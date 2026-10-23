@@ -17,7 +17,8 @@ import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
 export const CustomPractice = ({ onStartQuiz }) => {
-  const { 
+  const {
+    profile,
     isMath, 
     currentGrade,
     isGrade7,

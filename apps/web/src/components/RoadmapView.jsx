@@ -22,7 +22,8 @@ import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
 export const RoadmapView = ({ onStartQuiz }) => {
-  const { 
+  const {
+    profile,
     progress, 
     isWeekUnlocked, 
     totalStars, 

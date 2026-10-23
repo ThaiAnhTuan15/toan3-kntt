@@ -164,7 +164,7 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
         sessionId: getSessionId(),
         deviceInfo: getDeviceInfo(),
         forceTransfer: force,
-        parentPin: force ? parentPinForTransfer.trim() : undefined
+        parentPin: force ? (parentPinForTransfer.trim() || cleanPin) : undefined
       };
 
       const res = await fetch('/api/student/login', {
@@ -332,35 +332,37 @@ export const StudentAuthModal = ({ onLoginSuccess, onContinueOffline }) => {
                   <span className="text-[10px] text-amber-700">Cách đây {lockedSessionInfo.lastActiveSecondsAgo}s</span>
                 </div>
 
-                {!showForceTransfer ? (
+                                {!showForceTransfer ? (
                   <div className="flex flex-wrap items-center gap-2">
                     <button
                       type="button"
-                      onClick={() => executeLogin(false)}
-                      className="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs rounded-xl transition-all"
+                      onClick={() => executeLogin(true)}
+                      disabled={isLoading}
+                      className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-black text-xs rounded-xl shadow-xs transition-all flex items-center gap-1.5"
                     >
-                      Thử Lại 🔄
+                      <span>Chuyển Sang Máy Này Bằng Mã Của Bé</span>
+                      <span>🚀</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setShowForceTransfer(true)}
-                      className="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-white font-black text-xs rounded-xl shadow-xs transition-all"
+                      className="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs rounded-xl transition-all"
                     >
-                      Chuyển Sang Máy Này 🔑
+                      Nhập mã khác 🔑
                     </button>
                   </div>
                 ) : (
                   <div className="space-y-2 pt-2 border-t border-amber-200">
                     <label className="block text-[11px] font-black text-slate-700">
-                      Nhập mã PIN Ba Mẹ để mở khóa chuyển máy:
+                      Nhập mã PIN của bé ({loginPin || '4 số'}) hoặc mã Ba Mẹ:
                     </label>
                     <div className="flex items-center gap-2">
                       <input
                         type="password"
                         maxLength={4}
                         value={parentPinForTransfer}
-                        onChange={(e) => setParentPinForTransfer(e.target.value.replace(/\D/g, ''))}
-                        placeholder="••••"
+                        onChange={(e) => setParentPinForTransfer(e.target.value.replace(/D/g, ''))}
+                        placeholder={loginPin || '••••'}
                         className="w-24 px-3 py-1.5 rounded-xl border-2 border-amber-300 font-black text-center text-sm focus:outline-none focus:border-amber-500 bg-white"
                       />
                       <button

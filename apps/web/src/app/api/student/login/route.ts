@@ -55,18 +55,27 @@ export async function POST(request: Request) {
 
       // Nếu máy kia có tín hiệu hoạt động trong vòng 90 giây:
       if (diffSec < 90) {
-        if (forceTransfer) {
-          // Xác thực mã PIN Ba Mẹ
-          const cleanParentPin = (parentPin || '').trim();
-          const expectedParentPin = account.data?.parentPin || '2026';
-          if (cleanParentPin !== expectedParentPin) {
+                if (forceTransfer) {
+          // Bé có thể chủ động chuyển máy bằng mã PIN của bé HOẶC mã PIN của Ba Mẹ
+          const cleanTransferPin = (parentPin || '').trim();
+          const expectedParentPin = String(account.data?.parentPin || '2026').trim();
+          const expectedStudentPin = String(account.pin || '').trim();
+
+          let isPinValid = false;
+          if (cleanTransferPin) {
+            isPinValid = cleanTransferPin === expectedStudentPin || cleanTransferPin === expectedParentPin;
+          } else {
+            isPinValid = cleanPin === expectedStudentPin;
+          }
+
+          if (!isPinValid) {
             return NextResponse.json({
               success: false,
               isSessionLocked: true,
-              error: 'Mã PIN Ba Mẹ không chính xác! Không thể chuyển phiên học.'
+              error: 'Mã PIN không chính xác! Bé có thể dùng mã PIN của bé hoặc mã Ba Mẹ để chuyển máy.'
             }, { status: 403 });
           }
-          // Cho phép chuyển máy
+          // Cho phép chuyển máy thành công!
         } else {
           // Khóa và cảnh báo không cho đăng nhập đồng thời
           return NextResponse.json({
