@@ -18,13 +18,47 @@ export async function POST(request: Request) {
     }
     pin = pin.trim();
 
-    const rows = await queryNeon(
+    let rows = await queryNeon(
       `SELECT id, username, pin, nickname, avatar, data, active_session, updated_at
        FROM student_accounts
        WHERE LOWER(username) = LOWER($1)
        LIMIT 1;`,
       [username]
     );
+
+    if (!rows || rows.length === 0) {
+      // Fallback: Tìm trong bảng hoc12nam_student_accounts và tự động đồng bộ sang student_accounts
+      try {
+        const hocRows = await queryNeon(
+          `SELECT id, username, pin, nickname, avatar, data, active_session, updated_at
+           FROM hoc12nam_student_accounts
+           WHERE LOWER(username) = LOWER($1)
+           LIMIT 1;`,
+          [username]
+        );
+        if (hocRows && hocRows.length > 0) {
+          const hocAcc = hocRows[0];
+          await queryNeon(
+            `INSERT INTO student_accounts (id, username, pin, nickname, avatar, data, active_session, created_at, updated_at)
+             VALUES ($1, $2, $3, $4, $5, $6::jsonb, $7::jsonb, NOW(), NOW())
+             ON CONFLICT (id) DO UPDATE 
+             SET pin = $3, nickname = $4, avatar = $5, data = $6::jsonb, active_session = $7::jsonb, updated_at = NOW();`,
+            [
+              hocAcc.id,
+              hocAcc.username,
+              hocAcc.pin,
+              hocAcc.nickname,
+              hocAcc.avatar,
+              JSON.stringify(hocAcc.data || {}),
+              hocAcc.active_session ? JSON.stringify(hocAcc.active_session) : null
+            ]
+          );
+          rows = hocRows;
+        }
+      } catch (e) {
+        console.warn('Fallback hoc12nam_student_accounts error:', e);
+      }
+    }
 
     if (!rows || rows.length === 0) {
       return NextResponse.json({ 
@@ -55,7 +89,7 @@ export async function POST(request: Request) {
 
       // Nếu máy kia có tín hiệu hoạt động trong vòng 90 giây:
       if (diffSec < 90) {
-                if (forceTransfer) {
+        if (forceTransfer) {
           // Bé có thể chủ động chuyển máy bằng mã PIN của bé HOẶC mã PIN của Ba Mẹ
           const cleanTransferPin = (parentPin || '').trim();
           const expectedParentPin = String(account.data?.parentPin || '2026').trim();
@@ -65,7 +99,7 @@ export async function POST(request: Request) {
           if (cleanTransferPin) {
             isPinValid = cleanTransferPin === expectedStudentPin || cleanTransferPin === expectedParentPin;
           } else {
-            isPinValid = cleanPin === expectedStudentPin;
+            isPinValid = pin === expectedStudentPin;
           }
 
           if (!isPinValid) {
