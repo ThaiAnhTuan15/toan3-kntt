@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     }
 
     const rows = await queryNeon(
-      `SELECT active_session FROM student_accounts WHERE id = $1 LIMIT 1;`,
+      `SELECT active_session, data FROM student_accounts WHERE id = $1 LIMIT 1;`,
       [accountId]
     );
 
@@ -22,6 +22,7 @@ export async function POST(request: Request) {
     }
 
     const currentSession = rows[0].active_session;
+    const accountData = rows[0].data || {};
 
     // Nếu không có phiên hoặc sessionId khác -> phiên đã bị chuyển sang máy khác
     if (!currentSession || currentSession.sessionId !== sessionId) {
@@ -45,7 +46,15 @@ export async function POST(request: Request) {
       [accountId, JSON.stringify(updatedSession)]
     );
 
-    return NextResponse.json({ success: true, active: true, timestamp: now });
+    return NextResponse.json({ 
+      success: true, 
+      active: true, 
+      timestamp: now,
+      piggyBalance: typeof accountData.piggyBalance === 'number' ? accountData.piggyBalance : 0,
+      coins: typeof accountData.coins === 'number' ? accountData.coins : 50,
+      resetVersion: accountData.resetVersion || 0,
+      accountData: accountData
+    });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }

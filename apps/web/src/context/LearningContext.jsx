@@ -1100,35 +1100,102 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     checkBadges(history, totalStars);
   }, [history.length, totalStars, coins, piggyBalance, reportedQuestions.length]);
 
-  // Session Heartbeat Check (every 30s)
-  useEffect(() => {
-    if (!account?.id) return;
-    let sid = null;
-    try { sid = localStorage.getItem('agy_session_id'); } catch {}
-    if (!sid) return;
-
-    const interval = setInterval(async () => {
-      try {
-        const res = await fetch('/api/student/session/heartbeat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            accountId: account.id,
-            username: account.username,
-            sessionId: sid
-          })
-        });
-        const data = await res.json();
-        if (data && data.active === false && data.reason === 'transferred') {
-          alert('⚠️ Thông báo chuyển máy:\nTài khoản của bé vừa được đăng nhập trên một thiết bị khác. Phiên học trên máy này đã tạm dừng để tránh xung đột bài làm.');
-          localStorage.removeItem('agy_active_account');
-          window.location.reload();
-        }
-      } catch (err) {}
-    }, 30000);
-
-    return () => clearInterval(interval);
-  }, [account?.id, account?.username]);
+  // Session Heartbeat Check (every 30s)
+  useEffect(() => {
+    if (!account?.id) return;
+    let sid = null;
+    try { sid = localStorage.getItem('agy_session_id'); } catch {}
+    if (!sid) return;
+
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch('/api/student/session/heartbeat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            accountId: account.id,
+            username: account.username,
+            sessionId: sid
+          })
+        });
+        const data = await res.json();
+        if (data && data.active === false && data.reason === 'transferred') {
+          alert('⚠️ Thông báo chuyển máy:\nTài khoản của bé vừa được đăng nhập trên một thiết bị khác. Phiên học trên máy này đã tạm dừng để tránh xung đột bài làm.');
+          localStorage.removeItem('agy_active_account');
+          window.location.reload();
+        } else if (data && data.success) {
+          // Heartbeat Data Sync: Tự động đồng bộ số dư Heo đất và xu từ cloud nếu có biến động
+          if (typeof data.piggyBalance === 'number' && data.piggyBalance !== piggyBalance) {
+            setPiggyBalance(data.piggyBalance);
+            try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(data.piggyBalance)); } catch {}
+          }
+          if (typeof data.coins === 'number' && data.coins !== coins) {
+            setCoins(data.coins);
+            try { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(data.coins)); } catch {}
+          }
+        }
+      } catch (err) {}
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [account?.id, account?.username, piggyBalance, coins]);
+
+  // Silent Refresh on Focus & Tab Visibility Change (Tự động kéo dữ liệu mới nhất khi quay lại tab app)
+  useEffect(() => {
+    if (!account?.id || !account?.username) return;
+
+    const handleFocusSync = async () => {
+      try {
+        const res = await fetch('/api/student/refresh', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            accountId: account.id,
+            username: account.username,
+            pin: account.pin
+          })
+        });
+        const d = await res.json();
+        if (d && d.success && d.account?.data) {
+          const cloud = d.account.data;
+          if (typeof cloud.piggyBalance === 'number') {
+            setPiggyBalance(cloud.piggyBalance);
+            try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(cloud.piggyBalance)); } catch {}
+          }
+          if (typeof cloud.coins === 'number') {
+            setCoins(cloud.coins);
+            try { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(cloud.coins)); } catch {}
+          }
+          if (Array.isArray(cloud.claimedStages)) {
+            setClaimedStages(cloud.claimedStages);
+            try { localStorage.setItem(STORAGE_KEYS.CLAIMED_STAGES, JSON.stringify(cloud.claimedStages)); } catch {}
+          }
+          if (cloud.g4MathProgress && typeof cloud.g4MathProgress === 'object') {
+            setG4MathProgress(prev => ({ ...prev, ...cloud.g4MathProgress }));
+          }
+          if (onUpdateAccount) {
+            onUpdateAccount(d.account);
+          }
+        }
+      } catch (err) {
+        console.warn('Silent focus refresh error:', err);
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        handleFocusSync();
+      }
+    };
+
+    window.addEventListener('focus', handleFocusSync);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    return () => {
+      window.removeEventListener('focus', handleFocusSync);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
+  }, [account?.id, account?.username, account?.pin]);
 
   // Save Quiz Result
   const saveQuizResult = (resultData) => {

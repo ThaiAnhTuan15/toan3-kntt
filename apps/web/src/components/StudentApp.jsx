@@ -714,8 +714,17 @@ export default function App() {
               }).catch(() => {});
             }
           } catch {}
-          localStorage.removeItem('agy_active_account');
-          localStorage.removeItem('activeProfileId');
+          // Hard Flush: Xoa sach toan bo cache dem de tranh ro ri du lieu sang tai khoan be khac
+          try {
+            const keysToRemove = [];
+            for (let i = 0; i < localStorage.length; i++) {
+              const k = localStorage.key(i);
+              if (k && (k.startsWith('agy_') || k.startsWith('toan_') || k === 'activeProfileId')) {
+                keysToRemove.push(k);
+              }
+            }
+            keysToRemove.forEach(k => localStorage.removeItem(k));
+          } catch {}
           setActiveAccount(null);
           setActiveProfileId(null);
           setIsOfflineGuest(false);
