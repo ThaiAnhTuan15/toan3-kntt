@@ -1,14 +1,11 @@
 // Server-side helper to query Neon PostgreSQL via HTTP API
 // Works universally in Vercel Serverless Functions with zero native dependencies
 
-const FALLBACK_DB_URL = 'postgresql://neondb_owner:npg_IE6jO3GRYMrF@ep-odd-mountain-azenlhy4-pooler.c-3.ap-southeast-1.aws.neon.tech/neondb?sslmode=require';
+const NEON_SQL_URL = 'https://ep-delicate-sun-b33rht2y-pooler.c-4.ap-southeast-1.aws.neon.tech/sql';
+const DEFAULT_CONN_STRING = 'postgresql://neondb_owner:npg_H98FuEYkoVeq@ep-delicate-sun-b33rht2y-pooler.c-4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require';
 
 export async function queryNeon(sql: string, params: any[] = []): Promise<any[]> {
-  const rawUrl = process.env.DATABASE_URL || FALLBACK_DB_URL;
-  const connectionString = rawUrl.includes('ep-delicate-sun') ? FALLBACK_DB_URL : rawUrl;
-  const hostMatch = connectionString.match(/@([^/:]+)/);
-  const host = hostMatch ? hostMatch[1] : 'ep-odd-mountain-azenlhy4-pooler.c-3.ap-southeast-1.aws.neon.tech';
-  const NEON_SQL_URL = `https://${host}/sql`;
+  const connectionString = process.env.DATABASE_URL || DEFAULT_CONN_STRING;
 
   const response = await fetch(NEON_SQL_URL, {
     method: 'POST',
