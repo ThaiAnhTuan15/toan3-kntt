@@ -886,8 +886,20 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
 
     const cloud = account.data;
 
+    // Check reset timestamp from cloud to invalidate stale localStorage cache on client
+    const cloudLastReset = Number(cloud.lastResetTs || cloud.resetVersion || 0);
+    const localLastReset = Number(localStorage.getItem('toan3_last_reset_ts') || 0);
+    const isResetNewer = cloudLastReset > localLastReset;
+
+    if (isResetNewer) {
+      localStorage.setItem('toan3_last_reset_ts', String(cloudLastReset));
+    }
+
     if (cloud.g4MathProgress && Object.keys(cloud.g4MathProgress).length > 0) {
       setG4MathProgress(prev => {
+        if (isResetNewer) {
+          return { ...cloud.g4MathProgress };
+        }
         const merged = { ...cloud.g4MathProgress };
         for (const [k, v] of Object.entries(prev || {})) {
           if (!merged[k]) {
@@ -907,17 +919,20 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     }
 
     if (cloud.g4TvProgress && Object.keys(cloud.g4TvProgress).length > 0) {
-      setG4TvProgress(prev => ({ ...cloud.g4TvProgress, ...prev }));
+      setG4TvProgress(prev => (isResetNewer ? { ...cloud.g4TvProgress } : { ...cloud.g4TvProgress, ...prev }));
     }
     if (cloud.g7MathProgress && Object.keys(cloud.g7MathProgress).length > 0) {
-      setG7MathProgress(prev => ({ ...cloud.g7MathProgress, ...prev }));
+      setG7MathProgress(prev => (isResetNewer ? { ...cloud.g7MathProgress } : { ...cloud.g7MathProgress, ...prev }));
     }
     if (cloud.g7LitProgress && Object.keys(cloud.g7LitProgress).length > 0) {
-      setG7LitProgress(prev => ({ ...cloud.g7LitProgress, ...prev }));
+      setG7LitProgress(prev => (isResetNewer ? { ...cloud.g7LitProgress } : { ...cloud.g7LitProgress, ...prev }));
     }
 
     if (Array.isArray(cloud.history) && cloud.history.length > 0) {
       setHistory(prev => {
+        if (isResetNewer) {
+          return [...cloud.history];
+        }
         const idMap = new Map();
         cloud.history.forEach(h => idMap.set(String(h.id || `${h.date}_${h.week}`), h));
         (prev || []).forEach(h => {

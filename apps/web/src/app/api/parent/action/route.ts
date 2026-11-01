@@ -222,9 +222,11 @@ export async function POST(request: Request) {
             // 7. Reset all learning & quiz progress to clean state
       case 'reset_student_data': {
         const nextVersion = (data.resetVersion || 1) + 1;
+        const now = Date.now();
         data = {
           ...data,
           resetVersion: nextVersion,
+          lastResetTs: now,
           g4MathProgress: { "1": { bestScore: 0, stars: 0, attempts: 0, unlocked: true } },
           g4TvProgress: { "1": { bestScore: 0, stars: 0, attempts: 0, unlocked: true } },
           history: [],
@@ -242,6 +244,50 @@ export async function POST(request: Request) {
           verifiedErrorIds: []
         };
         msg = 'Đã đặt lại toàn bộ tiến trình học, điểm số, câu sai và heo đất về mặc định ban đầu!';
+        break;
+      }
+
+      // 8. Reset a specific stage progress to redo from scratch
+      case 'reset_stage': {
+        const stageId = Number(payload?.stageId || 3);
+        const STAGES_MAP: Record<number, number[]> = {
+          1: [1,2,3,4,5,6,7,8,9,10,11,12,13],
+          2: [14,15,16,17,18,19,20,21,22,23],
+          3: [24,25,26,27,28,29,30,31,32,33,34,35,36],
+          4: [37,38,39,40,41,42,43,44,45,46,47,48],
+          5: [49,50,51,52,53,54,55,56,57],
+          6: [58,59,60,61,62,63,64,65,66]
+        };
+        const weeksToReset = STAGES_MAP[stageId] || [];
+        if (weeksToReset.length === 0) {
+          return NextResponse.json({ success: false, error: 'Chặng không hợp lệ!' }, { status: 400 });
+        }
+
+        const g4Prog = { ...(data.g4MathProgress || {}) };
+        const firstWeek = weeksToReset[0];
+
+        weeksToReset.forEach((w, idx) => {
+          if (idx === 0) {
+            g4Prog[w] = { bestScore: 0, stars: 0, attempts: 0, unlocked: true };
+          } else {
+            g4Prog[w] = { bestScore: 0, stars: 0, attempts: 0, unlocked: false };
+          }
+        });
+        data.g4MathProgress = g4Prog;
+
+        if (Array.isArray(data.history)) {
+          data.history = data.history.filter((h: any) => !weeksToReset.includes(Number(h.week || h.quiz_id)));
+        }
+
+        if (Array.isArray(data.claimedStages)) {
+          data.claimedStages = data.claimedStages.filter((s: number) => s !== stageId);
+        }
+
+        const now = Date.now();
+        data.lastResetTs = now;
+        data[`stageReset_${stageId}_ts`] = now;
+
+        msg = `Đã đặt lại Chặng ${stageId} thành công! Bé sẽ bắt đầu lại từ Đề ${firstWeek}.`;
         break;
       }
 
