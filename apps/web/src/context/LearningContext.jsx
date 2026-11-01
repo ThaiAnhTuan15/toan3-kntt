@@ -951,22 +951,32 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       setCoins(cloud.coins);
       try { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(cloud.coins)); } catch {}
     }
-    if (Array.isArray(cloud.piggyHistory) && cloud.piggyHistory.length > 0) {
-      setPiggyHistory(prev => {
-        const idMap = new Map();
-        cloud.piggyHistory.forEach(h => idMap.set(String(h.id || `${h.date}_${h.title}`), h));
-        (prev || []).forEach(h => {
-          const k = String(h.id || `${h.date}_${h.title}`);
-          if (!idMap.has(k)) idMap.set(k, h);
+
+    if (isResetNewer) {
+      setPiggyHistory(Array.isArray(cloud.piggyHistory) ? [...cloud.piggyHistory] : []);
+      try { localStorage.setItem(STORAGE_KEYS.PIGGY_HISTORY, JSON.stringify(cloud.piggyHistory || [])); } catch {}
+      setPiggyRequests(Array.isArray(cloud.piggyRequests) ? [...cloud.piggyRequests] : []);
+      try { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(cloud.piggyRequests || [])); } catch {}
+      setClaimedStages(Array.isArray(cloud.claimedStages) ? [...cloud.claimedStages] : []);
+      try { localStorage.setItem(STORAGE_KEYS.CLAIMED_STAGES, JSON.stringify(cloud.claimedStages || [])); } catch {}
+    } else {
+      if (Array.isArray(cloud.piggyHistory) && cloud.piggyHistory.length > 0) {
+        setPiggyHistory(prev => {
+          const idMap = new Map();
+          cloud.piggyHistory.forEach(h => idMap.set(String(h.id || `${h.date}_${h.title}`), h));
+          (prev || []).forEach(h => {
+            const k = String(h.id || `${h.date}_${h.title}`);
+            if (!idMap.has(k)) idMap.set(k, h);
+          });
+          return Array.from(idMap.values()).sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
         });
-        return Array.from(idMap.values()).sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
-      });
-    }
-    if (Array.isArray(cloud.piggyRequests)) {
-      setPiggyRequests(cloud.piggyRequests);
-    }
-    if (Array.isArray(cloud.claimedStages) && cloud.claimedStages.length > 0) {
-      setClaimedStages(prev => Array.from(new Set([...(prev || []), ...cloud.claimedStages])));
+      }
+      if (Array.isArray(cloud.piggyRequests)) {
+        setPiggyRequests(cloud.piggyRequests);
+      }
+      if (Array.isArray(cloud.claimedStages) && cloud.claimedStages.length > 0) {
+        setClaimedStages(prev => Array.from(new Set([...(prev || []), ...cloud.claimedStages])));
+      }
     }
     if (cloud.claimedFinal) {
       setClaimedFinal(true);
@@ -997,6 +1007,7 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
 
     const timer = setTimeout(() => {
       const fullData = {
+        lastResetTs: Number(localStorage.getItem('toan3_last_reset_ts') || 0),
         currentGrade,
         currentSubject,
         g4MathProgress,
@@ -1033,13 +1044,35 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       })
       .then(res => res.json())
       .then(resData => {
-        if (resData?.data && typeof resData.data.piggyBalance === 'number') {
-          setPiggyBalance(resData.data.piggyBalance);
-          try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(resData.data.piggyBalance)); } catch {}
-        }
-        if (resData?.data && Array.isArray(resData.data.piggyRequests)) {
-          setPiggyRequests(resData.data.piggyRequests);
-          try { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(resData.data.piggyRequests)); } catch {}
+        if (resData?.data) {
+          const d = resData.data;
+          if (d.lastResetTs) {
+            try { localStorage.setItem('toan3_last_reset_ts', String(d.lastResetTs)); } catch {}
+          }
+          if (d.g4MathProgress && typeof d.g4MathProgress === 'object') {
+            setG4MathProgress(d.g4MathProgress);
+            try { localStorage.setItem(STORAGE_KEYS.PROGRESS_G4_MATH, JSON.stringify(d.g4MathProgress)); } catch {}
+          }
+          if (Array.isArray(d.history)) {
+            setHistory(d.history);
+            try { localStorage.setItem(STORAGE_KEYS.HISTORY, JSON.stringify(d.history)); } catch {}
+          }
+          if (typeof d.piggyBalance === 'number') {
+            setPiggyBalance(d.piggyBalance);
+            try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(d.piggyBalance)); } catch {}
+          }
+          if (Array.isArray(d.piggyHistory)) {
+            setPiggyHistory(d.piggyHistory);
+            try { localStorage.setItem(STORAGE_KEYS.PIGGY_HISTORY, JSON.stringify(d.piggyHistory)); } catch {}
+          }
+          if (Array.isArray(d.piggyRequests)) {
+            setPiggyRequests(d.piggyRequests);
+            try { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(d.piggyRequests)); } catch {}
+          }
+          if (Array.isArray(d.claimedStages)) {
+            setClaimedStages(d.claimedStages);
+            try { localStorage.setItem(STORAGE_KEYS.CLAIMED_STAGES, JSON.stringify(d.claimedStages)); } catch {}
+          }
         }
       })
       .catch(err => console.warn('Background auto-sync error:', err));
@@ -1204,10 +1237,41 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
         const d = await res.json();
         if (d && d.success && d.account?.data) {
           const cloud = d.account.data;
-          if (typeof cloud.piggyBalance === 'number') {
-            setPiggyBalance(cloud.piggyBalance);
-            try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(cloud.piggyBalance)); } catch {}
+          const cloudReset = Number(cloud.lastResetTs || 0);
+          const localReset = Number(localStorage.getItem('toan3_last_reset_ts') || 0);
+
+          if (cloudReset > localReset) {
+            localStorage.setItem('toan3_last_reset_ts', String(cloudReset));
+            if (cloud.g4MathProgress && typeof cloud.g4MathProgress === 'object') {
+              setG4MathProgress(cloud.g4MathProgress);
+              try { localStorage.setItem(STORAGE_KEYS.PROGRESS_G4_MATH, JSON.stringify(cloud.g4MathProgress)); } catch {}
+            }
+            if (Array.isArray(cloud.history)) {
+              setHistory(cloud.history);
+              try { localStorage.setItem(STORAGE_KEYS.HISTORY, JSON.stringify(cloud.history)); } catch {}
+            }
+            if (typeof cloud.piggyBalance === 'number') {
+              setPiggyBalance(cloud.piggyBalance);
+              try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(cloud.piggyBalance)); } catch {}
+            }
+            if (Array.isArray(cloud.piggyHistory)) {
+              setPiggyHistory(cloud.piggyHistory);
+              try { localStorage.setItem(STORAGE_KEYS.PIGGY_HISTORY, JSON.stringify(cloud.piggyHistory)); } catch {}
+            }
+            if (Array.isArray(cloud.piggyRequests)) {
+              setPiggyRequests(cloud.piggyRequests);
+              try { localStorage.setItem(STORAGE_KEYS.PIGGY_REQUESTS, JSON.stringify(cloud.piggyRequests)); } catch {}
+            }
+          } else {
+            if (typeof cloud.piggyBalance === 'number') {
+              setPiggyBalance(cloud.piggyBalance);
+              try { localStorage.setItem(STORAGE_KEYS.PIGGY_BANK, JSON.stringify(cloud.piggyBalance)); } catch {}
+            }
+            if (cloud.g4MathProgress && typeof cloud.g4MathProgress === 'object') {
+              setG4MathProgress(prev => ({ ...prev, ...cloud.g4MathProgress }));
+            }
           }
+
           if (typeof cloud.coins === 'number') {
             setCoins(cloud.coins);
             try { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(cloud.coins)); } catch {}
@@ -1215,9 +1279,6 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
           if (Array.isArray(cloud.claimedStages)) {
             setClaimedStages(cloud.claimedStages);
             try { localStorage.setItem(STORAGE_KEYS.CLAIMED_STAGES, JSON.stringify(cloud.claimedStages)); } catch {}
-          }
-          if (cloud.g4MathProgress && typeof cloud.g4MathProgress === 'object') {
-            setG4MathProgress(prev => ({ ...prev, ...cloud.g4MathProgress }));
           }
           if (onUpdateAccount) {
             onUpdateAccount(d.account);

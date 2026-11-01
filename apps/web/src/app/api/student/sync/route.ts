@@ -3,10 +3,15 @@ import { queryNeon } from '@/lib/neonDb';
 
 export const dynamic = 'force-dynamic';
 
-// Helper to merge progress objects (never downgrade score, stars, or unlock status)
-function mergeProgressStore(curProg: any = {}, inProg: any = {}) {
+// Helper to merge progress objects (never downgrade score, stars, or unlock status, EXCEPT for reset weeks)
+function mergeProgressStore(curProg: any = {}, inProg: any = {}, ignoredWeeks: number[] = []) {
   const result: Record<string, any> = { ...curProg };
   for (const [key, inVal] of Object.entries(inProg || {})) {
+    const weekNum = Number(key);
+    // If this week is reset on server and client is stale, enforce server's reset state!
+    if (ignoredWeeks.includes(weekNum)) {
+      continue;
+    }
     if (!result[key]) {
       result[key] = inVal;
     } else {
@@ -54,10 +59,17 @@ export async function POST(request: Request) {
 
     // Current data in Neon DB
     const curData = rows[0].data || {};
-    const inData = data;
+    const inData = data || {};
 
-    // 1. Merge History: Never lose completed quizzes!
-    // Key each quiz by id or (date + week) to eliminate duplicates
+    const serverResetTs = Number(curData.lastResetTs || curData.stage3ResetTs || 0);
+    const clientResetTs = Number(inData.lastResetTs || 0);
+    const isClientStale = serverResetTs > clientResetTs;
+
+    // Stage 3 weeks (24 to 36)
+    const STAGE_3_WEEKS = [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
+    const ignoredWeeks = isClientStale ? STAGE_3_WEEKS : [];
+
+    // 1. Merge History: Never lose completed quizzes, but reject stale Chặng 3 history
     const histMap = new Map<string, any>();
     const existingHist = Array.isArray(curData.history) ? curData.history : [];
     const incomingHist = Array.isArray(inData.history) ? inData.history : [];
@@ -68,6 +80,10 @@ export async function POST(request: Request) {
     });
 
     incomingHist.forEach((item: any) => {
+      const wk = Number(item.week || item.quiz_id);
+      if (isClientStale && ignoredWeeks.includes(wk)) {
+        return; // Stale history from client for reset week, reject!
+      }
       const key = String(item.id || `${item.date}_${item.week}`);
       if (!histMap.has(key)) {
         histMap.set(key, item);
@@ -85,7 +101,7 @@ export async function POST(request: Request) {
     );
 
     // 2. Merge Progress Stores for each grade & subject
-    const mergedG4MathProg = mergeProgressStore(curData.g4MathProgress, inData.g4MathProgress);
+    const mergedG4MathProg = mergeProgressStore(curData.g4MathProgress, inData.g4MathProgress, ignoredWeeks);
     const mergedG4TvProg = mergeProgressStore(curData.g4TvProgress, inData.g4TvProgress);
     const mergedG7MathProg = mergeProgressStore(curData.g7MathProgress, inData.g7MathProgress);
     const mergedG7LitProg = mergeProgressStore(curData.g7LitProgress, inData.g7LitProgress);
@@ -94,65 +110,78 @@ export async function POST(request: Request) {
     const curPiggy = typeof curData.piggyBalance === 'number' ? curData.piggyBalance : 0;
     const inPiggy = typeof inData.piggyBalance === 'number' ? inData.piggyBalance : 0;
 
-    // Check if parent approved any withdrawal requests that incoming client still considers pending
-    const clientReqMap = new Map((inData.piggyRequests || []).map((r: any) => [String(r.id), r.status]));
-    let unreflectedWithdrawals = 0;
-    (curData.piggyRequests || []).forEach((cr: any) => {
-      if (cr.status === 'approved' && clientReqMap.get(String(cr.id)) === 'pending') {
-        unreflectedWithdrawals += Number(cr.amount || 0);
-      }
-    });
+    let mergedPiggyBalance = curPiggy;
+    let mergedPiggyHistory: any[] = [];
+    let mergedPiggyRequests: any[] = [];
 
-    let mergedPiggyBalance = typeof inData.piggyBalance === 'number' ? inData.piggyBalance : curPiggy;
-    if (unreflectedWithdrawals > 0) {
-      mergedPiggyBalance = Math.max(0, mergedPiggyBalance - unreflectedWithdrawals);
-    } else if (curPiggy < inPiggy) {
-      const serverWithdrawCount = (curData.piggyHistory || []).filter((h: any) => h.type === 'withdraw').length;
-      const clientWithdrawCount = (inData.piggyHistory || []).filter((h: any) => h.type === 'withdraw').length;
-      if (serverWithdrawCount > clientWithdrawCount) {
+    // If server has piggyBalance = 0 (reset) and client is stale, enforce 0
+    if (isClientStale && curPiggy === 0 && inPiggy > 0) {
+      mergedPiggyBalance = 0;
+      mergedPiggyHistory = [];
+      mergedPiggyRequests = [];
+    } else {
+      // Check if parent approved any withdrawal requests that incoming client still considers pending
+      const clientReqMap = new Map((inData.piggyRequests || []).map((r: any) => [String(r.id), r.status]));
+      let unreflectedWithdrawals = 0;
+      (curData.piggyRequests || []).forEach((cr: any) => {
+        if (cr.status === 'approved' && clientReqMap.get(String(cr.id)) === 'pending') {
+          unreflectedWithdrawals += Number(cr.amount || 0);
+        }
+      });
+
+      mergedPiggyBalance = typeof inData.piggyBalance === 'number' ? inData.piggyBalance : curPiggy;
+      if (unreflectedWithdrawals > 0) {
+        mergedPiggyBalance = Math.max(0, mergedPiggyBalance - unreflectedWithdrawals);
+      } else if (curPiggy < inPiggy) {
+        const serverWithdrawCount = (curData.piggyHistory || []).filter((h: any) => h.type === 'withdraw').length;
+        const clientWithdrawCount = (inData.piggyHistory || []).filter((h: any) => h.type === 'withdraw').length;
+        if (serverWithdrawCount > clientWithdrawCount) {
+          mergedPiggyBalance = curPiggy;
+        }
+      } else if (inPiggy === 0 && curPiggy > 0) {
         mergedPiggyBalance = curPiggy;
       }
-    } else if (inPiggy === 0 && curPiggy > 0) {
-      mergedPiggyBalance = curPiggy;
+
+      // Merge Piggy History
+      const piggyHistMap = new Map<string, any>();
+      (Array.isArray(curData.piggyHistory) ? curData.piggyHistory : []).forEach((item: any) => {
+        piggyHistMap.set(String(item.id || `${item.date}_${item.title}`), item);
+      });
+      (Array.isArray(inData.piggyHistory) ? inData.piggyHistory : []).forEach((item: any) => {
+        const key = String(item.id || `${item.date}_${item.title}`);
+        if (!piggyHistMap.has(key)) piggyHistMap.set(key, item);
+      });
+      mergedPiggyHistory = Array.from(piggyHistMap.values()).sort(
+        (a: any, b: any) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
+      );
+
+      // Merge Piggy Requests
+      const reqMap = new Map<string, any>();
+      (Array.isArray(curData.piggyRequests) ? curData.piggyRequests : []).forEach((r: any) => {
+        reqMap.set(String(r.id), r);
+      });
+      (Array.isArray(inData.piggyRequests) ? inData.piggyRequests : []).forEach((r: any) => {
+        const curReq = reqMap.get(String(r.id));
+        if (!curReq || curReq.status === 'pending') {
+          reqMap.set(String(r.id), r);
+        }
+      });
+      mergedPiggyRequests = Array.from(reqMap.values()).sort(
+        (a: any, b: any) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
+      );
     }
 
     const curCoins = typeof curData.coins === 'number' ? curData.coins : 50;
     const inCoins = typeof inData.coins === 'number' ? inData.coins : 50;
     const mergedCoins = typeof inData.coins === 'number' ? inData.coins : curCoins;
 
-    // 4. Merge Piggy History
-    const piggyHistMap = new Map<string, any>();
-    (Array.isArray(curData.piggyHistory) ? curData.piggyHistory : []).forEach((item: any) => {
-      piggyHistMap.set(String(item.id || `${item.date}_${item.title}`), item);
-    });
-    (Array.isArray(inData.piggyHistory) ? inData.piggyHistory : []).forEach((item: any) => {
-      const key = String(item.id || `${item.date}_${item.title}`);
-      if (!piggyHistMap.has(key)) piggyHistMap.set(key, item);
-    });
-    const mergedPiggyHistory = Array.from(piggyHistMap.values()).sort(
-      (a: any, b: any) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
-    );
-
-    // 5. Merge Piggy Requests
-    const reqMap = new Map<string, any>();
-    (Array.isArray(curData.piggyRequests) ? curData.piggyRequests : []).forEach((r: any) => {
-      reqMap.set(String(r.id), r);
-    });
-    (Array.isArray(inData.piggyRequests) ? inData.piggyRequests : []).forEach((r: any) => {
-      // If status in cur is approved/rejected, keep it over pending
-      const curReq = reqMap.get(String(r.id));
-      if (!curReq || curReq.status === 'pending') {
-        reqMap.set(String(r.id), r);
-      }
-    });
-    const mergedPiggyRequests = Array.from(reqMap.values()).sort(
-      (a: any, b: any) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
-    );
-
-    // 6. Merge Claimed Stages & Final
+    // 6. Merge Claimed Stages & Final (Remove stage 3 if reset)
     const curStages = Array.isArray(curData.claimedStages) ? curData.claimedStages : [];
     const inStages = Array.isArray(inData.claimedStages) ? inData.claimedStages : [];
-    const mergedClaimedStages = Array.from(new Set([...curStages, ...inStages]));
+    const rawClaimedStages = Array.from(new Set([...curStages, ...inStages]));
+    const mergedClaimedStages = isClientStale 
+      ? rawClaimedStages.filter((s: number) => s !== 3)
+      : rawClaimedStages;
     const mergedClaimedFinal = Boolean(curData.claimedFinal || inData.claimedFinal);
 
     // 7. Merge Badges
@@ -185,8 +214,10 @@ export async function POST(request: Request) {
       lastDate: inData.streakData?.lastDate || curData.streakData?.lastDate || new Date().toISOString().split('T')[0]
     };
 
-    // Combine all merged data
+    // Combine all merged data (Preserve reset timestamps!)
+    const activeResetTs = Math.max(serverResetTs, clientResetTs, Date.now());
     const mergedData = {
+      ...curData,
       parentPin: inData.parentPin || curData.parentPin || '2026',
       currentGrade: inData.currentGrade || curData.currentGrade || '4',
       currentSubject: inData.currentSubject || curData.currentSubject || 'math',
@@ -208,7 +239,9 @@ export async function POST(request: Request) {
       claimedStages: mergedClaimedStages,
       claimedFinal: mergedClaimedFinal,
       reportedQuestions: mergedReportedQuestions,
-      verifiedErrorIds: mergedVerifiedErrorIds
+      verifiedErrorIds: mergedVerifiedErrorIds,
+      lastResetTs: activeResetTs,
+      stage3ResetTs: curData.stage3ResetTs || activeResetTs
     };
 
     // Save merged data to Neon DB
