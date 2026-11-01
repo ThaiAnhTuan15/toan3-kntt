@@ -23,6 +23,7 @@ export const QuizArena = ({
   title, 
   questions = [], 
   timeLimitSec = 900, // 15 mins default
+  week = null,
   onFinishQuiz,
   onExitQuiz 
 }) => {
@@ -111,26 +112,41 @@ export const QuizArena = ({
     sounds.playClick();
     setShowConfirmSubmit(false);
 
-    // Compute results
-    let correctCount = 0;
+    // Compute results with Parent-Verified Errors Exemption
+    let validCorrectCount = 0;
+    let exemptCount = 0;
+
     const details = questions.map((q, idx) => {
       const selectedIndex = answers[idx] !== undefined ? answers[idx] : null;
-      const isCorrect = selectedIndex === q.correctIndex;
-      if (isCorrect) correctCount++;
+      const isExempt = Boolean(verifiedErrorIds && verifiedErrorIds.includes(q.id));
+      const isCorrect = isExempt ? true : (selectedIndex === q.correctIndex);
+
+      if (isExempt) {
+        exemptCount++;
+      } else if (selectedIndex === q.correctIndex) {
+        validCorrectCount++;
+      }
+
       return {
         question: q,
         selectedIndex,
-        isCorrect
+        isCorrect,
+        isExempt
       };
     });
 
-    const score = Math.round((correctCount / totalQuestions) * 100);
+    const validTotal = totalQuestions - exemptCount;
+    // Điểm số tính trên số câu hợp lệ (loại trừ toàn bộ câu lỗi đã được Ba Mẹ xác nhận)
+    const score = validTotal > 0 ? Math.round((validCorrectCount / validTotal) * 100) : 100;
+    const correctCount = validCorrectCount + exemptCount;
     const timeSpent = timeLimitSec - timeLeft;
 
     onFinishQuiz({
       score,
       correctCount,
       totalCount: totalQuestions,
+      validTotal,
+      exemptCount,
       details,
       timeSpent
     });
@@ -501,6 +517,7 @@ export const QuizArena = ({
       {reportModalQuestion && (
         <ReportErrorModal
           question={reportModalQuestion}
+          week={week || reportModalQuestion.week}
           onClose={() => setReportModalQuestion(null)}
         />
       )}

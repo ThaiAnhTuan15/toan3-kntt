@@ -696,7 +696,7 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     };
   };
 
-  // Verify Question Error by parent -> reward +5.000d & exempt from wrong lists
+  // Verify Question Error by parent -> reward +5.000d, exempt from wrong lists, recalculate score & auto-unlock week
   const verifyQuestionError = (reportId, customReward = 5000) => {
     const report = reportedQuestions.find(r => r.id === reportId);
     if (!report) return;
@@ -713,6 +713,7 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     } : r));
 
     // Add to verified error IDs
+    const newVerifiedIds = verifiedErrorIds.includes(qId) ? verifiedErrorIds : [...verifiedErrorIds, qId];
     if (!verifiedErrorIds.includes(qId)) {
       setVerifiedErrorIds(prev => [...prev, qId]);
     }
@@ -735,6 +736,64 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     setG4TvWrong(removeFromList);
     setG7MathWrong(removeFromList);
     setG7LitWrong(removeFromList);
+
+    // Identify target week: from report.week or parsing qId (e.g. 'q_27_4' -> 27) or history
+    let targetWeek = report.week;
+    if (!targetWeek && qId) {
+      const match = qId.match(/q_(\d+)_/);
+      if (match) targetWeek = parseInt(match[1], 10);
+    }
+    if (!targetWeek) {
+      const historyMatch = (history || []).find(h => (h.details || []).some(d => (d.questionId || d.question?.id || d.id) === qId));
+      if (historyMatch) targetWeek = historyMatch.week;
+    }
+
+    if (targetWeek) {
+      // Recalculate score from past attempts for this week by exempting all verified error questions
+      const weekAttempts = (history || []).filter(h => Number(h.week) === Number(targetWeek) && (h.type === 'week' || !h.type));
+      let maxRecalcScore = 0;
+
+      weekAttempts.forEach(att => {
+        if (att.details && Array.isArray(att.details)) {
+          const validDetails = att.details.filter(d => {
+            const id = d.questionId || d.question?.id || d.id;
+            return !newVerifiedIds.includes(id);
+          });
+          const validTotal = validDetails.length;
+          const validCorrect = validDetails.filter(d => d.isCorrect).length;
+          const recalcScore = validTotal > 0 ? Math.round((validCorrect / validTotal) * 100) : 100;
+          if (recalcScore > maxRecalcScore) maxRecalcScore = recalcScore;
+        } else if (att.score) {
+          if (att.score > maxRecalcScore) maxRecalcScore = att.score;
+        }
+      });
+
+      setG4MathProgress(prev => {
+        const cur = prev[targetWeek] || { bestScore: 0, stars: 0, attempts: 1 };
+        const finalScore = Math.max(cur.bestScore || 0, maxRecalcScore);
+        const earnedStars = finalScore >= 90 ? 3 : (finalScore >= 70 ? 2 : (finalScore >= 50 ? 1 : 0));
+        const updated = {
+          ...prev,
+          [targetWeek]: {
+            ...cur,
+            bestScore: finalScore,
+            stars: Math.max(cur.stars || 0, earnedStars),
+            unlocked: true,
+            lastCompletedAt: cur.lastCompletedAt || new Date().toISOString()
+          }
+        };
+
+        if (finalScore >= 75 && Number(targetWeek) < 66) {
+          const nextW = Number(targetWeek) + 1;
+          if (!updated[nextW]) {
+            updated[nextW] = { bestScore: 0, stars: 0, attempts: 0, unlocked: true };
+          } else {
+            updated[nextW] = { ...updated[nextW], unlocked: true };
+          }
+        }
+        return updated;
+      });
+    }
 
     sounds.playVictory();
   };
@@ -1201,7 +1260,7 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
 
     const prevAttempts = isOfficialLesson ? ((progress[week]?.attempts) || 0) : 0;
     // Miễn trừ câu hỏi lỗi đã được xác nhận để không bị phạt trừ tiền heo đất:
-    const verifiedErrorsInDetails = details ? details.filter(d => !d.isCorrect && verifiedErrorIds.includes(d.question.id)).length : 0;
+    const verifiedErrorsInDetails = details ? details.filter(d => !d.isCorrect && (d.isExempt || (verifiedErrorIds || []).includes(d.question?.id || d.questionId))).length : 0;
     const wrongCount = Math.max(0, (totalCount - correctCount) - verifiedErrorsInDetails);
 
     if (isEligibleForPiggy) {
@@ -1299,12 +1358,13 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     const updateWrongList = (prevList) => {
       const updated = [...prevList];
       details.forEach(item => {
-        if (!item.isCorrect && !verifiedErrorIds.includes(item.question.id)) {
-          if (!updated.some(w => w.id === item.question.id)) {
-            updated.push(item.question);
+        const qId = item.question?.id || item.questionId;
+        if (!item.isCorrect && !item.isExempt && !(verifiedErrorIds || []).includes(qId)) {
+          if (!updated.some(w => w.id === qId)) {
+            if (item.question) updated.push(item.question);
           }
         } else {
-          const idx = updated.findIndex(w => w.id === item.question.id);
+          const idx = updated.findIndex(w => w.id === qId);
           if (idx !== -1) updated.splice(idx, 1);
         }
       });

@@ -839,7 +839,7 @@ export const STAGE_3_QUESTIONS = [
       "2",
       "3"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Mặt đồng hồ có kim giờ và kim phút cùng gắn vào trục tâm đồng hồ. Hai kim này tạo thành hai cạnh của một góc với đỉnh là tâm đồng hồ. Vậy có 2 kim tạo thành một góc, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image115.png"
   },
@@ -859,7 +859,7 @@ export const STAGE_3_QUESTIONS = [
       "C",
       "Không có góc nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, hai cạnh BA và BC cùng xuất phát từ điểm B. Điểm chung B chính là đỉnh của góc. Vậy góc trong hình là góc đỉnh B, ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image116.png"
   },
@@ -879,7 +879,7 @@ export const STAGE_3_QUESTIONS = [
       "Đỉnh B, cạnh BA và AC",
       "Đỉnh B, cạnh BA và BC"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Góc trong hình có đỉnh chung là điểm B và hai cạnh là hai tia BA và BC. Do đó tên đỉnh và tên các cạnh của góc là: Đỉnh B, cạnh BA và BC. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image117.png"
   },
@@ -899,7 +899,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Không có hình nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát các hình vẽ, ở Hình 2 hai tia xuất phát từ đỉnh A tạo thành một góc đỉnh A. Các hình khác đỉnh là B hoặc O. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image118.png"
   },
@@ -919,7 +919,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình C",
       "Hình D"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Dùng thước ê-ke để kiểm tra các góc trong các hình: Hình A là góc nhọn, Hình B là góc tù, Hình C có một góc trùng khít với góc vuông của thước ê-ke nên Hình C có góc vuông. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image119.png"
   },
@@ -939,7 +939,7 @@ export const STAGE_3_QUESTIONS = [
       "Góc vuông đỉnh B, cạnh BA, BC",
       "Góc không vuông đỉnh B, cạnh AB, CB"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình vẽ có kí hiệu góc vuông tại điểm B, được tạo bởi hai cạnh vuông góc là BA và BC. Vậy hình vẽ biểu diễn: Góc vuông đỉnh B, cạnh BA, BC. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image120.png"
   },
@@ -959,7 +959,7 @@ export const STAGE_3_QUESTIONS = [
       "Cả hai bạn đều nói sai",
       "Cả hai bạn đều nói đúng"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình vẽ gồm hai tia ON và OM cùng xuất phát từ gốc O. Hai tia này tạo thành một góc có đỉnh O và hai cạnh là ON, OM. Do đó bạn Lan nói đúng, bạn Mai nói sai. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image44.png"
   },
@@ -979,7 +979,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Cả ba hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đếm số góc của mỗi hình:\n- Hình 1 (hình tam giác): có 3 góc.\n- Hình 2 (hình tứ giác): có 4 góc.\n- Hình 3 (hình ngũ giác): có 5 góc.\nVì 5 > 4 > 3 nên Hình 3 có nhiều góc nhất. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image128.png"
   },
@@ -999,7 +999,7 @@ export const STAGE_3_QUESTIONS = [
       "6 góc",
       "7 góc"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Tại đỉnh A có 4 tia xuất phát. Cứ 2 tia tạo thành 1 góc. Số góc tạo thành tại đỉnh A là: 4 x 3 : 2 = 6 góc (hoặc đếm gồm: 3 góc đơn ghép lại tạo thêm 2 góc đôi và 1 góc ba lớn nhất: 3 + 2 + 1 = 6 góc). Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image129.png"
   },
@@ -1039,7 +1039,7 @@ export const STAGE_3_QUESTIONS = [
       "8",
       "10"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Hình vẽ gồm 5 tia chung một đỉnh. Áp dụng quy tắc tính số góc tạo bởi n tia chung gốc: n x (n - 1) : 2. Với n = 5 tia, số góc là: 5 x 4 : 2 = 10 góc (gồm 4 góc đơn + 3 góc ghép đôi + 2 góc ghép ba + 1 góc lớn nhất = 10 góc). Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image131.png"
   },
@@ -1059,7 +1059,7 @@ export const STAGE_3_QUESTIONS = [
       "9; 1; 2",
       "3; 1; 2"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ:\n- Tại đỉnh E trong tứ giác AFED có 3 góc tạo bởi các đoạn thẳng xuất phát từ E.\n- Trong tam giác AEB chỉ có 1 góc đỉnh A.\n- Tứ giác FBCE có 2 góc chung đỉnh B và cạnh BC (góc FBC và góc EBC).\nVậy các số lần lượt điền vào chỗ trống là 3; 1; 2. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image136.png"
   },
@@ -1079,7 +1079,7 @@ export const STAGE_3_QUESTIONS = [
       "6",
       "2"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Khi nối hai điểm N và P bằng một đoạn thẳng:\n- Tại đỉnh N, đoạn thẳng NP chia góc ở đỉnh N hoặc tạo thêm 2 góc mới với các cạnh kề.\n- Tại đỉnh P, đoạn thẳng NP cũng tạo thêm 2 góc mới.\nNhư vậy số góc được tạo thêm khi nối N và P là: 2 + 2 = 4 góc. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image54.png"
   },
@@ -1099,7 +1099,7 @@ export const STAGE_3_QUESTIONS = [
       "44",
       "11"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đếm số góc trong hình vẽ:\n- Dùng ê-ke kiểm tra, hình có a = 4 góc vuông.\n- Đếm tất cả các góc không vuông ở các đỉnh, ta được b = 11 góc không vuông.\nGiá trị của biểu thức là: b x a = 11 x 4 = 44. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image141.png"
   },

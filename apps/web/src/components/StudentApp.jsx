@@ -179,6 +179,7 @@ const MainContent = ({ onLogout }) => {
           title={activeQuizConfig.title}
           questions={activeQuizConfig.questions}
           timeLimitSec={activeQuizConfig.timeLimitSec}
+          week={activeQuizConfig.week}
           onFinishQuiz={handleFinishQuiz}
           onExitQuiz={handleExitQuiz}
         />

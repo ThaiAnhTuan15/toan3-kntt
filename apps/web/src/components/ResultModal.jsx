@@ -149,6 +149,12 @@ export const ResultModal = ({
           <div className="text-xs font-bold text-amber-700">
             Tỉ lệ chính xác: {score}%
           </div>
+          {resultData.exemptCount > 0 && (
+            <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mt-2 border border-emerald-300">
+              <span>🎖️</span>
+              <span>Đã miễn trừ {resultData.exemptCount} câu lỗi do Ba Mẹ xác nhận</span>
+            </div>
+          )}
 
           {/* Sub Stats: Coins & Money & Time */}
           <div className="grid grid-cols-4 gap-1.5 mt-4 pt-3 border-t border-amber-200/60 text-xs font-extrabold">

@@ -142,11 +142,18 @@ export const ExplanationView = ({
 
                 <div className="flex items-center gap-2">
                   <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
-                    isCorrect 
-                      ? 'bg-emerald-50 border-emerald-300 text-emerald-700' 
-                      : 'bg-rose-50 border-rose-300 text-rose-700'
+                    item.isExempt || verifiedErrorIds?.includes(q.id)
+                      ? 'bg-amber-50 border-amber-300 text-amber-800'
+                      : isCorrect 
+                        ? 'bg-emerald-50 border-emerald-300 text-emerald-700' 
+                        : 'bg-rose-50 border-rose-300 text-rose-700'
                   }`}>
-                    {isCorrect ? (
+                    {item.isExempt || verifiedErrorIds?.includes(q.id) ? (
+                      <>
+                        <Sparkles className="w-4 h-4 text-amber-600" />
+                        <span>MIỄN TRỪ (Đã duyệt lỗi)</span>
+                      </>
+                    ) : isCorrect ? (
                       <>
                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                         <span>ĐÚNG (+10 điểm)</span>
