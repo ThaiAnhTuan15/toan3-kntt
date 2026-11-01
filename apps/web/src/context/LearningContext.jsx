@@ -513,6 +513,16 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
     return getInitialVal(STORAGE_KEYS.WRONG_G7_LIT, 'wrongG7Lit', []);
   });
 
+  // Track attempts per wrong question for 5-attempt unlock mechanism
+  const [wrongQuestionAttempts, setWrongQuestionAttempts] = useState(() => {
+    try {
+      const saved = localStorage.getItem('toan_wrong_attempts');
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
   const [unlockedBadges, setUnlockedBadges] = useState(() => {
     return getInitialVal(STORAGE_KEYS.BADGES, 'badges', []);
   });
@@ -951,6 +961,10 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       setCoins(cloud.coins);
       try { localStorage.setItem(STORAGE_KEYS.COINS, JSON.stringify(cloud.coins)); } catch {}
     }
+    if (cloud.wrongQuestionAttempts && typeof cloud.wrongQuestionAttempts === 'object') {
+      setWrongQuestionAttempts(cloud.wrongQuestionAttempts);
+      try { localStorage.setItem('toan_wrong_attempts', JSON.stringify(cloud.wrongQuestionAttempts)); } catch {}
+    }
 
     if (isResetNewer) {
       setPiggyHistory(Array.isArray(cloud.piggyHistory) ? [...cloud.piggyHistory] : []);
@@ -1056,6 +1070,10 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
           if (Array.isArray(d.history)) {
             setHistory(d.history);
             try { localStorage.setItem(STORAGE_KEYS.HISTORY, JSON.stringify(d.history)); } catch {}
+          }
+          if (d.wrongQuestionAttempts && typeof d.wrongQuestionAttempts === 'object') {
+            setWrongQuestionAttempts(d.wrongQuestionAttempts);
+            try { localStorage.setItem('toan_wrong_attempts', JSON.stringify(d.wrongQuestionAttempts)); } catch {}
           }
           if (typeof d.piggyBalance === 'number') {
             setPiggyBalance(d.piggyBalance);
@@ -1447,6 +1465,24 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       return updated;
     };
 
+    // Update attempts count for wrong questions (Cơ chế 5 lần thử thách tư duy)
+    const nextAttempts = { ...wrongQuestionAttempts };
+    details.forEach(item => {
+      const qId = item.question?.id || item.questionId;
+      if (!qId) return;
+      if (item.isCorrect) {
+        // Bé đã làm đúng -> reset số lần thử thách về 0
+        delete nextAttempts[qId];
+      } else if (!item.isExempt && !(verifiedErrorIds || []).includes(qId)) {
+        // Bé làm sai -> tăng số lần thử sức
+        nextAttempts[qId] = (nextAttempts[qId] || 0) + 1;
+      }
+    });
+    setWrongQuestionAttempts(nextAttempts);
+    try {
+      localStorage.setItem('toan_wrong_attempts', JSON.stringify(nextAttempts));
+    } catch {}
+
     if (isActG7) {
       if (isActMath) setG7MathWrong(updateWrongList);
       else setG7LitWrong(updateWrongList);
@@ -1492,12 +1528,14 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       }
     }
 
-    // Record History
+    // Record History with explicit descriptive title and math subject
+    const quizTitle = resultData.title || (week ? `Đề Số ${week}: ${currentMetadata?.[week]?.title || `Đề ${week}`}` : (type === 'retry_wrong' || type === 'wrong_review' ? 'Luyện tập sửa câu sai' : (type === 'custom_practice' ? 'Luyện tập tự do' : 'Bài Luyện Toán 3')));
     const historyItem = {
       id: Date.now(),
       date: new Date().toISOString(),
       grade: activeGrade,
-      subject: activeSubj,
+      subject: activeSubj || 'math',
+      title: quizTitle,
       week: week || null,
       type: type || 'practice',
       score,
@@ -1543,6 +1581,7 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
             wrongG4Tv: isActG7 || isActMath ? g4TvWrong : updateWrongList(g4TvWrong),
             wrongG7Math: !isActG7 || !isActMath ? g7MathWrong : updateWrongList(g7MathWrong),
             wrongG7Lit: !isActG7 || isActMath ? g7LitWrong : updateWrongList(g7LitWrong),
+            wrongQuestionAttempts: nextAttempts,
             badges: unlockedBadges,
             streakData,
             coins: coins + earnedCoins,
@@ -1773,6 +1812,7 @@ export const LearningProvider = ({ children, profileId = 'default', account = nu
       toggleSound,
       history,
       wrongQuestions,
+      wrongQuestionAttempts,
       unlockedBadges,
       saveQuizResult,
       isWeekUnlocked,

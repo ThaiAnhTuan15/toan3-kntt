@@ -9,7 +9,9 @@ import {
   BookOpen, 
   Lightbulb,
   Heart,
-  Flag
+  Flag,
+  Lock,
+  Unlock
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { ReportErrorModal } from './ReportErrorModal';
@@ -17,7 +19,7 @@ import { useLearning } from '../context/LearningContext';
 import sounds from '../utils/soundEffects';
 
 export const WrongQuestionsReview = ({ onStartQuiz }) => {
-  const { profile, wrongQuestions, reportedQuestions, verifiedErrorIds } = useLearning();
+  const { profile, wrongQuestions, reportedQuestions, verifiedErrorIds, wrongQuestionAttempts } = useLearning();
   const [reportModalQuestion, setReportModalQuestion] = useState(null);
 
   const handleStartReviewQuiz = () => {
@@ -101,25 +103,40 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
                     Tuần {q.week} • {q.topic}
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-extrabold px-2.5 py-0.5 bg-rose-50 text-rose-600 rounded-full border border-rose-200">
-                    Cần luyện lại
-                  </span>
-                  {reportedQuestions?.some(r => r.questionId === q.id && r.status === 'pending') ? (
-                    <span className="text-[11px] font-bold px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-full border border-amber-300">
-                      Đã báo lỗi ⏳
-                    </span>
-                  ) : (
-                    <button
-                      onClick={() => { sounds.playClick(); setReportModalQuestion(q); }}
-                      className="px-2.5 py-0.5 rounded-full text-[11px] font-bold border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 transition flex items-center gap-1"
-                      title="Báo câu hỏi này bị lỗi cho Ba Mẹ (Thưởng 5.000đ)"
-                    >
-                      <Flag className="w-3 h-3 text-rose-500" />
-                      <span>Báo lỗi 🚩</span>
-                    </button>
-                  )}
-                </div>
+                {(() => {
+                  const qAttempts = wrongQuestionAttempts?.[q.id] || 1;
+                  const isUnlocked = qAttempts >= 5;
+
+                  return (
+                    <div className="flex items-center gap-2">
+                      {isUnlocked ? (
+                        <span className="text-[11px] font-black px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 flex items-center gap-1">
+                          <Unlock className="w-3 h-3 text-emerald-600" />
+                          <span>Đã mở khóa ({qAttempts} lần thử)</span>
+                        </span>
+                      ) : (
+                        <span className="text-[11px] font-black px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-full border border-amber-300 flex items-center gap-1">
+                          <Lock className="w-3 h-3 text-amber-600" />
+                          <span>Thử sức: {qAttempts}/5 lần</span>
+                        </span>
+                      )}
+                      {reportedQuestions?.some(r => r.questionId === q.id && r.status === 'pending') ? (
+                        <span className="text-[11px] font-bold px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-full border border-amber-300">
+                          Đã báo lỗi ⏳
+                        </span>
+                      ) : (
+                        <button
+                          onClick={() => { sounds.playClick(); setReportModalQuestion(q); }}
+                          className="px-2.5 py-0.5 rounded-full text-[11px] font-bold border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 transition flex items-center gap-1"
+                          title="Báo câu hỏi này bị lỗi cho Ba Mẹ (Thưởng 5.000đ)"
+                        >
+                          <Flag className="w-3 h-3 text-rose-500" />
+                          <span>Báo lỗi 🚩</span>
+                        </button>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
 
               {/* Question Text */}
@@ -138,14 +155,34 @@ export const WrongQuestionsReview = ({ onStartQuiz }) => {
                 </div>
               )}
 
-              {/* Hint & Formula */}
-              <div className="rounded-xl bg-amber-50/70 border border-amber-200 p-3 text-xs sm:text-sm font-semibold text-amber-900 flex items-start gap-2">
-                <Lightbulb className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-extrabold text-amber-800">Gợi ý cách làm: </span>
-                  <MathRenderer text={q.explanation || q.hint} />
-                </div>
-              </div>
+              {/* Hint & Formula / Explanation */}
+              {(() => {
+                const qAttempts = wrongQuestionAttempts?.[q.id] || 1;
+                const isUnlocked = qAttempts >= 5;
+
+                return isUnlocked ? (
+                  <div className="rounded-xl bg-amber-50/80 border border-amber-300 p-3.5 text-xs sm:text-sm font-semibold text-amber-950 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center gap-1.5 font-black text-amber-900">
+                      <Lightbulb className="w-4 h-4 text-amber-600" />
+                      <span>Hướng dẫn giải chi tiết (Đã mở khóa sau {qAttempts} lần thử):</span>
+                    </div>
+                    <div className="pl-5 text-slate-700 leading-relaxed">
+                      <MathRenderer text={q.explanation || q.hint} />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="rounded-xl bg-amber-50/90 border border-amber-300 p-3.5 text-xs sm:text-sm font-semibold text-amber-950 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center gap-1.5 font-black text-amber-900">
+                      <Lock className="w-4 h-4 text-amber-600" />
+                      <span>Thử thách tự tư duy (Lời giải mở khóa sau 5 lần thử sức):</span>
+                    </div>
+                    <div className="pl-5 text-slate-700 leading-relaxed">
+                      <span className="font-extrabold text-amber-800">Gợi ý phương pháp: </span>
+                      <MathRenderer text={q.hint || "Bé hãy đọc kĩ đề bài, vẽ hình hoặc đặt phép tính ra giấy nháp để tự tìm kết quả nhé!"} />
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
           ))}
         </div>

@@ -10,7 +10,9 @@ import {
   Sparkles,
   HelpCircle,
   Filter,
-  Flag
+  Flag,
+  Lock,
+  Unlock
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { ReportErrorModal } from './ReportErrorModal';
@@ -23,7 +25,7 @@ export const ExplanationView = ({
   onBack, 
   onRetryWrongOnly 
 }) => {
-  const { profile, reportedQuestions, verifiedErrorIds } = useLearning();
+  const { profile, reportedQuestions, verifiedErrorIds, wrongQuestionAttempts } = useLearning();
   const [filterMode, setFilterMode] = useState('all'); // 'all' | 'wrong' | 'correct'
   const [reportModalQuestion, setReportModalQuestion] = useState(null);
 
@@ -205,68 +207,122 @@ export const ExplanationView = ({
               )}
 
               {/* 4 Options with Status Coloring */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
-                {q.options.map((opt, optIdx) => {
-                  const isUserSelection = userChoice === optIdx;
-                  const isTargetCorrect = correctChoice === optIdx;
+              {(() => {
+                const qAttempts = wrongQuestionAttempts?.[q.id] || 1;
+                const isUnlocked = isCorrect || qAttempts >= 5;
 
-                  let cardStyle = "bg-slate-50/50 border-slate-200 text-slate-600";
-                  let letterStyle = "bg-slate-100 text-slate-600 border-slate-200";
+                return (
+                  <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                      {q.options.map((opt, optIdx) => {
+                        const isUserSelection = userChoice === optIdx;
+                        // Only highlight target correct if isUnlocked!
+                        const showTargetCorrect = isUnlocked && correctChoice === optIdx;
 
-                  if (isTargetCorrect) {
-                    cardStyle = "bg-emerald-50/90 border-emerald-400 text-emerald-950 font-bold ring-2 ring-emerald-300";
-                    letterStyle = "bg-emerald-500 text-white font-bold";
-                  } else if (isUserSelection && !isCorrect) {
-                    cardStyle = "bg-rose-50/90 border-rose-400 text-rose-950 font-bold ring-2 ring-rose-300";
-                    letterStyle = "bg-rose-500 text-white font-bold";
-                  }
+                        let cardStyle = "bg-slate-50/50 border-slate-200 text-slate-600";
+                        let letterStyle = "bg-slate-100 text-slate-600 border-slate-200";
 
-                  return (
-                    <div
-                      key={optIdx}
-                      className={`p-3.5 rounded-2xl border-2 flex items-center justify-between gap-3 ${cardStyle}`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className={`w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center shrink-0 ${letterStyle}`}>
-                          {optionLetters[optIdx]}
-                        </span>
-                        <span className="text-sm sm:text-base font-bold">
-                          <MathRenderer text={opt} />
-                        </span>
-                      </div>
+                        if (showTargetCorrect) {
+                          cardStyle = "bg-emerald-50/90 border-emerald-400 text-emerald-950 font-bold ring-2 ring-emerald-300";
+                          letterStyle = "bg-emerald-500 text-white font-bold";
+                        } else if (isUserSelection && !isCorrect) {
+                          cardStyle = "bg-rose-50/90 border-rose-400 text-rose-950 font-bold ring-2 ring-rose-300";
+                          letterStyle = "bg-rose-500 text-white font-bold";
+                        }
 
-                      {/* Indicator tag */}
-                      {isTargetCorrect && (
-                        <span className="text-[11px] font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 shrink-0">
-                          Đáp án đúng ✓
-                        </span>
-                      )}
-                      {isUserSelection && !isTargetCorrect && (
-                        <span className="text-[11px] font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded-full border border-rose-300 shrink-0 inline-flex items-center gap-1">
-                          <span>{profile?.avatar || '✗'}</span>
-                          <span>{profile?.name || 'Bé'} đã chọn ✗</span>
-                        </span>
-                      )}
+                        return (
+                          <div
+                            key={optIdx}
+                            className={`p-3.5 rounded-2xl border-2 flex items-center justify-between gap-3 ${cardStyle}`}
+                          >
+                            <div className="flex items-center gap-3">
+                              <span className={`w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center shrink-0 ${letterStyle}`}>
+                                {optionLetters[optIdx]}
+                              </span>
+                              <span className="text-sm sm:text-base font-bold">
+                                <MathRenderer text={opt} />
+                              </span>
+                            </div>
+
+                            {/* Indicator tag */}
+                            {showTargetCorrect && (
+                              <span className="text-[11px] font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 shrink-0">
+                                Đáp án đúng ✓
+                              </span>
+                            )}
+                            {isUserSelection && !showTargetCorrect && (
+                              <span className="text-[11px] font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded-full border border-rose-300 shrink-0 inline-flex items-center gap-1">
+                                <span>{profile?.avatar || '✗'}</span>
+                                <span>{profile?.name || 'Bé'} đã chọn ✗ {!isUnlocked && '(Chưa đúng)'}</span>
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
-                  );
-                })}
-              </div>
 
-              {/* Step-by-Step Explanation Box */}
-              <div className="rounded-2xl bg-amber-50/70 border-2 border-amber-200 p-4 space-y-2">
-                <div className="flex items-center gap-2 font-bold text-sm text-amber-900">
-                  <Lightbulb className="w-5 h-5 text-amber-600" />
-                  <span>Hướng dẫn giải chi tiết từng bước:</span>
-                </div>
-                <div className="text-sm sm:text-base font-semibold text-slate-700 pl-7 leading-relaxed">
-                  <MathRenderer text={q.explanation} />
-                </div>
-                {q.hint && (
-                  <div className="text-xs font-bold text-amber-700 pl-7 pt-1">
-                    📌 <em>Mẹo nhớ nhanh: {q.hint}</em>
-                  </div>
-                )}
-              </div>
+                    {/* Step-by-Step Explanation Box (Chỉ hiện khi bé đã làm đúng hoặc đã thử sức >= 5 lần) */}
+                    {!isUnlocked ? (
+                      <div className="rounded-2xl bg-amber-50/90 border-2 border-amber-300 p-4 sm:p-5 space-y-3">
+                        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-200/80 pb-2.5">
+                          <div className="flex items-center gap-2 font-black text-sm sm:text-base text-amber-900">
+                            <Lock className="w-5 h-5 text-amber-600" />
+                            <span>Thử Thách Tự Tư Duy: Lời Giải Chi Tiết Đang Tạm Ẩn</span>
+                          </div>
+                          <span className="text-xs font-black px-3 py-1 rounded-full bg-amber-200 text-amber-900 border border-amber-300">
+                            Đã thử sức: {qAttempts}/5 lần
+                          </span>
+                        </div>
+
+                        <p className="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed">
+                          Để rèn luyện tư duy thực chất và tránh học vẹt, hệ thống tạm ẩn đáp án đúng và lời giải chi tiết. 
+                          Bé hãy lấy giấy nháp tự tính lại và chọn <strong>&quot;Luyện Tập Lại Câu Sai&quot;</strong> để chinh phục nhé!
+                        </p>
+
+                        {q.hint && (
+                          <div className="p-3 bg-white/90 rounded-xl border border-amber-200 text-xs sm:text-sm font-semibold text-amber-900 flex items-start gap-2 shadow-2xs">
+                            <Lightbulb className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                            <div>
+                              <span className="font-extrabold text-amber-800">Gợi ý tư duy: </span>
+                              <MathRenderer text={q.hint} />
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="text-[11px] font-bold text-slate-500 italic">
+                          💡 Lời giải đầy đủ và đáp án chính xác sẽ tự động mở khóa sau 5 lần bé kiên trì tự thử sức!
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="space-y-2">
+                        {!isCorrect && qAttempts >= 5 && (
+                          <div className="rounded-xl bg-emerald-50 border border-emerald-300 px-3.5 py-2 flex items-center justify-between gap-2 text-emerald-800 text-xs font-black">
+                            <div className="flex items-center gap-1.5">
+                              <Unlock className="w-4 h-4 text-emerald-600" />
+                              <span>Đã mở khóa lời giải chi tiết (Bé đã kiên trì thử sức {qAttempts} lần)!</span>
+                            </div>
+                            <span className="bg-emerald-200/70 text-emerald-900 px-2 py-0.5 rounded-md">≥ 5 lần thử</span>
+                          </div>
+                        )}
+                        <div className="rounded-2xl bg-amber-50/70 border-2 border-amber-200 p-4 space-y-2">
+                          <div className="flex items-center gap-2 font-bold text-sm text-amber-900">
+                            <Lightbulb className="w-5 h-5 text-amber-600" />
+                            <span>Hướng dẫn giải chi tiết từng bước:</span>
+                          </div>
+                          <div className="text-sm sm:text-base font-semibold text-slate-700 pl-7 leading-relaxed">
+                            <MathRenderer text={q.explanation} />
+                          </div>
+                          {q.hint && (
+                            <div className="text-xs font-bold text-amber-700 pl-7 pt-1">
+                              📌 <em>Mẹo nhớ nhanh: {q.hint}</em>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           );
         })}

@@ -214,6 +214,11 @@ export async function POST(request: Request) {
       lastDate: inData.streakData?.lastDate || curData.streakData?.lastDate || new Date().toISOString().split('T')[0]
     };
 
+    // 10. Merge Wrong Question Attempts (5-attempt unlock mechanism)
+    const curWrongAttempts = (curData.wrongQuestionAttempts && typeof curData.wrongQuestionAttempts === 'object') ? curData.wrongQuestionAttempts : {};
+    const inWrongAttempts = (inData.wrongQuestionAttempts && typeof inData.wrongQuestionAttempts === 'object') ? inData.wrongQuestionAttempts : {};
+    const mergedWrongQuestionAttempts = { ...curWrongAttempts, ...inWrongAttempts };
+
     // Combine all merged data (Preserve reset timestamps!)
     const activeResetTs = Math.max(serverResetTs, clientResetTs, Date.now());
     const mergedData = {
@@ -230,6 +235,7 @@ export async function POST(request: Request) {
       wrongG4Tv: inData.wrongG4Tv || curData.wrongG4Tv || [],
       wrongG7Math: inData.wrongG7Math || curData.wrongG7Math || [],
       wrongG7Lit: inData.wrongG7Lit || curData.wrongG7Lit || [],
+      wrongQuestionAttempts: mergedWrongQuestionAttempts,
       badges: mergedBadges,
       streakData: mergedStreakData,
       coins: mergedCoins,

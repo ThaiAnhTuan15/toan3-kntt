@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { 
   User, KeyRound, Sparkles, Check, AlertCircle, RefreshCw, 
@@ -22,7 +22,7 @@ const STAGES_LIST = [
 
 export default function ParentAdminPage() {
   // Auth state - KHÔNG tự động đăng nhập, luôn bắt buộc nhập mật khẩu cha mẹ mỗi lần truy cập
-  const [authData, setAuthData] = useState(null);
+  const [authData, setAuthData] = useState<any>(null);
 
   const [inputUsername, setInputUsername] = useState(() => {
     try {
@@ -37,16 +37,16 @@ export default function ParentAdminPage() {
   const [authError, setAuthError] = useState('');
 
   // Student loaded state
-  const [student, setStudent] = useState(null);
+  const [student, setStudent] = useState<any>(null);
   const [isLoadingData, setIsLoadingData] = useState(false);
   const [autoRefresh, setAutoRefresh] = useState(true);
-  const [lastRefreshedAt, setLastRefreshedAt] = useState(null);
+  const [lastRefreshedAt, setLastRefreshedAt] = useState<any>(null);
 
   // Active Tab
   const [activeTab, setActiveTab] = useState('history'); // 'history' | 'stages' | 'piggy' | 'reports' | 'settings'
 
   // Modal inspection states
-  const [viewingQuiz, setViewingQuiz] = useState(null);
+  const [viewingQuiz, setViewingQuiz] = useState<any>(null);
   const [inspectingQuiz, setInspectingQuiz] = useState<any>(null);
   const [inspectLevelFilter, setInspectLevelFilter] = useState('all');
   const [inspectSearch, setInspectSearch] = useState('');
@@ -79,7 +79,7 @@ export default function ParentAdminPage() {
   const [newParentPinInput, setNewParentPinInput] = useState('');
 
   // Fetch student data from server
-  const fetchStudentData = async (username, pin) => {
+  const fetchStudentData = async (username: string, pin: string) => {
     setIsLoadingData(true);
     setAuthError('');
     try {
@@ -100,7 +100,7 @@ export default function ParentAdminPage() {
       setStudent(resJson.student);
       setLastRefreshedAt(new Date().toLocaleTimeString('vi-VN'));
       return resJson.student;
-    } catch (err) {
+    } catch (err: any) {
       setAuthError(err.message || 'Lỗi kết nối máy chủ');
       return null;
     } finally {
@@ -125,7 +125,7 @@ export default function ParentAdminPage() {
   }, [autoRefresh, authData]);
 
   // Handle Parent Login (Chỉ lưu vào bộ nhớ tạm session, đóng tab/truy cập lại phải nhập lại)
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputUsername.trim()) {
       setAuthError('Vui lòng nhập tên đăng nhập của bé!');
@@ -161,7 +161,7 @@ export default function ParentAdminPage() {
   };
 
   // Handle Action (Approve, Reject, Bonus, Verify, Change PIN)
-  const handleParentAction = async (action, payload) => {
+  const handleParentAction = async (action: string, payload?: any) => {
     if (!authData) return;
     setIsSubmittingAction(true);
     setActionSuccessMsg('');
@@ -184,12 +184,12 @@ export default function ParentAdminPage() {
       setActionSuccessMsg(resJson.message);
       const activePin = (action === 'change_parent_pin' && payload?.newParentPin) ? payload.newParentPin : authData.pin;
       if (action === 'change_parent_pin' && payload?.newParentPin) {
-        setAuthData(prev => prev ? { ...prev, pin: payload.newParentPin } : prev);
+        setAuthData((prev: any) => prev ? { ...prev, pin: payload.newParentPin } : prev);
       }
       // Refresh student data
       await fetchStudentData(authData.username, activePin);
       setTimeout(() => setActionSuccessMsg(''), 4000);
-    } catch (err) {
+    } catch (err: any) {
       alert(err.message || 'Lỗi khi thực hiện thao tác');
     } finally {
       setIsSubmittingAction(false);
@@ -201,7 +201,11 @@ export default function ParentAdminPage() {
 
   // Derived student data
   const studentData = student?.data || {};
-  const historyList = Array.isArray(studentData.history) ? studentData.history : [];
+  const NON_MATH_SUBJECTS = ['vietnamese', 'english', 'civics', 'technology', 'history_geo', 'science', 'informatics', 'literature'];
+  const historyList = useMemo(() => {
+    const raw = Array.isArray(studentData.history) ? studentData.history : [];
+    return raw.filter((item: any) => !NON_MATH_SUBJECTS.includes(item.subject));
+  }, [studentData.history]);
   const g4Prog = studentData.g4MathProgress || {};
   const piggyBalance = typeof studentData.piggyBalance === 'number' ? studentData.piggyBalance : 0;
   const piggyRequests = Array.isArray(studentData.piggyRequests) ? studentData.piggyRequests : [];
@@ -213,7 +217,7 @@ export default function ParentAdminPage() {
 
   // Total completed weeks (scored >= 70%)
   const completedWeeks = Object.keys(g4Prog).filter(w => (g4Prog[w]?.bestScore || 0) >= 70).length;
-  const totalStars = Object.values(g4Prog).reduce((sum, item) => sum + (item.stars || 0), 0);
+  const totalStars = Object.values(g4Prog).reduce((sum: number, item: any) => sum + (item.stars || 0), 0);
 
   // -------------------------------------------------------------
   // VIEW 1: PARENT LOGIN SCREEN
@@ -465,9 +469,9 @@ export default function ParentAdminPage() {
           </div>
           <p className="text-[11px] font-bold text-rose-600 mt-2 flex items-center justify-between">
             <span>Tiền thưởng con kiếm được</span>
-            {piggyRequests.filter(r => r.status === 'pending').length > 0 && (
+            {piggyRequests.filter((r: any) => r.status === 'pending').length > 0 && (
               <span className="px-1.5 py-0.2 bg-rose-500 text-white rounded-full text-[10px]">
-                {piggyRequests.filter(r => r.status === 'pending').length} yêu cầu
+                {piggyRequests.filter((r: any) => r.status === 'pending').length} yêu cầu
               </span>
             )}
           </p>
@@ -529,7 +533,7 @@ export default function ParentAdminPage() {
         >
           <span>🐷</span>
           <span>Heo Đất & Duyệt Thưởng</span>
-          {piggyRequests.filter(r => r.status === 'pending').length > 0 && (
+          {piggyRequests.filter((r: any) => r.status === 'pending').length > 0 && (
             <span className="w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white inline-block absolute top-1.5 right-1.5" />
           )}
         </button>
@@ -544,7 +548,7 @@ export default function ParentAdminPage() {
         >
           <span>🎖️</span>
           <span>Câu Báo Lỗi ({reportedQuestions.length})</span>
-          {reportedQuestions.filter(q => q.status === 'pending').length > 0 && (
+          {reportedQuestions.filter((q: any) => q.status === 'pending').length > 0 && (
             <span className="w-2 h-2 rounded-full bg-amber-500 ring-2 ring-white inline-block absolute top-1.5 right-1.5" />
           )}
         </button>
@@ -592,7 +596,7 @@ export default function ParentAdminPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-              {historyList.map((item, idx) => {
+              {historyList.map((item: any, idx: number) => {
                 const dateStr = item.date ? new Date(item.date).toLocaleString('vi-VN') : 'Không rõ ngày';
                 const scoreColor = item.score >= 90 ? 'text-emerald-600 bg-emerald-50 border-emerald-200' :
                                    item.score >= 70 ? 'text-amber-600 bg-amber-50 border-amber-200' :
@@ -607,7 +611,7 @@ export default function ParentAdminPage() {
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-xs font-black text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">
-                          {item.title || `Đề Số ${item.week || ''}`}
+                          {item.title || (item.week ? `Đề Số ${item.week}` : (item.type === 'retry_wrong' || item.type === 'wrong_review' ? 'Luyện tập câu sai' : 'Luyện tập Toán 3'))}
                         </span>
                         <span className="text-[11px] font-bold text-slate-400">{dateStr}</span>
                       </div>
@@ -784,7 +788,7 @@ export default function ParentAdminPage() {
               </div>
             ) : (
               <div className="space-y-3">
-                {piggyRequests.map((req) => (
+                {piggyRequests.map((req: any) => (
                   <div
                     key={req.id}
                     className={`bg-white rounded-2xl border-2 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs ${
@@ -843,7 +847,7 @@ export default function ParentAdminPage() {
               Lịch sử biến động quỹ Heo đất ({piggyHistory.length} giao dịch)
             </h3>
             <div className="bg-white rounded-2xl border border-slate-200 divide-y divide-slate-100 max-h-96 overflow-y-auto">
-              {piggyHistory.map((item, idx) => (
+              {piggyHistory.map((item: any, idx: number) => (
                 <div key={item.id || idx} className="p-3.5 flex items-center justify-between text-xs">
                   <div>
                     <div className="font-black text-slate-800">{item.title}</div>
@@ -881,7 +885,7 @@ export default function ParentAdminPage() {
             </div>
           ) : (
             <div className="space-y-3">
-              {reportedQuestions.map((rep) => {
+              {reportedQuestions.map((rep: any) => {
                 const isVerified = rep.status === 'verified';
 
                 return (
@@ -1043,7 +1047,7 @@ export default function ParentAdminPage() {
 
             {/* Questions detail breakdown */}
             <div className="overflow-y-auto space-y-2 pr-1 flex-1">
-              {Array.isArray(viewingQuiz.details) && viewingQuiz.details.map((item, qIdx) => (
+              {Array.isArray(viewingQuiz.details) && viewingQuiz.details.map((item: any, qIdx: number) => (
                 <div 
                   key={qIdx}
                   className={`p-3 rounded-xl border text-xs font-bold ${

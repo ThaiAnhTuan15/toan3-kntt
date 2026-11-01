@@ -203,23 +203,32 @@ export const ResultModal = ({
 
         {/* Action Buttons Stack */}
         <div className="space-y-2.5">
-          {/* View Detailed Solutions */}
-          <button
-            onClick={() => { sounds.playClick(); onOpenExplanations(); }}
-            className="w-full py-3.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-base rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-2"
-          >
-            <BookOpen className="w-5 h-5" />
-            Xem Lời Giải Chi Tiết & Sửa Lỗi
-          </button>
+          {/* Retry Wrong Questions (if any) -> Promoted to primary to encourage self-thinking */}
+          {wrongCount > 0 ? (
+            <>
+              <button
+                onClick={() => { sounds.playClick(); onRetryWrongOnly(); }}
+                className="w-full py-3.5 bg-rose-500 hover:bg-rose-600 text-white font-black text-base rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-2 animate-pulse"
+              >
+                <RotateCcw className="w-5 h-5" />
+                🎯 Thử Thách Lại {wrongCount} Câu Chưa Đúng (Bé Tự Tư Duy)
+              </button>
 
-          {/* Retry Wrong Questions (if any) */}
-          {wrongCount > 0 && (
+              <button
+                onClick={() => { sounds.playClick(); onOpenExplanations(); }}
+                className="w-full py-3 bg-amber-100 hover:bg-amber-200 text-amber-950 border-2 border-amber-300 font-extrabold text-sm rounded-2xl transition-all flex items-center justify-center gap-2"
+              >
+                <BookOpen className="w-4 h-4" />
+                Xem Lại Bài Làm & Gợi Ý
+              </button>
+            </>
+          ) : (
             <button
-              onClick={() => { sounds.playClick(); onRetryWrongOnly(); }}
-              className="w-full py-3 bg-rose-50 hover:bg-rose-100 text-rose-700 border-2 border-rose-300 font-extrabold text-sm rounded-2xl transition-all flex items-center justify-center gap-2"
+              onClick={() => { sounds.playClick(); onOpenExplanations(); }}
+              className="w-full py-3.5 bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-base rounded-2xl shadow-bouncy-sm btn-bouncy flex items-center justify-center gap-2"
             >
-              <RotateCcw className="w-4 h-4" />
-              Luyện Tập Lại {wrongCount} Câu Làm Sai
+              <BookOpen className="w-5 h-5" />
+              Xem Lời Giải Chi Tiết
             </button>
           )}
 
