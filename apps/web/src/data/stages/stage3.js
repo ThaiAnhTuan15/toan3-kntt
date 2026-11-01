@@ -17,7 +17,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Hình 1"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Ba điểm A, B, C không cùng nằm trên một đường thẳng thì ba điểm đó không thẳng hàng. Quan sát 4 hình vẽ, ở Hình 2 ba điểm A, B, C không cùng nằm trên một đường thẳng. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image84.png"
   },
@@ -37,7 +37,7 @@ export const STAGE_3_QUESTIONS = [
       "G và H",
       "E và G"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình vẽ, trên đoạn thẳng GH có điểm O nằm giữa hai điểm G và H. Do đó ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image85.png"
   },
@@ -57,7 +57,7 @@ export const STAGE_3_QUESTIONS = [
       "3 điểm",
       "4 điểm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát đoạn thẳng AD, trên đường thẳng nối từ A đến D có 2 điểm M và N nằm giữa hai điểm A và D. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image86.png"
   },
@@ -77,7 +77,7 @@ export const STAGE_3_QUESTIONS = [
       "Bạn An đúng, bạn Trang sai",
       "Cả hai bạn nói đúng"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ: Ba điểm H, E, K thẳng hàng và E nằm giữa H và K nên bạn An nói đúng. Ba điểm G, E, N thẳng hàng và E nằm giữa G và N nên bạn Trang nói đúng. Vậy cả hai bạn đều nói đúng, ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image14.png"
   },
@@ -97,7 +97,7 @@ export const STAGE_3_QUESTIONS = [
       "B",
       "M"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ, điểm M nằm trên đoạn thẳng AB và nằm ở giữa hai điểm A và B. Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image88.png"
   },
@@ -157,7 +157,7 @@ export const STAGE_3_QUESTIONS = [
       "Bạn An đúng, bạn Trang sai",
       "Cả hai bạn nói đúng"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đoạn thẳng HK và đoạn thẳng GN cắt nhau tại E. Vì E nằm trên đoạn HK và ở giữa H và K nên bạn An nói đúng. E nằm trên đoạn GN và ở giữa G và N nên bạn Trang cũng nói đúng. Vậy cả hai bạn đều nói đúng, ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image14.png"
   },
@@ -197,7 +197,7 @@ export const STAGE_3_QUESTIONS = [
       "5 cm",
       "6 cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đoạn thẳng AB có điểm A đặt tại vạch 0 cm và điểm B đặt tại vạch 8 cm của thước kẻ. Độ dài đoạn thẳng AB là 8 cm. Để M là trung điểm của đoạn thẳng AB thì M phải chia đôi đoạn AB: 8 : 2 = 4 (cm). Vậy cần đánh dấu điểm M ứng với vạch 4 cm. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image99.png"
   },
@@ -217,7 +217,7 @@ export const STAGE_3_QUESTIONS = [
       "5400",
       "5300"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Trên tia số, điểm A ứng với số 5 000 và điểm B ứng với số 5 600. Độ dài đoạn AB tương ứng là: 5 600 - 5 000 = 600 đơn vị. Trung điểm của đoạn thẳng AB cách điểm A: 600 : 2 = 300 đơn vị. Do đó, trung điểm của đoạn thẳng AB ứng với số: 5 000 + 300 = 5 300. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image100.png"
   },
@@ -277,7 +277,7 @@ export const STAGE_3_QUESTIONS = [
       "20 cm",
       "8 cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Vì điểm H nằm ở giữa hai điểm D và F nên: DH + HF = DF. Thay số ta có: DH + 20 = 38, suy ra DH = 38 - 20 = 18 (cm). Vậy ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -297,7 +297,7 @@ export const STAGE_3_QUESTIONS = [
       "Rùa đang ở giữa điểm dừng của Thỏ và điểm đích B",
       "Rùa cách B một khoảng 130m"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Theo đề bài: Điểm xuất phát A cách C (nơi Thỏ dừng) là 120 m. Rùa chậm hơn Thỏ và ở điểm D cách C là 50 m, tức là Rùa cách A một khoảng: 120 - 50 = 70 m. Đoạn thẳng AB dài 200 m, thứ tự các điểm trên đường thẳng từ xuất phát đến đích là: A (0 m) -> D (70 m) -> C (120 m) -> B (200 m).\nXét các khẳng định:\n- A: Rùa (D) ở giữa A và C (đúng).\n- B: Thỏ (C) ở giữa A và B (đúng).\n- C: Rùa (D) ở giữa Thỏ (C) và B là SAI, vì D nằm trước C chứ không nằm giữa C và B.\n- D: Rùa (D) cách B một khoảng: 200 - 70 = 130 m (đúng).\nVậy khẳng định sai là C, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -317,7 +317,7 @@ export const STAGE_3_QUESTIONS = [
       "B",
       "A"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát đoạn thẳng AC, điểm M nằm giữa hai điểm A và C và có AM = MC (đều gồm 2 phần bằng nhau). Vậy M là trung điểm của đoạn thẳng AC. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image91.png"
   },
@@ -357,7 +357,7 @@ export const STAGE_3_QUESTIONS = [
       "G",
       "D"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát đoạn thẳng BD, điểm G nằm giữa B và D đồng thời chia đoạn BD thành hai đoạn bằng nhau (BG = GD). Vậy trung điểm của đoạn thẳng BD là điểm G. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image93.png"
   },
@@ -377,7 +377,7 @@ export const STAGE_3_QUESTIONS = [
       "P",
       "M"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ, điểm N nằm trên đoạn thẳng MP và ở giữa hai điểm M và P. Vậy điểm N ở giữa hai điểm M và P. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image11.png"
   },
@@ -397,7 +397,7 @@ export const STAGE_3_QUESTIONS = [
       "3",
       "1"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình vẽ: Điểm O là trung điểm của 3 đoạn thẳng: đoạn thẳng KG (OK = OG), đoạn thẳng AB (OA = OB), và đoạn thẳng MN (OM = ON). Vậy có 3 đoạn thẳng nhận O làm trung điểm. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image95.png"
   },
@@ -437,7 +437,7 @@ export const STAGE_3_QUESTIONS = [
       "2",
       "4"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, điểm K nằm ở giữa các cặp điểm: A và B, C và D, E và G, H và I, M và N. Như vậy có tất cả 5 cặp điểm nhận K là điểm ở giữa. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image101.png"
   },
@@ -457,7 +457,7 @@ export const STAGE_3_QUESTIONS = [
       "nhiều hơn",
       "không so sánh được"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình vẽ, giữa hai điểm C và D có 2 điểm (E và F), giữa hai điểm A và B có 1 điểm (M). Vì 2 > 1 nên số điểm ở giữa C và D nhiều hơn số điểm ở giữa A và B. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image19.png"
   },
@@ -477,7 +477,7 @@ export const STAGE_3_QUESTIONS = [
       "1",
       "2"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ, điểm M nằm giữa hai điểm A và B; điểm N nằm giữa hai điểm C và D. Vậy hình vẽ có 2 điểm ở giữa hai điểm khác (điểm M và điểm N). Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image103.png"
   },
@@ -497,7 +497,7 @@ export const STAGE_3_QUESTIONS = [
       "Ba điểm C, D, E",
       "Ba điểm D, E, B"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát đoạn thẳng AF, các điểm nằm giữa hai điểm đầu mút A và F là ba điểm C, D, E. Do đó ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
     "image": "/images/math3/v3_image104.png"
   },
@@ -517,7 +517,7 @@ export const STAGE_3_QUESTIONS = [
       "70cm",
       "36cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Vì K là trung điểm của đoạn thẳng HI nên: HK = HI : 2 = 144 : 2 = 72 (cm). Vì M là trung điểm của đoạn thẳng HK nên: MK = HK : 2 = 72 : 2 = 36 (cm). Vậy MK = 36 cm, ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -537,7 +537,7 @@ export const STAGE_3_QUESTIONS = [
       "6cm",
       "4cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, đoạn thẳng AC có độ dài 6 cm. Vì B là trung điểm của đoạn thẳng AC nên: BC = AC : 2 = 6 : 2 = 3 (cm). Đoạn thẳng CD có độ dài là 2 cm. Vì C nằm giữa B và D nên: BD = BC + CD = 3 + 2 = 5 (cm). Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image106.png"
   },
@@ -577,7 +577,7 @@ export const STAGE_3_QUESTIONS = [
       "9cm",
       "6cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Phân tích các bước gấp sợi dây:\n1. Minh gấp đôi sợi dây AB tại điểm C, do đó C là trung điểm của đoạn thẳng AB, suy ra AB = 2 x AC.\n2. Gấp đôi đoạn thẳng AC tại điểm D, do đó D là trung điểm của đoạn thẳng AC, suy ra AC = 2 x AD.\nBiết AD = 2 cm, suy ra: AC = 2 x 2 = 4 (cm).\nDo đó, độ dài cả sợi dây AB là: AB = 4 x 2 = 8 (cm). (Chi tiết CE = 1 cm là minh họa thêm cho vị trí gấp tiếp theo trên đoạn DB).\nVậy sợi dây AB dài 8 cm, ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -595,8 +595,7 @@ export const STAGE_3_QUESTIONS = [
       "346cm",
       "364cm",
       "290cm",
-      "368cm",
-      "TRẮC NGHIỆM"
+      "368cm"
     ],
     "correctIndex": 0,
     "explanation": "Giải thích: Theo đề bài:\n- MN = 212 cm và I là trung điểm của MN nên: MI = IN = 212 : 2 = 106 (cm).\n- Q là điểm ở giữa M và N với MQ = 78 cm. Do đó: NQ = MN - MQ = 212 - 78 = 134 (cm).\n- Vì MQ = 78 cm < MI = 106 cm nên điểm Q nằm giữa M và I. Độ dài đoạn thẳng IQ là: IQ = MI - MQ = 106 - 78 = 28 (cm).\nBây giờ ta tính tổng: MQ + MI + IQ + NQ = 78 + 106 + 28 + 134 = 346 (cm).\nDo đó ta chọn phương án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ═════════════════════════════════════════════ BÀI 17: HÌNH TRÒN. TÂM, BÁN KÍNH, ĐƯỜNG KÍNH CỦA HÌNH TRÒN 1. NHẬN BIẾT",
@@ -618,7 +617,7 @@ export const STAGE_3_QUESTIONS = [
       "Tâm A",
       "Không có tâm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, điểm nằm chính giữa hình tròn được đặt tên là chữ O, vậy hình tròn có tâm là O. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b21_25_image26.png"
   },
@@ -638,7 +637,7 @@ export const STAGE_3_QUESTIONS = [
       "Tâm H, bán kính HK",
       "Tâm K, bán kính HK"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Điểm H nằm ở chính giữa hình tròn là tâm. Đoạn thẳng nối từ tâm H đến điểm K trên đường tròn là bán kính HK. (Đoạn KG không đi qua tâm nên không phải bán kính). Do đó tâm là H và bán kính là HK, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_b17_c2.png"
   },
@@ -658,7 +657,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình tam giác",
       "Hình tròn"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Chiếc bánh có mặt phẳng cong tròn đều khép kín, đó là dạng hình tròn quen thuộc trong thực tế. Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_b17_c3.png"
   },
@@ -718,7 +717,7 @@ export const STAGE_3_QUESTIONS = [
       "Tâm O, đường kính AB",
       "Tâm A, đường kính AB"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình tròn có điểm chính giữa là tâm O. Đoạn thẳng đi qua tâm O nối hai điểm A và B trên đường tròn là đường kính AB. Vậy tâm là O, đường kính là AB, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_b17_c6.png"
   },
@@ -758,7 +757,7 @@ export const STAGE_3_QUESTIONS = [
       "OB, MB",
       "OM, AM"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Bán kính là đoạn thẳng nối từ tâm O đến một điểm nằm trên đường tròn. Trong các đáp án được nêu, OA và OB đều là các đoạn thẳng nối từ tâm O đến điểm nằm trên đường tròn nên OA và OB là các bán kính. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_b17_c8.png"
   },
@@ -796,10 +795,9 @@ export const STAGE_3_QUESTIONS = [
       "CD > 6cm",
       "CD < 6cm",
       "CD = 6cm",
-      "Không xác định được",
-      "TRẮC NGHIỆM"
+      "Không xác định được"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Trong hình tròn tâm O, cả AB và CD đều là các đoạn thẳng đi qua tâm O và cắt đường tròn tại hai điểm, tức là AB và CD đều là đường kính của hình tròn đó. Trong một hình tròn, mọi đường kính đều có độ dài bằng nhau. Vì AB = 6cm nên CD = 6cm. Do đó ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ═════════════════════════════════════════════ BÀI 18: GÓC, GÓC VUÔNG, GÓC KHÔNG VUÔNG 1. NHẬN BIẾT",
     "image": "/images/math3/b16_20_b17_c10.png"
   },
@@ -1119,7 +1117,7 @@ export const STAGE_3_QUESTIONS = [
       "0 góc vuông",
       "1 góc vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình tam giác và dùng thước ê-ke kiểm tra cả 3 góc ở 3 đỉnh: cả 3 góc đều là các góc không vuông (góc nhọn bé hơn góc vuông). Vậy hình vẽ có 0 góc vuông, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image121.png"
   },
@@ -1199,7 +1197,7 @@ export const STAGE_3_QUESTIONS = [
       "3 góc vuông",
       "4 góc vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Hình vẽ là hình chữ nhật. Dùng thước ê-ke kiểm tra 4 góc ở 4 đỉnh của hình chữ nhật, ta thấy cả 4 góc đều là góc vuông. Vậy hình vẽ có 4 góc vuông, ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image125.png"
   },
@@ -1219,7 +1217,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình A; Hình B",
       "Cả ba hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát ba hình:\n- Hình A gồm các nét cong khép kín nên không tạo thành góc.\n- Hình B gồm hai đoạn thẳng chung gốc tạo thành một góc.\n- Hình C là chiếc ê-ke có các cạnh thẳng tạo thành các góc.\nVậy Hình B và Hình C tạo thành góc, ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU",
     "image": "/images/math3/v3_image126.png"
   },
@@ -1239,7 +1237,7 @@ export const STAGE_3_QUESTIONS = [
       "9 góc",
       "8 góc"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình ngôi sao 5 cánh có:\n- 5 góc nhọn ở 5 đỉnh nhọn hướng ra ngoài (5 góc lồi).\n- 5 góc ở 5 điểm lõm vào trong giữa các cánh (5 góc lõm).\nTổng cộng ngôi sao có: 5 + 5 = 10 góc. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image132.png"
   },
@@ -1259,7 +1257,7 @@ export const STAGE_3_QUESTIONS = [
       "Góc đỉnh A cạnh AB, AC; Góc đỉnh A cạnh AD, AC",
       "Góc đỉnh A cạnh BA, CA; Góc đỉnh A cạnh BA, DA"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình tại đỉnh A có 3 tia: AB, AC, AD. Hai góc thành phần ở đỉnh A gồm góc tạo bởi cạnh AB và AC, và góc tạo bởi cạnh AD và AC. Do đó tên hai góc là: Góc đỉnh A cạnh AB, AC và Góc đỉnh A cạnh AD, AC. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image133.png"
   },
@@ -1279,7 +1277,7 @@ export const STAGE_3_QUESTIONS = [
       "Góc không vuông đỉnh N cạnh NM; NP",
       "Góc không vuông đỉnh M, cạnh MN; MP"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Dùng thước ê-ke kiểm tra góc trong hình: Đỉnh của góc là điểm N, hai cạnh là tia NM và tia NP. Góc này rộng hơn góc vuông của ê-ke (là góc tù), nên đây là góc không vuông đỉnh N cạnh NM, NP. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image134.png"
   },
@@ -1319,7 +1317,7 @@ export const STAGE_3_QUESTIONS = [
       "2",
       "8"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình chữ nhật ban đầu ABCD có 4 góc vuông ở 4 đỉnh. Khi kẻ thêm đoạn thẳng nối đường chéo AC, mỗi đỉnh A và C được chia thành 2 góc (thêm 2 góc ở A, 2 góc ở C), và tổng số góc trong hình mới (gồm 2 tam giác ABC và ADC) là 8 góc. Số góc trong hình mới gấp số góc ban đầu là: 8 : 4 = 2 lần. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image138.png"
   },
@@ -1339,7 +1337,7 @@ export const STAGE_3_QUESTIONS = [
       "2 góc",
       "8 góc"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Cạnh MN tham gia vào việc tạo góc ở cả hai đầu mút M và N với các đường thẳng khác (mỗi đầu mút tham gia tạo các góc đơn và góc ghép xung quanh). Khi bỏ cạnh MN đi, tất cả các góc có chứa cạnh MN bị biến mất. Tổng số góc giảm đi là 8 góc. Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image139.png"
   },
@@ -1397,10 +1395,9 @@ export const STAGE_3_QUESTIONS = [
       "4",
       "16",
       "6",
-      "8",
-      "TRẮC NGHIỆM"
+      "8"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Để tạo được nhiều góc vuông nhất với 4 que tính, ta xếp 4 que tính thành hình dấu thăng (#) gồm 2 que nằm ngang song song cắt 2 que thẳng đứng song song. Khi đó tạo thành 4 giao điểm. Tại mỗi giao điểm có 4 góc vuông xung quanh. Tổng số góc vuông tối đa xếp được là: 4 x 4 = 16 góc vuông. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ═════════════════════════════════════════════ BÀI 19: HÌNH TAM GIÁC, HÌNH TỨ GIÁC. HÌNH CHỮ NHẬT, HÌNH VUÔNG 1. NHẬN BIẾT",
     "image": null
   },
@@ -1420,7 +1417,7 @@ export const STAGE_3_QUESTIONS = [
       "5 cạnh",
       "3 cạnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Hình tam giác MNP được tạo bởi ba đoạn thẳng MN, NP, PM. Ba đoạn thẳng này chính là ba cạnh của hình tam giác. Vậy tam giác MNP có 3 cạnh, ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image143.png"
   },
@@ -1460,7 +1457,7 @@ export const STAGE_3_QUESTIONS = [
       "bằng",
       "không so sánh được"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình tứ giác ABCD có 4 đỉnh (A, B, C, D). So sánh với số 5: vì 4 < 5 nên số đỉnh của hình tứ giác nhỏ hơn 5. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image145.png"
   },
@@ -1480,7 +1477,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Không có hình nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình tứ giác là hình phẳng khép kín gồm 4 đoạn thẳng (4 cạnh). Quan sát các hình:\n- Hình 1 là hình tam giác (3 cạnh).\n- Hình 2 là hình ngũ giác (5 cạnh).\n- Hình 3 gồm 4 cạnh khép kín nên là hình tứ giác.\nDo đó ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image146.png"
   },
@@ -1520,7 +1517,7 @@ export const STAGE_3_QUESTIONS = [
       "3 tam giác",
       "4 tam giác"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát các hình tam giác có chung đỉnh D trong hình vẽ: đếm các tam giác đơn có đỉnh D và các tam giác ghép có đỉnh D, ta tìm được tất cả 4 tam giác có đỉnh D. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image148.png"
   },
@@ -1540,7 +1537,7 @@ export const STAGE_3_QUESTIONS = [
       "7cm",
       "8cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, tam giác ABC có cạnh AB = 3 cm. Theo đề bài, cạnh BC lớn hơn cạnh AB là 2 cm. Vậy độ dài cạnh BC là: 3 + 2 = 5 (cm). Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image66.png"
   },
@@ -1560,7 +1557,7 @@ export const STAGE_3_QUESTIONS = [
       "Nối E với D",
       "Nối E với F"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình chữ nhật ABCD: E nằm trên cạnh AB và F nằm trên cạnh DC. Khi nối E với F bằng một đoạn thẳng, ta chia hình chữ nhật lớn thành 2 hình tứ giác nhỏ là AEFD và EBCF. Cùng với hình ban đầu ABCD, ta có tất cả: 2 + 1 = 3 hình tứ giác. Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image156.png"
   },
@@ -1580,7 +1577,7 @@ export const STAGE_3_QUESTIONS = [
       "bằng",
       "không so sánh được"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, độ dài cạnh PQ = 6 cm. Cạnh MN nhỏ hơn cạnh PQ là 4 cm, do đó độ dài cạnh MN là: 6 - 4 = 2 (cm). Tổng độ dài hai cạnh MN và PQ là: 2 + 6 = 8 (cm). Vì 8 cm < 10 cm nên tổng độ dài hai cạnh nhỏ hơn 10 cm. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image74.png"
   },
@@ -1600,7 +1597,7 @@ export const STAGE_3_QUESTIONS = [
       "2; 1",
       "2; 2"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ: Khi nối điểm D với điểm E, đoạn thẳng DE chia hình thành: 1 hình tứ giác là ABDE và 2 hình tam giác là tam giác CDE và tam giác ABC. Do đó ta được 1 hình tứ giác và 2 hình tam giác. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image75.png"
   },
@@ -1620,7 +1617,7 @@ export const STAGE_3_QUESTIONS = [
       "10",
       "1"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình vuông có 4 cạnh có độ dài bằng nhau, nên: BC = CD = 2 dm. Đổi đơn vị đo: 2 dm = 20 cm. Vậy độ dài cạnh BC = 20 cm, ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image159.png"
   },
@@ -1640,7 +1637,7 @@ export const STAGE_3_QUESTIONS = [
       "6 hình vuông",
       "5 hình vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. 5 hình vuông.\nHình vẽ gồm 4 hình vuông nhỏ (kích thước 1x1) và 1 hình vuông lớn bao bên ngoài (kích thước 2x2). Tổng cộng có: 4 + 1 = 5 hình vuông. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image209.png"
   },
@@ -1680,7 +1677,7 @@ export const STAGE_3_QUESTIONS = [
       "4; 6",
       "6; 4"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Vì AEFD là hình chữ nhật có chiều dài bằng chiều rộng nên AEFD là hình vuông. Quan sát hình vẽ, cạnh AD = 4 cm nên cạnh AEFD bằng 4 cm. Chiều dài hình chữ nhật ABCD là: DC = DF + FC = 4 + 2 = 6 (cm). Chiều rộng của hình chữ nhật ABCD là: AD = 4 cm. Vậy chiều dài là 6 cm, chiều rộng là 4 cm. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image167.png"
   },
@@ -1700,7 +1697,7 @@ export const STAGE_3_QUESTIONS = [
       "6cm",
       "14cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình chữ nhật ABCD có chu vi (tổng độ dài các cạnh) là 56 cm và chiều rộng BC = 16 cm. Nửa chu vi hình chữ nhật ABCD là: 56 : 2 = 28 (cm). Chiều dài AB là: 28 - 16 = 12 cm. Trong hình chữ nhật ABNM ghép cùng, cạnh MN = AB = 12 cm. Vì OM = 6 cm nên độ dài đoạn thẳng ON là: ON = MN - OM = 12 - 6 = 6 (cm). Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image169.png"
   },
@@ -1720,7 +1717,7 @@ export const STAGE_3_QUESTIONS = [
       "4",
       "5"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát quy luật của dãy hình vẽ theo số cạnh hoặc hình dạng: hình thay vào dấu ba chấm là hình tam giác màu đỏ, mà hình tam giác thì có 3 cạnh. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image150.png"
   },
@@ -1740,7 +1737,7 @@ export const STAGE_3_QUESTIONS = [
       "1 hình",
       "4 hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Trong chương trình Toán lớp 3, học sinh nhận biết hình chữ nhật là hình có 4 góc vuông, 2 chiều dài bằng nhau và 2 chiều rộng bằng nhau (phân biệt với hình vuông có 4 cạnh bằng nhau). Trong các hình đã cho, Hình 2 là hình chữ nhật. Do đó ta chọn phương án C · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image151.png"
   },
@@ -1760,7 +1757,7 @@ export const STAGE_3_QUESTIONS = [
       "4cm",
       "8cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Theo đề bài, ADFE là hình vuông. Hình vuông là hình có 4 cạnh dài bằng nhau: AD = DF = FE = EA. Biết cạnh AD = 4 cm, do đó độ dài đoạn thẳng EF = 4 cm. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image152.png"
   },
@@ -1780,7 +1777,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình chữ nhật DABC",
       "Hình chữ nhật ABDC"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quy tắc đọc tên một hình chữ nhật hay hình tứ giác là đọc liên tiếp các đỉnh theo một chiều vòng quanh (cùng chiều hoặc ngược chiều kim đồng hồ). Trong các cách đọc, cách gọi tên 'Hình chữ nhật DABC' là đọc liên tiếp vòng quanh 4 đỉnh (D -> A -> B -> C). Các cách khác nhảy đỉnh chéo nên không đúng quy tắc. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image153.png"
   },
@@ -1800,7 +1797,7 @@ export const STAGE_3_QUESTIONS = [
       "bằng",
       "không so sánh được"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình tam giác ABC có 3 đỉnh (A, B, C) và có 3 cạnh (AB, BC, CA). Vì 3 = 3 nên số đỉnh của hình tam giác bằng số cạnh của hình tam giác. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image154.png"
   },
@@ -1840,7 +1837,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Cả ba hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Hình 2\nQuan sát Hình 2, đoạn thẳng kẻ thêm tạo với các cạnh có sẵn một hình vuông có 4 góc vuông và 4 cạnh bằng nhau. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b21_25_image12.png"
   },
@@ -1900,7 +1897,7 @@ export const STAGE_3_QUESTIONS = [
       "10cm",
       "12cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ, cạnh KL = 3 cm.\n- Cạnh ML lớn hơn cạnh KL là 1 cm nên: ML = 3 + 1 = 4 (cm).\n- Cạnh ML nhỏ hơn cạnh KM là 1 cm nên: KM = ML + 1 = 4 + 1 = 5 (cm).\nTổng độ dài 3 cạnh của tam giác KLM là: KL + ML + KM = 3 + 4 + 5 = 12 (cm). Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
     "image": "/images/math3/b16_20_image82.png"
   },
@@ -1920,7 +1917,7 @@ export const STAGE_3_QUESTIONS = [
       "20dm",
       "22dm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Tổng độ dài các cạnh của hình chữ nhật chính là chu vi của hình chữ nhật đó (74 dm). Nửa chu vi hình chữ nhật là: 74 : 2 = 37 (dm). Cạnh ngắn là chiều rộng (15 dm). Độ dài cạnh dài (chiều dài) của hình chữ nhật là: 37 - 15 = 22 (dm). Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -1940,7 +1937,7 @@ export const STAGE_3_QUESTIONS = [
       "12cm",
       "6cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Theo đề bài, 2 lần chiều rộng bằng 36 cm, vậy chiều rộng của hình chữ nhật là: 36 : 2 = 18 (cm). Chiều dài gấp 3 lần chiều rộng, nên chiều dài của hình chữ nhật là: 18 x 3 = 54 (cm). Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -1960,7 +1957,7 @@ export const STAGE_3_QUESTIONS = [
       "3 cạnh",
       "0 cạnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát quy luật các hình hình học trong chuỗi: hình đầu tiên là tam giác (3 cạnh), hình thứ hai là tứ giác (4 cạnh), hình thứ ba là hình tròn... Hình cần thay vào dấu hỏi chấm là hình tam giác có 3 cạnh. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO",
     "image": "/images/math3/v3_image168.png"
   },
@@ -1981,7 +1978,7 @@ export const STAGE_3_QUESTIONS = [
       "145m"
     ],
     "correctIndex": 0,
-    "explanation": "",
+    "explanation": "Giải thích: Chiều dài mảnh vườn hình chữ nhật là: 20 x 3 = 60 (m). Chu vi của mảnh vườn là: (60 + 20) x 2 = 160 (m). Độ rộng của hai cửa ra vào là: 3 x 2 = 6 (m). Chiều dài hàng rào xung quanh mảnh vườn là: 160 - 6 = 154 (m). Ta chọn phương án A.",
     "image": null
   },
   {
@@ -1998,8 +1995,7 @@ export const STAGE_3_QUESTIONS = [
       "20cm",
       "10cm",
       "30cm",
-      "15cm",
-      "TRẮC NGHIỆM"
+      "15cm"
     ],
     "correctIndex": 0,
     "explanation": "Giải thích: Lưu ý đề bài: Kích thước ban đầu ghi '50m' là lỗi đánh máy từ '50cm' để đồng nhất đơn vị với '30cm' và câu hỏi 'xăng-ti-mét'.\nGiải bài toán:\n- Gọi chiều dài miếng bìa ban đầu là d và chiều rộng là r. Tổng chiều dài và chiều rộng ban đầu là: d + r = 50 cm.\n- Khi cắt dọc theo chiều rộng r, ta được một hình vuông có cạnh bằng r và một hình chữ nhật mới. Hình chữ nhật mới có chiều rộng là r và chiều dài là (d - r).\n- Tổng chiều dài và chiều rộng của hình chữ nhật mới là: (d - r) + r = d = 30 cm.\n- Suy ra chiều dài ban đầu d = 30 cm. Cạnh của hình vuông (chiều rộng r) là: r = 50 - 30 = 20 (cm).\nDo đó ta chọn phương án A. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · CHỦ ĐỀ 4: PHÉP NHÂN, PHÉP CHIA TRONG PHẠM VI 100 ═════════════════════════════════════════════ BÀI 20: THỰC HÀNH VẼ GÓC VUÔNG, VẼ ĐƯỜNG TRÒN, HÌNH VUÔNG, HÌNH CHỮ NHẬT VÀ VẼ TRANG TRÍ 1. NHẬN BIẾT",
@@ -2021,7 +2017,7 @@ export const STAGE_3_QUESTIONS = [
       "Bút mực",
       "Com-pa"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Com-pa là dụng cụ hình học chuyên dùng để vẽ đường tròn. Ta cắm đầu nhọn làm tâm và quay đầu chì để vẽ đường tròn. Do đó ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image170.png"
   },
@@ -2041,7 +2037,7 @@ export const STAGE_3_QUESTIONS = [
       "Com-pa",
       "Tẩy"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Để vẽ các cạnh thẳng của hình chữ nhật có độ dài chính xác, ta sử dụng thước kẻ có vạch chia xăng-ti-mét. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image171.png"
   },
@@ -2061,7 +2057,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình tròn",
       "Hình tứ giác"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình vẽ của bạn Hoa, nét vẽ cong tròn đều khép kín quanh một tâm, đó chính là hình tròn. Vậy Hoa đã vẽ hình tròn, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image172.png"
   },
@@ -2081,7 +2077,7 @@ export const STAGE_3_QUESTIONS = [
       "MQ và PQ",
       "MN và PQ"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình chữ nhật MNPQ gồm 4 cạnh: MN, NP, PQ, QM. Trong các phương án lựa chọn, cặp hai cạnh của hình chữ nhật là MN và NP (hai cạnh kề nhau). Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image173.png"
   },
@@ -2101,7 +2097,7 @@ export const STAGE_3_QUESTIONS = [
       "5 góc vuông",
       "Không có góc vuông nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Theo định nghĩa, hình chữ nhật là hình tứ giác có 4 góc vuông ở 4 đỉnh. Vậy hình chữ nhật MNPQ có 4 góc vuông, ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image174.png"
   },
@@ -2121,7 +2117,7 @@ export const STAGE_3_QUESTIONS = [
       "N",
       "G"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Điểm nằm ở chính giữa hình tròn là tâm của hình tròn. Quan sát hình vẽ, điểm chính giữa được đặt tên là chữ G. Vậy hình tròn có tâm là G, ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image175.png"
   },
@@ -2141,7 +2137,7 @@ export const STAGE_3_QUESTIONS = [
       "4",
       "5"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Bán kính là đoạn thẳng nối từ tâm đến một điểm nằm trên đường tròn. Đếm số đoạn thẳng nối từ tâm ra đường tròn trong hình vẽ, có tất cả 4 đoạn thẳng bán kính. Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image176.png"
   },
@@ -2161,7 +2157,7 @@ export const STAGE_3_QUESTIONS = [
       "Cả A và B",
       "Hình tứ giác"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Quan sát hình vẽ ngôi nhà: mái nhà, thân nhà, cửa sổ và cửa ra vào đều được ghép từ các hình chữ nhật, hình vuông và hình tam giác. Vậy ngôi nhà không được vẽ từ hình tứ giác. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image183.png"
   },
@@ -2181,7 +2177,7 @@ export const STAGE_3_QUESTIONS = [
       "Cả hai bạn đều đúng",
       "Cả hai bạn đều sai"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình tam giác MNP chỉ có 3 cạnh là MN, NP và MP. Điểm Q nằm ở vị trí khác (không phải đỉnh của tam giác MNP) nên MQ không phải là cạnh của tam giác MNP. Do đó bạn An nói 'MN là cạnh của tam giác MNP' là đúng, bạn Bình nói sai. Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image101.png"
   },
@@ -2201,7 +2197,7 @@ export const STAGE_3_QUESTIONS = [
       "3 hình",
       "1 hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, các tam giác có chứa cạnh MN gồm có: tam giác MNP, tam giác MNQ, tổng cộng có 2 hình tam giác có cạnh MN. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image185.png"
   },
@@ -2221,7 +2217,7 @@ export const STAGE_3_QUESTIONS = [
       "1cm",
       "3cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Hình vuông là hình tứ giác đặc biệt có 4 cạnh dài bằng nhau: AB = BC = CD = DA. Biết AB = 3 cm, do đó độ dài cạnh BC cũng bằng 3 cm. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image186.png"
   },
@@ -2241,7 +2237,7 @@ export const STAGE_3_QUESTIONS = [
       "4cm",
       "6cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ, tam giác EFG có độ dài cạnh FG = 6 cm. Theo đề bài, cạnh FG lớn hơn cạnh EF là 3 cm. Vậy độ dài cạnh EF là: 6 - 3 = 3 (cm). Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b16_20_image104.png"
   },
@@ -2261,7 +2257,7 @@ export const STAGE_3_QUESTIONS = [
       "Cần sử dụng Com-pa để vẽ",
       "Cần dùng thước kẻ sao cho độ dài các cạnh bằng nhau và 4 đỉnh tạo thành góc vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Để vẽ một hình vuông chuẩn xác, ta cần dùng thước kẻ và ê-ke sao cho 4 cạnh có độ dài bằng nhau và 4 góc ở 4 đỉnh đều là góc vuông. Do đó phương án đúng là D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -2281,7 +2277,7 @@ export const STAGE_3_QUESTIONS = [
       "Bút chì, thước kẻ",
       "Ê-ke, com-pa"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình vẽ  các đoạn thẳng và trục đối xứng được kẻ bằng Thước kẻ. Vậy dụng cụ chủ yếu là bút chì và thước kẻ, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image192.png"
   },
@@ -2301,7 +2297,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 2 và 3",
       "Hình 2 và 4"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Hình vuông ban đầu đã có 4 góc vuông ở 4 đỉnh. Để có tổng cộng 8 góc vuông, cần vẽ thêm 2 đoạn thẳng tạo thêm 4 góc vuông nữa (chẳng hạn 2 đoạn thẳng cắt nhau vuông góc bên trong hoặc tạo thành 2 hình chữ nhật con). Quan sát các cách vẽ, Hình 1 và Hình 2 đều có đúng 8 góc vuông. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image196.png"
   },
@@ -2321,7 +2317,7 @@ export const STAGE_3_QUESTIONS = [
       "2 góc vuông",
       "0 góc vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Dùng thước ê-ke để kiểm tra 4 góc của hình tứ giác đã cho: có 2 góc trùng khít với góc vuông của ê-ke (được đánh dấu kí hiệu góc vuông), 2 góc còn lại không vuông. Vậy tứ giác có 2 góc vuông, ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image177.png"
   },
@@ -2361,7 +2357,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình tứ giác",
       "Hình vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Hình bạn Hạnh vẽ có 4 cạnh, không góc vuông. Đó chính là hình tứ giác. Do đó ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image179.png"
   },
@@ -2441,7 +2437,7 @@ export const STAGE_3_QUESTIONS = [
       "3cm",
       "7cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Quan sát hình vẽ hình chữ nhật ABCD: cạnh dài CD = 5 cm, cạnh ngắn AD = 2 cm. Độ dài cạnh CD lớn hơn độ dài cạnh AD là: 5 - 2 = 3 (cm). Ta chọn phương án C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image188.png"
   },
@@ -2481,7 +2477,7 @@ export const STAGE_3_QUESTIONS = [
       "5",
       "3"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ dạng lưới ô vuông: gồm 5 hình vuông nhỏ (1x1) và 1 hình vuông lớn (3x3). Tổng cộng có: 5 + 1 = 6 hình vuông. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image190.png"
   },
@@ -2501,7 +2497,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Không có hình nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Hình vuông EGIH có 4 đỉnh đọc theo vòng quanh liên tiếp là E -> G -> I -> H. Quan sát 3 hình vẽ, không có hình đặt tên các đỉnh theo đúng thứ tự vòng tròn E - G - I - H. Ta chọn phương án D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
     "image": "/images/math3/v3_image191.png"
   },
@@ -2541,7 +2537,7 @@ export const STAGE_3_QUESTIONS = [
       "Không có góc nào tạo thành",
       "Tạo thành cả góc vuông và góc không vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Khi đồng hồ chỉ 12 giờ 55 phút: kim dài chỉ vào số 11, kim ngắn chỉ vào gần số 1. Góc tạo bởi hai kim ở vị trí này là một góc nhọn (nhỏ hơn góc vuông của ê-ke). Vậy hai kim tạo thành góc không vuông, ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image194.png"
   },
@@ -2561,7 +2557,7 @@ export const STAGE_3_QUESTIONS = [
       "Nối MP",
       "Không nối điểm nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Quan sát hình vẽ với các điểm đã cho: khi nối đoạn thẳng AP, đoạn thẳng này chia hình lớn thành 2 hình tứ giác và 1 hình tam giác. Do đó ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 4. VẬN DỤNG CAO",
     "image": "/images/math3/v3_image195.png"
   },
@@ -2581,7 +2577,7 @@ export const STAGE_3_QUESTIONS = [
       "120cm",
       "180cm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Phân tích quãng đường chạy của hai bạn:\n- Cua chạy theo đoạn thẳng AB nên quãng đường là: AB.\n- Rùa chạy theo đường gấp khúc ADCB nên quãng đường là: AD + DC + CB.\nVì ABCD là hình chữ nhật nên CD = AB và AD = BC = 30 cm.\nQuãng đường Rùa chạy là: 30 + AB + 30 = AB + 60 (cm).\nVậy đoạn đường Rùa chạy dài hơn đoạn đường Cua chạy là: (AB + 60) - AB = 60 (cm). Ta chọn phương án B. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image197.png"
   },
@@ -2621,7 +2617,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình tứ giác",
       "Hình tròn"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Hình vuông.\nKhối lập phương có 6 mặt đều là hình vuông bằng nhau. Vì vậy tấm gỗ lắp vừa khít vào mặt trước cũng có dạng hình vuông. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image199.png"
   },
@@ -2661,7 +2657,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình chữ nhật",
       "Hình tứ giác"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. Hình chữ nhật.\nThùng carton dạng khối hộp chữ nhật có tất cả 6 mặt đều là hình chữ nhật. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image201.png"
   },
@@ -2681,7 +2677,7 @@ export const STAGE_3_QUESTIONS = [
       "10 đỉnh",
       "12 đỉnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 8 đỉnh.\nKhối lập phương có 8 đỉnh (4 đỉnh ở mặt trên và 4 đỉnh ở mặt dưới). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -2741,7 +2737,7 @@ export const STAGE_3_QUESTIONS = [
       "3 khối",
       "1 khối"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 2 khối.\nKhối có 6 mặt, 8 đỉnh và 12 cạnh là khối hộp chữ nhật hoặc khối lập phương. Quan sát hình, ở bên phải khối cầu có 2 khối hộp chữ nhật (khối màu đỏ và khối màu vàng). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image202.png"
   },
@@ -2761,7 +2757,7 @@ export const STAGE_3_QUESTIONS = [
       "30 tờ",
       "35 tờ"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 30 tờ.\nMột chiếc hộp dạng khối hộp chữ nhật có 6 mặt, nên mỗi hộp cần 6 tờ giấy màu. Để làm 5 chiếc hộp như thế, An cần số tờ giấy màu là: 6 × 5 = 30 (tờ). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -2781,7 +2777,7 @@ export const STAGE_3_QUESTIONS = [
       "8 miếng gỗ",
       "2 miếng gỗ"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 6 miếng gỗ.\nChiếc khung sắt có dạng khối hộp chữ nhật có tất cả 6 mặt. Mỗi mặt lắp 1 miếng gỗ nên cần lắp tất cả 6 miếng gỗ. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image208.png"
   },
@@ -2841,7 +2837,7 @@ export const STAGE_3_QUESTIONS = [
       "6 hình vuông",
       "5 hình vuông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. 5 hình vuông.\nHình vẽ gồm 4 hình vuông nhỏ (kích thước 1x1) và 1 hình vuông lớn bao bên ngoài (kích thước 2x2). Tổng cộng có: 4 + 1 = 5 hình vuông. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image209.png"
   },
@@ -2861,7 +2857,7 @@ export const STAGE_3_QUESTIONS = [
       "4 mặt",
       "6 mặt"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 4 mặt.\nMột mặt của khối lập phương lớn được tạo thành từ 4 mặt của 4 khối lập phương nhỏ. Khi sơn một mặt lớn thì có đúng 4 mặt của khối nhỏ được sơn màu đỏ. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image213.png"
   },
@@ -2901,7 +2897,7 @@ export const STAGE_3_QUESTIONS = [
       "2 mặt",
       "8 mặt"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 6 mặt.\nMỗi khối hộp chữ nhật có 6 mặt. Đã sơn 2 mặt đỏ và 2 mặt vàng, vậy số mặt màu xanh của mỗi khối là: 6 - 2 - 2 = 2 (mặt xanh). Ba khối hộp chữ nhật cần sơn tất cả số mặt màu xanh là: 2 × 3 = 6 (mặt). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -2921,7 +2917,7 @@ export const STAGE_3_QUESTIONS = [
       "4 mặt",
       "6 mặt"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 4 mặt.\nMột mặt của khối lập phương lớn được ghép bởi 4 mặt của 4 khối lập phương nhỏ. Do đó khi sơn 1 mặt của khối lớn thì có 4 mặt của khối nhỏ được sơn màu. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image203.png"
   },
@@ -2941,7 +2937,7 @@ export const STAGE_3_QUESTIONS = [
       "8 đỉnh",
       "9 đỉnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 8 đỉnh.\nCon xúc xắc có dạng khối lập phương, do đó có tất cả 8 đỉnh. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image204.png"
   },
@@ -2961,7 +2957,7 @@ export const STAGE_3_QUESTIONS = [
       "Khối lập phương",
       "Khối hộp chữ nhật"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. Khối hộp chữ nhật.\nHình có 6 mặt, 8 đỉnh, 12 cạnh và các mặt đều là hình chữ nhật chính là khối hộp chữ nhật. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -3001,7 +2997,7 @@ export const STAGE_3_QUESTIONS = [
       "Viên gạch",
       "Khối rubik"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. Khối rubik.\nKhối rubik có dạng khối lập phương nên tất cả các mặt đều là hình vuông. Viên gạch có dạng khối hộp chữ nhật. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image206.png"
   },
@@ -3041,7 +3037,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 3",
       "Cả ba hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Hình 2\nQuan sát Hình 2, đoạn thẳng kẻ thêm tạo với các cạnh có sẵn một hình vuông có 4 góc vuông và 4 cạnh bằng nhau. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/b21_25_image12.png"
   },
@@ -3061,7 +3057,7 @@ export const STAGE_3_QUESTIONS = [
       "12 bông",
       "14 bông"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 12 bông.\nKhối hộp chữ nhật có 6 mặt. Mỗi mặt in 2 bông hoa, nên cần in tất cả số bông hoa là: 6 × 2 = 12 (bông). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -3081,7 +3077,7 @@ export const STAGE_3_QUESTIONS = [
       "Khối lập phương có tất cả các cạnh bằng nhau",
       "Khối lập phương có tất cả 12 cạnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Khối lập phương có tất cả 8 mặt.\nKhối lập phương chỉ có 6 mặt (không phải 8 mặt). Do đó nhận định 'Khối lập phương có tất cả 8 mặt' là không đúng. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -3121,7 +3117,7 @@ export const STAGE_3_QUESTIONS = [
       "24 que tính",
       "26 que tính"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 24 que tính.\nMỗi khối lập phương có 12 cạnh, tương ứng với 12 que tính. Để làm 2 mô hình khối lập phương cần: 12 × 2 = 24 (que tính). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image215.png"
   },
@@ -3141,7 +3137,7 @@ export const STAGE_3_QUESTIONS = [
       "27 ngôi sao",
       "24 ngôi sao"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. 24 ngôi sao.\nKhối lập phương có 8 đỉnh. Ở mỗi đỉnh vẽ 3 ngôi sao, do đó bác Dũng đã vẽ tất cả số ngôi sao là: 8 × 3 = 24 (ngôi sao). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image216.png"
   },
@@ -3181,7 +3177,7 @@ export const STAGE_3_QUESTIONS = [
       "12 khối",
       "8 khối"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. 8 khối.\nKhối lập phương nhỏ được sơn đúng 3 mặt chính là các khối nằm tại 8 đỉnh của khối lập phương lớn. Vì khối lớn có 8 đỉnh nên có đúng 8 khối nhỏ được sơn 3 mặt. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image218.png"
   },
@@ -3199,10 +3195,9 @@ export const STAGE_3_QUESTIONS = [
       "2 khẳng định",
       "3 khẳng định",
       "1 khẳng định",
-      "0 khẳng định",
-      "TRẮC NGHIỆM"
+      "0 khẳng định"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 1 khẳng định.\nKhối A có 2 cạnh đỏ, 2 cạnh xanh. Khối B có 2 cạnh đỏ, 4 cạnh xanh.\n- Khẳng định 1 sai vì cả hai khối đều có 2 cạnh đỏ (bằng nhau).\n- Khẳng định 2 đúng vì số cạnh xanh của A ít hơn B là: 4 - 2 = 2 cạnh.\n- Khẳng định 3 sai vì số mặt chứa cạnh đỏ của A và B đều bằng nhau. Vậy chỉ có 1 khẳng định đúng (Khẳng định 2). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ═════════════════════════════════════════════ BÀI 22: LUYỆN TẬP CHUNG 1. NHẬN BIẾT",
     "image": "/images/math3/v3_image219.png"
   },
@@ -3242,7 +3237,7 @@ export const STAGE_3_QUESTIONS = [
       "Điểm P",
       "Không có điểm nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Điểm N.\nBa điểm M, N, P thẳng hàng theo thứ tự từ trái sang phải, do đó điểm N nằm giữa hai điểm M và P. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image221.png"
   },
@@ -3282,7 +3277,7 @@ export const STAGE_3_QUESTIONS = [
       "Đỉnh N",
       "Không có đỉnh nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. Đỉnh N.\nGóc có hai cạnh NM và NP là góc có đỉnh chung là đỉnh N. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image223.png"
   },
@@ -3302,7 +3297,7 @@ export const STAGE_3_QUESTIONS = [
       "Tâm D",
       "Tâm C"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. Tâm C.\nĐiểm chính giữa hình tròn là tâm của hình tròn, trong hình là điểm C. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image224.png"
   },
@@ -3342,7 +3337,7 @@ export const STAGE_3_QUESTIONS = [
       "4 đỉnh",
       "5 đỉnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 4 đỉnh.\nHình tứ giác ABCD có 4 đỉnh là A, B, C, D. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image226.png"
   },
@@ -3382,7 +3377,7 @@ export const STAGE_3_QUESTIONS = [
       "2 góc",
       "1 góc"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 3 góc.\nHình tam giác có 2 góc, và 1 góc ngoài, cả 3 góc này đều là góc không vuông. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image233.png"
   },
@@ -3422,7 +3417,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình 1",
       "Không có hình nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Hình 2.\nHình 2 có góc đỉnh N tạo bởi hai cạnh NM và NA. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image235.png"
   },
@@ -3442,7 +3437,7 @@ export const STAGE_3_QUESTIONS = [
       "12",
       "10"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 8.\nToàn bộ khối hộp chữ nhật có tất cả 8 đỉnh. (Lưu ý: Nếu câu hỏi xét riêng nửa màu xanh của khối hộp thì có 4 đỉnh; do các phương án đề bài đưa ra là 6, 8, 12, 10 - thuộc tính của khối - nên đáp án chọn 8 đỉnh). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image236.png"
   },
@@ -3462,7 +3457,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình C",
       "Hình D"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D Hình D.\nHình B vẽ thêm một đoạn thẳng vuông góc với 2 cạnh thành 2 góc vuông mới, làm số góc vuông tăng thêm 2. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image242.png"
   },
@@ -3482,7 +3477,7 @@ export const STAGE_3_QUESTIONS = [
       "40cm",
       "3dm"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 40cm.\nChiều rộng của cái ao bằng tổng đường kính của 4 lá súng đặt sát nhau: 1dm × 4 = 4dm=40cm · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image243.png"
   },
@@ -3502,7 +3497,7 @@ export const STAGE_3_QUESTIONS = [
       "3 cách",
       "4 cách"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 2 cách.\nHình chữ nhật ghép từ 10 que tính có nửa chu vi là: 10 : 2 = 5 que tính. Ta có 2 cách phân tích thành chiều dài và chiều rộng: 5 = 4 + 1 (chiều dài 4 que, chiều rộng 1 que) hoặc 5 = 3 + 2 (chiều dài 3 que, chiều rộng 2 que). Vậy có 2 cách xếp. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image247.png"
   },
@@ -3522,7 +3517,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình tam giác có 3 đỉnh",
       "Hình tứ giác có 3 đỉnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. Hình tứ giác có 3 đỉnh.\nHình tứ giác có 4 đỉnh và 4 cạnh. Do đó phát biểu 'Hình tứ giác có 3 đỉnh' là phát biểu sai. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": null
   },
@@ -3542,7 +3537,7 @@ export const STAGE_3_QUESTIONS = [
       "4 cạnh",
       "5 cạnh"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 4 cạnh.\nHình còn thiếu là hình tứ giác, mà hình tứ giác có 4 cạnh. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image227.png"
   },
@@ -3582,7 +3577,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình chữ nhật",
       "Hình tam giác"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Khối hộp chữ nhật.\nBể cá có dạng hình khối hộp chữ nhật. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image229.png"
   },
@@ -3622,7 +3617,7 @@ export const STAGE_3_QUESTIONS = [
       "NP",
       "QP"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. HO.\nĐiểm I nằm giữa hai điểm H, O và chia đoạn HO thành hai đoạn bằng nhau IH = IO, nên I là trung điểm của đoạn thẳng HO. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 2. THÔNG HIỂU",
     "image": "/images/math3/v3_image231.png"
   },
@@ -3642,7 +3637,7 @@ export const STAGE_3_QUESTIONS = [
       "11 que tính",
       "14 que tính"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 11 que tính.\nQuy luật: Hình sau hơn hình trước 2 que tính. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image237.png"
   },
@@ -3662,7 +3657,7 @@ export const STAGE_3_QUESTIONS = [
       "40 nan tre",
       "30 nan tre"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Giải thích: Đáp án đúng là: C. 40 nan tre.\nKhung đèn lồng khối lập phương có 8 đỉnh. Mỗi đỉnh buộc 1 sợi lạt, nên 5 khung đèn cần: 8 × 5 = 40 (sợi lạt/nan tre). · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image238.png"
   },
@@ -3702,7 +3697,7 @@ export const STAGE_3_QUESTIONS = [
       "Hình C",
       "Cả ba hình"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Hình B.\nĐồng hồ ở Hình A chỉ đúng 9 giờ, kim giờ và kim phút vuông góc với nhau tạo thành góc vuông. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · 3. VẬN DỤNG",
     "image": "/images/math3/v3_image240.png"
   },
@@ -3722,7 +3717,7 @@ export const STAGE_3_QUESTIONS = [
       "Đoạn thẳng PQ",
       "Đoạn thẳng MN"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Giải thích: Đáp án đúng là: D. Đoạn thẳng MN.\nTờ giấy có chiều rộng bằng đoạn MN. Để cắt được hình vuông có cạnh bằng chiều rộng tờ giấy, Rô-bốt cần cắt theo đoạn thẳng MN. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image244.png"
   },
@@ -3742,7 +3737,7 @@ export const STAGE_3_QUESTIONS = [
       "8",
       "5"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. 7.\nQuan sát đường đi màu trắng từ A đến B, con kiến bò qua lần lượt 7 cạnh của các khối lập phương. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·",
     "image": "/images/math3/v3_image245.png"
   },
@@ -3800,10 +3795,9 @@ export const STAGE_3_QUESTIONS = [
       "Vị trí số 1",
       "Vị trí số 2",
       "Vị trí số 3",
-      "Không ở vị trí nào",
-      "TRẮC NGHIỆM"
+      "Không ở vị trí nào"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Giải thích: Đáp án đúng là: B. Vị trí số 2.\nĐiểm D ở giữa A và B: A - D - B. Điểm C ở giữa A và D: A - C - D - B. Điểm E ở giữa C và D: A - C - E - D - B. Do đó điểm E nằm giữa C và D, ứng với vị trí số 2. · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · CHỦ ĐỀ 4: PHÉP NHÂN, PHÉP CHIA TRONG PHẠM VI 100 ═════════════════════════════════════════════ BÀI 24: GẤP MỘT SỐ LÊN MỘT SỐ LẦN 1. NHẬN BIẾT",
     "image": null
   }
