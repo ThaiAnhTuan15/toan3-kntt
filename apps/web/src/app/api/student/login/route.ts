@@ -27,40 +27,6 @@ export async function POST(request: Request) {
     );
 
     if (!rows || rows.length === 0) {
-      // Fallback: Tìm trong bảng hoc12nam_student_accounts và tự động đồng bộ sang student_accounts
-      try {
-        const hocRows = await queryNeon(
-          `SELECT id, username, pin, nickname, avatar, data, active_session, updated_at
-           FROM hoc12nam_student_accounts
-           WHERE LOWER(username) = LOWER($1)
-           LIMIT 1;`,
-          [username]
-        );
-        if (hocRows && hocRows.length > 0) {
-          const hocAcc = hocRows[0];
-          await queryNeon(
-            `INSERT INTO student_accounts (id, username, pin, nickname, avatar, data, active_session, created_at, updated_at)
-             VALUES ($1, $2, $3, $4, $5, $6::jsonb, $7::jsonb, NOW(), NOW())
-             ON CONFLICT (id) DO UPDATE 
-             SET pin = $3, nickname = $4, avatar = $5, data = $6::jsonb, active_session = $7::jsonb, updated_at = NOW();`,
-            [
-              hocAcc.id,
-              hocAcc.username,
-              hocAcc.pin,
-              hocAcc.nickname,
-              hocAcc.avatar,
-              JSON.stringify(hocAcc.data || {}),
-              hocAcc.active_session ? JSON.stringify(hocAcc.active_session) : null
-            ]
-          );
-          rows = hocRows;
-        }
-      } catch (e) {
-        console.warn('Fallback hoc12nam_student_accounts error:', e);
-      }
-    }
-
-    if (!rows || rows.length === 0) {
       return NextResponse.json({ 
         success: false, 
         error: `Không tìm thấy tài khoản "${username}". Bé hãy kiểm tra lại tên đăng nhập hoặc đăng ký tài khoản mới nhé!` 
